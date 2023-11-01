@@ -1,0 +1,164 @@
+﻿.pageContent {
+    position: absolute;
+    top: 480px;
+    /*background: #c3bfbf;*/
+    width: 100%;
+    height: 1200px;
+}
+
+h1 {
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+#required {
+    position: absolute;
+    top: 0px;
+    margin-left: 1400px;
+    font-size: 12px;
+    font-weight: 400;
+    color: red;
+}
+
+#headTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    top: 35px;
+    left: 30px;
+    width: 33px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+
+.fldPersonal {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    row-gap: 20px;
+    column-gap: 180px;
+    width: 88%;
+    left: 6%;
+    right: 6%;
+    flex-wrap: wrap;
+}
+
+.inbox {
+    background: #cfcfcf;
+    width: 350px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.longbox {
+    background: #cfcfcf;
+    width: 1500px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.longbox textarea {
+    margin-top: 10px;
+    width: 1450px;
+    height: 195px;
+    margin-left: 15px;
+    border-style: none;
+    background: none;
+    color: black;
+    outline: none;
+}
+
+input {
+    width: 320px;
+    height: 35px;
+    margin-left: 15px;
+    border-style: none;
+    background: none;
+    color: black;
+    outline: none;
+}
+
+#concernTitle {
+    margin-top: 50px;
+}
+
+#concernTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    top: 208px;
+    left: 30px;
+    width: 33px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+.fldConcern {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    row-gap: 20px;
+    column-gap: 180px;
+    width: 88%;
+    left: 6%;
+    right: 6%;
+    flex-wrap: wrap;
+}
+
+#emailNote
+{
+    font-size: 12px;
+    font-weight: 400;
+    color: green;
+}
+
+.rate
+{
+    top: 30px;
+    position: relative;
+    margin-left: 30px;
+    display: flex;
+}
+
+.stars img
+{
+    position: relative;
+    top: 20px;
+    left: 25px;
+    height: 50px;
+    width: 50px;
+}
+
+#consent
+{
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+#check
+{
+    position:relative;
+    margin-left: 30px;
+    bottom: 36px;
+    height: 15px;
+    width:15px;
+}
+
+.submit 
+{
+    height: 50px;
+    width: 160px;
+    background-color: #16601f;
+    border-radius: 50px;
+    border-style: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 30px;
+}
