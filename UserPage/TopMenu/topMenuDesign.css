@@ -195,7 +195,14 @@ body {
     font-weight: bold;
     height: 38px;
     width: 165px;
+    cursor: pointer;
 }
+
+.learnMore:hover {
+    transition: 0.3s;
+    background-color: rgb(221, 221, 221);
+}
+
 
 .copyRight {
     position: absolute;

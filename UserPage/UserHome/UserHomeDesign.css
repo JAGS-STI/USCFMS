@@ -54,4 +54,10 @@
     border-style: none;
     height: 40px;
     width: 200px;
+    cursor: pointer;
+}
+
+.card-content .submit:hover {
+    transition: 0.3s;
+    background-color: rgb(221, 221, 221);
 }
