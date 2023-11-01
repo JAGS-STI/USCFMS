@@ -50,76 +50,86 @@
     </div>
 
     <div class="pageContent">
-        <h1 id="headTitle">Personal Information</h1>
-        <p id="required">Fields with * are required</p>
-        <div class="fldPersonal">
-            <div class="namefield">
-                <p>Name <span style="color: red">*</span></p>
-                <div class="inbox">
-                    <input id="nameBox" type="text" placeholder="Type Here" required />
+        <div class="field1">
+            <h1 id="headTitle">Personal Information</h1>
+            <div class="underline"></div>
+            <p id="required">Fields with * are required</p>
+            <div class="fldPersonal">
+                <div class="namefield">
+                    <p>Name <span style="color: red">*</span></p>
+                    <div class="inbox">
+                        <input id="nameBox" type="text" placeholder="Type Here" required />
+                    </div>
                 </div>
-            </div>
-            <div class="contactfield">
-                <p>Contact number <span style="color: red">*</span></p>
-                <div class="inbox">
-                    <input id="contactBox" type="text" placeholder="Type Here" required />
+                <div class="contactfield">
+                    <p>Contact number <span style="color: red">*</span></p>
+                    <div class="inbox">
+                        <input id="contactBox" type="text" placeholder="Type Here" required />
+                    </div>
                 </div>
-            </div>
-            <div class="emailfield">
-                <p>Email address</p>
-                <div class="inbox">
-                    <input id="emailBox" type="text" placeholder="Type Here" />
+                <div class="emailfield">
+                    <p>Email address</p>
+                    <div class="inbox">
+                        <input id="emailBox" type="text" placeholder="Type Here" />
+                    </div>
                 </div>
-            </div>
-            <div class="addressfield">
-                <p>Your address <span style="color: red">*</span></p>
-                <div class="inbox">
-                    <input id="addressBox" type="text" placeholder="Type Here" required />
-                </div>
-            </div>
-        </div>
-
-        <h1 id="concernTitle">Concern Information</h1>
-        <div class="fldConcern">
-
-            <div class="concernfield">
-                <p>Type of concern <span style="color: red">*</span></p>
-                <div class="inbox">
-                    <input id="nameBox" type="text" placeholder="Type Here" required />
-                    <img src="media/expand-more-circle-svgrepo-com.svg" />
-                </div>
-            </div>
-
-            <div class="locationfield">
-                <p>Incident location you are concerned <span style="color: red">*</span></p>
-                <div class="inbox">
-                    <input id="nameBox" type="text" placeholder="Type Here" required />
-                </div>
-            </div>
-
-            <div class="uploadfield">
-                <p>Upload photos as proof/evidence <span style="color: red">*</span></p>
-                <div class="inbox" id="invi">
-                    <button class="upload">Upload photos</button>
-                </div>
-            </div>
-            <div class="descfield">
-                <p>Describe your concern/incident <span style="color: red">*</span></p>
-                <div class="longbox">
-                    <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
+                <div class="addressfield">
+                    <p>Your address <span style="color: red">*</span></p>
+                    <div class="inbox">
+                        <input id="addressBox" type="text" placeholder="Type Here" required />
+                    </div>
                 </div>
             </div>
         </div>
-        <h1 id="identityTitle">Identity verification</h1>
-        <p id="note">Your ID will be used in accordance on verifying the authenticity of the concern. This will be kept with utmost confidentiality.</p>
-        <div class="fldVerification">
-            <p>Upload your ID <span style="color: red">*</span></p>
-            <button class="upload">Upload</button>
-            <p id="consent">I consent to the processing of my personal data in accordance with the Republic Act 10173 or also known as the Data Privacy Act of 2012.</p>
-            <input id="check" type="checkbox" />
 
+        <div class="field2">
+            <h1 id="concernTitle">Concern Information</h1>
+            <div class="underline"></div>
+            <div class="fldConcern">
+
+                <div class="concernfield">
+                    <p>Type of concern <span style="color: red">*</span></p>
+                    <div class="inbox">
+                        <input id="nameBox" type="text" placeholder="Type Here" required />
+                        <img src="Media/expand-more-circle-svgrepo-com.svg" />
+                    </div>
+                </div>
+
+                <div class="locationfield">
+                    <p>Incident location you are concerned <span style="color: red">*</span></p>
+                    <div class="inbox">
+                        <input id="nameBox" type="text" placeholder="Type Here" required />
+                    </div>
+                </div>
+
+                <div class="uploadfield">
+                    <p>Upload photos as proof/evidence <span style="color: red">*</span></p>
+                    <div class="inbox" id="invi">
+                        <button class="upload">Upload photos</button>
+                    </div>
+                </div>
+                <div class="descfield">
+                    <p>Describe your concern/incident <span style="color: red">*</span></p>
+                    <div class="longbox">
+                        <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button class="submit">SUBMIT</button>
+        
+        <div class="field3">
+            <h1 id="identityTitle">Identity verification</h1>
+            <div class="underline"></div>
+            <p id="note">Your ID will be used in accordance on verifying the authenticity of the concern. This will be kept with utmost confidentiality.</p>
+            <div class="fldVerification">
+                <p>Upload your ID <span style="color: red">*</span></p>
+                <button class="upload">Upload</button>
+                <p id="consent">I consent to the processing of my personal data in accordance with the Republic Act 10173 or also known as the Data Privacy Act of 2012.</p>
+                <input id="check" type="checkbox" />
+            </div>
+            <button class="submit">SUBMIT</button>
+        </div>
+        
 
         <!--bottom-->
         <footer class="copyRight">
@@ -129,8 +139,6 @@
                 Gerald Balbon | Sheena Gem Juarbal | Jherico Medina | Arjay Fortuno
             </p>
         </footer>
-    </div>
-
-    
+    </div> 
 </body>
 </html>

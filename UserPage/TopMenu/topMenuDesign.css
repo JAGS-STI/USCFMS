@@ -17,19 +17,6 @@ body {
     background: #16601F;
 }
 
-.copyRight {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 45px;
-    background: linear-gradient(180deg, #498032, #003D19);
-    font-size: 10px;
-    color: white;
-}
-
 .PageSubtitle p {
     margin-left: 10px;
     font-size: 15px;
@@ -208,4 +195,21 @@ body {
     font-weight: bold;
     height: 38px;
     width: 165px;
+}
+
+.copyRight {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    background: linear-gradient(180deg, #498032, #003D19);
+    font-size: 10px;
+    color: white;
+}
+
+.copyRight p {
+    margin: 10px 10px;
 }

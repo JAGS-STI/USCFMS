@@ -3,7 +3,7 @@
     top: 480px;
     /*background: #c3bfbf;*/
     width: 100%;
-    height: 1200px;
+    height: 1300px;
 }
 
 h1
@@ -16,16 +16,22 @@ h1
 {
     position: absolute;
     top: 0px;
-    margin-left: 1400px;
+    right: 6%;
     font-size: 12px;
     font-weight:400;
     color: red;
 }
-#headTitle::after {
-    content: "";
+
+.field1,
+.field2,
+.field3 {
+    position: relative;
+}
+
+.underline {
     position: absolute;
     bottom: 0px;
-    top: 35px;
+    top: 22px;
     left: 30px;
     width: 33px;
     height: 6px;
@@ -69,17 +75,11 @@ input {
     margin-top: 90px;
 }
 
-#concernTitle::after {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    top: 355px;
-    left: 30px;
-    width: 33px;
-    height: 6px;
-    background-color: #feda00;
-    border-radius: 10px;
+.field2 {
+    position: relative;
 }
+
+
 
 .fldConcern {
     position: relative;
@@ -125,8 +125,9 @@ input {
 }
 
 .longbox textarea {
-    width: 865px;
-    height: 195px;
+    margin-top: 10px;
+    width: 870px;
+    height: 175px;
     margin-left: 15px;
     border-style: none;
     background: none;
@@ -136,18 +137,6 @@ input {
 
 #identityTitle {
     margin-top: 90px;
-}
-
-#identityTitle::after {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    top: 840px;
-    left: 30px;
-    width: 33px;
-    height: 6px;
-    background-color: #feda00;
-    border-radius: 10px;
 }
 
 #note
