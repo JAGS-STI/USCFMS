@@ -1,0 +1,73 @@
+﻿.PageMenu {
+    position: absolute;
+    top: 480px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 150px;
+    align-items: center;
+    height: 40px;
+    background: #16601F;
+    color: white;
+    font-size:13px;
+    font-weight: bold;
+}
+
+#goTo
+{
+    margin-left: 30px;
+    font-weight: lighter;
+}
+
+.aboutInfo
+{
+    position: absolute;
+    top: 520px;
+    width: 100%;
+    height: 500px;
+}
+
+.history
+{
+    margin-left: 20px;
+}
+
+.history p
+{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#captions
+{
+    margin-top: -20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.history h1 
+{
+    position: relative;
+    top: -20px;
+}
+
+.history h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    top: 40px;
+    left: 0px;
+    width: 40px;
+    height: 7px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+.history img
+{
+    position: relative;
+    height: 25px;
+    width: 25px;
+    bottom: 272px;
+    margin-left: 270px;
+}

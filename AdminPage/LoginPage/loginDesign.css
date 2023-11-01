@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+html, body {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    place-items: center;
+    background: linear-gradient(to right, #ccaf00 0%, #0b3e27 100%);
+}
+
+
+
+/** COLOR WHEN SELECTS A TEXT **/
+::selection {
+    background: #b79f3f;
+}
+
+/** LOGIN BACKGROUND **/
+.container {
+    background: #fff;
+    max-width: 350px;
+    width: 100%;
+    padding: 50px 55px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    left: 950px;
+}
+
+/** LOGIN TITLE **/
+.container form .title {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+    position: relative;
+}
+
+/** LOGIN TITLE UNDERLINE **/
+.container form .title:before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 33px;
+    left: 0px;
+    bottom: 3px;
+    border-radius: 5px;
+    background: #ccaf00;
+}
+
+/** ENTER YOUR USERNAME **/
+.container form .input-box {
+    width: 100%;
+    height: 45px;
+    margin-top: 25px;
+    position: relative;
+}
+/** ENTER YOUR PASSWORD **/
+.container form .input-box input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 16px;
+    border: none;
+}
+
+.container form .underline::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+    left: 0;
+    bottom: 0;
+}
+
+.container form .underline::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #0c3f27;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.3s ease;
+}
+
+.container form .input-box input:focus ~ .underline::after,
+.container form .input-box input:valid ~ .underline::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.container form .button {
+    margin: 40px 0 20px 0;
+}
+
+/** LOGIN BUTTON **/
+.container .input-box input[type="submit"] {
+    background: #0b3e27;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.container .input-box input[type="submit"]:hover {
+    letter-spacing: 1px;
+    background: #a08800
+}
+
+.container .option {
+    font-size: 14px;
+    text-align: center;
+}
+
+
+
+
+&::before {
+    content: '';
+    position: absolute;
+    left: 1px;
+    background: #fff;
+    width: 595px;
+    height: 100%;
+    clip-path: polygon(0 0, 75% 0%, 100% 50%, 75% 100%, 0 100%, 0% 50%);
+}
+
+.brgyHall {
+    position: absolute;
+    left: 1px;
+    width: 580px;
+    height: 100%;
+    background: url(media/brgy_hall.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0 0, 75% 0%, 100% 50%, 75% 100%, 0 100%, 0% 50%);
+}
+
+.logoNtitle {
+    position: absolute;
+    left: 150px;
+}

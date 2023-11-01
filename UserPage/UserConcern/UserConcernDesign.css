@@ -1,0 +1,195 @@
+﻿.pageContent {
+    position: absolute;
+    top: 480px;
+    /*background: #c3bfbf;*/
+    width: 100%;
+    height: 1200px;
+}
+
+h1
+{
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+#required
+{
+    position: absolute;
+    top: 0px;
+    margin-left: 1400px;
+    font-size: 12px;
+    font-weight:400;
+    color: red;
+}
+#headTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    top: 35px;
+    left: 30px;
+    width: 33px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+
+.fldPersonal {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    row-gap: 20px;
+    column-gap: 180px;
+    width: 88%;
+    left: 6%;
+    right: 6%;
+    flex-wrap: wrap;
+}
+
+.inbox {
+    background: #cfcfcf;
+    width: 350px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+
+
+input {
+    width: 320px;
+    height: 35px;
+    margin-left: 15px;
+    border-style: none;
+    background: none;
+    color: black;
+    outline: none;
+}
+
+#concernTitle {
+    margin-top: 90px;
+}
+
+#concernTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    top: 355px;
+    left: 30px;
+    width: 33px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+.fldConcern {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    row-gap: 20px;
+    column-gap: 180px;
+    width: 88%;
+    left: 6%;
+    right: 6%;
+    flex-wrap: wrap;
+}
+
+#invi {
+    background: none;
+}
+
+.upload {
+    margin-top: -5px;
+    font-weight: bold;
+    font-size: 15px;
+    height: 40px;
+    width: 140px;
+    background: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.concernfield .inbox img {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    bottom: 32px;
+    margin-left: 310px;
+}
+
+
+.longbox {
+    background: #cfcfcf;
+    width: 900px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.longbox textarea {
+    width: 865px;
+    height: 195px;
+    margin-left: 15px;
+    border-style: none;
+    background: none;
+    color: black;
+    outline: none;
+}
+
+#identityTitle {
+    margin-top: 90px;
+}
+
+#identityTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    top: 840px;
+    left: 30px;
+    width: 33px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+#note
+{
+    font-size: 13px;
+    position: relative;
+    bottom: 31px;
+    margin-left: 200px;
+}
+
+.fldVerification
+{
+    position: relative;
+    bottom: 20px;
+    margin-left: 30px;
+}
+
+#consent
+{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#check
+{
+    position:relative;
+    bottom: 36px;
+    height: 15px;
+    width:15px;
+}
+
+.submit {
+    height: 50px;
+    width: 160px;
+    background-color: #16601f;
+    border-radius: 50px;
+    border-style: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 30px;
+}

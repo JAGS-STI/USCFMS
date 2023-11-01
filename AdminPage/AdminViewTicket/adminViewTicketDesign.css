@@ -1,0 +1,267 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+.PageSubtitle {
+    position: relative;
+    font-weight: 300;
+    font-size: 15px;
+    color: gray;
+    padding-left: 360px;
+    padding-top: 60px;
+}
+
+.PageTitle {
+    position: relative;
+    font-size: 50px;
+    padding-top: 8px;
+    padding-left: 360px;
+    font-weight: bold;
+}
+
+.ticketID {
+    position: relative;
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;
+    bottom: 65px;
+    background: #16601F;
+    left: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ticketID p
+{
+    margin-top: 7px;
+    font-size: 10px;
+    font-weight: 400;
+    color: white;
+    margin-left: 10px;
+}
+
+.ticketID h1
+{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-left: 10px;
+}
+
+.PageTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 80px;
+    left: 362px;
+    width: 55px;
+    height: 7px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+/* tickets Section */
+.container {
+    position: absolute;
+    width: calc(100% - 300px);
+    height: 750px;
+    top: 180px;
+    left: 300px;
+}
+
+/* Time */
+.rightContainer {
+position: fixed;
+right: 150px;
+top: 60px;
+}
+
+.rightContainer .date {
+    font-size: 15px;
+    color: #000000;
+}
+
+.rightContainer .date h3 {
+    font-size: 25px;
+    color: #000000;
+}
+
+.header {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    width: calc(100% - 550px);
+    height: 150px;
+    top: 180px;
+    left: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card1 {
+    background: #EDEDED;
+    height: 120px;
+    width: 290px;
+    border-style: solid;
+    border-color:#797979;
+    border-width: 1px;
+}
+
+.header p 
+{
+    margin-top: 15px;
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 20px;
+}
+.header h3 
+{
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+.card2
+{
+    background: #EDEDED;
+    height: 120px;
+    width: 190px;
+    border-style: solid;
+    border-color:#797979;
+    border-width: 1px;
+}
+
+.info1 
+{
+    display: flex;
+    gap: 360px;
+}
+
+.info2 
+{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pageContent 
+{
+    position: absolute;
+    width: 100%;
+    position: absolute;
+    width: calc(100% - 550px);
+    height: 400px;
+    top: 340px;
+    left: 350px;
+}
+
+.pageContent p {
+    margin-top: 7px;
+    font-size: 15px;
+} 
+
+.pageContent h1 {
+    font-size: 15px;
+}
+
+.description 
+{
+    margin-top: 50px;
+}
+
+.evidence
+{
+    margin-top: 50px;
+}
+
+.evidence img
+{
+    height: 100px;
+    width: 100px;
+}
+
+.pictureList 
+{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.validID 
+{
+    margin-top: 50px;
+}
+
+.save,
+.close,
+.discard 
+{
+    height: 40px;
+    width: 160px;
+    background-color: #22872F;
+    border-radius: 50px;
+    border-style: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.bottomContent {
+    margin-top: 50px;
+    display: flex;
+    gap: 50px;
+}
+
+.boxshadow {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    background: #cfcfcf;
+    width: 350px;
+    height: 35px;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+#note {
+    margin-top: 50px;
+    font-size: 14px;
+    font-style:italic;
+}
+
+.buttons {
+    position: relative;
+    bottom: 115px;
+    left: 950px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.discard {
+    margin-top: 30px;
+}
+
+.boxshadow img
+{
+    margin-right: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.boxshadow h1 {
+    margin-left: 20px;
+}

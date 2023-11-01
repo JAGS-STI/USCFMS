@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Home | Ususan SCFMS</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="adminViewTicketDesign.css" />
+    <link rel="stylesheet" href="/USCFMS/AdminPage/Sidebar/sidebarDesign.css" />
+
+</head>
+<body>
+    <div>
+        <div class="PageSubtitle">
+            <p>BARANGAY SOCIAL CONCERNS AND FEEDBACK MANAGEMENT SYSTEM</p>
+        </div>
+        <div class="PageTitle">
+            <h3>View Ticket</h3>
+            <div class="ticketID">
+                <p>Ticket ID:</p>
+                <h1>SC-98765</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="card1">
+            <p>Date and time received:</p>
+            <h3>September 26, 2023</h3>
+            <h3>11:07 PM</h3>
+        </div>
+        <div class="card1">
+            <p>Concern type:</p>
+            <h3>Roads and highways</h3>
+        </div>
+        <div class="card2">
+            <p>Status:</p>
+            <h3>Not yet set</h3>
+        </div>
+        <div class="card2">
+            <p>Priority:</p>
+            <h3>Normal</h3>
+        </div>
+    </div>
+
+    <div class="pageContent">
+        <div class="info1">
+            <div class="subtitle">
+                <h1>Respondent name:</h1>
+                <p>Gerald Balbon</p>
+            </div>
+            <div class="subtitle">
+                <h1>Contact number:</h1>
+                <p>0976 045 9207</p>
+            </div>
+        </div>
+        <div class="info2">
+            <div class="subtitle">
+                <h1>Email address:</h1>
+                <p>email@email.com</p>
+            </div>
+            <div class="subtitle">
+                <h1>Address:</h1>
+                <p>Tomasa Ave.</p>
+            </div>
+            <div class="subtitle">
+                <h1>Incident location:</h1>
+                <p>Tomasa Ave.</p>
+            </div>
+        </div>
+
+        <div class="description">
+            <h1>Concern description:</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor <br />
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+        </div>
+
+        <div class="evidence">
+            <h1>Uploaded evidences:</h1>
+            <div class="pictureList">
+                <img src="media/blank-image-svgrepo-com.svg" />
+                <img src="media/blank-image-svgrepo-com.svg" />
+                <img src="media/blank-image-svgrepo-com.svg" />
+                <img src="media/blank-image-svgrepo-com.svg" />
+            </div>
+
+            <div class="validID">
+                <h1>Uploaded valid ID:</h1>
+                <div class="pictureList">
+                    <img src="media/blank-image-svgrepo-com.svg" />
+                </div>
+            </div>
+        </div>
+        <div class="bottomContent">
+            <div class="comboBox">
+                <p>Set status: </p>
+                <div class="boxshadow">
+                    <h1>Active (ongoing)</h1>
+                    <img src="media/expand-more-circle-svgrepo-com.svg" />
+                </div>
+            </div>
+            <div class="comboBox">
+                <p>Set priority level: </p>
+                <div class="boxshadow">
+                    <h1>Normal</h1>
+                    <img src="media/expand-more-circle-svgrepo-com.svg" />
+                </div>
+            </div>
+        </div>
+        <p id="note">If you wish to generate a PDF documentation of this ticket, go to the Documentations page.</p>
+        <div class="buttons">
+            <button class="save">Save and close</button>
+            <button class="close">Close without saving</button>
+            <button class="discard">Discard this ticket</button>
+        </div>
+    </div>
+    
+
+    <div class="sidebar">
+        <img src="media/ususan_logo.png">
+        <h2>Welcome!</h2>
+        <ul class="nav">
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminHome/adminHome.html">
+                        <img src="media/home-1-svgrepo-com (1).svg" />
+                        <span>Home</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminTickets/adminTickets.html">
+                        <img id="ticket" src="media/tickets.svg" />
+                        <span>Tickets</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminFeedback/adminFeedback.html">
+                        <img src="media/feedback-svgrepo-com.svg" />
+                        <span>Feedbacks</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminDocumentations/adminDocumentations.html">
+                        <img src="media/documentations.svg" />
+                        <span>Documentations</span>
+                    </a>
+                </div>
+            </li>
+
+            <li id="about">
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminAbout/adminAbout.html">
+                        <img src="media/i.svg" />
+                        <span>About</span>
+                    </a>
+                </div>
+            </li>
+
+            <li id="logout">
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/LoginPage/loginPage.html">
+                        <img src="media/logout.svg" />
+                        <span>Log out</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- TABLE FOR DASHBOARD-->
+    <div class="container">
+
+    </div>
+
+    <div class="rightContainer">
+        <div class="date">
+            <p>September 25, 2023</p>
+            <h3>03:46:00 PM</h3>
+        </div>
+    </div>
+</body>
+
+</html>

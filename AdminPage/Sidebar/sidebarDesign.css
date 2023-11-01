@@ -1,0 +1,84 @@
+﻿.sidebar {
+position: fixed;
+background: #16601f;
+width: 300px;
+height: 100%;
+top: 0;
+left: 0;
+z-index: 1;
+border-radius: 10px;
+}
+
+.sidebar img {
+    width: 250px;
+    height: 250px;
+    padding: 35px 0px 0px 35px;
+    filter: drop-shadow(0px 0px 2px #494949);
+}
+
+.sidebar .icon {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+}
+
+
+.sidebar .icon img {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px; /* Add space between the image and text if needed */
+    max-height: 50px;
+    filter: drop-shadow(0px 0px 2px #494949);
+    padding: 5px 0px 5px 20px;
+}
+
+#ticket {
+width: 50px;
+height: 50px;
+margin-left: -3px;
+margin-right: 6px;
+padding: 5px 0px 5px 20px;
+}
+
+.sidebar h2 {
+text-align: left;
+font-size: 35px;
+color: #ffffff;
+background: #16601f;
+padding: 30px;
+}
+
+.sidebar ul li {
+margin: 30px 0;
+}
+
+.sidebar ul li {
+margin: 30px 0;
+}
+
+span {
+font-size: 22px;
+}
+
+.sidebar ul #about {
+position: absolute;
+bottom: 50px;
+}
+
+.sidebar ul #logout {
+position: absolute;
+bottom: 0;
+}
+
+.sidebar ul li .icon a {
+display: flex; /* Make the link a flex container */
+align-items: center;
+color: #ffffff;
+position: center;
+width: 288px;
+}
+
+.sidebar ul li .icon a:hover {
+    transition: 0.4s;
+    background-color: #a4d37f;
+}

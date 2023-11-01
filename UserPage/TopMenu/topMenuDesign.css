@@ -1,0 +1,211 @@
+﻿* {
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.PageSubtitle {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    background: #16601F;
+}
+
+.copyRight {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    background: linear-gradient(180deg, #498032, #003D19);
+    font-size: 10px;
+    color: white;
+}
+
+.PageSubtitle p {
+    margin-left: 10px;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.PageSubtitle img {
+    margin-right: 40px;
+    width: 25px;
+    height: 25px;
+}
+
+.toolBar {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    height: 150px;
+    width: 100%;
+    /* background: #00ff90;*/
+}
+
+.toolBar img 
+{
+    height: 110px;
+    width: 110px;
+}
+
+.toolBar .PageTitle 
+{
+    position: absolute;
+    /* background: white;*/
+    display: flex;
+    align-items: center;
+    height: 120px;
+    width: 500px;
+    gap: 10px;
+    left: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.label 
+{
+    margin-left: 10px;
+}
+
+.label p 
+{
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.label h3 
+{
+    margin: 0px;
+    padding: 0px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+#taguig 
+{
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 0px;
+}
+
+.toolBar .menuOptions 
+{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 0px;
+    column-gap: 10px;
+    /*background: white; */
+
+    right: 50px;
+    height: 120px;
+    width: 555px;
+}
+
+.menuOptions a 
+{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 150px;
+    height: 20px;
+    text-shadow: 0px 0px 2px #575500ec;
+    color: #575500;
+    text-decoration: none;
+}
+
+.menuOptions a:hover 
+{
+    text-decoration: underline;
+}
+
+#contact,
+#area 
+{
+    width: 90px;
+}
+
+.aboutBrgy 
+{
+    position: absolute;
+    background-image: url('/USCFMS/UserPage/UserHome/Media/brgyHall.JPG');
+    background-size: 100% 100%;
+    top: 180px;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
+}
+
+.blur 
+{
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    background: linear-gradient( #003d19b9, #498032bf);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.blur h1 
+{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 50px;
+}
+
+.blur p 
+{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#info 
+{
+    margin-top: 40px;
+    font-size: 13px;
+    font-weight: lighter;
+}
+
+.blur img 
+{
+    position: absolute;
+    margin-top: 135px;
+    margin-right: 465px;
+    height: 15px;
+    width: 15px;
+}
+
+.learnMore 
+{
+    margin-top: 70px;
+    border-radius: 20px;
+    background-color: white;
+    border-style: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    height: 38px;
+    width: 165px;
+}

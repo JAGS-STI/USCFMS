@@ -1,0 +1,129 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.PageSubtitle {
+    position: relative;
+    font-weight: 300;
+    font-size: 15px;
+    color: gray;
+    padding-left: 360px;
+    padding-top: 60px;
+}
+
+.PageTitle {
+    position: relative;
+    font-size: 50px;
+    padding-top: 8px;
+    padding-left: 360px;
+    font-weight: bold;
+}
+
+.PageTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 80px;
+    left: 362px;
+    width: 55px;
+    height: 7px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+/* tickets Section */
+.main {
+    position: fixed;
+    width: calc(100% - 100px);
+    top: 90px;
+    left: 320px
+}
+
+.main-skills {
+    margin-top: 60px;
+    width: 100%;
+    padding: 55px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.main-skills .card1,
+.main-skills .card2, 
+.main-skills .card3 {
+    border-radius: 10px; 
+    padding: 10px;
+    display: flex;
+    text-align: left;
+    align-items: flex-start;   
+    justify-content: space-between;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    height: 230px;
+}
+
+.main-skills .card1 {
+    background: linear-gradient(45deg, #a4d37f, #127937);
+}
+.main-skills .card2 {
+    background: linear-gradient(45deg, #1ab5ab, #113e6f);
+}
+.main-skills .card3 {
+    background: linear-gradient(45deg, #d92080, #780439);
+}
+
+.rightContainer {
+    position: fixed;
+    right: 180px;
+    top: 60px;
+
+}
+
+.rightContainer .date {
+    font-size: 15px;
+    color: #000000;
+}
+
+.rightContainer .date h3 {
+    font-size: 25px;
+    color: #000000;
+}
+
+
+/* title */
+.card-content h3 {
+    font-size: 100px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #393939;
+    padding-left: 10px;
+
+}
+
+/* descriptions */
+.card-content p {
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: bold;
+    padding-left: 13px;
+    text-align: justify;
+}
+
+
+.card1 img,
+.card2 img,
+.card3 img {
+    width: 100px;
+    height: 100px;
+    padding: 20px 20px 0px 0px;
+}
+

@@ -1,0 +1,269 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.PageSubtitle {
+    position: relative;
+    font-weight: 300;
+    font-size: 15px;
+    color: gray;
+    padding-left: 360px;
+    padding-top: 60px;
+}
+
+.PageTitle {
+    position: relative;
+    font-size: 50px;
+    padding-top: 8px;
+    padding-left: 360px;
+    font-weight: bold;
+}
+
+.PageTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 80px;
+    left: 362px;
+    width: 55px;
+    height: 7px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+.container {
+    position: fixed;
+    width: calc(100% - 100px);
+    left: 320px;
+    top: 90px;
+}
+
+.main {
+    position: absolute;
+    width: calc(100% - 100px);
+}
+
+.main-skills {
+    margin-top: 60px;
+    width: 100%;
+    padding: 55px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+}
+
+.main-skills .card1,
+.main-skills .card2,
+.main-skills2 .card3,
+.main-skills2 .card4 {
+    border-style: groove;
+    padding: 10px;
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 350px;
+    height: 320px;
+}
+
+
+.main-skills2 {
+    margin-top: 5px;
+    width: 100%;
+    padding: 0px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+}
+
+
+
+.main-skills .card1 {
+    background: #d4d4d2;
+}
+
+.main-skills .card2 {
+    background: #d4d4d2;
+}
+
+.main-skills2 .card3 {
+    background: #d4d4d2;
+}
+
+.main-skills2 .card4 {
+    background: #d4d4d2;
+}
+
+/* title Feedback ID*/
+.card-content h3 {
+    margin: 10px;
+    font-weight: lighter;
+    font-size: 15px;
+    color: #000000;
+    padding-left: 10px;
+}
+
+#date {
+    margin-top: 22px;
+}
+
+#dateNtime {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+#concernID {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+/* view button */
+.view {
+    position: relative;
+    margin-top: 10px;
+    bottom: 0px;
+    left: 20px;
+    height: 40px;
+    width: 90px;
+    background-color: #22872F;
+    border-color: #22872F;
+    border-radius: 50px;
+    border-style: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* download button */
+.download {
+    position: relative;
+    margin-top: 10px;
+    bottom: 0px;
+    left: 60px;
+    height: 40px;
+    width: 150px;
+    background-color: #22872F;
+    border-color: #22872F;
+    border-radius: 50px;
+    border-style: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* descriptions */
+.card-content p {
+    font-size: 35px;
+    color: #000000;
+    font-weight: bold;
+    padding-left: 13px;
+    text-align: justify;
+}
+
+
+.rightContainer {
+    position: fixed;
+    right: 180px;
+    top: 60px;
+
+}
+
+.rightContainer .date {
+    font-size: 15px;
+    color: #000000;
+}
+
+.rightContainer .date h3 {
+    font-size: 25px;
+    color: #000000;
+}
+
+.rightCard {
+    width: 220px;
+    height: 150px;
+    background: linear-gradient(90deg, #d6249a, #6b0029);
+    border-radius: 20px;
+    margin-top: 50px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.rightCard h3 {
+    position: relative;
+    font-size: 65px;
+    color: #ffffff;
+    top: 10px;
+    margin-left: 20px;
+    text-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.rightCard p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 20px;
+    margin-top: 6px;
+}
+
+.rightCard img {
+    position: relative;
+    bottom: 110px;
+    left: 160px;
+    width: 50px;
+    height: 50px;
+}
+
+.searchBar p {
+    margin-top: 60px;
+}
+
+.searchBar .bar {
+    margin-top: 5px;
+    width: 220px;
+    height: 40px;
+    background: #DBDBDB;
+    border-radius: 20px;
+
+}
+
+.searchBar .bar input {
+    position: relative;
+    width: 210px;
+    height: 30px;
+    top: 5px;
+    left: 15px;
+    border: none;
+    background: #00000000;
+    outline: none;
+}
+
+.searchBar .bar img {
+    position: relative;
+    left: 190px;
+    bottom: 20px;
+    height: 15px;
+    width: 15px;
+}
+
+.Sortby{
+    margin-top: 70px;
+}
+
+.Sortby img {
+    position: relative;
+    bottom: 20px;
+    left: 150px;
+    height: 15px;
+    width: 15px;
+}

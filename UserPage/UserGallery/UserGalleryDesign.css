@@ -1,0 +1,116 @@
+﻿.pageContent 
+{
+    position: absolute;
+    top: 500px;
+    /*background: #c3bfbf;*/
+    width: 100%;
+    height: 1500px;
+}
+
+#headTitle
+{
+
+    left: 30px;
+    position: relative;
+    font-size: 20px;
+}
+
+#headTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    top: 28px;
+    left: 1px;
+    width: 33px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+.captions
+{
+    position: relative;
+    display: flex;
+}
+.captions p
+{
+    margin-left: 30px;
+}
+
+#date
+{
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.searchBar
+{
+    position:absolute;
+    margin-top: -35px;
+    right: 50px;
+}
+.searchBar p 
+{
+    margin-top: 60px;
+}
+
+.searchBar .bar 
+{
+    margin-top: 5px;
+    width: 220px;
+    height: 40px;
+    background: #DBDBDB;
+    border-radius: 20px;
+
+}
+
+.searchBar .bar input 
+{
+    position: relative;
+    width: 210px;
+    height: 30px;
+    top: 5px;
+    left: 15px;
+    border: none;
+    background: #00000000;
+    outline: none;
+}
+
+.searchBar .bar img 
+{
+    position: relative;
+    left: 190px;
+    bottom: 20px;
+    height: 15px;
+    width: 15px;
+}
+
+.pictureList 
+{
+    margin-left: 30px;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.pictureList img 
+{
+    height: 200px;
+    width: 200px;
+}
+
+.showMore 
+{
+    margin-left:30px;
+    font-size: 18px;
+    font-weight:bold;
+    color:green;
+    cursor: pointer;
+}
+
+.area2,
+.area3
+{
+    margin-top: 150px;
+}

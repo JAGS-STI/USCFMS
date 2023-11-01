@@ -1,0 +1,207 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.PageSubtitle {
+    position: relative;
+    font-weight: 300;
+    font-size: 15px;
+    color: gray;
+    padding-left: 360px;
+    padding-top: 60px;
+}
+
+.PageTitle {
+    position: relative;
+    font-size: 50px;
+    padding-top: 8px;
+    padding-left: 360px;
+    font-weight: bold;
+}
+
+.PageTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 80px;
+    left: 362px;
+    width: 55px;
+    height: 7px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+.rightContainer {
+    position: fixed;
+    right: 180px;
+    top: 60px;
+
+}
+
+.rightContainer .date {
+    font-size: 15px;
+    color: #000000;
+}
+
+.rightContainer .date h3 {
+    margin-bottom: 80px;
+    font-size: 25px;
+    color: #000000;
+}
+
+.rightCard {
+    width: 220px;
+    height: 150px;
+    background: linear-gradient(90deg, #7ed957, #00742f);
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.rightCard h3 {
+    position: relative;
+    font-size: 65px;
+    color: #ffffff;
+    top: 10px;
+    margin-left: 20px;
+    text-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.rightCard p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 20px;
+    margin-top: 6px;
+}
+
+.rightCard img {
+    position: relative;
+    bottom: 110px;
+    left: 160px;
+    width: 50px;
+    height: 50px;
+}
+
+.searchBar p {
+    margin-top: 60px;
+}
+
+.searchBar .bar {
+    margin-top: 5px;
+    width: 220px;
+    height: 40px;
+    background: #DBDBDB;
+    border-radius: 20px;
+
+}
+
+.searchBar .bar input {
+    position: relative;
+    width: 210px;
+    height: 30px;
+    top: 5px;
+    left: 15px;
+    border: none;
+    background: #00000000;
+    outline: none;
+}
+
+.searchBar .bar img {
+    position: relative;
+    left: 190px;
+    bottom: 20px;
+    height: 15px;
+    width: 15px;
+}
+
+.Sortby{
+    margin-top: 70px;
+}
+
+.Sortby img {
+    position: relative;
+    bottom: 20px;
+    left: 150px;
+    height: 15px;
+    width: 15px;
+}
+
+/* BODY CONTENT*/
+.pageContent 
+{
+    position: absolute;
+    width: 980px;
+    height: 750px;
+    top: 180px;
+    left: 300px;
+
+}
+
+#info
+{
+    margin-left: 70px;
+    margin-top: 30px;
+
+}
+
+.pageContent img
+{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    top: -20px;
+    margin-left: 40px;
+}
+
+table {
+    margin-left: 40px;
+    text-align: left;
+    background: #e8e8e8;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+tr {
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: #e8e8e8;
+}
+
+.tbl {
+    padding: 100px;
+    background: white;
+}
+
+.head {
+    background: #e8e8e8;
+    color: #606060;
+}
+
+.ticketID{
+    cursor: pointer;
+}
+.active {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.dot {
+    background: blue;
+    width: 5px;
+    height: 5px;
+    border-radius: 2px;
+}
