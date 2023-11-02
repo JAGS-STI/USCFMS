@@ -100,9 +100,10 @@
     width: 200px;
 }
 
-.showMore 
+.showMore
 {
     margin-left:30px;
+    width: fit-content;
     font-size: 18px;
     font-weight:bold;
     color:green;
