@@ -1,0 +1,182 @@
+﻿.aboutContact {
+    position: absolute;
+    background-image: url('/USCFMS/UserPage/UserHome/Media/brgyHall.JPG');
+    background-size: 100% 100%;
+    top: 180px;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+}
+.PageSubtitle img
+{
+    position: absolute;
+    right: 5px;
+}
+
+.register
+{
+    position: absolute;
+    display: flex;
+    font-size: 15px;
+    right: 90px;
+}
+
+#login,
+#signup
+{
+    cursor: pointer;
+}
+
+.register p:hover
+{
+    text-decoration: underline;
+}
+
+.pageContent {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 480px);
+    top: 490px;
+}
+
+@media (max-height: 1080px) {
+    .pageContent {
+        height: 1000px;
+    }
+}
+
+.underline 
+{
+    position: absolute;
+    bottom: 0px;
+    top: 20px;
+    left: 0px;
+    width: 25px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+    margin-left: 50px; 
+}
+
+#fld
+{
+    margin-left: 50px;
+}
+
+#details
+{
+    font-weight: bold;
+}
+.first
+{
+    display: flex;
+    gap: 300px;
+    margin-left: 50px; 
+}
+
+.NameNAdd
+{
+    display: flex;
+    gap: 30px;
+}
+
+.NameNAdd p
+{
+    width: 150px;
+}
+
+.buttons
+{
+    margin-left: 50px;
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.buttons button
+{
+    background-color: #16601f;
+    border-radius: 50px;
+    height: 40px;
+    width: 200px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.second
+{
+    margin-top: 80px;
+}
+.DashCnrcn,
+.headtitle
+{
+    position: relative;
+}
+
+
+#noteCncrn
+{
+    position: relative;
+    margin-left: 200px;
+    margin-top: -38px;
+    font-size: 13px;
+    color: #16601f;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+table {
+    margin-top: 30px;
+    margin-left: 40px;
+    text-align: left;
+    background: #e8e8e8;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+tr {
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: #e8e8e8;
+}
+
+.tbl {
+    padding: 100px;
+    background: white;
+}
+
+.head {
+    background: #e8e8e8;
+    color: #606060;
+}
+
+.ticketID{
+    cursor: pointer;
+}
+.active {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.dot {
+    background: blue;
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+}
+
+#showMore
+{
+    margin-left: 500px;
+    color: #16601f;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+

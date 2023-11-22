@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            opacity: 0.5; /* Initially fully transparent */
+            transition: opacity 0.5s ease; /* Transition on opacity property */
+            cursor: pointer;
+        }
+
+        .scroll-indicator.visible {
+            opacity: 1; /* Fully opaque when visible */
+        }
+
+        .pageContent {
+            position: relative;
+            width: 100%;
+            height: 1900px;
+        }
+
+    </style>
+    <title>Scroll Detection</title>
+</head>
+<body>
+    <!-- Your content here -->
+
+    <div class="pageContent">
+        <div class="scroll-indicator">Scroll down</div>
+        <script>
+            // Get the scroll indicator element
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+    
+            // Function to handle scroll events
+            function handleScroll() {
+                // Check the scroll position
+                if (window.scrollY === 0) {
+                    // At the top of the page, hide the scroll indicator
+                    scrollIndicator.style.display = 'none';
+                    scrollIndicator.classList.remove('visible');
+                } else {
+                    // Scrolled down, show the scroll indicator
+                    scrollIndicator.style.display = 'block';
+                    scrollIndicator.classList.add('visible');
+                }
+            }
+    
+            // Attach the scroll event listener
+            window.addEventListener('scroll', handleScroll);
+        </script>
+    </div>
+</body>
+</html>

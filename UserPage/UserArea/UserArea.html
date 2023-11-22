@@ -10,13 +10,21 @@
 
     <link rel="stylesheet" href="UserAreaDesign.css"/>
     <link rel="stylesheet" href="/USCFMS/UserPage/TopMenu/topMenuDesign.css" />
+    <script src="java/scrollEvent.js"></script>
+    <script src="java/scrollIndicator.js" defer></script>
 
 </head>
 <body>
 
     <div class="PageSubtitle">
-        <p>October 18, 2023 | 04:32 PM</p>
-        <img src="Media/facebook-svgrepo-com.svg" />
+        <p id="dateTime">ERROR: Date cannot display</p>
+        <img src="Media/user-circle-svgrepo-com(1).svg"/>
+        <div class="register">
+            <p id="login" onclick="window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html'">Log in</p>
+            <p>|</p>
+            <p id="signup" onclick="window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html'">Sign up</p>
+        </div>
+        <script src="/USCFMS/time.js"></script>
     </div>
     <div class="toolBar">
         <a class="PageTitle" href="/USCFMS/UserPage/UserHome/UserHome.html">
@@ -35,17 +43,273 @@
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
             <a href="/USCFMS/UserPage/UserConcern/UserConcern.html">Submit Concern</a>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
-            <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Feedback</a>
+            <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Suggestions</a>
         </div>
     </div>
 
     <div class="aboutBrgy">
         <div class="blur">
-            <h1>About the Barangay</h1>
-            <p>Learn more about the Barangay’s history, statistics, organizational chart, etc.</p>
-            <button class="learnMore">LEARN MORE</button>
+            <h1>Barangay’s Area Guide</h1>
+            <p>This is your guide in exploring the Barangay.</p>
         </div>
     </div>
+    <div class="PageMenu">
+        <p id="goTo">Go to: </p>
+        <p onclick="scrollEvent('field1', 0)">Boundaries</p>
+        <p onclick="scrollEvent('field1', 1)">Villages</p>
+        <p onclick="scrollEvent('field1', 2)">Residential/Housing/Condominium</p>
+        <p onclick="scrollEvent('field1', 3)">Schools</p>
+        <p onclick="scrollEvent('field1', 4)">Subdivisions</p>
+        <p onclick="scrollEvent('field1', 5)">Facilities</p>
+        <p onclick="scrollEvent('field1', 6)">Health Center / Material Recovery Facilities / Livelihood Center</p>
+    </div>
+
+    <div class="pageContent">
+        <div class="field1">
+            <h1 id="headTitle">Boundaries</h1>
+            <div class="underline"></div>
+        </div>
+        <div class="boundaries">
+            <div class="directions">
+               <h2>North:</h2>  
+               <ul>
+                <li>Pateros</li>
+               </ul>              
+            </div>
+            
+            <div class="directions">
+               <h2>South:</h2>  
+               <ul>
+                <li>Tuktukan/Bambang</li>
+               </ul>         
+            </div>
+             
+            <div class="directions">
+              <h2>East:</h2>  
+              <ul>
+                <li>Calzada </li>
+                <li>Tipas</li>        
+              </ul>             
+            </div>
+             
+            <div class="directions">
+            <h2>West:</h2>   
+            <ul>
+               <li>Fort Bonifacio</li>  
+            </ul>                      
+            </div>
+        </div>   
+        <div class="field1">
+            <h1 id="headTitle">Villages</h1>
+            <div class="underline"></div>
+        </div>
+
+        <table>
+            <tr class="head">
+                <th width="800px">Name</th>
+                <th width="500px">Google Maps Link</th>
+            </tr>
+            <tr class="tbl">
+                <td>Wildcat Village</td>
+                <td><a href="https://maps.app.goo.gl/uDXsjZJ4McLyjavb6">https://maps.app.goo.gl/uDXsjZJ4McLyjavb6</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Aranai Village</td>
+                <td><a href="https://maps.app.goo.gl/1JkDbh9t4Et8Rdp7A">https://maps.app.goo.gl/1JkDbh9t4Et8Rdp7A</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Maysapang</td>
+                <td><a href="https://maps.app.goo.gl/mVfjx3zPTZ6ByoAR9">https://maps.app.goo.gl/mVfjx3zPTZ6ByoAR9</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Sitio Pusawan</td>
+                <td><a href="https://maps.app.goo.gl/EttXnVYKVp4A86JEA">https://maps.app.goo.gl/EttXnVYKVp4A86JEA</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Lot-4 East C-5</td>
+                <td><a href="https://maps.app.goo.gl/JDMHFBY9JPWQbHRn9?g_st=ic">https://maps.app.goo.gl/JDMHFBY9JPWQbHRn9?g_st=ic</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>MRB</td>
+                <td><a href="https://maps.app.goo.gl/LNq1fxVWJMNp7TV28">https://maps.app.goo.gl/LNq1fxVWJMNp7TV28</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>BCDA</td>
+                <td><a href="https://maps.app.goo.gl/K4qe1maSHksmwqaw5">https://maps.app.goo.gl/K4qe1maSHksmwqaw5</a></td>
+            </tr>
+        </table>    
+
+        <div class="field1">
+            <h1 id="headTitle">Residential / Housing / Condominium locations</h1>
+            <div class="underline"></div>
+        </div>
+        <table>
+            <tr class="head">
+                <th width="800px">Name</th>
+                <th width="500px">Google Maps Link</th>
+            </tr>
+            <tr class="tbl">
+                <td>Lakeview Manors</td>
+                <td><a href="https://maps.app.goo.gl/vCFWumAZexksHTSK7">https://maps.app.goo.gl/vCFWumAZexksHTSK7</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Camella Homes</td>
+                <td><a href="https://maps.app.goo.gl/R5cmg6zxXrSajQzR9">https://maps.app.goo.gl/R5cmg6zxXrSajQzR9</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Pacific Residences</td>
+                <td><a href="https://maps.app.goo.gl/og8QHwcjXKfKNUNs8">https://maps.app.goo.gl/og8QHwcjXKfKNUNs8</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Rosewood Pointe</td>
+                <td><a href="https://maps.app.goo.gl/Ad95Zmiyd8aTLA6n9">https://maps.app.goo.gl/Ad95Zmiyd8aTLA6n9</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Cypress Towers</td>
+                <td><a href="https://maps.app.goo.gl/8zxBqeDeKAUebqFg7">https://maps.app.goo.gl/8zxBqeDeKAUebqFg7</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Pamayanang Diego Silang - BCDA</td>
+                <td><a href="https://maps.app.goo.gl/oMyTaNVFdcwFTFde8">https://maps.app.goo.gl/oMyTaNVFdcwFTFde8</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Medium Rise Building (MRB) BCDA</td>
+                <td><a href="https://maps.app.goo.gl/1hu533xus1ratbBM6">https://maps.app.goo.gl/1hu533xus1ratbBM6</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Tres Palmas</td>
+                <td><a href="https://maps.app.goo.gl/ZHX1UwjGdERNECCJ7">https://maps.app.goo.gl/ZHX1UwjGdERNECCJ7</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Royal Palm Residences</td>
+                <td><a href="https://maps.app.goo.gl/UkqY2srJzrrAxQjd9">https://maps.app.goo.gl/UkqY2srJzrrAxQjd9</a></td>
+            </tr>
+        </table>    
+
+        <div class="field1">
+            <h1 id="headTitle">Schools</h1>
+            <div class="underline"></div>
+        </div>
+        <table>
+            <tr class="head">
+                <th width="800px">Public</th>
+                <th width="500px">Google Maps Link</th>
+            </tr>
+            <tr class="tbl">
+                <td>Ususan Elementary School</td>
+                <td><a href="https://maps.app.goo.gl/t4a1ybdgySsK7h7r5">https://maps.app.goo.gl/t4a1ybdgySsK7h7r5</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Dr. Artemio Natividad Elementary School</td>
+                <td><a href="https://maps.app.goo.gl/BtAaXMoSzWA3UvEp7">https://maps.app.goo.gl/BtAaXMoSzWA3UvEp7</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Sen. Rene “Companero” Cayetano Science & Technology</td>
+                <td><a href="https://maps.app.goo.gl/gzv9PFmucyAAzMNcA">https://maps.app.goo.gl/gzv9PFmucyAAzMNcA</a></td>
+            </tr>
+            <tr class="tbl">
+                <td>Gen. Ricardo Papa Memorial High School</td>
+                <td><a href="https://maps.app.goo.gl/BNTZXVmXw94jRWxZ6">https://maps.app.goo.gl/BNTZXVmXw94jRWxZ6</a></td>
+            </tr>
+        </table> 
+
+        <table>
+            <tr class="head">
+                <th width="800px">Private</th>
+                <th width="500px">Google Maps Link</th> 
+            </tr>
+        <tr class="tbl">
+            <td>St. Monica Learning Center</td>
+            <td><a href=""></a></td>
+        </tr>
+        <tr class="tbl">
+            <td>M.V Kiddieland</td>
+            <td><a href="https://maps.app.goo.gl/Qpe2sq4fGHqxUd67A">https://maps.app.goo.gl/Qpe2sq4fGHqxUd67A</a></td>
+        </tr>
+        <tr class="tbl">
+            <td>Budding Flowers Tutorial Center </td>
+            <td><a href="https://maps.app.goo.gl/s4eMoUAHxUv1MiCz8">https://maps.app.goo.gl/s4eMoUAHxUv1MiCz8</a></td>
+        </tr>
+        <tr class="tbl">
+            <td>Learning Haven</td>
+            <td><a href=""></a></td>
+        </tr>
+        <tr class="tbl">
+            <td>Fairyland Kindergarten and Grade School</td>
+            <td><a href="https://maps.app.goo.gl/Ayt7JikuzNhxbVkW6">https://maps.app.goo.gl/Ayt7JikuzNhxbVkW6</a></td>
+        </tr>
+        <tr class="tbl">
+            <td>St. Ignatius Of Loyola School</td>
+            <td><a href="https://maps.app.goo.gl/kJ3sWqu5BCVLuqP67">https://maps.app.goo.gl/kJ3sWqu5BCVLuqP67</a></td>
+        </tr>
+        </table>
+        
+        <div class="field1">
+            <h1 id="headTitle">Subdivision</h1>
+            <div class="underline"></div>
+        </div>
+
+        <table>
+            <tr class="head">
+                <th width="800px">Name</th>
+                <th width="500px">Google Maps Link</th>
+            </tr>
+            <tr class="tbl">
+                <td>Tomasa Estate Subdivision</td>
+                <td><a href=""></a></td>
+            </tr>
+        </table>
+
+        <div class="field1">
+            <h1 id="headTitle">Facilities</h1>
+            <div class="underline"></div>
+        </div>
+
+        <div class="boundaries">
+            <div class="directions">
+               <h2>Day Care Centers:</h2>  
+               <ul>
+                <li>Ususan Proper</li>
+                <li>Maysapang</li>
+                <li>Wildcat Village</li> 
+                <li>Ususan Proper</li>
+                <li>N. P. Cruz - Ibayo, Ususan Proper</li> 
+               </ul>              
+            </div>
+            
+            <div class="directions">
+               <h2>Covered Court:</h2>  
+               <ul>
+                <li>Ususan Proper</li>
+                <li>Pamayanang Diego Silang</li>
+                <li>Wildcat Village</li>
+               </ul>         
+            </div>
+             
+            <div class="directions">
+              <h2>Open Court:</h2>  
+              <ul>
+                <li>N. P - Cruz Ibayo</li>
+                <li>Gen. Luna St.</li>    
+                <li>Maysapang</li>     
+              </ul>             
+            </div>
+        </div>
+
+        <div class="field1">
+            <h1 id="headTitle">Health Center / Material Recovery Facilities / Livelihood Center</h1>
+            <div class="underline"></div>
+        </div>
+        <div class="boundaries">
+            <div class="directions">
+                <ul>
+                    <li>Ususan Proper</li>
+                </ul>
+            </div>
+        </div>
+        <div class="up" id="upBtn" onclick="scrollEvent('register', 0)">
+            <img src = "Media/up-circle-svgrepo-com.svg">
+        </div>
 
     <!--bottom-->
     <footer class="copyRight">
@@ -54,6 +318,8 @@
             Website developed by: <br />
             Gerald Balbon | Sheena Gem Juarbal | Jherico Medina | Arjay Fortuno
         </p>
-    </footer>
+    </footer>  
+    </div>
+    
 </body>
 </html>

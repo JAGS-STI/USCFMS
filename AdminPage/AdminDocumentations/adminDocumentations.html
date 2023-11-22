@@ -40,7 +40,7 @@
                 <div class="icon">
                     <a href="/USCFMS/AdminPage/AdminTickets/adminTickets.html">
                         <img id="ticket" src="media/tickets.svg" />
-                        <span>Tickets</span>
+                        <span>Concern</span>
                     </a>
                 </div>
             </li>
@@ -48,7 +48,15 @@
                 <div class="icon">
                     <a href="/USCFMS/AdminPage/AdminFeedback/adminFeedback.html">
                         <img src="media/feedback-svgrepo-com.svg" />
-                        <span>Feedbacks</span>
+                        <span>Feedbacks Surveys</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminComments/adminComments.html">
+                        <img src="media/feedback-svgrepo-com.svg" />
+                        <span>Comments</span>
                     </a>
                 </div>
             </li>
@@ -92,7 +100,7 @@
                         <p id="concernID"> SC-12345</p>
                         <h3 id="date">Date and time generated:</h3>
                         <p id="dateNtime">October 21, 2023 <br> 06:46 PM</p>
-                        <button class="view">View</button>
+                        <button class="view" onclick="window.location.href='/USCFMS/AdminPage/AdminViewDocument/adminViewDocument.html'">View</button>
                         <button class="download">Download PDF</button>
                     </div>
                 </div>
@@ -104,7 +112,7 @@
                         <p id="concernID"> SC-12345</p>
                         <h3 id="date">Date and time generated:</h3>
                         <p id="dateNtime">October 21, 2023 <br> 06:46 PM</p>
-                        <button class="view">View</button>
+                        <button class="view" onclick="window.location.href='/USCFMS/AdminPage/AdminViewDocument/adminViewDocument.html'">View</button>
                         <button class="download">Download PDF</button>
                     </div>
                 </div>
@@ -119,7 +127,7 @@
                         <p id="concernID"> SC-12345</p>
                         <h3 id="date">Date and time generated:</h3>
                         <p id="dateNtime">October 21, 2023 <br> 06:46 PM</p>
-                        <button class="view">View</button>
+                        <button class="view" onclick="window.location.href='/USCFMS/AdminPage/AdminViewDocument/adminViewDocument.html'">View</button>
                         <button class="download">Download PDF</button>
                     </div>
                 </div>
@@ -132,7 +140,7 @@
                         <p id="concernID"> SC-12345</p>
                         <h3 id="date">Date and time generated:</h3>
                         <p id="dateNtime">October 21, 2023 <br> 06:46 PM</p>
-                        <button class="view">View</button>
+                        <button class="view" onclick="window.location.href='/USCFMS/AdminPage/AdminViewDocument/adminViewDocument.html'">View</button>
                         <button class="download">Download PDF</button>
                     </div>
                 </div>
@@ -141,14 +149,10 @@
         </div>
         <div class="rightContainer">
             <div class="date">
-                <p>September 25, 2023</p>
-                <h3>03:46:00 PM</h3>
-            </div>
-            <div class="rightCard">
-                <h3>15</h3>
-                <p>Generated</p>
-                <img src="media/generated.svg" />
-            </div>
+            <p id="currentDate">September 25, 2023</p>
+            <h3 id="currentTime">03:46:00 PM</h3>
+            <script src="/USCFMS/time.js"></script>
+        </div>
             
             <div class="searchBar">
                 <p>  Search concern ID or <br /> document ID: </p>

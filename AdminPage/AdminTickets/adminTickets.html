@@ -20,7 +20,7 @@
             <p>BARANGAY SOCIAL CONCERNS AND FEEDBACK MANAGEMENT SYSTEM</p>
         </div>
         <div class="PageTitle">
-            <h3>Tickets</h3>
+            <h3>Concerns</h3>
         </div>
     </div>
 
@@ -40,7 +40,7 @@
                 <div class="icon">
                     <a href="/USCFMS/AdminPage/AdminTickets/adminTickets.html">
                         <img id="ticket" src="media/tickets.svg" />
-                        <span>Tickets</span>
+                        <span>Concern</span>
                     </a>
                 </div>
             </li>
@@ -48,7 +48,15 @@
                 <div class="icon">
                     <a href="/USCFMS/AdminPage/AdminFeedback/adminFeedback.html">
                         <img src="media/feedback-svgrepo-com.svg" />
-                        <span>Feedbacks</span>
+                        <span>Feedbacks Surveys</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminComments/adminComments.html">
+                        <img src="media/feedback-svgrepo-com.svg" />
+                        <span>Comments</span>
                     </a>
                 </div>
             </li>
@@ -82,12 +90,12 @@
     </div>
 
     <div class="pageContent">
-        <p id="info">Click on a ticket ID to view its contents.</p>
+        <p id="info">Click on a concern ID to view its contents.</p>
         <img src="media/information-circle-svgrepo-com.svg" />
         
         <table>
             <tr class="head">
-                <th width="150px">Ticket ID</th>
+                <th width="150px">Concern ID</th>
                 <th width="240px">Date received</th>
                 <th width="200px">Concern type</th>
                 <th width="150px">Status</th>
@@ -126,8 +134,9 @@
 
     <div class="rightContainer">
         <div class="date">
-            <p>September 25, 2023</p>
-            <h3>03:46:00 PM</h3>
+            <p id="currentDate">September 25, 2023</p>
+            <h3 id="currentTime">03:46:00 PM</h3>
+            <script src="/USCFMS/time.js"></script>
         </div>
         <div class="rightCard">
             <h3>15</h3>

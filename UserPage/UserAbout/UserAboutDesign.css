@@ -4,18 +4,60 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    gap: 150px;
+    gap: 12vw;
     align-items: center;
     height: 40px;
     background: #16601F;
     color: white;
-    font-size:13px;
+    font-size: 13px;
     font-weight: bold;
+}
+@media (max-width: 1200px) {
+    .PageMenu {
+        gap: calc(12vw); /* Adjust gap for screens smaller than 600px */
+    }
+}
+
+.PageSubtitle img
+{
+    position: absolute;
+    right: 5px;
+}
+
+.register
+{
+    position: absolute;
+    display: flex;
+    font-size: 15px;
+    right: 90px;
+}
+
+#login,
+#signup
+{
+    cursor: pointer;
+}
+
+.register p:hover
+{
+    text-decoration: underline;
+}
+
+
+.PageMenu p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+#goTo:hover {
+    text-decoration: none;
+    cursor: default;
 }
 
 #goTo
 {
-    margin-left: 30px;
+    margin-left: 50px;
     font-weight: lighter;
 }
 
@@ -24,15 +66,24 @@
     position: absolute;
     top: 520px;
     width: 100%;
-    height: 500px;
+    height: calc(100vh - 520px);
+    
 }
 
-.history
+@media (max-height: 1820px) {
+    .aboutInfo {
+        height: 1300px;
+    }
+}
+
+#field
 {
-    margin-left: 20px;
+    position: relative;
+    margin-left: 50px;
 }
 
-.history p
+.history p,
+.MV p
 {
     font-size: 15px;
     font-weight: 700;
@@ -40,34 +91,55 @@
 
 #captions
 {
-    margin-top: -20px;
+    margin-top: 10px;
     font-size: 13px;
     font-weight: 500;
 }
 
-.history h1 
+.underline 
 {
-    position: relative;
-    top: -20px;
-}
-
-.history h1::after {
-    content: "";
     position: absolute;
     bottom: 0px;
-    top: 40px;
+    top: 60px;
     left: 0px;
-    width: 40px;
-    height: 7px;
+    width: 25px;
+    height: 6px;
     background-color: #feda00;
     border-radius: 10px;
 }
 
-.history img
+#brief {
+    margin-bottom: -20px;
+}
+
+.history .underline 
 {
-    position: relative;
+    top: 60px;
+}
+
+.title 
+{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.title img
+{
+    cursor: pointer;
     height: 25px;
     width: 25px;
-    bottom: 272px;
-    margin-left: 270px;
+}
+
+iframe {
+    border: rgb(156, 156, 156);
+    border-style: solid;
+    border-radius: 3px;
+}
+
+.mvCaptions
+{
+    position: relative;
+    display: flex;
+    gap: 500px;
 }

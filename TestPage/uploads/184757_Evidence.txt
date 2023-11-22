@@ -1,0 +1,145 @@
+REQUIREMENTS SA DEFENSE HUHU
+
+Title Page
+Endorsement form for the Oral Defense
+Abstract
+Approval Sheet
+Acknowledgements
+Table of Contents
+List of Figures
+List of Tables
+List of Notations
+
+Chapter I - Introduction
+	◦	Project Context
+	>Background of the Study
+	>Statement of the Problem
+	>Overview of the current of the system
+
+	◦	Purpose and Description of the Project
+> Use Cases Model Diagram
+Objectives of the Study
+Scope and Limitation of the Study
+
+Chapter II - Review of the Related Literature /System
+
+	◦	Review of the Related Literature
+	◦	Related Studies and/or Systems
+	◦	Synthesis (Thematic Approach)
+> Benchmark Table
+
+
+Chapter III - Technical Background
+
+	◦	Overview of the Current Technologies to be used in the system
+-Design Principle will be use
+Calendar of Activities
+- Gantt Chart of the Activities
+Resources
+- Hardware
+- Software
+
+
+Chapter IV - Methodology, Results and Discussion
+
+	◦	Requirement Analysis
+	◦	Requirement Documentation
+- Function & Non-Functional Requirements (For Business App)
+- Storyboard (For Game app)
+- Wireframing
+
+	◦	Design of Software, System, Product and / Or Processes
+- Entity Relationship Diagram
+	> ERD
+- System Flow Chart (BUSINESS PROCESS FLOW, BASIC )
+
+
+	◦	Development and Testing
+(Paragraph form, didiscuss lang kung pano ginawa)
+- Unit Testing
+- Integretion Testing
+- System Testing
+- Performing Testing
+- Acceptance Testing
+
+
+	◦	Description of Prototype
+-screenshot per page. 
+-explain per page
+ex. User Module - this is the page where user will submit their concerns etc.
+
+	◦	Implementation Plan
+	◦	Implementation Results
+	⁃	indicate lang yung plan and then yung nangyari 
+
+	◦	Test Cases and Survey Result Representation
+	⁃	(Medyo mahirap) Ilalagay yung mga test cases and summary presentation. Kung pano yung naging output, kung okay ba etc.
+	⁃	Survey result presentation 
+	⁃	Pre survey - bago gawin yung system
+	⁃	Post survey - after gawin yung system
+
+Chapter V - Conclusion and Recommendations
+
+	◦	Conclusion
+	⁃	answer of objectives of the study
+	⁃	Nameet ba requirement natin
+	⁃	We conclude that the creation of the proposed system will benefit to the client eme
+
+
+	◦	Recommendation
+
+
+
+	◦	Bibliography
+	◦	References
+
+
+
+Appendices 
+	◦	> A. Resource Persons
+	⁃	person or contacts na pinagtanungan
+	⁃	Client, nainterview, consultation
+	⁃	Personal vitae and contribution nila sa development naten
+
+
+	◦	> B. Relevant Source Code
+	⁃	copy paste ng code or yung pinaka function (para makatipid) ng system naten then iexplain lang.
+	⁃	2 columns lang ng code sa isang paper
+
+
+
+
+	◦	> C. Evaluation Tool or Test Documents
+	✓		- Interview notes
+	✓	- interview questionnaire (with no answer)
+	✓		- Transcript of Interview
+	◦		- Requirement Checklist Form
+	◦		- Inspection review Form Fagan Methodology
+	◦		- Test Cases Form
+	⁃	test cases ng chapter 4, dito papasok yung documentation ng testing natin. Naka include yung format ng test. Test ID, Test Description. Dapat naka form din yun, yun yung ilalagay din natin. 
+
+	◦	> D. Sample Input / Output / Reports
+	◦		- Input
+	◦		- Output
+	◦		- Reports
+	⁃	Pano yung input sa system, pano yung input sa traditional process. 
+	⁃	Different type of reports pprint
+	⁃	Example sa ticketing, may reporting list sa lahat ng users, or nag iidentify nung number of reported issues, lahat ng diff types ng report ilalagay dito.
+
+
+	◦	> E. User's Guide
+	⁃	pano gagamitin per module yung system
+
+
+	◦	> F. Survey Results and Tally
+	⁃	aattached lahat ng survey
+	⁃	Magbibigay daw sya template para sa pre at post survey
+	⁃	5 employees to ask to try the system
+
+
+	◦	> G. Project Involvements
+	⁃	madali lang daw. Document yung progress or journey sa paggawa, and describe ano nangyari.
+
+
+	◦	> H. Personal Technical Vitae(One page per member)
+	◦	> I.  Consultation Forms

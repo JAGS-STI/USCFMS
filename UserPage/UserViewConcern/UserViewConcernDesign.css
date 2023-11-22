@@ -1,0 +1,129 @@
+﻿.aboutContact {
+    position: absolute;
+    background-image: url('/USCFMS/UserPage/UserHome/Media/brgyHall.JPG');
+    background-size: 100% 100%;
+    top: 180px;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+}
+.PageSubtitle img
+{
+    position: absolute;
+    right: 5px;
+}
+
+.register
+{
+    position: absolute;
+    display: flex;
+    font-size: 15px;
+    right: 90px;
+}
+
+#login,
+#signup
+{
+    cursor: pointer;
+}
+
+.register p:hover
+{
+    text-decoration: underline;
+}
+
+.pageContent {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 480px);
+    top: 490px;
+}
+
+@media (max-height: 1080px) {
+    .pageContent {
+        height: 1000px;
+    }
+}
+
+.underline 
+{
+    position: absolute;
+    bottom: 0px;
+    top: 20px;
+    left: 0px;
+    width: 25px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+    margin-left: 50px; 
+}
+
+#back
+{
+    height: 25px;
+    width: 25px;
+    margin-left: 300px;
+    margin-bottom: 60px;
+    cursor: pointer;
+}
+
+.headtitle,
+.CnrcnDesc
+{
+    position: relative;
+}
+
+#fld
+{
+    margin-left: 50px;
+}
+
+.CncrnInfos
+{
+    margin-left: 50px;
+}
+
+.infos
+{
+    display: flex;
+    gap: 10px;
+    margin-top: -20px;
+}
+
+.infos p
+{
+    width: 200px;
+}
+
+#details
+{
+    font-weight: bold;
+}
+
+.rightInfo
+{
+    position: absolute;
+    left: 700px;
+}
+.uploadedImg
+{
+    display: flex;
+    gap: 10px;
+}
+
+.uploadedImg img
+{
+    height: 100px;
+    width: 100px;
+}
+
+.second
+{
+    margin-top: 50px;
+}
+
+.desc
+{
+    margin-left: 50px;
+}

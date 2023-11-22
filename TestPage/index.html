@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Transition</title>
+    <style>
+        .hidden {
+            opacity: 0;
+            display: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Visible state */
+        .visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Example Element -->
+<div id="myElement" class="hidden">This is an example element</div>
+
+<!-- Button to Toggle Display -->
+<button onclick="toggleDisplay()">Toggle Display</button>
+
+<script>
+    function toggleDisplay() {
+        var myElement = document.getElementById("myElement");
+
+        // Toggle the classes to trigger the transition
+        myElement.classList.toggle("hidden");
+        myElement.classList.toggle("visible");
+    }
+</script>
+
+</body>
+</html>

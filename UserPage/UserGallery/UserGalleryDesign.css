@@ -1,18 +1,54 @@
-﻿.pageContent 
+﻿.body {
+    overflow-x: hidden;
+}
+
+.pageContent 
 {
     position: absolute;
     top: 500px;
-    /*background: #c3bfbf;*/
     width: 100%;
-    height: 1500px;
+    height: calc(100vh - 500px);
+    overflow-x: hidden;
+}
+
+.PageSubtitle img
+{
+    position: absolute;
+    right: 5px;
+}
+
+.register
+{
+    position: absolute;
+    display: flex;
+    font-size: 15px;
+    right: 90px;
+}
+
+#login,
+#signup
+{
+    cursor: pointer;
+}
+
+.register p:hover
+{
+    text-decoration: underline;
+}
+
+@media (max-height: 2000px) {
+    .pageContent {
+        height: 1500px;
+    }
 }
 
 #headTitle
 {
 
-    left: 30px;
+    left: 50px;
     position: relative;
     font-size: 20px;
+    width: fit-content;
 }
 
 #headTitle::after {
@@ -34,7 +70,7 @@
 }
 .captions p
 {
-    margin-left: 30px;
+    margin-left: 50px;
 }
 
 #date
@@ -46,49 +82,65 @@
 
 .searchBar
 {
-    position:absolute;
-    margin-top: -35px;
+    position: absolute;
+    top: 10px;
     right: 50px;
 }
-.searchBar p 
+
+.searchBar p
 {
-    margin-top: 60px;
+    margin-bottom: 10px;
 }
 
 .searchBar .bar 
 {
-    margin-top: 5px;
     width: 220px;
     height: 40px;
     background: #DBDBDB;
     border-radius: 20px;
-
 }
 
 .searchBar .bar input 
 {
     position: relative;
-    width: 210px;
+    width: 155px;
     height: 30px;
     top: 5px;
     left: 15px;
     border: none;
     background: #00000000;
     outline: none;
+    
 }
 
-.searchBar .bar img 
+.searchBar .bar .imgBorder
 {
-    position: relative;
-    left: 190px;
-    bottom: 20px;
-    height: 15px;
-    width: 15px;
+    position: absolute;
+    right: 13px;
+    bottom: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchBar .bar .imgBorder img 
+{
+    height: 17px;
+    width: 17px;
+}
+
+.searchBar .bar .imgBorder:hover
+{
+    transition: 0.3s;
+    background-color: #c5c5c5;
+    cursor: pointer;
 }
 
 .pictureList 
 {
-    margin-left: 30px;
+    margin-left: 50px;
     margin-top: 20px;
     display: flex;
     gap: 20px;
@@ -102,7 +154,7 @@
 
 .showMore
 {
-    margin-left:30px;
+    margin-left:50px;
     width: fit-content;
     font-size: 18px;
     font-weight:bold;

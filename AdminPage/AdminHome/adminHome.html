@@ -40,7 +40,7 @@
                 <div class="icon">
                     <a href="/USCFMS/AdminPage/AdminTickets/adminTickets.html">
                         <img id="ticket" src="media/tickets.svg" />
-                        <span>Tickets</span>
+                        <span>Concern</span>
                     </a>
                 </div>
             </li>
@@ -48,7 +48,15 @@
                 <div class="icon">
                     <a href="/USCFMS/AdminPage/AdminFeedback/adminFeedback.html">
                         <img src="media/feedback-svgrepo-com.svg" />
-                        <span>Feedbacks</span>
+                        <span>Feedbacks Surveys</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminComments/adminComments.html">
+                        <img src="media/feedback-svgrepo-com.svg" />
+                        <span>Comments</span>
                     </a>
                 </div>
             </li>
@@ -90,7 +98,7 @@
                     <div class="card1">
                         <div class="card-content">
                             <h3>15</h3>
-                            <p>Active tickets</p>
+                            <p>Active concerns</p>
                         </div>
                         <img src="media/tickets.svg" />
                     </div>
@@ -99,28 +107,55 @@
                     <div class="card2">
                         <div class="card-content">
                             <h3>67</h3>
-                            <p>Received feedbacks</p>
+                            <p>Received comments</p>
                         </div>
                         <img src="media/feedback-svgrepo-com.svg" />
                     </div>
                 </a>
-                <a href="/USCFMS/AdminPage/AdminDocumentations/adminDocumentations.html" class="card-link">
-                    <div class="card3">
-                        <div class="card-content">
-                            <h3>25</h3>
-                            <p>Generated documentations</p>
-                        </div>
-                        <img src="media/documentations.svg" />
-                    </div>
-                </a>
+                
             </div>
+            <div class="notifs">
+                <img src="media\notifications-outline-svgrepo-com.svg"/>
+                <h3>Notifications</h3>
+            </div>
+            <div class="notifTbl">
+                <table>
+                    <tr class="head">
+                        <th width="650px"></th>
+                        <th width="150px"></th>
+                        <th width="120px"></th>
+                    </tr>
+                    <tr class="tbl">
+                        <td class="received"><div class="dot"></div>Received a new concern</td>
+                        <td>10-18-2023</td>
+                        <td>06:33 PM</td>
+                    </tr>
+                    <tr class="tbl">
+                        <td class="received"><div class="dot"></div>Received a new concern</td>
+                        <td>10-18-2023</td>
+                        <td>06:33 PM</td>
+                    </tr>
+                    <tr class="tbl">
+                        <td class="received"><div class="dot"></div>Received a new concern</td>
+                        <td>10-18-2023</td>
+                        <td>06:33 PM</td>
+                    </tr>
+                    <tr class="tbl">
+                        <td class="received"><div class="dot"></div>Received a new concern</td>
+                        <td>10-18-2023</td>
+                        <td>06:33 PM</td>
+                    </tr>
+                    
+                </table>
+            </div>              
         </div>
     </div>
 
     <div class="rightContainer">
         <div class="date">
-            <p>September 25, 2023</p>
-            <h3>03:46:00 PM</h3>
+            <p id="currentDate">September 25, 2023</p>
+            <h3 id="currentTime">03:46:00 PM</h3>
+            <script src="/USCFMS/time.js"></script>
         </div>
     </div>
 </body>

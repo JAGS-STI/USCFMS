@@ -2,8 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>User About | Ususan SCFMS</title>
 
     <style>
@@ -12,11 +10,20 @@
 
     <link rel="stylesheet" href="UserAboutDesign.css" />
     <link rel="stylesheet" href="/USCFMS/UserPage/TopMenu/topMenuDesign.css" />
+    <script src="java/scrollEvent.js"></script>
+    
 </head>
+
 <body>
     <div class="PageSubtitle">
-        <p>October 18, 2023 | 04:32 PM</p>
-        <img src="Media/facebook-svgrepo-com.svg" />
+        <p id="dateTime">ERROR: Date cannot display</p>
+        <img src="Media/user-circle-svgrepo-com(1).svg"/>
+        <div class="register">
+            <p id="login" onclick="window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html'">Log in</p>
+            <p>|</p>
+            <p id="signup" onclick="window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html'">Sign up</p>
+        </div>
+        <script src="/USCFMS/time.js"></script>
     </div>
     <div class="toolBar">
         <a class="PageTitle" href="/USCFMS/UserPage/UserHome/UserHome.html">
@@ -35,7 +42,7 @@
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
             <a href="/USCFMS/UserPage/UserConcern/UserConcern.html">Submit Concern</a>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
-            <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Feedback</a>
+            <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Suggestions</a>
         </div>
     </div>
 
@@ -49,15 +56,21 @@
     </div>
     <div class="PageMenu">
         <p id="goTo">Go to: </p>
-        <p>Brief History</p>
-        <p>Organizational Chart</p>
-        <p>Vision and Mission</p>
-        <p>Geographical Look</p>
+        <p id="BH" onclick="scrollEvent('history')">Brief History</p>
+        <p id="OC" onclick="scrollEvent('OC')">Organizational Chart</p>
+        <p id="VM" onclick="scrollEvent('MV')">Vision and Mission</p>
+        <p id="GL" onclick="scrollEvent('OC')">Geographical Look</p>
     </div>
+
+    <!--Page Content-->
     <div class="aboutInfo">
-        <div class="history">
-            <p>A brief history of</p>
-            <h1>Barangay Ususan</h1>
+        <div class="history" id="field">
+            <p id="brief">A brief history of</p>
+            <div class="title">
+                <h1>Barangay Ususan</h1>
+                <img src="Media/expand-more-circle-svgrepo-com.svg" />
+            </div>           
+            <div class="underline"></div>
             <p id="captions">
                 Apat na pook ang bumubuo sa Ususan: Subaan, Ibaba Langos, Kabilang Banda at Pampangin. Ang nayon ay hugis letrang “U”. <br /> <br />
 
@@ -73,10 +86,56 @@
 
                 When Metropolitan Manila was created, Taguig was integrated into it together with 16 other cities and towns. Taguig is now a highly urbanized city.
             </p>
-            <img src="Media/expand-more-circle-svgrepo-com.svg" />
+        </div>
+        <div class="OC"  id="field">
+            <div class="title">
+                <h1>Organizational Chart</h1>
+                <img src="Media/expand-more-circle-svgrepo-com.svg" />
+            </div>
+            <div class="underline"></div>
         </div>
 
+        <div class="MV"  id="field">
+            <div class="title">
+                <h1>Mission and Vision</h1>
+                <img src="Media/expand-more-circle-svgrepo-com.svg" />
+            </div>
+            <div class="underline"></div>
+            
+            <div class="mvCaptions">
+                <div class="mission">
+                   <p>Mission:</p>
+                    <p id="captions">
+                    To uplift the quality of our constituents through continuous improvement of the management <br>
+                    system on the delivery of basic services: through quality health care; through quality <br>
+                    education; through job placement assistance; and through good governance.
+                    </p> 
+                </div>
+                
+                <div class="vision">
+                    <p>Vision:</p>
+                    <p id="captions">
+                        To be a role model Barangay with amenities and opportunities for the total <br>
+                        well being of our constituents.
+                    </p>
+                </div>
+            </div>
+        </div>
 
+        <div class="GL" id="field">
+            <div class="title">
+                <h1>Geographical Look</h1>
+                <img src="Media/expand-more-circle-svgrepo-com.svg" />
+            </div>
+            <div class="underline"></div>
+            <iframe width="600"
+            height="450"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10923.927502950095!2d121.06127505053675!3d14.531030024333866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8bdadcad883%3A0x90bf2c38bba3288a!2sUsusan%2C%20Taguig%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1699535140288!5m2!1sen!2sph"
+            ></iframe>
+        </div>
+        
         <!--bottom-->
         <footer class="copyRight">
             <p>Copyright 2023 | All Rights Reserved | Barangay Government of Ususan</p>
