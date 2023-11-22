@@ -1,14 +1,43 @@
 ﻿.pageContent {
     position: absolute;
     top: 480px;
-    /*background: #c3bfbf;*/
     width: 100%;
-    height: 1300px;
+    height: calc(100vh - 480px);
+}
+
+@media (max-height: 1780px) {
+    .pageContent {
+        height: 1400px;
+    }
+}
+.PageSubtitle img
+{
+    position: absolute;
+    right: 5px;
+}
+
+.register
+{
+    position: absolute;
+    display: flex;
+    font-size: 15px;
+    right: 90px;
+}
+
+#login,
+#signup
+{
+    cursor: pointer;
+}
+
+.register p:hover
+{
+    text-decoration: underline;
 }
 
 h1
 {
-    margin-left: 30px;
+    margin-left: 50px;
     font-size: 18px;
 }
 
@@ -32,25 +61,13 @@ h1
     position: absolute;
     bottom: 0px;
     top: 22px;
-    left: 30px;
+    left: 50px;
     width: 33px;
     height: 6px;
     background-color: #feda00;
     border-radius: 10px;
 }
 
-
-.fldPersonal {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    row-gap: 20px;
-    column-gap: 180px;
-    width: 88%;
-    left: 6%;
-    right: 6%;
-    flex-wrap: wrap;
-}
 
 .inbox {
     background: #cfcfcf;
@@ -60,8 +77,13 @@ h1
 }
 
 
+#notes
+{
+    color:#16601f;
+    font-size: 12px;
+}
 
-input {
+input, select {
     width: 320px;
     height: 35px;
     margin-left: 15px;
@@ -69,6 +91,10 @@ input {
     background: none;
     color: black;
     outline: none;
+}
+
+.inbox select option {
+    text-decoration: bold;
 }
 
 #concernTitle {
@@ -79,8 +105,6 @@ input {
     position: relative;
 }
 
-
-
 .fldConcern {
     position: relative;
     display: flex;
@@ -88,7 +112,7 @@ input {
     row-gap: 20px;
     column-gap: 180px;
     width: 88%;
-    left: 6%;
+    left: 50px;
     right: 6%;
     flex-wrap: wrap;
 }
@@ -97,15 +121,30 @@ input {
     background: none;
 }
 
-.upload {
-    margin-top: -5px;
+
+.file-input {
+    position: absolute;
+    left: 0;
+    margin-left: -10px;
+    font-size: 55px; /* Set a large font size to cover the button */
+    width: 150px;
+    height: 40px;
+    opacity: 0; /* Make the actual file input transparent */
+    cursor: pointer;
+}
+
+.upload-button {
     font-weight: bold;
     font-size: 15px;
     height: 40px;
     width: 140px;
     background: none;
     border-radius: 20px;
-    cursor: pointer;
+}
+
+.selected-file {
+    margin-left: 10px;
+    font-size: 14px;
 }
 
 .concernfield .inbox img {
@@ -116,6 +155,12 @@ input {
     margin-left: 310px;
 }
 
+.upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+}
 
 .longbox {
     background: #cfcfcf;
@@ -141,17 +186,18 @@ input {
 
 #note
 {
-    font-size: 13px;
+    color: green;
+    font-size: 12px;
     position: relative;
     bottom: 31px;
-    margin-left: 200px;
+    margin-left: 230px;
 }
 
 .fldVerification
 {
     position: relative;
     bottom: 20px;
-    margin-left: 30px;
+    margin-left: 50px;
 }
 
 #consent
@@ -180,5 +226,40 @@ input {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    margin-left: 30px;
+    margin-left: 50px;
+}
+
+#submitBtn:disabled {
+    background-color: #ddd;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.submit:hover { 
+    transition: 0.3s;
+    background-color: #1a7225;
+}
+
+.fld
+{
+    margin-left: 50px;
+    display: flex;
+    gap: 50px;
+    margin-bottom: -10px;
+}
+
+#inf
+{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.fld p
+{
+    width: 220px;
+}
+
+#bold
+{
+    font-weight: bold;
 }

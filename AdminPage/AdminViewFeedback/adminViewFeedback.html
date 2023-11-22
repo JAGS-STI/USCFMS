@@ -20,9 +20,131 @@
             <p>BARANGAY SOCIAL CONCERNS AND FEEDBACK MANAGEMENT SYSTEM</p>
         </div>
         <div class="PageTitle">
-            <h3>View Feedback</h3>
+            <h3>Survey result</h3>
+            <div class="ticketID">
+                <p>Survey ID:</p>
+                <h1>FS-98765</h1>
+            </div>
         </div>
     </div>
+
+    <div class="header1">
+        <div class="card1">
+            <p>Date and time received:</p>
+            <h3>September 26, 2023</h3>
+            <h3>11:07 PM</h3>
+        </div>
+        <div class="card1">
+            <p>Respondent name:</p>
+            <h3>Ian Gerald Balbon</h3>
+        </div>
+    </div>
+    <div class="header2">
+        <div class="card1">
+            <p>Contact no.:</p>
+            <h3>0976 045 9207</h3>
+        </div>
+        <div class="card1">
+            <p>Email address:</p>
+            <h3>email@domain.com</h3>
+        </div>
+    </div>
+    <div class="sideInfo">
+        <p>This result is from a concern with concern ID:</p>
+        <h3>FS-98765</h3>
+        <button class="view">View concern</button>
+    </div>
+
+    <div class="pageContent">
+        <div id="top" class="title">
+            <h1 id="subTitle">Concern Details</h1>
+            <div class="underline"></div>
+            <div class="questions">
+                <div class="q1">
+                    <p>Did you receive timely assistance for your concern?</p>  
+                    <div class="answers">
+                        <img src="media/radio-button-checked-svgrepo-com.svg">
+                        <p>Yes</p>  
+                    </div>    
+                </div>
+
+                <div class="q2">
+                    <p>Rate the responsiveness of the Barangay authorities in addressing your concern: </p>  
+                    <div class="answers">
+                        <img src="media/star.svg">
+                        <img src="media/star.svg">
+                        <img src="media/star.svg">
+                        <img src="media/star.svg">
+                        <img src="media/star.svg">
+                    </div>    
+                </div>
+            </div>   
+        </div>
+        <div class="title">
+            <h1 id="subTitle">User Experience</h1>
+            <div class="underline"></div>
+            <div class="questions">
+                <div class="q1">
+                    <p>Did you receive timely assistance for your concern?</p>  
+                    <div class="answers">
+                        <img src="media/star.svg">
+                        <img src="media/star.svg">
+                        <img src="media/star.svg">
+                        <img src="media/star.svg">
+                        <img src="media/star.svg">
+                    </div>    
+                </div>
+
+                <div class="q2">
+                    <p>Rate the responsiveness of the Barangay authorities in addressing your concern: </p>  
+                    <div class="answers">     
+                        <img src="media/radio-button-checked-svgrepo-com.svg">
+                        <p>Yes</p>
+                    </div>    
+                </div>
+            </div>     
+                <p id="no">In corresponds to: Were you able to easily navigate and use the platform?</p>
+                <p>If no, please share any difficulties you encountered:</p>        
+                <div class="longbox">
+                    <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
+                </div>
+        </div>
+        <div class="title">
+            <h1 id="subTitle">Transparency and Communication</h1>
+            <div class="underline"></div>
+            <div class="questions">
+                <div class="q1">
+                    <p>Did you receive updates regarding the status and resolution of your concern?</p>  
+                    <div class="answers">
+                        <img src="media/radio-button-checked-svgrepo-com.svg">
+                        <p>Yes</p>
+                    </div>    
+                </div>
+
+                <div class="q2">
+                    <p>Were you satisfied with the level of transparency in the process?</p>  
+                    <div class="answers">     
+                        <img src="media/radio-button-checked-svgrepo-com.svg">
+                        <p>Yes</p>
+                    </div>    
+                </div>
+            </div> 
+        </div>   
+        <div class="title">
+            <h1 id="subTitle">Additional Comments</h1>
+            <div class="underline"></div>
+            <div class="questions">
+                <div class="q1">
+                    <p>Is there anything else you would like to share regarding your experience or concerns that were not covered in this survey? </p>  
+                    <div class="longbox">
+                        <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
+                    </div>   
+                </div>
+            </div> 
+        </div>   
+    </div>
+    
+    
 
     <div class="sidebar">
         <img src="media/ususan_logo.png">
@@ -40,7 +162,7 @@
                 <div class="icon">
                     <a href="/USCFMS/AdminPage/AdminTickets/adminTickets.html">
                         <img id="ticket" src="media/tickets.svg" />
-                        <span>Tickets</span>
+                        <span>Concern</span>
                     </a>
                 </div>
             </li>
@@ -48,7 +170,15 @@
                 <div class="icon">
                     <a href="/USCFMS/AdminPage/AdminFeedback/adminFeedback.html">
                         <img src="media/feedback-svgrepo-com.svg" />
-                        <span>Feedbacks</span>
+                        <span>Feedbacks Surveys</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminComments/adminComments.html">
+                        <img src="media/feedback-svgrepo-com.svg" />
+                        <span>Comments</span>
                     </a>
                 </div>
             </li>
@@ -81,16 +211,11 @@
         </ul>
     </div>
 
-
-    <!-- TABLE FOR DASHBOARD-->
-    <div class="container">
-        
-    </div>
-
     <div class="rightContainer">
         <div class="date">
-            <p>September 25, 2023</p>
-            <h3>03:46:00 PM</h3>
+            <p id="currentDate">September 25, 2023</p>
+            <h3 id="currentTime">03:46:00 PM</h3>
+            <script src="/USCFMS/time.js"></script>
         </div>
     </div>
 </body>

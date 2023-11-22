@@ -15,8 +15,14 @@
 <body>
 
     <div class="PageSubtitle">
-        <p>October 18, 2023 | 04:32 PM</p>
-        <img src="Media/facebook-svgrepo-com.svg" />
+        <p id="dateTime">ERROR: Date cannot display</p>
+        <img src="Media/user-circle-svgrepo-com(1).svg"/>
+        <div class="register">
+            <p id="login" onclick="window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html'">Log in</p>
+            <p>|</p>
+            <p id="signup" onclick="window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html'">Sign up</p>
+        </div>
+        <script src="/USCFMS/time.js"></script>
     </div>
     <div class="toolBar">
         <a class="PageTitle" href="/USCFMS/UserPage/UserHome/UserHome.html">
@@ -35,7 +41,7 @@
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
             <a href="/USCFMS/UserPage/UserConcern/UserConcern.html">Submit Concern</a>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
-            <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Feedback</a>
+            <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Suggestions</a>
         </div>
     </div>
 
@@ -43,29 +49,44 @@
         <div class="blur">
             <h1>About the Barangay</h1>
             <p>Learn more about the Barangay’s history, statistics, organizational chart, etc.</p>
-            <button class="learnMore">LEARN MORE</button>
-        </div>
-    </div>
-    <div class="main-skills">
-        <div class="card-content">
-            <h3>Submit your Concern</h3>
-            <p>Do you have concerns? Submit your concern here and get started by clicking the button below. </p>
-            <button class="submit">SUBMIT</button>
-        </div>
-        <div class="card-content">
-            <h3>Submit your feedback</h3>
-            <p>We would love to have your concern about the Barangay. Click the button below.</p>
-            <button class="submit">SUBMIT</button>
+            <button class="learnMore" onclick="window.location.href='/USCFMS/UserPage/UserAbout/UserAbout.html'">LEARN MORE</button>
         </div>
     </div>
 
-    <!--bottom-->
-    <footer class="copyRight">
-        <p>Copyright 2023 | All Rights Reserved | Barangay Government of Ususan</p>
-        <p id="developedBy">
-            Website developed by: <br />
-            Gerald Balbon | Sheena Gem Juarbal | Jherico Medina | Arjay Fortuno
-        </p>
-    </footer>
+    <!--Page Content-->
+    <div class="pageContent">
+        <div class="main-skills">
+            <div class="card-content">
+                <h3>Submit your Concern</h3>
+                <p>Do you have concerns? Submit your concern here and get started by clicking the button below. </p>
+                <p id="acc">An account is required to submit.</p>
+                <button class="submit" onclick="window.location.href='/USCFMS/UserPage/UserConcern/UserConcern.html'">SUBMIT</button>
+            </div>
+            <div class="card-content">
+                <h3>Comments and Suggestions</h3>
+                <p>We would love to have your concern about the Barangay. Click the button below.</p>               
+                <button class="submit" onclick="window.location.href='/USCFMS/UserPage/UserFeedback/UserFeedback.html'">SUBMIT</button>
+            </div>
+        </div>
+        
+        <!--bottom-->
+        <footer class="copyRight">
+            <p>Copyright 2023 | All Rights Reserved | Barangay Government of Ususan</p>
+            <p id="developedBy">
+                Website developed by: <br />
+                Gerald Balbon | Sheena Gem Juarbal | Jherico Medina | Arjay Fortuno
+            </p>
+        </footer>
+    </div>
+    <div class="shadow">
+        <div class="popup">
+            <p id="head">You need to log in or sign up first.</p>
+            <div class="buttons">
+                <button>Log in</button>
+                <button>Sign up</button>
+            </div>
+            <img src="Media/button-error-svgrepo-com.svg">
+        </div>        
+    </div>
 </body>
 </html>

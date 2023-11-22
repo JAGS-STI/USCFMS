@@ -8,7 +8,64 @@
     width: 100%;
     height: 390px;
     gap: 50px;
+}
 
+.PageSubtitle img
+{
+    position: absolute;
+    right: 5px;
+}
+
+.register
+{
+    position: absolute;
+    display: flex;
+    font-size: 15px;
+    right: 90px;
+}
+
+#login,
+#signup
+{
+    cursor: pointer;
+}
+
+.register p:hover
+{
+    text-decoration: underline;
+}
+
+.PageMenu {
+    position: absolute;
+    top: 480px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 90px;
+    align-items: center;
+    height: 60px;
+    background: #16601F;
+    color: white;
+    font-size:13px;
+    font-weight: bold;
+}
+
+#goTo
+{
+    margin-left: 50px;
+    font-weight: lighter;
+}
+
+#goTo:hover
+{
+    text-decoration: none;
+    cursor: default;
+}
+
+.PageMenu p:hover 
+{
+    text-decoration: underline;
+    cursor: pointer;
 }
 .card-content 
 {
@@ -55,3 +112,116 @@
     height: 40px;
     width: 200px;
 }
+
+/* BODY CONTENT*/
+.pageContent {
+    position: absolute;
+    width: 100%;
+    top: 540px;
+    height: 2600px;
+    height: calc(100vh - 540px);
+}
+
+@media (max-height: 3140px) {
+    .pageContent {
+        height: 2600px;
+    }
+}
+
+.boundaries
+{
+    position: relative;
+    margin-left: 60px;
+    display: flex;
+    gap: 200px;
+}
+
+.directions
+{
+    margin-bottom: 50px;
+}
+
+.boundaries ul
+{
+    margin-top: -10px;
+}
+
+.directions h2
+{
+    font-size: 15px;
+}
+
+.field1,
+.field2,
+.field3 {
+    position: relative;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0px;
+    top: 22px;
+    left: 50px;
+    width: 33px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+h1
+{
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+table {
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    text-align: left;
+    background: #e8e8e8;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+tr {
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: #e8e8e8;
+}
+
+.tbl {
+    padding: 100px;
+    background: white;
+}
+
+.head {
+    background: #e8e8e8;
+    color: #606060;
+}
+
+.up {
+    position: fixed;
+    right: 50px;
+    bottom: 90px;
+    display: none;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.up img
+{
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.up:active {
+    transition: 0.3s;
+    opacity: 1; /* Fully opaque when visible */
+}
+

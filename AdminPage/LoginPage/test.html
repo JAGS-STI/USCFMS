@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("name").value;
+            var password = document.getElementById("pass").value;
+
+            // Send data to PHP script using Fetch API
+            fetch('login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'name=' + username + '&pass=' + password,
+            })
+            .then(response => {
+                if (response.redirected) {
+                    // Redirect to the next HTML if login is successful
+                    window.location.href = response.url;
+                } else {
+                    // Show an error message if login is unsuccessful
+                    alert('Invalid username or password');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="validateForm(); return false;">
+        Username: <input type="text" id="name" name="name"><br>
+        Password: <input type="password" id="pass" name="pass"><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

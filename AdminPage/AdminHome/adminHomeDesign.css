@@ -127,3 +127,54 @@ body {
     padding: 20px 20px 0px 0px;
 }
 
+.notifs
+{
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.notifs h3
+{
+    font-size: 30px;
+}
+.notifs img
+{
+    height: 30px;
+    width: 30px;
+}
+
+table {
+    margin-left: 40px;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+tr {
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: #797979;
+}
+
+
+.tbl {
+    padding: 100px;
+    background: white;
+}
+
+.received {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.dot {
+    background:#ff3131;
+    width: 5px;
+    height: 5px;
+    border-radius: 2px;
+}

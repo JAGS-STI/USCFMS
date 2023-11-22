@@ -190,40 +190,6 @@ body {
     color: #000000;
 }
 
-.rightCard {
-    width: 220px;
-    height: 150px;
-    background: linear-gradient(90deg, #d6249a, #6b0029);
-    border-radius: 20px;
-    margin-top: 50px;
-    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
-}
-
-.rightCard h3 {
-    position: relative;
-    font-size: 65px;
-    color: #ffffff;
-    top: 10px;
-    margin-left: 20px;
-    text-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
-}
-
-.rightCard p {
-    font-size: 30px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-left: 20px;
-    margin-top: 6px;
-}
-
-.rightCard img {
-    position: relative;
-    bottom: 110px;
-    left: 160px;
-    width: 50px;
-    height: 50px;
-}
-
 .searchBar p {
     margin-top: 60px;
 }
@@ -239,7 +205,7 @@ body {
 
 .searchBar .bar input {
     position: relative;
-    width: 210px;
+    width: 160px;
     height: 30px;
     top: 5px;
     left: 15px;
@@ -249,9 +215,9 @@ body {
 }
 
 .searchBar .bar img {
-    position: relative;
-    left: 190px;
-    bottom: 20px;
+    position: absolute;
+    margin-top: 13px;
+    right: 15px;
     height: 15px;
     width: 15px;
 }

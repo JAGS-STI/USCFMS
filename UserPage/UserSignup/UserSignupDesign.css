@@ -1,0 +1,264 @@
+﻿.pageContent {
+    position: absolute;
+    top: 480px;
+    /*background: #c3bfbf;*/
+    width: 100%;
+    height: 1000px;
+    height: calc(100vh - 480px);
+}
+@media (max-height: 1480px) {
+    .pageContent {
+        height: 1000px;
+    }
+}
+
+.subContent
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+
+}
+
+.underline 
+{
+    position: absolute;
+    bottom: 0px;
+    top: 40px;
+    left: 165px;
+    width: 25px;
+    height: 5px;
+    background-color:#ffe500;
+    border-radius: 10px;
+}
+
+.subhead
+{
+    position: relative;
+    margin-top: 30px;
+    display: flex;
+    gap:50px;
+}
+
+#sign
+{
+    font-weight: bold;
+}
+
+#log
+{
+    color: gray;
+}
+
+.subInfos
+{
+    position: relative;
+    top: 20px;
+}
+
+input {
+    width: 230px;
+    height: 35px;
+    margin-left: 15px;
+    border-style: none;
+    background: none;
+    color: black;
+    outline: none;
+}
+
+.textline
+{
+    position: absolute;
+    bottom: 0px;
+    top: 40px;
+    left: 12px;
+    width: 250px;
+    height: 2px;
+    background-color: #16601fa4;
+}
+
+.inputs
+{
+    position: relative;
+    right: 25%;
+    left: 25%;
+    width: 50%;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+
+}
+
+.leftInfos
+{
+    display: flex;
+    flex-direction: column;
+    gap:31px;
+}
+
+.rightInfos
+{
+    position: relative;
+}
+
+.upload
+{
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+#file
+{
+    margin-top: -10px;
+    font-size: 10px;
+    color: gray;
+}
+
+.upload
+{
+    font-size: 15px;
+}
+
+#upload
+{
+    position: absolute;
+    right: -10px;
+    height: 30px;
+    width: 90px;
+    margin-top: -50px;
+    border-radius: 20px;
+    background-color: transparent;
+    border-style:solid;
+    border-color: black;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+.consent
+{
+    position: absolute;
+    margin-top: 180px;
+    margin-right: 480px;
+    display: flex;
+    gap: 10px;
+    align-items:center ;
+}
+
+.consentShow
+{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#check
+{
+    height: 15px;
+    width: 15px;
+}
+
+#signUp
+{
+    position: absolute;
+    top: 500px;
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    background-color: #16601f;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#show
+{
+    font-size: 14px;
+}
+
+#head
+{
+    margin-bottom:120px;
+    position: absolute;
+    font-weight: bold;
+}
+
+.reminder
+{
+    position: absolute;
+    margin-top: 150px;
+    margin-right: 80px;
+}
+
+#rmndr
+{
+    font-size: 13px;
+    color: red;
+}
+
+.downInfos
+{
+    position: absolute;
+    right: 25%;
+    left: 25%;
+    width: 50%;
+    top:250px;
+    display: flex;
+    gap: 100px;
+    justify-content: space-evenly;
+}
+.shadow
+{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.384);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+}
+
+.popup
+{
+    position: relative;
+    height: 200px;
+    width: 450px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.popup img
+{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    right: 13px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.buttons
+{
+    display: flex;
+    gap: 20px;
+}
+
+.buttons button
+{
+    background-color: #00742F;
+    border-radius: 20px;
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}

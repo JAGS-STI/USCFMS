@@ -2,8 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>User About | Ususan SCFMS</title>
 
     <style>
@@ -15,8 +13,14 @@
 </head>
 <body>
     <div class="PageSubtitle">
-        <p>October 18, 2023 | 04:32 PM</p>
-        <img src="Media/facebook-svgrepo-com.svg" />
+        <p id="dateTime">ERROR: Date cannot display</p>
+        <img src="Media/user-circle-svgrepo-com(1).svg"/>
+        <div class="register">
+            <p id="login" onclick="window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html'">Log in</p>
+            <p>|</p>
+            <p id="signup" onclick="window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html'">Sign up</p>
+        </div>
+        <script src="/USCFMS/time.js"></script>
     </div>
     <div class="toolBar">
         <a class="PageTitle" href="/USCFMS/UserPage/UserHome/UserHome.html">
@@ -35,15 +39,15 @@
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
             <a href="/USCFMS/UserPage/UserConcern/UserConcern.html">Submit Concern</a>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
-            <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Feedback</a>
+            <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Suggestions</a>
         </div>
     </div>
 
     <div class="aboutBrgy">
         <div class="blur">
-            <h1>Do you have any feedback?</h1>
+            <h1>Any comments or suggestions?</h1>
             <p>
-                Your feedback is invaluable to us as we strive to improve our services. <br />
+                Your feedback is invaluable to us as we strive to improve our services. 
                 Please take a moment to share your thoughts with us.
             </p>
         </div>
@@ -66,39 +70,20 @@
                         <input id="contactBox" type="text" placeholder="Type Here" required />
                     </div>
                 </div>
-                <div class="emailfield">
-                    <p>Email address <span style="color: red">*</span></p>
-                    <div class="inbox">
-                        <input id="emailBox" type="text" placeholder="Type Here" />
-                        <p id="emailNote">We will send updates on this email address.</p>
-                    </div>
-                </div>
             </div>
         </div>
         
         <div class="field2">
-            <h1 id="concernTitle">Feedback Information</h1>
+            <h1 id="concernTitle">Comments and/or suggestions</h1>
             <div class="underline"></div>
             <div class="fldConcern">
                 <div class="concernfield">
-                    <p>Describe your feedback <span style="color: red">*</span></p>
+                    <p>Type your comments/suggestions <span style="color: red">*</span></p>
                     <div class="longbox">
                         <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="rate">
-            <p>Rate the services you are benefiting from the Barangay: <span style="color: red">*</span></p>
-        </div>
-
-        <div class="stars">
-            <img src="Media/starFull.svg" />
-            <img src="Media/starFull.svg" />
-            <img src="Media/starFull.svg" />
-            <img src="Media/starFull.svg" />
-            <img src="Media/star border.svg" />
         </div>
 
         <div class="consent">

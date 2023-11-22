@@ -2,8 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>User About | Ususan SCFMS</title>
 
     <style>
@@ -15,8 +13,14 @@
 </head>
 <body>
     <div class="PageSubtitle">
-        <p>October 18, 2023 | 04:32 PM</p>
-        <img src="Media/facebook-svgrepo-com.svg" />
+        <p id="dateTime">ERROR: Date cannot display</p>
+        <img src="Media/user-circle-svgrepo-com(1).svg"/>
+        <div class="register">
+            <p id="login" onclick="window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html'">Log in</p>
+            <p>|</p>
+            <p id="signup" onclick="window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html'">Sign up</p>
+        </div>
+        <script src="/USCFMS/time.js"></script>
     </div>
     <div class="toolBar">
         <a class="PageTitle" href="/USCFMS/UserPage/UserHome/UserHome.html">
@@ -35,7 +39,7 @@
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
             <a href="/USCFMS/UserPage/UserConcern/UserConcern.html">Submit Concern</a>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
-            <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Feedback</a>
+            <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Suggestions</a>
         </div>
     </div>
 
@@ -43,93 +47,114 @@
         <div class="blur">
             <h1>Do you have any concerns?</h1>
             <p>
-                We’d love to hear and assist you to your concern. <br />
+                We’d love to hear and assist you to your concern. 
                 Kindly fill out the form below to proceed.
             </p>
         </div>
     </div>
 
     <div class="pageContent">
-        <div class="field1">
-            <h1 id="headTitle">Personal Information</h1>
-            <div class="underline"></div>
-            <p id="required">Fields with * are required</p>
-            <div class="fldPersonal">
-                <div class="namefield">
-                    <p>Name <span style="color: red">*</span></p>
-                    <div class="inbox">
-                        <input id="nameBox" type="text" placeholder="Type Here" required />
-                    </div>
-                </div>
-                <div class="contactfield">
-                    <p>Contact number <span style="color: red">*</span></p>
-                    <div class="inbox">
-                        <input id="contactBox" type="text" placeholder="Type Here" required />
-                    </div>
-                </div>
-                <div class="emailfield">
-                    <p>Email address</p>
-                    <div class="inbox">
-                        <input id="emailBox" type="text" placeholder="Type Here" />
-                    </div>
-                </div>
-                <div class="addressfield">
-                    <p>Your address <span style="color: red">*</span></p>
-                    <div class="inbox">
-                        <input id="addressBox" type="text" placeholder="Type Here" required />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="field2">
-            <h1 id="concernTitle">Concern Information</h1>
-            <div class="underline"></div>
-            <div class="fldConcern">
-
-                <div class="concernfield">
-                    <p>Type of concern <span style="color: red">*</span></p>
-                    <div class="inbox">
-                        <input id="nameBox" type="text" placeholder="Type Here" required />
-                        <img src="Media/expand-more-circle-svgrepo-com.svg" />
-                    </div>
-                </div>
-
-                <div class="locationfield">
-                    <p>Incident location you are concerned <span style="color: red">*</span></p>
-                    <div class="inbox">
-                        <input id="nameBox" type="text" placeholder="Type Here" required />
-                    </div>
-                </div>
-
-                <div class="uploadfield">
-                    <p>Upload photos as proof/evidence <span style="color: red">*</span></p>
-                    <div class="inbox" id="invi">
-                        <button class="upload">Upload photos</button>
-                    </div>
-                </div>
-                <div class="descfield">
-                    <p>Describe your concern/incident <span style="color: red">*</span></p>
-                    <div class="longbox">
-                        <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
         
-        <div class="field3">
-            <h1 id="identityTitle">Identity verification</h1>
-            <div class="underline"></div>
-            <p id="note">Your ID will be used in accordance on verifying the authenticity of the concern. This will be kept with utmost confidentiality.</p>
-            <div class="fldVerification">
-                <p>Upload your ID <span style="color: red">*</span></p>
-                <button class="upload">Upload</button>
-                <p id="consent">I consent to the processing of my personal data in accordance with the Republic Act 10173 or also known as the Data Privacy Act of 2012.</p>
-                <input id="check" type="checkbox" />
+        <form id="concernForm" action="php/process_form.php" method="post" enctype="multipart/form-data">
+            <div class="field1">
+                <h1 id="headTitle">Personal Information</h1>
+                <div class="underline"></div>
+                <p id="required">Fields with * are required</p>
+                <div class="fld">
+                    <p>You are logged in as:</p>
+                    <p id="bold">Ian Gerald Balbon</p>
+                </div>
+                <div class="fld">
+                    <p>Email address:</p>
+                    <p id="bold">email@domain.com</p>
+                </div>
+                <div class="fld">
+                    <p>Contact number:</p>
+                    <p id="bold">0976 045 9207</p>
+                </div>
+                <div class="fld">
+                    <p>Your address:</p>
+                    <p id="bold">Tomasa St.</p>
+                </div>
+
+                <p id="inf">The information above will be used and kept on this concern submission.</p>
             </div>
-            <button class="submit">SUBMIT</button>
-        </div>
-        
+    
+            <div class="field2">
+                <h1 id="concernTitle">Concern Information</h1>
+                <div class="underline"></div>
+                <div class="fldConcern">
+    
+                    <div class="concernfield">
+                        <p>Type of concern <span style="color: red">*</span></p>
+                        <div class="inbox">
+                            <select id="concernBox" name="concernBox" placeholder="Type Here" required >
+                                <option value="Road and highways">Road and highways</option>
+                                <option value="Residential">Residential</option>
+                                <option value="Schools">Schools</option>
+                                <option value="Safety and security">Safety and security</option>
+                                <option value="Infrastructures and facilities">Infrastructures and facilities</option>
+                                <option value="Animal Welfare">Animal Welfare</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="locationfield">
+                        <p>Incident location you are concerned <span style="color: red">*</span></p>
+                        <div class="inbox">
+                            <input id="locationBox" name="locationBox" type="text" placeholder="Type Here" required />
+                        </div>
+                    </div>
+    
+                    <div class="uploadfield">
+                        <p>Upload photos as proof/evidence <span style="color: red">*</span></p>
+                        <div class="inbox" id="invi">
+                            <div class="upload">
+                                <button for="fileInput" class="upload-button">Upload photos</button>
+                                <span class="selected-file">No file selected</span>
+                                <input class="file-input" type="file" id="fileInput" name="fileInput" accept=".jpeg, .jpg, .png, .pdf, .mp4" required>
+                                <script>
+                                    // JavaScript to display the selected file name
+                                    document.getElementById('fileInput').addEventListener('change', function () {
+                                        const fileName = this.value.split('\\').pop(); // Extract the file name
+                                        document.querySelector('.selected-file').textContent = fileName || 'No file selected';
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="descfield">
+                        <p>Describe your concern/incident <span style="color: red">*</span></p>
+                        <div class="longbox">
+                            <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here" required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="field3">
+                <div class="fldVerification">
+                    <p id="consent">I consent to the processing of my personal data in accordance with the Republic Act 10173 or also known as the Data Privacy Act of 2012.</p>
+                    <input id="check" type="checkbox" required />
+                </div>
+                <input type="submit"  id="submitBtn" class="submit" value="Submit" disabled>
+                <script>
+                    // Get references to the form and submit button
+                    var myForm = document.getElementById("concernForm");
+                    var submitBtn = document.getElementById("submitBtn");
+                
+                    // Add an event listener to the form to check the form validity
+                    myForm.addEventListener("input", function() {
+                        // Check if the form is valid
+                        var isFormValid = myForm.checkValidity();
+                
+                        // Update the state of the submit button
+                        submitBtn.disabled = !isFormValid;
+                    });
+                </script>
+            </div>
+        </form>
 
         <!--bottom-->
         <footer class="copyRight">
