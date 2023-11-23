@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Active Concerns</title>  
+    <title>Active Concerns</title>
 </head>
 <body>
 
@@ -31,23 +31,15 @@ displayActiveConcerns();
         var newH3 = document.createElement("h3");
         newH3.className = "activeConcern";
 
-        // Call the PHP function to fetch and display the total amount
-        // Note: This will append a new <h3> to the existing ones
-        fetchAndUpdateCount();
-
         // Append the new <h3> element to the body
         document.body.appendChild(newH3);
-    }
 
-    // JavaScript function to fetch and update the total amount
-    function fetchAndUpdateCount() {
-        fetch('<?php echo $_SERVER['DOCUMENT_ROOT'] . "/USCFMS/TestPage/php/fetch_count.php" ?>')
+        // Call the PHP script to fetch and update the total amount
+        fetch('php/fetch_count.php') // Assuming your PHP script is in the "php" folder
             .then(response => response.text())
             .then(data => {
-                // Update the innerHTML of the last <h3> element with the new count
-                var h3Elements = document.getElementsByClassName('activeConcern');
-                var lastH3 = h3Elements[h3Elements.length - 1];
-                lastH3.innerHTML = data;
+                // Update the innerHTML of the new <h3> element with the new count
+                newH3.innerHTML = data;
             })
             .catch(error => console.error('Error:', error));
     }

@@ -11,15 +11,15 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT COUNT(*) AS activeCount FROM concerndetail WHERE status = 'active'";
+$sql = "SELECT COUNT(*) AS commentCount FROM commenttbl WHERE DATE(submitDate) = CURDATE()";
 $result = $conn->query($sql);
 
 if ($result) {
     $row = $result->fetch_assoc();
-    $activeCount = $row['activeCount'];
+    $commentCount = $row['commentCount'];
     
     // Echo the total amount
-    echo $activeCount;
+    echo $commentCount;
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

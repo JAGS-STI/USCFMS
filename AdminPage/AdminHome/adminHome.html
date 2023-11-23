@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="adminHomeDesign.css" />
     <link rel="stylesheet" href="/USCFMS/AdminPage/Sidebar/sidebarDesign.css" />
 
+    <script src="/USCFMS/AdminPage/java/createElement.js"></script>
 </head>
 <body>
     <div>
@@ -96,8 +97,9 @@
             <div class="main-skills">
                 <a href="/USCFMS/AdminPage/AdminTickets/adminTickets.html" class="card-link">
                     <div class="card1">
-                        <div class="card-content">
-                            <h3>15</h3>
+                        <div class="card-content" id="activeCard">
+                            <!-- Display the total amount of active concerns -->
+                            <script>createElement('h3','', 'activeCard', '/USCFMS/AdminPage/php/activeCount.php');</script>
                             <p>Active concerns</p>
                         </div>
                         <img src="media/tickets.svg" />
@@ -105,14 +107,13 @@
                 </a>
                 <a href="/USCFMS/AdminPage/AdminFeedback/adminFeedback.html" class="card-link">
                     <div class="card2">
-                        <div class="card-content">
-                            <h3>67</h3>
+                        <div class="card-content" id="commentCard">
+                            <script>createElement('h3','', 'commentCard', '/USCFMS/AdminPage/php/commentCount.php')</script>
                             <p>Received comments</p>
                         </div>
                         <img src="media/feedback-svgrepo-com.svg" />
                     </div>
                 </a>
-                
             </div>
             <div class="notifs">
                 <img src="media\notifications-outline-svgrepo-com.svg"/>
