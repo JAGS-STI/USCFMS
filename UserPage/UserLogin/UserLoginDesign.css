@@ -8,19 +8,18 @@
 }
 @media (max-height: 1480px) {
     .pageContent {
-        height: 1000px;
+        height: 650px;
     }
 }
 
 .subContent
 {
-    display: none;
+    display: flex; /* should be flex */
     flex-direction: column;
     gap: 20px;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-
 }
 
 #login,
@@ -50,20 +49,14 @@ input {
     gap:50px;
 }
 
-.subhead img
-{
-    position: absolute;
-    top: 20px;
-    left: -80px;
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-}
-
 #sign,
 #line
 {
     color: gray;
+}
+
+#sign {
+    cursor: pointer;
 }
 
 .login
@@ -163,15 +156,51 @@ input {
     cursor: pointer;
 }
 
+.blockButton {
+    position: absolute;
+    top: 15px;
+    left: -80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    width: 28px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.blockButton:hover {
+    transition: 0.5s;
+    background-color:  rgb(221, 221, 221);
+}
+
+.blockButton img
+{
+    width: 15px;
+    height: 15px;
+}
+
 #forgot
 {
     margin-top: 30px;
     font-weight: bold;
     text-decoration: underline;
+    cursor: pointer;
 }
 .forgot
 {
     position: relative;
+}
+
+.forgot .underline {
+    position: absolute;
+    bottom: 0px;
+    top: 40px;
+    left: 0px;
+    width: 25px;
+    height: 5px;
+    background-color:#ffe500;
+    border-radius: 10px;
 }
 
 #forg
@@ -181,7 +210,7 @@ input {
 
 .subContent1
 {
-    display: flex;
+    display: none; /* should be flex */
     flex-direction: column;
     gap: 20px;
     align-items: center;

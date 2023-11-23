@@ -10,6 +10,21 @@
 
     <link rel="stylesheet" href="UserLoginDesign.css" />
     <link rel="stylesheet" href="/USCFMS/UserPage/TopMenu/topMenuDesign.css" />
+
+    <script>
+        function toggleForgetPanel(toggle) {
+            var forgetPanel = document.getElementById('forgetPanel');
+            var loginPanel = document.getElementById('loginPanel');
+
+            if (toggle === "open"){
+                forgetPanel.style.display = "flex";
+                loginPanel.style.display = "none";
+            } else {
+                forgetPanel.style.display = "none";
+                loginPanel.style.display = "flex";
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="PageSubtitle">
@@ -50,14 +65,14 @@
         </div>
     </div>
     <div class="pageContent">
-        <div class="subContent">
+        <div class="subContent" id="loginPanel">
             <div class="subhead">
                 <div class="login">
                     <p id="log">Log in</p>
                     <div class="underline"></div>
                 </div>
                 <p id="line">|</p>
-                <p id="sign">Sign up</p>
+                <p id="sign" onclick="window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html'">Sign up</p>
             </div>
 
             <div class="sub">
@@ -79,12 +94,14 @@
                 </div>
             </div>
             <button id="btnLog">Log in</button>
-            <p id="forgot">Forgot password?</p>
+            <p id="forgot" onclick="toggleForgetPanel('open')">Forgot password?</p>
         </div>
 
-        <div class="subContent1">
+        <div class="subContent1" id="forgetPanel">
             <div class="subhead">
-                <img src="Media/back-light-svgrepo-com.svg">
+                <div class="blockButton" onclick="toggleForgetPanel('close')">
+                    <img src="Media/back-light-svgrepo-com.svg">
+                </div>
                 <div class="forgot">                   
                     <p id="forg">Forgot password</p>
                     <div class="underline"></div>    
