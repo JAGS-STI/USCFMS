@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="adminViewTicketDesign.css" />
     <link rel="stylesheet" href="/USCFMS/AdminPage/Sidebar/sidebarDesign.css" />
-
 </head>
 <body>
     <div>
@@ -21,10 +20,14 @@
         </div>
         <div class="PageTitle">
             <h3>Viewing concern</h3>
-            <div class="ticketID">
-                <p>Concern ID:</p>
-                <h1>SC-98765</h1>
-            </div>
+            <?php
+            $concernID = $_GET['concernID'];
+
+            echo    '<div class="ticketID">
+                        <p>Concern ID:</p>
+                        <h1 id=pID>SC-' . $concernID . '</h1>
+                    </div>'
+            ?>
         </div>
     </div>
 
@@ -40,64 +43,15 @@
             </div>
             
         </div>
-        <div class="first">
-            <div class="card">
-                <p>Date and time received:</p>
-                <h3>September 26, 2023</h3>
-                <h3>11:07 PM</h3>
-            </div>
-            <div class="card">
-                <p>Concern type:</p>
-                <h3>Roads and highways</h3>
-            </div>
-        </div>
-        <div class="first">
-            <div class="card">
-                <p>Status:</p>
-                <h3>Not yet set</h3>
-            </div>
-            <div class="card">
-                <p>Priority:</p>
-                <h3>Normal</h3>
-            </div>
-        </div>  
+        <?php include(dirname(__DIR__) . "/php/getConcernInfo.php")?>
         
         <div class="pageInfos">
-            <div class="firstRow">
-                <div class="name">
-                    <h4>Respondent name:</h4>
-                    <p id="pName">Ian Gerald Balbon</p>
-                </div>
-                <div class="name">
-                    <h4>Contact number:</h4>
-                    <p id="pContact">0976 045 9207</p>
-                </div>
-            </div>
-            <div class="secondRow">
-                <div class="name">
-                    <h4>Email address:</h4>
-                    <p id="pEmail">email@email.com</p>
-                </div>
-                <div class="name">
-                    <h4>Address:</h4>
-                    <p id="pAddress">Tomasa Ave.</p>
-                </div>
-                <div class="name">
-                    <h4>Incident location:</h4>
-                    <p id="pLocation">Tomasa Ave.</p>
-                </div>
-            </div>
-            <div class="concernDesc">
-                <h4>Concern description:</h4>
-                <p id="pDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur.</p>
-            </div>
+            <?php include(dirname(__DIR__) . "/php/getAccountInfo.php")?>
 
             <div class="evidence">
                 <h4>Uploaded evidence:</h4>
                 <div class="imgs">
-                    <img src="media/blank-image-svgrepo-com.svg">
+                    <img src="/USCFMS/AdminPage/uploads/10012_Evidence.png">
                     <img src="media/blank-image-svgrepo-com.svg">
                     <img src="media/blank-image-svgrepo-com.svg">
                     <img src="media/blank-image-svgrepo-com.svg">

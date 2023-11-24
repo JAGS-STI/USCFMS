@@ -202,9 +202,30 @@ tr {
     align-items: center;
     gap: 5px;
 }
+
 .dot {
     background: black;
     width: 5px;
     height: 5px;
     border-radius: 50px;
+}
+
+#red {
+    background-color: #d92b0b;
+}
+
+#gray {
+    background-color: #aaaaaa;
+}
+
+#blue {
+    background-color: #004aad;
+}
+
+#green {
+    background-color: #22872f;
+}
+
+#orange {
+    background-color: #ff914d;
 }

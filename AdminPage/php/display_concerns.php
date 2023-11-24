@@ -44,8 +44,10 @@ if ($result->num_rows > 0) {
 function getStatusColor($status)
 {
     switch ($status) {
-        case 'Pending':
+        case 'Unread':
             return 'red';
+        case 'Pending':
+            return 'gray';
         case 'Active':
             return 'blue';
         case 'Resolved':

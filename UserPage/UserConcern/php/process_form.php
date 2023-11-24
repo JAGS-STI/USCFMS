@@ -23,7 +23,7 @@ $currentDateTime = date("Y-m-d H:i:s");
 
 // Insert data into the database
 $sql = "INSERT INTO concerndetail (accID, location, concernType, description, submitDate, status)
-        VALUES ('$accId', '$location', '$concern', '$description', '$currentDateTime', 'Pending')";
+        VALUES ('$accId', '$location', '$concern', '$description', '$currentDateTime', 'Pending');";
 
 if ($conn->query($sql) === TRUE) {
     $lastInsertedID = $conn->insert_id; // Get the auto-incremented ID
@@ -32,7 +32,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-// File Naming 1
+// File Naming
 
 $originalFileName = $_FILES["fileInput"]["name"];
 $tempFileName = $_FILES["fileInput"]["tmp_name"];
@@ -60,6 +60,21 @@ if (file_exists($targetFile)) {
 
 // Move uploaded files to a folder
 move_uploaded_file($tempFileName, $targetFile);
+
+$varTargetFile = '/AdminPage/uploads/' . $newFileName;
+$escapedTargetFile = addslashes($varTargetFile);
+
+$sql2 ="INSERT INTO concernphoto (concernID, photoEvidence, evidenceName, evidenceDate)
+        VALUES ('$lastInsertedID', '$escapedTargetFile', '$newFileName', '$currentDateTime');";
+
+if ($conn->query($sql2) === TRUE) {
+    echo "<br>Record inserted successfully. Directory Path: " . $escapedTargetFile;
+    // Match found, redirect to the next HTML page
+    header("Location: \USCFMS\UserPage\UserAccPage\UserAccPage.html");
+    exit;
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
 
 $conn->close();
 ?>
