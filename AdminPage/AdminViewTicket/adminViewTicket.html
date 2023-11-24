@@ -66,31 +66,31 @@
             <div class="firstRow">
                 <div class="name">
                     <h4>Respondent name:</h4>
-                    <p>Ian Gerald Balbon</p>
+                    <p id="pName">Ian Gerald Balbon</p>
                 </div>
                 <div class="name">
                     <h4>Contact number:</h4>
-                    <p>0976 045 9207</p>
+                    <p id="pContact">0976 045 9207</p>
                 </div>
             </div>
             <div class="secondRow">
                 <div class="name">
                     <h4>Email address:</h4>
-                    <p>email@email.com</p>
+                    <p id="pEmail">email@email.com</p>
                 </div>
                 <div class="name">
                     <h4>Address:</h4>
-                    <p>Tomasa Ave.</p>
+                    <p id="pAddress">Tomasa Ave.</p>
                 </div>
                 <div class="name">
                     <h4>Incident location:</h4>
-                    <p>Tomasa Ave.</p>
+                    <p id="pLocation">Tomasa Ave.</p>
                 </div>
             </div>
             <div class="concernDesc">
                 <h4>Concern description:</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  <br>
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse  <br>
+                <p id="pDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                     cillum dolore eu fugiat nulla pariatur.</p>
             </div>
 
@@ -116,9 +116,9 @@
                     <p>Set status:</p>
                     <div class="xpnd">
                         <select id="statusBox" placeholder="Type Here" required >
-                            <option value="volvo">Active(ongoing)</option>
-                            <option value="saab">Pending</option>
-                            <option value="mercedes">Resolved</option>
+                            <option value="Active">Active</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Resolved">Resolved</option>
                         </select>
                     </div>
                 </div>
@@ -126,10 +126,11 @@
                     <p>Set priority level:</p>
                     <div class="xpnd">
                         <select id="priorBox" placeholder="Type Here" required >
-                            <option value="volvo">Urgent</option>
-                            <option value="saab">High priority</option>
-                            <option value="mercedes">Normal priority</option>
-                            <option value="mercedes">Low priority</option>
+                            <option value="">-----</option>
+                            <option value="Urgent">Urgent</option>
+                            <option value="High">High</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Low">Low</option>
                         </select>
                     </div>  
                 </div>

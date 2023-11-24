@@ -93,43 +93,8 @@
         <p id="info">Click on a concern ID to view its contents.</p>
         <img src="media/information-circle-svgrepo-com.svg" />
         
-        <table>
-            <tr class="head">
-                <th width="150px">Concern ID</th>
-                <th width="240px">Date received</th>
-                <th width="200px">Concern type</th>
-                <th width="150px">Status</th>
-                <th width="100px">Priority</th>
-            </tr>
-            <tr class="tbl">
-                <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
-                <td>October 26, 2023</td>
-                <td>Residential</td>
-                <td class="active"><div class="dot"></div>Active</td>
-                <td>Urgent</td>
-            </tr>
-            <tr class="tbl">
-                <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
-                <td>October 26, 2023</td>
-                <td>Residential</td>
-                <td class="active"><div class="dot"></div>Active</td>
-                <td>Urgent</td>
-            </tr>
-            <tr class="tbl">
-                <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
-                <td>October 26, 2023</td>
-                <td>Residential</td>
-                <td class="active"><div class="dot"></div>Active</td>
-                <td>Urgent</td>
-            </tr>
-            <tr class="tbl">
-                <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
-                <td>October 26, 2023</td>
-                <td>Residential</td>
-                <td class="active"><div class="dot"></div>Active</td>
-                <td>Urgent</td>
-            </tr>
-        </table>
+        <?php include(dirname(__DIR__) . "/php/display_concerns.php"); ?>
+
     </div>
 
     <div class="rightContainer">

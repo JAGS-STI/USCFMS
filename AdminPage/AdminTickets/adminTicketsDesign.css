@@ -181,9 +181,15 @@ tr {
     border-color: #e8e8e8;
 }
 
+.tbl:hover {
+    transition: 0.2s;
+    background-color: #dadada;
+}
+
 .tbl {
     padding: 100px;
     background: white;
+    cursor: pointer;
 }
 
 .head {
@@ -191,16 +197,13 @@ tr {
     color: #606060;
 }
 
-.ticketID{
-    cursor: pointer;
-}
 .active {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 .dot {
-    background: blue;
+    background: black;
     width: 5px;
     height: 5px;
     border-radius: 50px;

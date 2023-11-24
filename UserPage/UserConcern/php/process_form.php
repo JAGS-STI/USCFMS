@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Get values from the form
-$accId = 184757;
+$accId = 100000;
 $location = $_POST['locationBox'];
 $file1 = $_FILES['fileInput']['name'];
 $concern = $_POST['concernBox'];
@@ -23,7 +23,7 @@ $currentDateTime = date("Y-m-d H:i:s");
 
 // Insert data into the database
 $sql = "INSERT INTO concerndetail (accID, location, concernType, description, submitDate, status)
-        VALUES ('$accId', '$location', '$concern', '$description', '$currentDateTime', 'pending')";
+        VALUES ('$accId', '$location', '$concern', '$description', '$currentDateTime', 'Pending')";
 
 if ($conn->query($sql) === TRUE) {
     $lastInsertedID = $conn->insert_id; // Get the auto-incremented ID
@@ -36,7 +36,7 @@ if ($conn->query($sql) === TRUE) {
 
 $originalFileName = $_FILES["fileInput"]["name"];
 $tempFileName = $_FILES["fileInput"]["tmp_name"];
-$targetDir = "/xampp/htdocs/USCFMS/AdminPage/uploads/";
+$targetDir = dirname(dirname(dirname(__DIR__))) . "/AdminPage/uploads/";
 
 // Generate a new unique filename to avoid conflicts
 $fileExtension = pathinfo($originalFileName, PATHINFO_EXTENSION);
