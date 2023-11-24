@@ -14,6 +14,8 @@ if ($conn->connect_error) {
 $sql = "SELECT concernID, submitDate, concernType, status, priority FROM concernDetail";
 $result = $conn->query($sql);
 
+
+
 // Display the HTML table
 if ($result->num_rows > 0) {
     echo '<table>';
@@ -28,7 +30,12 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<tr class="tbl" onclick="redirectToTicket(' . $row['concernID'] . ')">';
         echo '<td class="ticketID">SC-' . $row['concernID'] . '</td>';
-        echo '<td>' . $row['submitDate'] . '</td>';
+
+        // Format the date using DateTime
+        $dateTime = new DateTime($row['submitDate']);
+        $formattedDate = $dateTime->format('Y-m-d h:i A');
+
+        echo '<td>' . $formattedDate . '</td>';
         echo '<td>' . $row['concernType'] . '</td>';
         echo '<td class="active"><div class="dot" id="' . getStatusColor($row['status']) . '"></div> ' . $row['status'] . '</td>';
         echo '<td>' . ($row['priority'] ? $row['priority'] : '-----') . '</td>';

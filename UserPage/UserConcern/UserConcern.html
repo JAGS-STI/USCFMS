@@ -113,12 +113,13 @@
                             <div class="upload">
                                 <button for="fileInput" class="upload-button">Upload photos</button>
                                 <span class="selected-file">No file selected</span>
-                                <input class="file-input" type="file" id="fileInput" name="fileInput" accept=".jpeg, .jpg, .png, .pdf, .mp4" required>
+                                <input class="file-input" type="file" id="fileInput" name="fileInput[]" accept=".jpeg, .jpg, .png" multiple required>
                                 <script>
-                                    // JavaScript to display the selected file name
+                                    // JavaScript to display the selected file names
                                     document.getElementById('fileInput').addEventListener('change', function () {
-                                        const fileName = this.value.split('\\').pop(); // Extract the file name
-                                        document.querySelector('.selected-file').textContent = fileName || 'No file selected';
+                                        const files = this.files;
+                                        const fileNames = Array.from(files).map(file => file.name);
+                                        document.querySelector('.selected-file').textContent = fileNames.join(', ') || 'No file selected';
                                     });
                                 </script>
                             </div>

@@ -103,26 +103,7 @@
             <h3 id="currentTime">03:46:00 PM</h3>
             <script src="/USCFMS/time.js"></script>
         </div>
-        <div class="rightCard">
-            <h3>15</h3>
-            <p>Active</p>
-            <img src="media/active.svg" />
-        </div>
-        <div class="rightCard">
-            <h3>9</h3>
-            <p>Unread</p>
-            <img src="media/mail-all-unread-svgrepo-com.svg" />
-        </div>
-        <div class="rightCard">
-            <h3>5</h3>
-            <p>Resolved</p>
-            <img src="media/resolved.svg" />
-        </div>
-        <div class="rightCard">
-            <h3>3</h3>
-            <p>Discarded</p>
-            <img src="media/discarded.svg" />
-        </div>
+        <?php include(dirname(__DIR__) . "/php/getCountCard.php") ?>
 
     </div>
 

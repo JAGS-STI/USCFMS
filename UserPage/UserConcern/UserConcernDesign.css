@@ -5,9 +5,9 @@
     height: calc(100vh - 480px);
 }
 
-@media (max-height: 1780px) {
+@media (max-height: 1580px) {
     .pageContent {
-        height: 1400px;
+        height: 1100px;
     }
 }
 .PageSubtitle img

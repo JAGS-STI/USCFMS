@@ -12,6 +12,22 @@
 
     <link rel="stylesheet" href="adminViewTicketDesign.css" />
     <link rel="stylesheet" href="/USCFMS/AdminPage/Sidebar/sidebarDesign.css" />
+
+    <script>
+        function toggleSurveyPanel(toggle) {
+            var forgetPanel = document.getElementsByClassName('shadow');
+
+            if (toggle === "open"){
+                forgetPanel[0].style.display = "flex";
+                document.body.style.overflowY = 'hidden';
+            } else {
+                forgetPanel[0].style.display = "none";
+                document.body.style.overflowY = 'scroll';
+            }
+        }
+    </script>
+
+    <script src="/USCFMS/AdminPage/java/updateStatus.js"></script>
 </head>
 <body>
     <div>
@@ -38,40 +54,32 @@
             <p id="view">View survey result</p>
 
             <div class="btn">
-                <button id="btnView">View</button>
+                <button id="btnView" onclick="toggleSurveyPanel('open')">View</button>
                 <p id="not">No available result.</p>  
             </div>
             
         </div>
+        <!-- Concern Information -->
         <?php include(dirname(__DIR__) . "/php/getConcernInfo.php")?>
         
         <div class="pageInfos">
+            <!-- Account Information -->
             <?php include(dirname(__DIR__) . "/php/getAccountInfo.php")?>
 
-            <div class="evidence">
-                <h4>Uploaded evidence:</h4>
-                <div class="imgs">
-                    <img src="/USCFMS/AdminPage/uploads/10012_Evidence.png">
-                    <img src="media/blank-image-svgrepo-com.svg">
-                    <img src="media/blank-image-svgrepo-com.svg">
-                    <img src="media/blank-image-svgrepo-com.svg">
-                    <img src="media/blank-image-svgrepo-com.svg">
-                </div>   
-            </div>
-            <div class="upldID">
-                <h4>Uploaded valid ID:</h4>
-                <div class="imgs">
-                    <img src="media/blank-image-svgrepo-com.svg">
-                </div>  
-            </div>
+            <!-- Concern Photo Evidences -->
+            <?php include(dirname(__DIR__) . "/php/getEvidence.php")?>
+            
+            <!-- Account Photo ID -->
+            <?php include(dirname(__DIR__) . "/php/getPhotoID.php")?>
 
             <div class="expandsPart">
                 <div class="expands">
                     <p>Set status:</p>
                     <div class="xpnd">
-                        <select id="statusBox" placeholder="Type Here" required >
+                        <select id="statusBox" value="Unread" required >
                             <option value="Active">Active</option>
                             <option value="Pending">Pending</option>
+                            <option value="Unread">Unread</option>
                             <option value="Resolved">Resolved</option>
                         </select>
                     </div>
@@ -79,8 +87,8 @@
                 <div class="expands">
                     <p>Set priority level:</p>
                     <div class="xpnd">
-                        <select id="priorBox" placeholder="Type Here" required >
-                            <option value="">-----</option>
+                        <select id="priorBox" required >
+                            <option value="-----">-----</option>
                             <option value="Urgent">Urgent</option>
                             <option value="High">High</option>
                             <option value="Normal">Normal</option>
@@ -92,9 +100,9 @@
             <p id="printCopy">A printable copy of this report can be found on the Documentations page.</p>
         </div>    
         <div class="buttons">
-            <button>Save and close</button>
-            <button>Close without saving</button>
-            <button>Discard this ticket</button>
+            <button id="saveNclose">Save and close</button>
+            <button id="close">Close without saving</button>
+            <button id="discard">Discard this ticket</button>
         </div>
     </div>
 
@@ -202,7 +210,11 @@
                     <h3>email@domain.com</h3>
                 </div>
             </div>
-        
+
+            <div class="closeBtn" onclick="toggleSurveyPanel('close')">
+                <img src="media/button-error-svgrepo-com.svg">
+            </div>
+
             <div class="popContent">
                 <div id="top" class="title">
                     <h1 id="subTitle">Concern Details</h1>

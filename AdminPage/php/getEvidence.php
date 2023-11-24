@@ -13,18 +13,18 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT idPath FROM useraccount, concerndetail, idphoto
-            WHERE concerndetail.accID = useraccount.accID AND concerndetail.concernID = $concernID AND useraccount.photoID = idphoto.photoID";
+    $sql = "SELECT photoEvidence FROM concernphoto, concerndetail
+            WHERE concerndetail.concernID = $concernID AND concerndetail.concernID = concernphoto.concernID";
     // Execute the SQL query to retrieve the data from the database
     
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-    echo    '<div class="upldID">
-                <h4>Uploaded valid ID:</h4>
+    echo    '<div class="evidence">
+                <h4>Uploaded evidence:</h4>
                 <div class="imgs">';
     while ($row = $result->fetch_assoc()) {
-        $idPath = $row['idPath'];
+        $idPath = $row['photoEvidence'];
         $pathFormat = '/USCFMS' . $idPath;
     echo            '<img src="' . $pathFormat . '">';
     }         
@@ -33,10 +33,14 @@
     }
     
     /* OLD TEMPLATE
-    <div class="upldID">
-        <h4>Uploaded valid ID:</h4>
+    <div class="evidence">
+        <h4>Uploaded evidence:</h4>
         <div class="imgs">
+            <img src="/USCFMS/AdminPage/uploads/10012_Evidence.png">
             <img src="media/blank-image-svgrepo-com.svg">
-        </div>  
-    </div>*/
+            <img src="media/blank-image-svgrepo-com.svg">
+            <img src="media/blank-image-svgrepo-com.svg">
+            <img src="media/blank-image-svgrepo-com.svg">
+        </div>   
+     </div>*/
 ?>

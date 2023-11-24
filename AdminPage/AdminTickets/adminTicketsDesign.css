@@ -210,6 +210,10 @@ tr {
     border-radius: 50px;
 }
 
+.ticketID {
+    font-weight: bold;
+}
+
 #red {
     background-color: #d92b0b;
 }
