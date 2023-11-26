@@ -6,9 +6,9 @@
     height: 1000px;
     height: calc(100vh - 480px);
 }
-@media (max-height: 1480px) {
+@media (max-height: 1280px) {
     .pageContent {
-        height: 650px;
+        height: 800px;
     }
 }
 
@@ -21,14 +21,6 @@
     justify-content: center;
     margin-top: 10px;
 }
-
-#login,
-#signup
-{
-    cursor: pointer;
-}
-
-
 
 input {
     width: 320px;
@@ -137,7 +129,8 @@ input {
     background-color: #16601fa4;
 }
 
-#nameBox
+#emailBox,
+#passwordBox
 {
     width: 235px;
 }
@@ -228,4 +221,18 @@ input {
 {
     font-size: 12px;
     text-align: center;
+}
+
+.form-error {
+    margin-top: -10px;
+    font-size: 13px;
+    color: red;
+    margin-bottom: -10px;
+}
+
+.form-success {
+    margin-top: -10px;
+    font-size: 13px;
+    color: rgb(7, 173, 7);
+    margin-bottom: -10px;
 }

@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+    require_once "../php/config_session.inc.php";
+    require_once "../php/signup_view.inc.php";
+    require_once "../php/login_view.inc.php";
+?>
+
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -25,16 +32,21 @@
             }
         }
     </script>
+    <script> 
+        function login() {
+            onclick="window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html'"
+        }
+
+        function signup() {
+            onclick="window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html'"
+        }
+    </script>
 </head>
 <body>
     <div class="PageSubtitle">
         <p id="dateTime">ERROR: Date cannot display</p>
         <img src="Media/user-circle-svgrepo-com(1).svg"/>
-        <div class="register">
-            <p id="login" onclick="window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html'">Log in</p>
-            <p>|</p>
-            <p id="signup" onclick="window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html'">Sign up</p>
-        </div>
+        <?php output_account(); ?>
         <script src="/USCFMS/time.js"></script>
     </div>
     <div class="toolBar">
@@ -65,37 +77,41 @@
         </div>
     </div>
     <div class="pageContent">
-        <div class="subContent" id="loginPanel">
-            <div class="subhead">
-                <div class="login">
-                    <p id="log">Log in</p>
-                    <div class="underline"></div>
+        <form id="loginForm" action="../php/login.inc.php" method="post">
+            <div class="subContent" id="loginPanel">
+                <div class="subhead">
+                    <div class="login">
+                        <p id="log">Log in</p>
+                        <div class="underline"></div>
+                    </div>
+                    <p id="line">|</p>
+                    <p id="sign" onclick="window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html'">Sign up</p>
                 </div>
-                <p id="line">|</p>
-                <p id="sign" onclick="window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html'">Sign up</p>
-            </div>
 
-            <div class="sub">
-                <input id="nameBox" type="text" placeholder="Enter email address"/>
-                <div class="textline"></div>
-            </div>
-            <div class="sub">
-                <input id="nameBox" type="password" placeholder="Enter password"/>
-                <div class="textline"></div>
-            </div>
-            <div class="checkboxes">
-                <div class="check">
-                    <input id="check" type="checkbox"/>
-                    <p id="consent">Show password</p>
+                <div class="sub">
+                    <input id="emailBox" name="emailBox" type="text" placeholder="Enter email address"/>
+                    <div class="textline"></div>
                 </div>
-                <div class="check" id="rem">
-                    <input id="check" type="checkbox"/>
-                    <p id="consent">Remember me</p>
+                <div class="sub">
+                    <input id="passwordBox" name="passwordBox" type="password" placeholder="Enter password"/>
+                    <div class="textline"></div>
                 </div>
+                <div class="checkboxes">
+                    <div class="check">
+                        <input id="check" type="checkbox"/>
+                        <p id="consent">Show password</p>
+                    </div>
+                    <div class="check" id="rem">
+                        <input id="check" type="checkbox"/>
+                        <p id="consent">Remember me</p>
+                    </div>
+                </div>
+                <button id="btnLog">Log in</button>
+                <?php check_login_errors(); ?>
+                <p id="forgot" onclick="toggleForgetPanel('open')">Forgot password?</p>
             </div>
-            <button id="btnLog">Log in</button>
-            <p id="forgot" onclick="toggleForgetPanel('open')">Forgot password?</p>
-        </div>
+        </form>
+        
 
         <div class="subContent1" id="forgetPanel">
             <div class="subhead">

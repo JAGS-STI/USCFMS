@@ -1,4 +1,10 @@
-﻿    <!DOCTYPE html>
+﻿<?php 
+    require_once "../php/config_session.inc.php";
+    require_once "../php/signup_view.inc.php";
+    require_once "../php/login_view.inc.php";
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,6 +16,13 @@
 
     <link rel="stylesheet" href="UserSignupDesign.css" />
     <link rel="stylesheet" href="/USCFMS/UserPage/TopMenu/topMenuDesign.css" />
+    
+    <script>
+        function closePopUp() {
+            var popup = document.getElementById('signup_popup');
+            popup.style.display = 'none';
+        }
+    </script>
 </head>
 <body>
     <div class="PageSubtitle">
@@ -49,74 +62,113 @@
             <p>An account is required to submit a concern. Please log in or sign up to continue. </p>
         </div>
     </div>
+
     <div class="pageContent">
-        <div class="subContent">
-            <div class="subhead">
-                <div class="login">
-                    <p id="log" onclick="window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html'">Log in</p>
-                    <div class="underline"></div>
-                </div>
-                <p id="line">|</p>
-                <p id="sign">Sign up</p>
-            </div>    
-            <button id="signUp">Sign up</button>
-        </div>
-        
-        <div class="inputs">
-            <div class="leftInfos">
-                <div class="subInfos">
-                    <input id="nameBox" type="text" placeholder="Name"/>
-                    <div class="textline"></div>
-                </div>
-                <div class="subInfos">
-                    <input id="nameBox" type="text" placeholder="Contact number"/>
-                    <div class="textline"></div>
-                </div>
-            </div>
+        <div class="SignupContent">
+            <form id="signUpForm" action="../php/signup.inc.php" method="post" enctype="multipart/form-data">
+                <div class="subContent">
+                    <div class="subhead">
+                        <div class="login">
+                            <p id="log" onclick="window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html'">Log in</p>
+                            <div class="underline"></div>
+                        </div>
+                        <p id="line">|</p>
+                        <p id="sign">Sign up</p>
+                    </div>    
+                    
+                    <div class="inputs">
+                        <div class="leftInfos">
+                            <div class="subInfos">
+                                <?php signup_input_name(); ?>
+                                <div class="textline"></div>
+                            </div>
+                            <div class="subInfos">
+                                <?php signup_input_contact(); ?>
+                                <div class="textline"></div>
+                            </div>
+                        </div>
 
-            <div class="rightInfos">
-                <div class="subInfos">
-                    <input id="nameBox" type="text" placeholder="Your address"/>
-                    <div class="textline"></div>
-                </div>
-                <div class="upload">
-                    <p>Upload you valid ID <span style="color: red">*</span></p>
-                    <p id="file">Supported file types: JPG, PNG</p>
-                </div>
-                <button id="upload">Upload</button>
-                <!--<div class="subInfos">
-                    <input id="nameBox" type="password" placeholder="Enter password"/>
-                    <div class="textline"></div>
-                </div>
-                <div class="consent">
-                    <input id="check" type="checkbox"/>
-                    <p id="show">Show password</p>    
-                </div>-->
-            </div>
-            <div class="reminder">
-                <p id="rmndr">Reminder: The information above cannot be changed once submitted and signed up.</p>
-            </div>
-            <div class="consent">
-                <input id="check" type="checkbox"/>
-                <p id="show">I understand</p>    
-            </div>
-
-            <div class="downInfos">
-                <div class="subInfos">
-                    <input id="nameBox" type="text" placeholder="Enter emai address"/>
-                    <div class="textline"></div>
-                </div>
-                <div class="subInfos">
-                    <input id="nameBox" type="password" placeholder="Password"/>
-                    <div class="textline"></div>
-                    <div class="consentShow">
-                        <input id="check" type="checkbox"/>
-                        <p id="show">Show password</p>    
+                        <div class="rightInfos">
+                            <div class="subInfos">
+                                <select id="streetBox" name="streetBox" value="Select your Street" required >
+                                    <option value="A. Bonifacio Street">A. Bonifacio Street</option>
+                                    <option value="A. Mabini Street">A. Mabini Street</option>
+                                    <option value="Kalayaan Street">Kalayaan Street</option>
+                                    <option value="Bagong Calzada">Bagong Calzada</option>
+                                    <option value="Camia Street">Camia Street</option>
+                                    <option value="Colonel C. Flores Street">Colonel C. Flores Street</option>
+                                    <option value="E. Aguinaldo Street">E. Aguinaldo Street</option>
+                                </select>
+                                <div class="textline"></div>
+                            </div>
+                            <div class="uploadField">
+                                <p>Upload your valid ID: <span style="color: red">*</span></p>
+                                <p id="file">Supported file types: JPG, PNG</p>
+                                <div class="inbox" id="invi">
+                                    <div class="upload">
+                                        <button for="fileInput" class="upload-button" id="upload">Upload</button>
+                                        <input class="file-input" type="file" id="fileInput" name="fileInput" accept=".jpeg, .jpg, .png" required>
+                                        <script>
+                                            // JavaScript to display the selected file names
+                                            document.getElementById('fileInput').addEventListener('change', function () {
+                                                const files = this.files;
+                                                const fileNames = Array.from(files).map(file => file.name);
+                                                document.querySelector('.selected-file').textContent = fileNames.join(', ') || 'No file selected';
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span-text">
+                                <span class="selected-file">No file selected</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
+                    <div class="reminder">
+                        <p id="rmndr">Reminder: The information above cannot be changed once submitted and signed up.</p>
+                        <div class="consent">
+                            <input id="check" type="checkbox" required>
+                            <p id="show">I understand</p>    
+                        </div>
+                    </div>
+
+                    <div class="downInfos">
+                        <div class="subInfos">
+                            <?php signup_input_email(); ?>
+                            <div class="textline"></div>
+                        </div>
+                        <div class="subInfos">
+                            <input id="passwordBox" name="passwordBox" type="password" placeholder="Password" required>
+                            <div class="textline"></div>
+                            <div class="consentShow">
+                                <input id="check" type="checkbox">
+                                <p id="show">Show password</p>    
+                            </div>
+                        </div>
+                    </div>  
+                    
+                    <input type="submit"  id="signUpBtn" class="submit" value="Sign-up" disabled>
+                    <script>
+                    // Get references to the form and submit button
+                    var myForm = document.getElementById("signUpForm");
+                    var submitBtn = document.getElementById("signUpBtn");
+                
+                    // Add an event listener to the form to check the form validity
+                    myForm.addEventListener("input", function() {
+                        // Check if the form is valid
+                        var isFormValid = myForm.checkValidity();
+                
+                        // Update the state of the submit button
+                        submitBtn.disabled = !isFormValid;
+                    });
+                    </script>
+                    <?php
+                        check_signup_errors();
+                    ?>
+                </div>
+            </form>
+        </div>
 
         <!--bottom-->
         <footer class="copyRight">
@@ -127,15 +179,37 @@
             </p>
         </footer>
     </div>
-    <div class="shadow">
+    <div class="shadow" id="signup_popup">
         <div class="popup">
             <p id="head">Signed up successfully!</p>
             <p>You can now log in.</p>
             <div class="buttons">
-                <button>Log in</button>
+                <button onclick="window.location.href='../UserLogin/UserLogin.html'">Log in</button>
             </div>
-            <img src="Media/button-error-svgrepo-com.svg">
+            <img src="Media/button-error-svgrepo-com.svg" onclick="closePopUp()">
         </div>        
     </div>
+
+    <script>
+        // Function to get URL parameter by name
+        function getUrlParameter(name) {
+            let searchParams = new URLSearchParams(window.location.search);
+            return searchParams.get(name) || '';
+        }
+
+        // Check the value of the 'signup' parameter
+        let signupValue = getUrlParameter('signup');
+
+        // Check if signupValue is equal to 'success'
+        if (signupValue === 'success') {
+            // Get the element with the ID 'signup_popup' and set its style to 'display: flex'
+            let signupPopup = document.getElementById('signup_popup');
+            if (signupPopup) {
+                signupPopup.style.display = 'flex';
+            } else {
+                signupPopup.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>

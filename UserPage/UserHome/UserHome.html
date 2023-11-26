@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+    require_once "../php/config_session.inc.php";
+    require_once "../php/signup_view.inc.php";
+    require_once "../php/login_view.inc.php";
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -11,17 +17,22 @@
     <link rel="stylesheet" href="UserHomeDesign.css"/>
     <link rel="stylesheet" href="/USCFMS/UserPage/TopMenu/topMenuDesign.css" />
 
+    <script> 
+        function login() {
+            window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html';
+        }
+
+        function signup() {
+            window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html';
+        }
+    </script>
 </head>
 <body>
 
     <div class="PageSubtitle">
         <p id="dateTime">ERROR: Date cannot display</p>
         <img src="Media/user-circle-svgrepo-com(1).svg"/>
-        <div class="register">
-            <p id="login" onclick="window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html'">Log in</p>
-            <p>|</p>
-            <p id="signup" onclick="window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html'">Sign up</p>
-        </div>
+        <?php output_account(); ?>
         <script src="/USCFMS/time.js"></script>
     </div>
     <div class="toolBar">

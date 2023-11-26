@@ -3,24 +3,30 @@
     top: 480px;
     /*background: #c3bfbf;*/
     width: 100%;
-    height: 1000px;
+    /* height: 1000px; */
     height: calc(100vh - 480px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-@media (max-height: 1480px) {
+
+@media (max-height: 1280px) {
     .pageContent {
-        height: 1000px;
+        height: 800px;
     }
 }
 
-.subContent
-{
+.SignupContent {
+    position: relative;
+}
+
+.subContent {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-
 }
 
 .underline 
@@ -84,13 +90,9 @@ input {
 .inputs
 {
     position: relative;
-    right: 25%;
-    left: 25%;
-    width: 50%;
     display: flex;
     gap: 100px;
     justify-content: center;
-
 }
 
 .leftInfos
@@ -103,50 +105,23 @@ input {
 .rightInfos
 {
     position: relative;
-}
-
-.upload
-{
-    margin-top: 50px;
-    margin-left: 20px;
-}
-
-#file
-{
-    margin-top: -10px;
-    font-size: 10px;
-    color: gray;
-}
-
-.upload
-{
-    font-size: 15px;
-}
-
-#upload
-{
-    position: absolute;
-    right: -10px;
-    height: 30px;
-    width: 90px;
-    margin-top: -50px;
-    border-radius: 20px;
-    background-color: transparent;
-    border-style:solid;
-    border-color: black;
-    cursor: pointer;
-    font-weight: bold;
-
-}
-
-.consent
-{
-    position: absolute;
-    margin-top: 180px;
-    margin-right: 480px;
     display: flex;
-    gap: 10px;
-    align-items:center ;
+    flex-direction: column;
+    gap:31px;
+}
+
+.rightInfos select {
+    width: 230px;
+    height: 35px;
+    margin-left: 15px;
+    border-style: none;
+    background: none;
+    color: black;
+    outline: none;
+}
+
+.inbox select option {
+    text-decoration: bold;
 }
 
 .consentShow
@@ -155,43 +130,127 @@ input {
     gap: 10px;
     align-items: center;
 }
-#check
+
+
+.downInfos
 {
-    height: 15px;
-    width: 15px;
+    position: relative;
+    top: 15px;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
 }
 
-#signUp
+.buttons
 {
-    position: absolute;
-    top: 500px;
+    display: flex;
+    gap: 20px;
+}
+
+.buttons button
+{
+    background-color: #00742F;
+    border-radius: 20px;
     height: 40px;
     width: 150px;
-    border-radius: 20px;
-    background-color: #16601f;
+    font-size: 18px;
     color: white;
     font-weight: bold;
-    font-size: 15px;
     cursor: pointer;
 }
 
-#show
-{
-    font-size: 14px;
+.otherInfos {
+    position: relative;
+    top: 10px;
+    width: 598px;
 }
 
-#head
+.uploadField 
 {
-    margin-bottom:120px;
+    margin-left: 15px;
+}
+
+#file
+{
+    margin-top: -15px;
+    font-size: 10px;
+    color: gray;
+}
+#invi {
+    background: none;
+}
+
+
+.file-input {
     position: absolute;
+    left: 0;
+    margin-left: -10px;
+    font-size: 55px; /* Set a large font size to cover the button */
+    width: 150px;
+    height: 40px;
+    opacity: 0; /* Make the actual file input transparent */
+    cursor: pointer;
+}
+
+.upload-button {
+    font-weight: bold;
+    font-size: 15px;
+    height: 40px;
+    width: 140px;
+    background: none;
+    border-radius: 20px;
+}
+
+.span-text {
+    position: relative;
+    top: -30px;
+    margin-left: 15px;
+    width: 100%;
+    max-width: 245px;
+}
+
+.selected-file {
+    margin-left: 0px;
+    font-size: 14px;
+    width: 100px;
+    text-wrap: nowrap;
+}
+
+.concernfield .inbox img {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    bottom: 32px;
+    margin-left: 310px;
+}
+
+.upload {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    top: 85px;
+    left: 180px;
+}
+
+#upload
+{
+    height: 30px;
+    width: 90px;
+    border-radius: 20px;
+    background-color: transparent;
+    border-style: solid;
+    border-color: black;
+    cursor: pointer;
     font-weight: bold;
 }
 
 .reminder
 {
-    position: absolute;
-    margin-top: 150px;
-    margin-right: 80px;
+    position: relative;
+    top: -10px;
+    width: 598px;
+    margin-left: 30px;
 }
 
 #rmndr
@@ -200,17 +259,52 @@ input {
     color: red;
 }
 
-.downInfos
+.consent
 {
-    position: absolute;
-    right: 25%;
-    left: 25%;
-    width: 50%;
-    top:250px;
+    margin-left: -15px;
+    height: 10px;
+    position: relative;
     display: flex;
-    gap: 100px;
-    justify-content: space-evenly;
+    gap: 10px;
+    align-items: center ;
 }
+
+.submit {
+    position: relative;
+    top: 50px;
+    height: 50px;
+    width: 160px;
+    background-color: #16601f;
+    border-radius: 50px;
+    border-style: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+#signUpBtn:disabled {
+    background-color: #ddd;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.submit:hover { 
+    transition: 0.3s;
+    background-color: #1a7225;
+}
+
+#check
+{
+    height: 15px;
+    width: 15px;
+}
+
+/* Shadow Pop-up */
+
 .shadow
 {
     display: none;
@@ -246,20 +340,24 @@ input {
     cursor: pointer;
 }
 
-.buttons
+#show
 {
-    display: flex;
-    gap: 20px;
+    font-size: 14px;
 }
 
-.buttons button
+#head
 {
-    background-color: #00742F;
-    border-radius: 20px;
-    height: 40px;
-    width: 150px;
-    font-size: 18px;
-    color: white;
+    margin-bottom:120px;
+    position: absolute;
     font-weight: bold;
-    cursor: pointer;
+}
+
+.form-error {
+    font-size: 13px;
+    color: red;
+}
+
+.form-success {
+    font-size: 13px;
+    color: rgb(7, 173, 7);
 }

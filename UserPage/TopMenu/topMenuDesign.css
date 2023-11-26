@@ -229,8 +229,11 @@ body {
 
 .register
 {
-    position: absolute;
+    position: relative;
+    height: 30px;
     display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 15px;
     right: 90px;
 }
@@ -241,7 +244,27 @@ body {
     cursor: pointer;
 }
 
-.register a:hover
+#login:hover,
+#signup:hover
 {
     text-decoration: underline;
+}
+
+.logoutBtn {
+    position: relative;
+    font-weight: bold;
+    font-size: 11px;
+    cursor: pointer;
+    bottom: 0;
+    background-color: white;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    width: 60px;
+    height: 20px;
+}
+
+.logoutBtn:hover {
+    transition: 0.2s;
+    background-color: rgb(238, 238, 238);
 }
