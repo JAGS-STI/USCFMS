@@ -30,6 +30,7 @@
     height: 390px;
     gap: 50px;
 }
+
 .card-content 
 {
     display: flex;
@@ -87,58 +88,4 @@
 {
     
     font-size: 15px;
-}
-
-.shadow
-{
-    display: none;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.384);
-    height: 100vh;
-    width: 100%;
-    top: 0;
-}
-
-.popup
-{
-    position: relative;
-    height: 150px;
-    width: 450px;
-    background-color: white;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.popup img
-{
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    right: 13px;
-    top: 10px;
-    cursor: pointer;
-}
-
-.buttons
-{
-    display: flex;
-    gap: 20px;
-
-}
-
-.buttons button
-{
-    background-color: #00742F;
-    border-radius: 20px;
-    height: 40px;
-    width: 150px;
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
 }

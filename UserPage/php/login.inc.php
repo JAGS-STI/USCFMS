@@ -41,6 +41,9 @@
 
             $_SESSION["user_id"] = $result["accID"];
             $_SESSION["user_name"] = htmlspecialchars($result["name"]) ;
+            $_SESSION["user_email"] = $result["email"];
+            $_SESSION["user_contact"] = $result["contact"];
+            $_SESSION["user_street"] = $result["address"];
 
             $_SESSION["last_regeneration"] = time();
 

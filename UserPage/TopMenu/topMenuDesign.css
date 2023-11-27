@@ -114,6 +114,7 @@ body {
     text-shadow: 0px 0px 2px #575500ec;
     color: #575500;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .menuOptions a:hover 
@@ -227,6 +228,8 @@ body {
     right: 5px;
 }
 
+/* User Profile Buttons */
+
 .register
 {
     position: relative;
@@ -239,7 +242,9 @@ body {
 }
 
 #login,
-#signup
+#signup,
+#user_name,
+#profile_pic
 {
     cursor: pointer;
 }
@@ -268,3 +273,60 @@ body {
     transition: 0.2s;
     background-color: rgb(238, 238, 238);
 }
+
+/* Login Popup */
+
+.shadow-login
+{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.384);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+}
+
+.shadow-login .popup
+{
+    position: relative;
+    height: 150px;
+    width: 450px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+    .shadow-login .popup img
+    {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        right: 13px;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    .shadow-login .popup .pop-buttons
+    {
+        display: flex;
+        gap: 20px;
+
+    }
+
+        .shadow-login .popup .pop-buttons button
+            {
+                background-color: #00742F;
+                border-radius: 20px;
+                height: 40px;
+                width: 150px;
+                font-size: 18px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+            }
+

@@ -9,11 +9,9 @@
 <head>
     <meta charset="utf-8" />
     <title>User Sign up | Ususan SCFMS</title>
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     </style>
-
     <link rel="stylesheet" href="UserSignupDesign.css" />
     <link rel="stylesheet" href="/USCFMS/UserPage/TopMenu/topMenuDesign.css" />
     
@@ -23,21 +21,11 @@
             popup.style.display = 'none';
         }
     </script>
-
-    <script> 
-        function login() {
-            window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html';
-        }
-
-        function signup() {
-            window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html';
-        }
-    </script>
+    <script src="/USCFMS/UserPage/java/user.inc.js"></script>
 </head>
 <body>
     <div class="PageSubtitle">
         <p id="dateTime">ERROR: Date cannot display</p>
-        <img src="Media/user-circle-svgrepo-com(1).svg"/>
         <?php output_account(); ?>
         <script src="/USCFMS/time.js"></script>
     </div>
@@ -56,7 +44,7 @@
             <a href="/USCFMS/UserPage/UserAbout/UserAbout.html">About the Barangay</a>
             <a id="contact" href="/USCFMS/UserPage/UserContact/UserContact.html">Contact</a>
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
-            <a href="/USCFMS/UserPage/UserConcern/UserConcern.html">Submit Concern</a>
+            <?php tosubmitBtn(); ?>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
             <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Suggestions</a>
         </div>
@@ -148,7 +136,7 @@
                             <input id="passwordBox" name="passwordBox" type="password" placeholder="Password" required>
                             <div class="textline"></div>
                             <div class="consentShow">
-                                <input id="check" type="checkbox">
+                                <input id="check" type="checkbox" onclick="togglePassword()" >
                                 <p id="show">Show password</p>    
                             </div>
                         </div>
@@ -187,14 +175,15 @@
     </div>
     <div class="shadow" id="signup_popup">
         <div class="popup">
-            <p id="head">Signed up successfully!</p>
+            <p id="signupHeader">Signed up successfully!</p>
             <p>You can now log in.</p>
             <div class="buttons">
                 <button onclick="window.location.href='../UserLogin/UserLogin.html'">Log in</button>
             </div>
             <img src="Media/button-error-svgrepo-com.svg" onclick="closePopUp()">
-        </div>        
+        </div>
     </div>
+    <?php login_popup(); ?>
 
     <script>
         // Function to get URL parameter by name

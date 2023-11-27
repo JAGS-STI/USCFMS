@@ -27,6 +27,8 @@
         }
     </script>
 
+    <!-- <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script> -->
+
     <script src="/USCFMS/AdminPage/java/updateStatus.js"></script>
 </head>
 <body>
@@ -194,9 +196,18 @@
                 </div>
             </div>
 
-            <div class="closeBtn" onclick="toggleSurveyPanel('close')">
+            <div class="closeBtn" id="downloadPdf" onclick="toggleSurveyPanel('close')">
                 <img src="media/button-error-svgrepo-com.svg">
             </div>
+            <!-- <script>
+                document.getElementById('downloadPdf').addEventListener('click', function () {
+                    // Select the element to convert to PDF
+                    var element = document.querySelector('.popup');
+
+                    // Use html2pdf library to generate PDF
+                    html2pdf(element);
+                });
+            </script> -->
 
             <div class="popContent">
                 <div id="top" class="title">

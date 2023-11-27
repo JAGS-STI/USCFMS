@@ -18,17 +18,105 @@
 
     function output_account() {
         if (isset($_SESSION["user_id"])) {
+            echo '<img id="profile_pic" onclick="toaccount()" src="/USCFMS/UserPage/UserHome/Media/user-circle-svgrepo-com(1).svg" />';
             echo '<div class="register">
-                    <p id="user_name">Logged in as: ' . $_SESSION["user_name"] . '</p>
+                    <p id="user_name" onclick="toaccount()">Logged in as: ' . $_SESSION["user_name"] . '</p>
                     <form action="../php/logout.inc.php" method="post">
                         <button class="logoutBtn">Log-out</button>
                     </form>
                 </div>';
         } else {
+            echo '<img id="profile_pic" onclick="toggleLoginPopup(\'open\')" src="/USCFMS/UserPage/UserHome/Media/user-circle-svgrepo-com(1).svg" />';
             echo '<div class="register">
-                    <p id="login" onclick="login()">Log in</p>
+                    <p id="login" onclick="tologin()">Log in</p>
                     <p>|</p>
-                    <p id="signup" onclick="signup()">Sign up</p>
+                    <p id="signup" onclick="tosignup()">Sign up</p>
                 </div>';
         }
+    }
+
+    function tosubmitBtn() {
+        if (isset($_SESSION["user_id"])) {
+            echo '<a href="/USCFMS/UserPage/UserConcern/UserConcern.html">Submit Concern</a>';
+        } else {
+            echo '<a onclick="toggleLoginPopup(\'open\')">Submit Concern</a>';
+        }
+    }
+
+    function tosubmitHomeBtn() {
+        if (isset($_SESSION["user_id"])) {
+            echo '<button class="submit" onclick="tosubmitconcern()">SUBMIT</button>';
+        } else {
+            echo '<button class="submit" onclick="toggleLoginPopup(\'open\')">SUBMIT</button>';
+        }
+    }
+
+    function userDetail() {
+        if (isset($_SESSION["user_id"])) {
+            $formattedContact = substr($_SESSION["user_contact"], 0, 4) . ' ' . substr($_SESSION["user_contact"], 4, 3) . ' ' . substr($_SESSION["user_contact"], 7);
+            echo '<div class="field1">
+                    <h1 id="headTitle">Personal Information</h1>
+                    <div class="underline"></div>
+                    <p id="required">Fields with * are required</p>
+                    <div class="fld">
+                        <p>You are logged in as:</p>
+                        <p id="bold">' . $_SESSION["user_name"] . '</p>
+                    </div>
+                    <div class="fld">
+                        <p>Email address:</p>
+                        <p id="bold">' . $_SESSION["user_email"] . '</p>
+                    </div>
+                    <div class="fld">
+                        <p>Contact number:</p>
+                        <p id="bold">' . $formattedContact . '</p>
+                    </div>
+                    <div class="fld">
+                        <p>Your address:</p>
+                        <p id="bold">' . $_SESSION["user_street"] . '</p>
+                    </div>
+
+                    <p id="inf">The information above will be used and kept on this concern submission.</p>
+                </div>';
+        } else {
+            echo '<h1>Please Login first</h1>';
+            header("Location: ../UserLogin/UserLogin.html");
+        }
+    }
+
+    function login_popup() {
+        echo '<div class="shadow-login" id="login-popup">
+                <div class="popup">
+                    <p id="head">You need to log in or sign up first.</p>
+                    <div class="pop-buttons">
+                        <button onclick="tologin()">Log in</button>
+                        <button onclick="tosignup()">Sign up</button>
+                    </div>
+                    <img onclick="toggleLoginPopup('."'close'".')" src="\USCFMS\UserPage\UserHome\Media\button-error-svgrepo-com.svg">
+                </div>
+            </div>';
+    }
+
+    function userProfileDetails() {
+        $formattedContact = substr($_SESSION["user_contact"], 0, 4) . ' ' . substr($_SESSION["user_contact"], 4, 3) 
+        . ' ' . substr($_SESSION["user_contact"], 7);
+        echo '<div class="first">        
+                <div class="NameNAdd">
+                    <p>Name:</p>
+                    <p id="details">' . $_SESSION["user_name"] . '</p>
+                </div>
+                <div class="NameNAdd">
+                    <p>Your address:</p>
+                    <p id="details">' . $_SESSION["user_email"] . '</p>
+                </div>
+            </div>
+            <div class="first">        
+                <div class="NameNAdd">
+                    <p>Contact number:</p>
+                    <p id="details">' . $formattedContact . '</p>
+                </div>
+                <div class="NameNAdd">
+                    <p>Email address:</p>
+                    <p id="details">' . $_SESSION["user_street"] . '</p>
+                </div>
+            </div>';
     }
