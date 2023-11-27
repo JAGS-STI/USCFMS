@@ -4,6 +4,6 @@
     session_unset();
     session_destroy();
 
-    header("Location: ../UserLogin/UserLogin.html?logout=true");
+    header("Location: ../UserHome/UserHome.html?logout=true");
     die();
 ?>

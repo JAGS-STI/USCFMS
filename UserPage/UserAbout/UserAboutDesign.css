@@ -24,26 +24,6 @@
     right: 5px;
 }
 
-.register
-{
-    position: absolute;
-    display: flex;
-    font-size: 15px;
-    right: 90px;
-}
-
-#login,
-#signup
-{
-    cursor: pointer;
-}
-
-.register p:hover
-{
-    text-decoration: underline;
-}
-
-
 .PageMenu p:hover {
     cursor: pointer;
     text-decoration: underline;
