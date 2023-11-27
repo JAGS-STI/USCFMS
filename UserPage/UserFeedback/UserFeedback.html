@@ -16,16 +16,21 @@
 
     <link rel="stylesheet" href="UserFeedbackDesign.css" />
     <link rel="stylesheet" href="/USCFMS/UserPage/TopMenu/topMenuDesign.css" />
+    <script> 
+        function login() {
+            window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html';
+        }
+
+        function signup() {
+            window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html';
+        }
+    </script>
 </head>
 <body>
     <div class="PageSubtitle">
         <p id="dateTime">ERROR: Date cannot display</p>
         <img src="Media/user-circle-svgrepo-com(1).svg"/>
-        <div class="register">
-            <p id="login" onclick="window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html'">Log in</p>
-            <p>|</p>
-            <p id="signup" onclick="window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html'">Sign up</p>
-        </div>
+        <?php output_account(); ?>
         <script src="/USCFMS/time.js"></script>
     </div>
     <div class="toolBar">
