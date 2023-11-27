@@ -42,7 +42,7 @@
 
 @media (max-height: 1080px) {
     .pageContent {
-        height: 1000px;
+        height: 1200px;
     }
 }
 
@@ -105,12 +105,14 @@
     cursor: pointer;
 }
 
-.second
+.second,
+.mssgs
 {
     margin-top: 80px;
 }
 .DashCnrcn,
-.headtitle
+.headtitle,
+.DashMssgs
 {
     position: relative;
 }
@@ -158,6 +160,7 @@ tr {
 
 .ticketID{
     cursor: pointer;
+    font-weight: bold;
 }
 .active {
     display: flex;

@@ -73,6 +73,63 @@
     </div>
 
     <div class="pageContent">
+    <h2 id="filterTitle">Filter list</h2>
+        <div class="filters">
+            <div class="concernfield">
+            <p id="headField">Concern type:</p>
+                <div class="inbox">
+                    <select id="concernBox" name="concernBox" placeholder="Type Here" required >
+                        <option value="Road and highways">Road and highways</option>
+                        <option value="Residential">Residential</option>
+                        <option value="Schools">Schools</option>
+                        <option value="Safety and security">Safety and security</option>
+                        <option value="Infrastructures and facilities">Infrastructures and facilities</option>
+                        <option value="Animal Welfare">Animal Welfare</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+            </div>
+            <div class="concernfield">
+            <p id="headField">Location:</p>
+                <div class="inbox">
+                    <select id="concernBox" name="concernBox" placeholder="Type Here" required >
+                        <option value="BCDA">BCDA</option>
+                        <option value="Tomasa St.">Tomasa St.</option>
+                        <option value="MRB">MRB</option>
+                        <option value="Levi Mariano Ave.">Levi Mariano Ave.</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="filters">
+            <div class="concernfield">
+            <p id="headField">Status:</p>
+                <div class="inbox">
+                    <select id="concernBox" name="concernBox" placeholder="Type Here" required >
+                        <option value="Active">Active</option>
+                        <option value="Unread">Unread</option>
+                        <option value="Resolved">Resolved</option>
+                        <option value="Pending">Resolved</option>
+                        <option value="Discarded">Discarded</option>
+                    </select>
+                </div>
+            </div>
+            <div class="concernfield">
+            <p id="headField">Priority:</p>
+                <div class="inbox">
+                    <select id="concernBox" name="concernBox" placeholder="Type Here" required >
+                        <option value="Urgent">Urgent</option>
+                        <option value="High">High</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button id="fltrNow">Filter now</button>
+
+
+
         <p id="info">Click on a concern ID to view its contents.</p>
         <img src="media/information-circle-svgrepo-com.svg" />
         
