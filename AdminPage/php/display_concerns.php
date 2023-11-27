@@ -47,6 +47,40 @@ if ($result->num_rows > 0) {
     echo 'No concerns found.';
 }
 
+// OLD_TEMPLATE
+// <table>
+//     <tr class="head">
+//         <th width="250px">Concern ID</th>
+//         <th width="270px">Date submitted</th>
+//         <th width="350px">Concern type</th>
+//         <th width="150px">Status</th>
+//     </tr>
+//     <tr class="tbl">
+//         <td class="ticketID">SC-12345</td>
+//         <td>October 26, 2023</td>
+//         <td>Residential</td>
+//         <td class="active"><div class="dot"></div>Active</td>
+//     </tr>
+//     <tr class="tbl">
+//         <td class="ticketID">SC-12345</td>
+//         <td>October 26, 2023</td>
+//         <td>Residential</td>
+//         <td class="active"><div class="dot"></div>Active</td>
+//     </tr>
+//     <tr class="tbl">
+//         <td class="ticketID">SC-12345</td>
+//         <td>October 26, 2023</td>
+//         <td>Residential</td>
+//         <td class="active"><div class="dot"></div>Active</td>
+//     </tr>
+//     <tr class="tbl">
+//         <td class="ticketID">SC-12345</td>
+//         <td>October 26, 2023</td>
+//         <td>Residential</td>
+//         <td class="active"><div class="dot"></div>Active</td>
+//     </tr>
+// </table>
+
 // Function to determine status color
 function getStatusColor($status)
 {

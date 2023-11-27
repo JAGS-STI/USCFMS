@@ -317,7 +317,7 @@ input {
     top: 0;
 }
 
-.popup
+.shadow .popup
 {
     position: relative;
     height: 200px;
@@ -330,7 +330,7 @@ input {
     flex-direction: column;
 }
 
-.popup img
+.shadow .popup img
 {
     position: absolute;
     height: 20px;
@@ -345,7 +345,7 @@ input {
     font-size: 14px;
 }
 
-#head
+#signupHeader
 {
     margin-bottom:120px;
     position: absolute;

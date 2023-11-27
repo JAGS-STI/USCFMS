@@ -23,3 +23,12 @@ function toggleLoginPopup($toggle) {
         $popupWindow.style.display = 'none';
     }
 }
+
+function togglePassword() {
+    var passwordField = document.getElementById("passwordBox");
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+    } else {
+        passwordField.type = "password";
+    }
+}

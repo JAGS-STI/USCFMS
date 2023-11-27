@@ -242,7 +242,9 @@ body {
 }
 
 #login,
-#signup
+#signup,
+#user_name,
+#profile_pic
 {
     cursor: pointer;
 }
@@ -274,7 +276,7 @@ body {
 
 /* Login Popup */
 
-.shadow
+.shadow-login
 {
     display: none;
     align-items: center;
@@ -286,7 +288,7 @@ body {
     top: 0;
 }
 
-.popup
+.shadow-login .popup
 {
     position: relative;
     height: 150px;
@@ -299,7 +301,7 @@ body {
     flex-direction: column;
 }
 
-    .popup img
+    .shadow-login .popup img
     {
         position: absolute;
         height: 20px;
@@ -309,22 +311,22 @@ body {
         cursor: pointer;
     }
 
-.pop-buttons
-{
-    display: flex;
-    gap: 20px;
-
-}
-
-    .pop-buttons button
+    .shadow-login .popup .pop-buttons
     {
-        background-color: #00742F;
-        border-radius: 20px;
-        height: 40px;
-        width: 150px;
-        font-size: 18px;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
+        display: flex;
+        gap: 20px;
+
     }
+
+        .shadow-login .popup .pop-buttons button
+            {
+                background-color: #00742F;
+                border-radius: 20px;
+                height: 40px;
+                width: 150px;
+                font-size: 18px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+            }
 

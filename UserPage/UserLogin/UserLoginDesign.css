@@ -6,9 +6,9 @@
     height: 1000px;
     height: calc(100vh - 480px);
 }
-@media (max-height: 1280px) {
+@media (max-height: 1180px) {
     .pageContent {
-        height: 800px;
+        height: 700px;
     }
 }
 
