@@ -18,25 +18,6 @@
     right: 5px;
 }
 
-.register
-{
-    position: absolute;
-    display: flex;
-    font-size: 15px;
-    right: 90px;
-}
-
-#login,
-#signup
-{
-    cursor: pointer;
-}
-
-.register p:hover
-{
-    text-decoration: underline;
-}
-
 h1 {
     margin-left: 50px;
     font-size: 18px;

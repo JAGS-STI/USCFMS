@@ -18,21 +18,12 @@
     <link rel="stylesheet" href="/USCFMS/UserPage/TopMenu/topMenuDesign.css" />
     <script src="java/scrollEvent.js"></script>
     <script src="java/scrollIndicator.js" defer></script>
-    <script> 
-        function login() {
-            window.location.href='/USCFMS/UserPage/UserLogin/UserLogin.html';
-        }
-
-        function signup() {
-            window.location.href='/USCFMS/UserPage/UserSignup/UserSignup.html';
-        }
-    </script>
+    <script src="/USCFMS/UserPage/java/user.inc.js"></script>
 </head>
 <body>
 
     <div class="PageSubtitle">
         <p id="dateTime">ERROR: Date cannot display</p>
-        <img src="Media/user-circle-svgrepo-com(1).svg"/>
         <?php output_account(); ?>
         <script src="/USCFMS/time.js"></script>
     </div>
@@ -51,7 +42,7 @@
             <a href="/USCFMS/UserPage/UserAbout/UserAbout.html">About the Barangay</a>
             <a id="contact" href="/USCFMS/UserPage/UserContact/UserContact.html">Contact</a>
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
-            <a href="/USCFMS/UserPage/UserConcern/UserConcern.html">Submit Concern</a>
+            <?php tosubmitBtn(); ?>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
             <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Suggestions</a>
         </div>
@@ -330,6 +321,6 @@
         </p>
     </footer>  
     </div>
-    
+    <?php login_popup(); ?>
 </body>
 </html>

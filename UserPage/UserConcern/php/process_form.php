@@ -1,4 +1,7 @@
 <?php
+    require_once dirname(dirname(__DIR__)) . "/php/config_session.inc.php";
+    require_once dirname(dirname(__DIR__)) . "/php/signup_view.inc.php";
+    require_once dirname(dirname(__DIR__)) . "/php/login_view.inc.php";
 
     $servername = "localhost";
     $username = "root";
@@ -14,7 +17,13 @@
     }
 
     // Get values from the form
-    $accId = 100000;
+    if (empty($_SESSION["user_id"])) {
+        echo 'Error: Cannot find $_SESSION["user_id"]';
+        echo 'Please go back to the home page';
+        die();
+    }
+    
+    $accId = $_SESSION["user_id"];
     $location = $_POST['locationBox'];
     $file1 = $_FILES['fileInput']['name'];
     $concern = $_POST['concernBox'];
