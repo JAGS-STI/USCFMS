@@ -62,6 +62,45 @@
         <div class="buttons">
             <button>View uploaded valid ID</button>
             <button>Change email / password</button>
+            <button>Log out now</button>
+        </div>
+
+        <div class="mssgs">
+            <div class="DashMssgs">
+                <h4 id="fld">Messages</h4>
+                <div class="underline"></div>
+            </div>
+            <p id="noteCncrn">Click on a message to view</p>
+
+            <table>
+                <tr class="head">
+                    <th width="250px">Date received</th>
+                    <th width="270px">Time received</th>
+                    <th width="300px">Concern ID connected</th>
+                </tr>
+                <tr class="tbl">
+                    <td>October 26, 2023</td>
+                    <td>09:46 PM</td>
+                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>                    
+                </tr>
+                <tr class="tbl">
+                    <td>October 26, 2023</td>
+                    <td>09:46 PM</td>
+                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
+                </tr>
+                <tr class="tbl">
+                    <td>October 26, 2023</td>
+                    <td>09:46 PM</td>
+                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
+                </tr>
+                <tr class="tbl">
+                    <td>October 26, 2023</td>
+                    <td>09:46 PM</td>
+                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
+                </tr>
+            </table>
+
+            <p id="showMore">Show more...</p>
         </div>
 
         <div class="second">
@@ -106,7 +145,7 @@
             <p id="showMore">Show more...</p>
         </div>
        
-        
+
        
 
         <!--bottom-->
@@ -118,6 +157,39 @@
             </p>
         </footer>
     </div>
+<<<<<<< HEAD
+    <div class="shadow">
+        <div class="popup">
+            <h1 id="headShadow">Viewing message</h1>
+            <div class="underline1"></div>         
+            <img src="Media/button-error-svgrepo-com.svg">
+        </div>    
+        <div class="fldConcern">
+                <div class="concernfield">
+                    <div class="longbox">
+                        <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
+                    </div>
+                </div>
+        </div>
+        <div class="PopDetails">
+            <div class="CncrnID">
+                <p>Concern ID connected:</p>
+                <p id="bld">SC-12345</p>
+            </div>
+            <div class="CncrnID">
+                <p>Date received:</p>
+                <p id="bld">November 27, 2023</p>
+            </div>
+            <div class="CncrnID">
+                <p>Time received:</p>
+                <p id="bld">09:48 PM</p>
+            </div>
+        </div>
+        <button id="done">Done</button>
+    </div>
+
+=======
     <?php login_popup(); ?>
+>>>>>>> 752ddc841c54b37bfb485adf0061686c2cf5a4c9
 </body>
 </html>
