@@ -14,28 +14,6 @@
     right: 5px;
 }
 
-<<<<<<< HEAD
-.register
-{
-    position: absolute;
-    display: none;
-    font-size: 15px;
-    right: 90px;
-}
-
-#login,
-#signup
-{
-    cursor: pointer;
-}
-
-.register p:hover
-{
-    text-decoration: underline;
-}
-
-=======
->>>>>>> 752ddc841c54b37bfb485adf0061686c2cf5a4c9
 .pageContent {
     position: absolute;
     width: 100%;
