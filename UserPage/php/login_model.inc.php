@@ -12,4 +12,14 @@
         return $result;
     }
 
+    function get_concernDetail(object $pdo, string $accID) {
+        $sql = "SELECT * FROM concernDetail WHERE accID = :accID";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(":accID", $accID);
+        $stmt->execute();
+
+        $userConcernList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $userConcernList;
+    }
+
 ?>

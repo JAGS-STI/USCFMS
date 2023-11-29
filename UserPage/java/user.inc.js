@@ -15,12 +15,12 @@ function toaccount() {
 }
 
 function toggleLoginPopup($toggle) {
-    $popupWindow = document.getElementById("login-popup");
+    $popupWindow = document.getElementsByClassName("shadow-login");
 
     if ($toggle === 'open') {
-        $popupWindow.style.display = 'flex';
+        $popupWindow[0].style.display = 'flex';
     } else {
-        $popupWindow.style.display = 'none';
+        $popupWindow[0].style.display = 'none';
     }
 }
 
@@ -30,5 +30,16 @@ function togglePassword() {
         passwordField.type = "text";
     } else {
         passwordField.type = "password";
+    }
+}
+
+function scrollEvent (targetElement, i, animation) {
+    const element = document.getElementsByClassName(targetElement);
+
+    if (animation === true) {
+        element[i].scrollIntoView( { behavior: "smooth" } );
+    }
+    else {
+        element[i].scrollIntoView();
     }
 }

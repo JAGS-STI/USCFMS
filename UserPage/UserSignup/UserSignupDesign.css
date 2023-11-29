@@ -207,6 +207,7 @@ input {
     margin-left: 15px;
     width: 100%;
     max-width: 245px;
+    
 }
 
 .selected-file {
@@ -301,6 +302,12 @@ input {
 {
     height: 15px;
     width: 15px;
+}
+
+.errorlist {
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
 }
 
 /* Shadow Pop-up */
