@@ -25,7 +25,8 @@ if ($result->num_rows > 0) {
             <th width="240px">Date received</th>
             <th width="200px">Concern type</th>
             <th width="150px">Status</th>
-            <th width="100px">Priority</th>
+            <th width="150px">Priority</th>
+            <th width="100px">Updated</th>
           </tr>';
 
     while ($row = $result->fetch_assoc()) {
@@ -40,6 +41,7 @@ if ($result->num_rows > 0) {
         echo '<td>' . $row['concernType'] . '</td>';
         echo '<td class="active"><div class="dot" id="' . getStatusColor($row['status']) . '"></div> ' . $row['status'] . '</td>';
         echo '<td>' . ($row['priority'] ? $row['priority'] : '-----') . '</td>';
+        echo '<td>----</td>'; 
         echo '</tr>';
     }
 
