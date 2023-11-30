@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="sub">
-                    <input id="emailBox" name="emailBox" type="text" placeholder="Enter email address"/>
+                    <?php login_input(); ?>
                     <div class="textline"></div>
                 </div>
                 <div class="sub">
@@ -135,5 +135,18 @@
         </footer>
     </div>
     <?php login_popup(); ?>
+
+    <script>
+        var loginpanel = document.getElementById("loginPanel");
+
+        var formErrorElement = loginPanel.querySelector('.form-error');
+        if (formErrorElement) {
+            scrollEvent('subhead', 0, false);
+            console.log("exists");
+        } else {
+            console.log("does not exists");
+            console.log(loginpanel.classList)
+        }
+    </script>
 </body>
 </html>

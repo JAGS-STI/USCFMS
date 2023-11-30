@@ -18,8 +18,9 @@ $result = $conn->query($sql);
 
 // Display the HTML table
 if ($result->num_rows > 0) {
-    echo '<table>';
-    echo '<tr class="head">
+    echo '<div class="tblContent">';
+    echo '<table>
+        <tr class="head">
             <th width="150px">Concern ID</th>
             <th width="240px">Date received</th>
             <th width="200px">Concern type</th>
@@ -42,7 +43,8 @@ if ($result->num_rows > 0) {
         echo '</tr>';
     }
 
-    echo '</table>';
+    echo '</table>
+    </div>';
 } else {
     echo 'No concerns found.';
 }

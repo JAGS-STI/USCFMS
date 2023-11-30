@@ -14,28 +14,6 @@
     right: 5px;
 }
 
-<<<<<<< HEAD
-.register
-{
-    position: absolute;
-    display: none;
-    font-size: 15px;
-    right: 90px;
-}
-
-#login,
-#signup
-{
-    cursor: pointer;
-}
-
-.register p:hover
-{
-    text-decoration: underline;
-}
-
-=======
->>>>>>> 752ddc841c54b37bfb485adf0061686c2cf5a4c9
 .pageContent {
     position: absolute;
     width: 100%;
@@ -156,6 +134,12 @@ tr {
     background: white;
 }
 
+.tbl:hover {
+    transition: 0.2s;
+    background-color: #dadada;
+    cursor: pointer;
+}
+
 .head {
     background: #e8e8e8;
     color: #606060;
@@ -189,7 +173,7 @@ tr {
 /*SHADOWING*/
 .shadow
 {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -199,7 +183,7 @@ tr {
     top: 0;
 }
 
-.popup
+.shadow .popup
 {
     position: relative;
     height: 600px;
@@ -209,7 +193,7 @@ tr {
 
 }
 
-.popup img
+.shadow .popup img
 {
     position: absolute;
     height: 20px;
@@ -219,7 +203,7 @@ tr {
     cursor: pointer;
 }
 
-.underline1
+.shadow .underline1
 {
     position: absolute;
     bottom: 0px;

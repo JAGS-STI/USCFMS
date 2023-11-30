@@ -227,6 +227,28 @@ body {
     position: absolute;
     right: 5px;
 }
+/* Table Dot Color */
+
+#red {
+    background-color: #d92b0b;
+}
+
+#gray {
+    background-color: #aaaaaa;
+}
+
+#blue {
+    background-color: #004aad;
+}
+
+#green {
+    background-color: #22872f;
+}
+
+#orange {
+    background-color: #ff914d;
+}
+
 
 /* User Profile Buttons */
 
@@ -276,8 +298,7 @@ body {
 
 /* Login Popup */
 
-.shadow-login
-{
+#shadow {
     display: none;
     align-items: center;
     justify-content: center;

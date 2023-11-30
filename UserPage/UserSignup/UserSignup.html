@@ -21,6 +21,7 @@
             popup.style.display = 'none';
         }
     </script>
+
     <script src="/USCFMS/UserPage/java/user.inc.js"></script>
 </head>
 <body>
@@ -142,7 +143,7 @@
                         </div>
                     </div>  
                     
-                    <input type="submit"  id="signUpBtn" class="submit" value="Sign-up" disabled>
+                    <input type="submit" name="submit"  id="signUpBtn" class="submit" value="Sign-up" disabled>
                     <script>
                     // Get references to the form and submit button
                     var myForm = document.getElementById("signUpForm");
@@ -156,10 +157,20 @@
                         // Update the state of the submit button
                         submitBtn.disabled = !isFormValid;
                     });
+
+                    myForm.addEventListener("submit", function (event) {
+                        // Display a confirmation dialog
+                        var userConfirmed = window.confirm("Are you sure you want to submit?");
+
+                        // If the user confirms, allow the form submission; otherwise, prevent it
+                        if (!userConfirmed) {
+                            event.preventDefault();
+                        }
+                    });
                     </script>
-                    <?php
-                        check_signup_errors();
-                    ?>
+                    <div class="errorlist">
+                        <?php check_signup_errors(); ?>
+                    </div>
                 </div>
             </form>
         </div>
@@ -204,6 +215,18 @@
             } else {
                 signupPopup.style.display = 'none';
             }
+        }
+    </script>
+    <script>
+        var loginpanel = document.getElementsByClassName("subContent");
+
+        var formErrorElement = loginpanel[0].querySelector('.form-error');
+        if (formErrorElement) {
+            scrollEvent('subhead', 0, false);
+            console.log("exists");
+        } else {
+            console.log("does not exists");
+            console.log(loginpanel.classList)
         }
     </script>
 </body>
