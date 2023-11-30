@@ -126,37 +126,9 @@
             <img src="media/information-circle-svgrepo-com.svg">
             <p>Click on a comment ID to view its contents.</p>
         </div>
-            
-            <table>
-                <tr class="head">
-                    <th width="250px">Comment ID</th>
-                    <th width="270px">Date received</th>
-                    <th width="350px">Comment from</th>
-                </tr>
-                <tr class="tbl">
-                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewComments/adminViewComments.html'">CM-12345</td>
-                    <td>October 26, 2023</td>
-                    <td id="anonymous">Anonymous</td>
-                </tr>
-                <tr class="tbl">
-                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewComments/adminViewComments.html'">CM-98765</td>
-                    <td>October 26, 2023</td>
-                    <td>Nezuko</td>
-                </tr>
-                <tr class="tbl">
-                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewComments/adminViewComments.html'">CM-98765</td>
-                    <td>October 26, 2023</td>
-                    <td>Zenitsu</td>
-                </tr>
-                <tr class="tbl">
-                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewComments/adminViewComments.html'">CM-24680</td>
-                    <td>October 26, 2023</td>
-                    <td id="anonymous">Anonymous</td>
-                </tr>
-            </table>
-
-            <p id="showMore">Show more...</p>
-        </div>
+        <?php include(dirname(__DIR__) . "/php/display_comments.php"); ?>
+        <p id="showMore">Show more...</p>
+    </div>
     
     <div class="rightContainer">
         <div class="date">

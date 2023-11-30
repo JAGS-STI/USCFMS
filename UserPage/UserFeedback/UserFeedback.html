@@ -55,45 +55,46 @@
         </div>
     </div>
     <div class="pageContent">
-        <div class="field1">
-            <h1 id="headTitle">Personal Information</h1>
-            <div class="underline"></div>
-            <p id="required">Fields with * are required</p>
-            <div class="fldPersonal">
-                <div class="namefield">
-                    <p>Name <span style="color: red">*</span></p>
-                    <div class="inbox">
-                        <input id="nameBox" type="text" placeholder="Type Here" required />
+        <form id="commentForm" action="php/process_comment.php" method="post" >
+            <div class="field1">
+                <h1 id="headTitle">Personal Information</h1>
+                <div class="underline"></div>
+                <p id="required">Fields with * are required</p>
+                <div class="fldPersonal">
+                    <div class="namefield">
+                        <p>Name</p>
+                        <div class="inbox">
+                            <input id="nameBox" name="nameBox" type="text" placeholder="Type Here" >
+                        </div>
                     </div>
-                </div>
-                <div class="contactfield">
-                    <p>Contact number</p>
-                    <div class="inbox">
-                        <input id="contactBox" type="text" placeholder="Type Here"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="field2">
-            <h1 id="concernTitle">Comments and/or suggestions</h1>
-            <div class="underline"></div>
-            <div class="fldConcern">
-                <div class="concernfield">
-                    <p>Type your comments/suggestions <span style="color: red">*</span></p>
-                    <div class="longbox">
-                        <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
+                    <div class="contactfield">
+                        <p>Contact number</p>
+                        <div class="inbox">
+                            <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            
+            <div class="field2">
+                <h1 id="concernTitle">Comments and/or suggestions</h1>
+                <div class="underline"></div>
+                <div class="fldConcern">
+                    <div class="concernfield">
+                        <p>Type your comments/suggestions <span style="color: red">*</span></p>
+                        <div class="longbox">
+                            <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here" required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <div class="consent">
-            <p id="consent">I consent to the processing of my personal data in accordance with the Republic Act 10173 or also known as the Data Privacy Act of 2012.</p>
-            <input id="check" type="checkbox" />
-        </div>
-        <input type="submit" class="submit" name="submit" value="SUBMIT">
-
+            <div class="consent">
+                <p id="consent">I consent to the processing of my personal data in accordance with the Republic Act 10173 or also known as the Data Privacy Act of 2012.</p>
+                <input id="check" type="checkbox" required/>
+            </div>
+            <input type="submit" class="submit" name="submit" value="SUBMIT">
+        </form>
         <!--bottom-->
         <footer class="copyRight">
             <p>Copyright 2023 | All Rights Reserved | Barangay Government of Ususan</p>

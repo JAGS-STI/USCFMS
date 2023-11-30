@@ -127,11 +127,21 @@
                     <p id="consent">I consent to the processing of my personal data in accordance with the Republic Act 10173 or also known as the Data Privacy Act of 2012.</p>
                     <input id="check" type="checkbox" required />
                 </div>
-                <input type="submit"  id="submitBtn" class="submit" value="Submit" disabled>
+                <input type="submit" name="submit"  id="submitBtn" class="submit" value="Submit" disabled>
                 <script>
                     // Get references to the form and submit button
                     var myForm = document.getElementById("concernForm");
                     var submitBtn = document.getElementById("submitBtn");
+
+                    myForm.addEventListener("submit", function (event) {
+                        // Display a confirmation dialog
+                        var userConfirmed = window.confirm("Are you sure you want to submit?");
+
+                        // If the user confirms, allow the form submission; otherwise, prevent it
+                        if (!userConfirmed) {
+                            event.preventDefault();
+                        }
+                    });
                 
                     // Add an event listener to the form to check the form validity
                     myForm.addEventListener("input", function() {

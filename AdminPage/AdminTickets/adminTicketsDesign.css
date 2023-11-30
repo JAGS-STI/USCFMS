@@ -170,6 +170,13 @@ table {
     border-collapse: collapse;
 }
 
+.tblContent {
+    position: relative;
+    width: fit-content;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
 th,
 td {
     padding: 10px;

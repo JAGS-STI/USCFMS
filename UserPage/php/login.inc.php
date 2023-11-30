@@ -60,7 +60,7 @@
             $_SESSION["last_regeneration"] = time();
 
 
-            header("Location: ../UserHome/UserHome.html?login=success");
+            header("Location: ../UserAccPage/UserAccPage.html?login=success");
             
             $pdo = null;
             $statement = null;

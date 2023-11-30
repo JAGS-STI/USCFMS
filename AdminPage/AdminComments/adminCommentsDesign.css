@@ -161,6 +161,11 @@ tr {
     background: white;
 }
 
+.tbl:hover {
+    transition: 0.2s;
+    background-color: #dadada;
+}
+
 .head {
     background: #e8e8e8;
     color: #606060;

@@ -166,7 +166,7 @@
     function userConcernTable() {
         // Display the HTML table
         $result = $_SESSION["user_concernList"];
-        if (count($result) > 0) {
+        if (count($result) > -1) {
             echo '<table>';
             echo '<tr class="head">
                     <th width="150px">Concern ID</th>
