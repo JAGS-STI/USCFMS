@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comments | Ususan SCFMS</title>
+    <title>Tickets | Ususan SCFMS</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="adminCommentsDesign.css" />
+    <link rel="stylesheet" href="adminReportDesign.css" />
     <link rel="stylesheet" href="/USCFMS/AdminPage/Sidebar/sidebarDesign.css" />
 
 </head>
@@ -20,7 +20,7 @@
             <p>BARANGAY SOCIAL CONCERNS AND FEEDBACK MANAGEMENT SYSTEM</p>
         </div>
         <div class="PageTitle">
-            <h3>Comments</h3>
+            <h3>Analytic Report</h3>
         </div>
     </div>
 
@@ -76,71 +76,35 @@
         <h2 id="filterTitle">Filter list</h2>
         <div class="filters">
             <div class="concernfield">
-            <p id="headField">Year:</p>
+            <p id="headField">Concern type:</p>
                 <div class="inbox">
                     <select id="concernBox" name="concernBox" placeholder="Type Here">
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
+                        <option value="All">All</option>
+                        <option value="January">January</option>
+                        <option value="Febuary">Febuary</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
                     </select>
                 </div>
-            </div>
-            <div class="concernfield">
-            <p id="headField">Comment from:</p>
-                <div class="inbox">
-                    <select id="concernBox" name="concernBox" placeholder="Type Here">
-                        <option value="Nezuko">Nezuko</option>
-                        <option value="Tanjiro">Tanjiro</option>
-                        <option value="Inosuke">Inosuke</option>
-                        <option value="Zenitsu">Zenitsu</option>
-                    </select>
-                </div>
+                <button id="fltrNow">Filter now</button>
             </div>
         </div>
-        <div class="filters">
-            <div class="concernfield">
-            <p id="headField">Month:</p>
-                <div class="inbox">
-                    <select id="concernBox" name="concernBox" placeholder="Type Here">
-                        <option value="January">Safety and security</option>
-                        <option value="February">Infrastructures and facilities</option>
-                        <option value="March">Animal Welfare</option>
-                        <option value="April">Others</option>
-                        <option value="May">Safety and security</option>
-                        <option value="June">Infrastructures and facilities</option>
-                        <option value="July">Animal Welfare</option>
-                        <option value="August">Others</option>
-                        <option value="September">Safety and security</option>
-                        <option value="October">Infrastructures and facilities</option>
-                        <option value="November">Animal Welfare</option>
-                        <option value="December">Others</option>
-                    </select>
-                </div>
-            </div>
+        
     </div>
-    <button id="fltrNow">Filter now</button>
 
-    <div class="second">
-        <div class="clickCncrn">
-            <img src="media/information-circle-svgrepo-com.svg">
-            <p>Click on a comment ID to view its contents.</p>
-        </div>
-        <?php include(dirname(__DIR__) . "/php/display_comments.php"); ?>
-    </div>
-    
     <div class="rightContainer">
         <div class="date">
             <p id="currentDate">September 25, 2023</p>
             <h3 id="currentTime">03:46:00 PM</h3>
             <script src="/USCFMS/time.js"></script>
-        </div>
-        <div class="searchBar">
-            <p>Search comment ID: </p>
-            <div class="bar">
-                <input type="text" placeholder="Type here...">
-                <img src="media/search.svg" />
-            </div>
         </div>
     </div>
 

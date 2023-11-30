@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch data from the database
-$sql = "SELECT concernID, submitDate, concernType, status, priority FROM concernDetail";
+$sql = "SELECT concernID, submitDate, concernType, status, priority FROM concernDetail WHERE status != 'Discarded'";
 $result = $conn->query($sql);
 
 

@@ -523,7 +523,7 @@ top: 60px;
 /*SHADOWING FOR SEND MESSAGE*/
 .shadow1
 {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     position: fixed;
