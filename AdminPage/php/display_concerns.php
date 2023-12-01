@@ -10,10 +10,49 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch data from the database
-$sql = "SELECT concernID, submitDate, concernType, status, priority FROM concernDetail WHERE status != 'Discarded'";
-$result = $conn->query($sql);
-
+if(!empty($_GET['concernType'])) {
+    if($_GET['concernType'] !== 'All' || $_GET['concernLocation'] !== 'All' || $_GET['concernStatus'] !== 'All' ||$_GET['concernPriority'] !== 'All') {
+        // Get selected values from AJAX request
+        $concernType = $_GET['concernType'];
+        $concernLocation = $_GET['concernLocation'];
+        $concernStatus = $_GET['concernStatus'];
+        $concernPriority = $_GET['concernPriority'];
+    
+        // Fetch data from the database
+        $sql = "SELECT concernID, submitDate, concernType, status, priority, location FROM concernDetail";
+    
+        // Build WHERE conditions based on selected values
+        $whereConditions = [];
+    
+        if ($concernType !== 'All') {
+            $whereConditions[] = "concernType = '$concernType'";
+        }
+    
+        if ($concernLocation !== 'All') {
+            $whereConditions[] = "location = '$concernLocation'";
+        }
+    
+        if ($concernStatus !== 'All') {
+            $whereConditions[] = "status = '$concernStatus'";
+        }
+    
+        if ($concernPriority !== 'All') {
+            $whereConditions[] = "priority = '$concernPriority'";
+        }
+    
+        // Add WHERE clause to the SQL query if conditions exist
+        if (!empty($whereConditions)) {
+            $sql .= " WHERE " . implode(" AND ", $whereConditions);
+        }
+        $result = $conn->query($sql);
+    } else {
+        $sql = "SELECT concernID, submitDate, concernType, status, priority, location FROM concernDetail WHERE status != 'Discarded'";
+        $result = $conn->query($sql);
+    }
+} else {
+    $sql = "SELECT concernID, submitDate, concernType, status, priority, location FROM concernDetail WHERE status != 'Discarded'";
+    $result = $conn->query($sql);
+}
 
 
 // Display the HTML table
@@ -26,6 +65,7 @@ if ($result->num_rows > 0) {
             <th width="200px">Concern type</th>
             <th width="150px">Status</th>
             <th width="150px">Priority</th>
+            <th width="100px">Location</th>
             <th width="100px">Updated</th>
           </tr>';
 
@@ -41,6 +81,7 @@ if ($result->num_rows > 0) {
         echo '<td>' . $row['concernType'] . '</td>';
         echo '<td class="active"><div class="dot" id="' . getStatusColor($row['status']) . '"></div> ' . $row['status'] . '</td>';
         echo '<td>' . ($row['priority'] ? $row['priority'] : '-----') . '</td>';
+        echo '<td>' . $row['location'] . '</td>';
         echo '<td>----</td>'; 
         echo '</tr>';
     }

@@ -1,4 +1,4 @@
-﻿* {
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -59,8 +59,8 @@ body {
 }
 
 .rightCard {
-    width: 210px;
-    height: 140px;
+    width: 220px;
+    height: 150px;
     background: linear-gradient(90deg, #7ed957, #00742f);
     border-radius: 20px;
     margin-top: 20px;
@@ -88,53 +88,10 @@ body {
     position: relative;
     bottom: 110px;
     left: 160px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 
-.searchBar p {
-    margin-top: 60px;
-}
-
-.searchBar .bar {
-    margin-top: 5px;
-    width: 220px;
-    height: 40px;
-    background: #DBDBDB;
-    border-radius: 20px;
-
-}
-
-.searchBar .bar input {
-    position: relative;
-    width: 210px;
-    height: 30px;
-    top: 5px;
-    left: 15px;
-    border: none;
-    background: #00000000;
-    outline: none;
-}
-
-.searchBar .bar img {
-    position: relative;
-    left: 190px;
-    bottom: 20px;
-    height: 15px;
-    width: 15px;
-}
-
-.Sortby{
-    margin-top: 70px;
-}
-
-.Sortby img {
-    position: relative;
-    bottom: 20px;
-    left: 150px;
-    height: 15px;
-    width: 15px;
-}
 
 /* BODY CONTENT*/
 .pageContent 
@@ -297,9 +254,9 @@ input, select
 #fltrNow
 {
     position: relative;
-    left: 700px;
+    left: 100px;
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     background-color: #22872f;
     height: 40px;
     width: 150px;
