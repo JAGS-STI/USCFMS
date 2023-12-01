@@ -53,12 +53,19 @@
         <div class="rightInf">
             <p id="dl">Download or view a print-friendly version of this concern</p>
             <button id="pdf">View/download PDF</button>
-            <p id="view">View survey result</p>
 
+            <p id="view">View survey result</p>
             <div class="btn">
                 <button id="btnView" onclick="toggleSurveyPanel('open')">View</button>
                 <p id="not">No available result.</p>  
             </div>
+
+            <div class="btnSendMssg">
+                <p id="send">Send a message to the respondent</p>
+                <button id="sndMssg">Send message</button>
+            </div>
+            
+            
             
         </div>
         <!-- Concern Information -->
@@ -138,6 +145,34 @@
                     </a>
                 </div>
             </li>
+
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminDocument/adminDocument.html">
+                        <img src="media/document-copy-svgrepo-com.svg" />
+                        <span>Requests Documents</span>
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminReport/adminReport.html">
+                        <img src="media/analytics-bars-chart-svgrepo-com.svg" />
+                        <span>Reports</span>
+                    </a>
+                </div>
+            </li>
+
+            <li id="about">
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminAbout/adminAbout.html">
+                        <img src="media/i.svg" />
+                        <span>About</span>
+                    </a>
+                </div>
+            </li>
+
             <li id="about">
                 <div class="icon">
                     <a href="/USCFMS/AdminPage/AdminAbout/adminAbout.html">

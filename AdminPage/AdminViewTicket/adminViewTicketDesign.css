@@ -153,7 +153,8 @@ top: 60px;
     font-size: 13px;
 }
 
-#dl
+#dl,
+#send
 {
     font-size: 13px;
 }
@@ -180,6 +181,24 @@ top: 60px;
     color:white;
     font-size: 15px;
     cursor: pointer;
+}
+
+
+#sndMssg
+{
+    margin-top: 5px;
+    height: 40px;
+    width: 160px;
+    border-radius: 50px;
+    background-color: #16601F;
+    color:white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btnSendMssg
+{
+    margin-top: 20px;
 }
 
 .pageInfos
@@ -324,6 +343,8 @@ top: 60px;
     cursor: pointer;
 }
 
+
+/*FIRST SHADOWING*/
 .shadow
 {
     display: none;
@@ -369,6 +390,7 @@ top: 60px;
     background-color: #feda00;
     border-radius: 10px;
 }
+
 
 /* tickets Section */
 
