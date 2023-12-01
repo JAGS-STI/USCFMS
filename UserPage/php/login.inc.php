@@ -19,9 +19,14 @@
             
             $result = get_email($pdo, $email);
 
+            if ($result["accID"]) {
+                $userConcernList = get_concernDetail($pdo, $result["accID"]);
+            }
+            
             if (is_email_wrong($result)) {
                 $errors["login_incorrect"] = "Incorrect email and password.";
             }
+
             if (!is_email_wrong($result) && is_password_wrong($password, $result["password"])) {
                 $errors["login_incorrect"] = "Incorrect password.";
             }
@@ -31,6 +36,11 @@
             if ($errors) {
                 $_SESSION["errors_login"] = $errors;
 
+                $loginData = [
+                    "email" => $email
+                ];
+                
+                $_SESSION["login_data"] = $loginData;
                 header("Location: ../UserLogin/UserLogin.html");
                 die();
             }
@@ -45,9 +55,12 @@
             $_SESSION["user_contact"] = $result["contact"];
             $_SESSION["user_street"] = $result["address"];
 
+            $_SESSION["user_concernList"] = $userConcernList;
+
             $_SESSION["last_regeneration"] = time();
 
-            header("Location: ../UserLogin/UserLogin.html?login=success");
+
+            header("Location: ../UserAccPage/UserAccPage.html?login=success");
             
             $pdo = null;
             $statement = null;

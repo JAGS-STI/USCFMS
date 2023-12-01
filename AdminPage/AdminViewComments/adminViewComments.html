@@ -21,28 +21,19 @@
         </div>
         <div class="PageTitle">
             <h3>Viewing comment</h3>
-            <div class="ticketID">
-                <p>Comment ID:</p>
-                <h1>CS-12345</h1>
-            </div>
+            <?php
+                $commentID = $_GET['commentID'];
+                echo '<div class="ticketID">
+                        <p>Comment ID:</p>
+                        <h1>CS-'. $commentID . '</h1>
+                    </div>';
+            ?>
         </div>
     </div>
 
-    <div class="header">
-        <div class="card1">
-            <p>Date and time received:</p>
-            <h3>September 26, 2023</h3>
-            <h3>11:07 PM</h3>
-        </div>
-        <div class="card1">
-            <p>Respondent name:</p>
-            <h3>Ian Gerald Balbon</h3>
-        </div>   
-        <div class="card1">
-            <p>Contact no.:</p>
-            <h3>0976 045 9207</h3>
-        </div>     
-    </div>
+    <!-- Comment Detail  -->
+    <?php include(dirname(__DIR__) . "/php/cmt.getCommentInfo.php")?>
+
     <div class="pageContent">
         <div id="top" class="title">
             <h1 id="subTitle">Comments and/or suggestions</h1>
@@ -50,10 +41,9 @@
         </div>
         <p id="type">Type your comments/suggestions</p>
         <div class="longbox">
-            <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
+            <?php include(dirname(__DIR__) . "/php/cmt.getComment.php") ?>
            <button id="button" class="view">Delete comment</button> 
         </div>
-        
     </div>
 
 

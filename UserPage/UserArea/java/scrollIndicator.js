@@ -10,7 +10,6 @@ function handleScroll() {
     } else {
         // Scrolled down, show the scroll indicator
         scrollIndicator.style.display = "block";
-        
     }
 }
 

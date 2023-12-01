@@ -46,10 +46,7 @@
     </div>
 
     <div class="aboutContact">
-        <div class="blur">
-            <h1>Welcome, Gerald!</h1>
-            <p>Here is your dashboard.</p>
-        </div>
+        <?php acc_head_title(); ?>
     </div>
     <div class="pageContent">
         <div class="headtitle">
@@ -62,7 +59,9 @@
         <div class="buttons">
             <button>View uploaded valid ID</button>
             <button>Change email / password</button>
-            <button>Log out now</button>
+            <form action="../php/logout.inc.php" method="post">
+                <button class="logoutAccBtn">Log-out now</button>
+            </form>
         </div>
 
         <div class="mssgs">
@@ -76,7 +75,7 @@
                 <tr class="head">
                     <th width="250px">Date received</th>
                     <th width="270px">Time received</th>
-                    <th width="300px">Concern ID connected</th>
+                    <th width="360px">Concern ID connected</th>
                 </tr>
                 <tr class="tbl">
                     <td>October 26, 2023</td>
@@ -109,44 +108,10 @@
                 <div class="underline"></div>
             </div>
             <p id="noteCncrn">Click on a concern ID to view</p>
-            <table>
-                <tr class="head">
-                    <th width="250px">Concern ID</th>
-                    <th width="270px">Date submitted</th>
-                    <th width="350px">Concern type</th>
-                    <th width="150px">Status</th>
-                </tr>
-                <tr class="tbl">
-                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
-                    <td>October 26, 2023</td>
-                    <td>Residential</td>
-                    <td class="active"><div class="dot"></div>Active</td>
-                </tr>
-                <tr class="tbl">
-                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
-                    <td>October 26, 2023</td>
-                    <td>Residential</td>
-                    <td class="active"><div class="dot"></div>Active</td>
-                </tr>
-                <tr class="tbl">
-                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
-                    <td>October 26, 2023</td>
-                    <td>Residential</td>
-                    <td class="active"><div class="dot"></div>Active</td>
-                </tr>
-                <tr class="tbl">
-                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
-                    <td>October 26, 2023</td>
-                    <td>Residential</td>
-                    <td class="active"><div class="dot"></div>Active</td>
-                </tr>
-            </table>
+            <?php userConcernTable(); ?>
 
             <p id="showMore">Show more...</p>
         </div>
-       
-
-       
 
         <!--bottom-->
         <footer class="copyRight">

@@ -35,12 +35,10 @@
             $errors = $_SESSION['errors_signup'];
 
             foreach($errors as $error) {
-                echo "<br>";
                 echo '<p class="form-error">' . $error . '</p>';
             }
             unset($_SESSION['errors_signup']);
         } else if (isset($_GET["signup"]) && $_GET["signup"] === "success") {
-            echo "<br>";
             echo '<p class="form-success">Signup success!</p>';
         }
     }
