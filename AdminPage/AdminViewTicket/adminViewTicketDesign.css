@@ -341,7 +341,6 @@ top: 60px;
     position: relative;
     margin-top: 50px;
     margin-bottom: 50px;
-    margin-left: 300px;
     height: 1600px;
     width: 1000px;
     background-color: white;
@@ -376,7 +375,7 @@ top: 60px;
 {
     position: absolute;
     left: 35px;
-    width: calc(100% - 300px);
+    width: calc(100% - 35px);
     top: 500px;
     height: 1100px;
 }
@@ -413,6 +412,7 @@ top: 60px;
     top: 12px;
     cursor: pointer;
 }
+
 .popup .closeBtn img {
     height: 30px;
     width: 30px;
@@ -459,6 +459,7 @@ top: 60px;
 {
     position: relative;
     margin-top: 80px;
+    width: 100%;
 }
 
 #top
@@ -502,14 +503,14 @@ top: 60px;
 .popup .longbox {
     margin-top: 10px;
     background: #cfcfcf;
-    width: 930px;
+    width: 95%;
     height: 150px;
     border-radius: 5px;
 }
 
 .popup .longbox textarea {
     margin-top: 10px;
-    width: 910px;
+    width: calc(100% - 30px);
     height: 140px;
     margin-left: 15px;
     border-style: none;
@@ -517,8 +518,10 @@ top: 60px;
     color: black;
     outline: none;
 }
-
-
+ 
+.popup .q1 {
+    width: 100%;
+}
 
 /*SHADOWING FOR SEND MESSAGE*/
 .shadow1
