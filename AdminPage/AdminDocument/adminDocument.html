@@ -52,6 +52,25 @@
                     </a>
                 </div>
             </li>
+
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminDocument/adminDocument.html">
+                        <img src="media/document-copy-svgrepo-com.svg" />
+                        <span>Requests Documents</span>
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminReport/adminReport.html">
+                        <img src="media/analytics-bars-chart-svgrepo-com.svg" />
+                        <span>Reports</span>
+                    </a>
+                </div>
+            </li>
+
             <li id="about">
                 <div class="icon">
                     <a href="/USCFMS/AdminPage/AdminAbout/adminAbout.html">
@@ -73,38 +92,48 @@
     </div>
 
     <div class="pageContent">
-        <h2 id="filterTitle">Filter list</h2>
-        <div class="filters">
-            <div class="concernfield">
-            <p id="headField">Select month:</p>
-                <div class="inbox">
-                    <select id="concernBox" name="concernBox" placeholder="Type Here">
-                        <option value="All">All</option>
-                        <option value="January">January</option>
-                        <option value="Febuary">Febuary</option>
-                        <option value="March">March</option>
-                        <option value="April">April</option>
-                        <option value="May">May</option>
-                        <option value="June">June</option>
-                        <option value="July">July</option>
-                        <option value="August">August</option>
-                        <option value="September">September</option>
-                        <option value="October">October</option>
-                        <option value="November">November</option>
-                        <option value="December">December</option>
-                    </select>
-                </div>
-                <button id="fltrNow">Filter now</button>
-            </div>
-        </div>
-        <div class="border">
-            <div id="chartContainer" style="height: 380px; width: 80%;"></div>
-            <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-        </div>
-        <div class="border2">
-            <div id="chartContainer2" style="height: 380px; width: 80%;"></div>
-            <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-        </div>
+        <div class="clickReqs">
+            <img src="media/information-circle-svgrepo-com.svg">
+            <p>Click on a request ID to view its contents.</p>
+        </div>    
+            
+        <table>
+            <tr class="head">
+                <th width="300px">Request ID</th>
+                <th width="400px">Date received</th>
+                <th width="300px">Requestor name</th>
+                <th width="300px">Document request</th>
+                <th width="200px">Status</th>
+            </tr>
+            <tr class="tbl" onclick="window.location.href='adminViewDoc.html'">
+                <td class="ticketID">SC-12345</td>
+                <td>October 26, 2023</td>
+                <td>Nezuko Kamado</td>
+                <td>Barangay Indigency</td>
+                <td class="active"><div class="dot"></div>Active</td>
+            </tr>
+                <tr class="tbl">
+                <td class="ticketID">SC-12345</td>
+                <td>October 26, 2023</td>
+                <td>Tanjiro Kamado</td>
+                <td>Barangay Indigency</td>
+                <td class="active"><div class="dot"></div>Active</td>
+            </tr>
+                <tr class="tbl">
+                <td class="ticketID">SC-12345</td>
+                <td>October 26, 2023</td>
+                <td>Zenitsu Agatsuma</td>
+                <td>Barangay Clearance</td>
+                <td class="active"><div class="dot"></div>Active</td>
+            </tr>
+            <tr class="tbl">
+                <td class="ticketID">SC-12345</td>
+                <td>October 26, 2023</td>
+                <td>Inosuke Hashibira</td>
+                <td>Barangay Indigency</td>
+                <td class="active"><div class="dot"></div>Active</td>
+            </tr>
+        </table>
     </div>
 
     <div class="rightContainer">

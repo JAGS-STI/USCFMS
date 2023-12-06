@@ -1,0 +1,245 @@
+﻿<?php 
+    require_once "../php/config_session.inc.php";
+    require_once "../php/signup_view.inc.php";
+    require_once "../php/login_view.inc.php";
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>User About | Ususan SCFMS</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="UserDocRequestDesign.css" />
+    <link rel="stylesheet" href="/USCFMS/UserPage/TopMenu/topMenuDesign.css" />
+    <script src="/USCFMS/UserPage/java/user.inc.js"></script>
+</head>
+<body>
+    <div class="PageSubtitle">
+        <p id="dateTime">ERROR: Date cannot display</p>
+        <?php output_account(); ?>
+        <script src="/USCFMS/time.js"></script>
+    </div>
+    <div class="toolBar">
+        <a class="PageTitle" href="/USCFMS/UserPage/UserHome/UserHome.html">
+            <img src="Media/City_of_Taguig_Seal.png" />
+            <img src="Media/ususan_logo.png" />
+            <div class="label">
+                <p>The Official website of </p>
+                <h3>Barangay Ususan</h3>
+                <p id="taguig">Taguig City</p>
+            </div>
+        </a>
+
+        <div class="menuOptions">
+            <a href="/USCFMS/UserPage/UserAbout/UserAbout.html">About the Barangay</a>
+            <a id="request" href="/USCFMS/UserPage/UserDocRequest/UserDocRequest.html">Request document(s)</a>
+            <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
+            <?php tosubmitBtn(); ?>
+            <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
+            <a href="/USCFMS/UserPage/UserFeedback/UserFeedback.html">Submit Suggestions</a>
+        </div>
+    </div>
+
+    <div class="aboutBrgy">
+        <div class="blur">
+            <h1>Document Request(s)</h1>
+            <p>You can now request a variety of barangay documents online. Kindly fill up the form below to request.</p>
+        </div>
+    </div>
+
+
+    <div class="pageContent">
+        <form id="commentForm" action="php/process_comment.php" method="post" >
+            
+        <div class="fieldtop">
+            <h1 id="headTitle">Personal Information</h1>
+            <div class="underline"></div>
+            <p id="required">Fields with * are required</p>
+            
+            <div class="fldAcc">
+                <div class="info">
+                    <p>You are logged in as:</p>
+                    <p id="bold">Gerald Balbon</p>
+                </div>
+                <div class="info">
+                    <p>Contact number:</p>
+                    <p id="bold">0976 045 9207</p>
+                </div>
+            </div>
+
+            <div class="cbDocType">
+                <div class="concernfield">
+                    <p>Choose document type: <span style="color: red">*</span></p>
+                    <div class="inbox">
+                        <select id="concernBox" name="concernBox" placeholder="Type Here" required >
+                            <option value="Blank"></option>
+                            <option value="Barangay Indigency">Barangay Indigency</option>
+                            <option value="Barangay Clearance">Barangay Clearance</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="allFields">
+            <div class="field1">
+                <h1 id="headTitle">Request Information</h1>
+                <div class="underline"></div>
+
+                <div class="fldPersonal">
+                    <div class="contactfield">
+                        <p>Name: <span style="color: red">*</span></p>
+                        <div class="inbox">
+                            <input id="nameBox" name="nameBox" type="text" placeholder="Type Here" >
+                        </div>
+                    </div>
+                    <div class="contactfield">
+                        <p>Age: <span style="color: red">*</span></p>
+                        <div class="inbox">
+                            <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                        </div>
+                    </div>
+                    <div class="contactfield">
+                        <p>Gender: <span style="color: red">*</span></p>
+                        <div class="inbox">
+                            <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                        </div>
+                    </div>
+
+                    <div class="contactfield">
+                        <p>Birthday: <span style="color: red">*</span></p>
+                        <div class="inbox">
+                            <input id="nameBox" name="nameBox" type="text" placeholder="Type Here" >
+                        </div>
+                    </div>
+                    <div class="contactfield">
+                        <p>Religion: <span style="color: red">*</span></p>
+                        <div class="inbox">
+                            <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                        </div>
+                    </div>
+                    <div class="contactfield">
+                        <p>Citizenship: <span style="color: red">*</span></p>
+                        <div class="inbox">
+                            <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fldPersonal2">
+                    <div class="contactfield">
+                        <p>Full home address: <span style="color: red">*</span></p>
+                        <div class="inbox1">
+                            <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                        </div>
+                    </div>
+                    <div class="contactfield">
+                        <p>Voter’s ID number: <span style="color: red">*</span></p>
+                        <div class="inbox">
+                            <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fldPersonal3">
+                    <div class="flds">
+                        <div class="contactfield">
+                            <p>Height: <span style="color: red">*</span></p>
+                            <div class="inbox2">
+                                <input id="nameBox" name="nameBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Width: <span style="color: red">*</span></p>
+                            <div class="inbox2">
+                                <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Complexion: <span style="color: red">*</span></p>
+                            <div class="inbox2">
+                                <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contactfield">
+                        <p>Hair color: <span style="color: red">*</span></p>
+                        <div class="inbox">
+                            <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                        </div>
+                    </div>
+                </div>   
+            </div>
+
+                <div class="field1">
+                    <h1 id="headTitle">Contact Person Information</h1>
+                    <div class="underline"></div>
+                    
+                    <div class="fldPersonal2">
+                        <div class="contactfield">
+                            <p>Contact person: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Contact number: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Address: <span style="color: red">*</span></p>
+                            <div class="inbox1">
+                                <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fldPurpose">
+                        <div class="contactfield">
+                            <p>Purpose of this request: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="contactBox" name="contactBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Upload your 2x2 photo <span style="color: red">*</span></p>
+                            <button id="upldPic">Upload photo</button>
+                        </div>
+                    </div>
+
+
+
+                
+                <div class="consent">
+                    <p id="consent">I consent to the processing of my personal data in accordance with the Republic Act 10173 or also known as the Data Privacy Act of 2012.</p>
+                    <input id="check" type="checkbox" required/>
+                </div>
+                    <input type="submit" class="submit" name="submit" value="SUBMIT">
+            </div>
+        </div>
+        
+            
+            
+
+         
+        </form>
+        <!--bottom-->
+        <footer class="copyRight">
+            <p>Copyright 2023 | All Rights Reserved | Barangay Government of Ususan</p>
+            <a id="contact1" href="/USCFMS/UserPage/UserContact/UserContact.html">Contact Us</a>
+            <p id="developedBy">
+                Website developed by: <br />
+                Gerald Balbon | Sheena Gem Juarbal | Jherico Medina | Arjay Fortuno
+            </p>
+        </footer>
+    </div>
+    <?php login_popup(); ?>
+</body>
+</html>
