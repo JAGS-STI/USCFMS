@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="adminTicketsDesign.css" />
     <link rel="stylesheet" href="/USCFMS/AdminPage/Sidebar/sidebarDesign.css" />
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
     <div>
@@ -74,12 +74,13 @@
 
     <div class="pageContent">
       
-    <h2 id="filterTitle">Filter list</h2>
+        <h2 id="filterTitle">Filter list</h2>
         <div class="filters">
             <div class="concernfield">
             <p id="headField">Concern type:</p>
                 <div class="inbox">
-                    <select id="concernBox" name="concernBox" placeholder="Type Here" required >
+                    <select id="concernType" name="concernBox" placeholder="Type Here">
+                        <option value="All">All</option>
                         <option value="Road and highways">Road and highways</option>
                         <option value="Residential">Residential</option>
                         <option value="Schools">Schools</option>
@@ -93,11 +94,15 @@
             <div class="concernfield">
             <p id="headField">Location:</p>
                 <div class="inbox">
-                    <select id="concernBox" name="concernBox" placeholder="Type Here" required >
-                        <option value="BCDA">BCDA</option>
-                        <option value="Tomasa St.">Tomasa St.</option>
-                        <option value="MRB">MRB</option>
-                        <option value="Levi Mariano Ave.">Levi Mariano Ave.</option>
+                    <select id="concernLocation" name="concernBox" placeholder="Type Here">
+                        <option value="All">All</option>
+                        <option value="A. Bonifacio Street">A. Bonifacio Street</option>
+                        <option value="A. Mabini Street">A. Mabini Street</option>
+                        <option value="Kalayaan Street">Kalayaan Street</option>
+                        <option value="Bagong Calzada">Bagong Calzada</option>
+                        <option value="Camia Street">Camia Street</option>
+                        <option value="Colonel C. Flores Street">Colonel C. Flores Street</option>
+                        <option value="E. Aguinaldo Street">E. Aguinaldo Street</option>
                     </select>
                 </div>
             </div>
@@ -106,11 +111,12 @@
             <div class="concernfield">
             <p id="headField">Status:</p>
                 <div class="inbox">
-                    <select id="concernBox" name="concernBox" placeholder="Type Here" required >
+                    <select id="concernStatus" name="concernStatus" placeholder="Type Here">
+                        <option value="All">All</option>
                         <option value="Active">Active</option>
                         <option value="Unread">Unread</option>
                         <option value="Resolved">Resolved</option>
-                        <option value="Pending">Resolved</option>
+                        <option value="Pending">Pending</option>
                         <option value="Discarded">Discarded</option>
                     </select>
                 </div>
@@ -118,7 +124,8 @@
             <div class="concernfield">
             <p id="headField">Priority:</p>
                 <div class="inbox">
-                    <select id="concernBox" name="concernBox" placeholder="Type Here" required >
+                    <select id="concernPriority" name="concernBox" placeholder="Type Here">
+                        <option value="All">All</option>
                         <option value="Urgent">Urgent</option>
                         <option value="High">High</option>
                         <option value="Normal">Normal</option>
@@ -132,7 +139,10 @@
         <p id="info">Click on a concern ID to view its contents.</p>
         <img src="media/information-circle-svgrepo-com.svg" />
         
-        <?php include(dirname(__DIR__) . "/php/display_concerns.php"); ?>
+        <div id="dataContainer" >
+            <?php include(dirname(__DIR__) . "/php/display_concerns.php"); ?>
+        </div>
+        
 
     </div>
 
@@ -145,7 +155,44 @@
         <?php include(dirname(__DIR__) . "/php/getCountCard.php") ?>
 
     </div>
+    
+    <script>
+    $(document).ready(function () {
+        // Click event for the button
+        $('#fltrNow').on('click', function () {
+            // Get selected values
+            var concernType = $('#concernType').val();
+            var concernLocation = $('#concernLocation').val();
+            var concernStatus = $('#concernStatus').val();
+            var concernPriority = $('#concernPriority').val();
 
+            // Call the function to load data with selected values
+            loadData(concernType, concernLocation, concernStatus, concernPriority);
+        });
+
+        // Function to load data
+        function loadData(concernType, concernLocation, concernStatus, concernPriority) {
+            // Use AJAX to load the PHP script with selected values
+            $.ajax({
+                url: '/USCFMS/AdminPage/php/display_concerns.php',
+                type: 'GET',
+                data: {
+                    concernType: concernType,
+                    concernLocation: concernLocation,
+                    concernStatus: concernStatus,
+                    concernPriority: concernPriority
+                },
+                success: function (data) {
+                    // Update the content of the dataContainer
+                    $('#dataContainer').html(data);
+                },
+                error: function () {
+                    console.error('Failed to load data.' . error);
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>
   

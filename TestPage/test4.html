@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortable Table</title>
+    <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+	<script src="https://unpkg.com/downloadjs@1.4.7"></script>
+    <script>
+        const { PDFDocument } = PDFLib;
+        let pdfDoc;
+        async function loadPdf() {
+            // Fetch an existing PDF document.
+            const url = 'JUARBAL-Certificate-of-Indigency.pdf';
+            const existingPdfBytes = await fetch(url).then((res) =>
+                res.arrayBuffer(),
+            );
+
+            // Load a `PDFDocument` from the existing PDF bytes.
+            return PDFDocument.load(existingPdfBytes);
+        }
+    </script>
+</head>
+<body>
+    <iframe id="pdf" style="width: 90%; height: 90%;"></iframe>
+    
+</body>
+</html>

@@ -27,7 +27,7 @@
         }
     </script>
 
-    <!-- <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script> -->
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 
     <script src="/USCFMS/AdminPage/java/updateStatus.js"></script>
 </head>
@@ -199,15 +199,6 @@
             <div class="closeBtn" id="downloadPdf" onclick="toggleSurveyPanel('close')">
                 <img src="media/button-error-svgrepo-com.svg">
             </div>
-            <!-- <script>
-                document.getElementById('downloadPdf').addEventListener('click', function () {
-                    // Select the element to convert to PDF
-                    var element = document.querySelector('.popup');
-
-                    // Use html2pdf library to generate PDF
-                    html2pdf(element);
-                });
-            </script> -->
 
             <div class="popContent">
                 <div id="top" class="title">
@@ -299,5 +290,36 @@
             </div>
         </div>
     </div>
+    
+
+    <div class="shadow1">
+        <div class="popup1">
+            <h1 id="headShadow1">Send a message</h1>
+            <div class="underline1"></div>         
+            <img src="Media/button-error-svgrepo-com.svg">
+        </div>    
+        <div class="fldConcern1">       
+        <p id="typeMssg">Type in your message below:</p>   
+                <div class="concernfield1">
+                    <div class="longbox1">
+                        <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
+                    </div>
+                </div>
+        </div>
+        
+        <div class="bttnShadow">
+            <button>Send now</button>
+            <button>Discard</button>
+        </div>
+    </div>
+    <script>
+    document.getElementById('pdf').addEventListener('click', function () {
+        // Select the element to convert to PDF
+        var element = document.querySelector('.popup');
+
+        // Use html2pdf library to generate PDF
+        html2pdf(element);
+    });
+</script>
 </body>
 </html>
