@@ -238,18 +238,17 @@
     images.forEach(function(img) {
         img.onerror = function() {
             // Replace the missing image with a placeholder
-            img.src = "/USCFMS/TestPage/media/flowers.jpg";
+            img.src = "/USCFMS/TestPage/media/button-error-svgrepo-com.png";
         };
     });
 
     doc.html(elementHTML, {
         callback: function(doc) {
             // Save the PDF
-            doc.setFont("times", "italic");
             doc.save('document-html.pdf');
         },
         margin: [10, 10, 10, 10],
-        autoPaging: 'text',     
+        autoPaging: 'text', 
         x: 0,
         y: 0,
         width: 190,
@@ -275,7 +274,7 @@
             <div class="card1">
                 <p>Date and time received:</p>
                 <h3>September 26, 2023</h3>
-                <h3>11 : 07 PM</h3>
+                <h3>11:07 PM</h3>
             </div>
             <div class="card1">
                 <p>Respondent name:</p>
@@ -294,7 +293,7 @@
         </div>
 
         <div class="closeBtn">
-            <img src="">
+            <img src="media/button-error-svgrepo-com.png">
         </div>
 
         <div class="popContent">
@@ -305,7 +304,7 @@
                     <div class="q1">
                         <p>Did you receive timely assistance for your concern?</p>  
                         <div class="answers">
-                            <img src="">
+                            <img src="\USCFMS\TestPage\media\radio-button-checked-svgrepo-com.png">
                             <p>Yes</p>  
                         </div>    
                     </div>
@@ -313,11 +312,11 @@
                     <div class="q2">
                         <p>Rate the responsiveness of the Barangay authorities in addressing your concern: </p>  
                         <div class="answers">
-                            <img src="">
-                            <img src="">
-                            <img src="">
-                            <img src="">
-                            <img src="">
+                            <img src="\USCFMS\TestPage\media\star.png">
+                            <img src="\USCFMS\TestPage\media\star.png">
+                            <img src="\USCFMS\TestPage\media\star.png">
+                            <img src="\USCFMS\TestPage\media\star.png">
+                            <img src="\USCFMS\TestPage\media\star.png">
                         </div>    
                     </div>
                 </div>   
@@ -329,18 +328,18 @@
                     <div class="q1">
                         <p>Did you receive timely assistance for your concern?</p>  
                         <div class="answers">
-                            <img src="">
-                            <img src="">
-                            <img src="">
-                            <img src="">
-                            <img src="">
+                            <img src="media/star.png">
+                            <img src="media/star.png">
+                            <img src="media/star.png">
+                            <img src="media/star.png">
+                            <img src="media/star.png">
                         </div>    
                     </div>
     
                     <div class="q2">
                         <p>Rate the responsiveness of the Barangay authorities in addressing your concern: </p>  
                         <div class="answers">     
-                            <img src="">
+                            <img src="\USCFMS\TestPage\media\radio-button-checked-svgrepo-com.png">
                             <p>Yes</p>
                         </div>    
                     </div>
@@ -358,7 +357,7 @@
                     <div class="q1">
                         <p>Did you receive updates regarding the status and resolution of your concern?</p>  
                         <div class="answers">
-                            <img src="">
+                            <img src="\USCFMS\TestPage\media\radio-button-checked-svgrepo-com.png">
                             <p>Yes</p>
                         </div>    
                     </div>
@@ -366,7 +365,7 @@
                     <div class="q2">
                         <p>Were you satisfied with the level of transparency in the process?</p>  
                         <div class="answers">     
-                            <img src="">
+                            <img src="\USCFMS\TestPage\media\radio-button-checked-svgrepo-com.png">
                             <p>Yes</p>
                         </div>    
                     </div>
