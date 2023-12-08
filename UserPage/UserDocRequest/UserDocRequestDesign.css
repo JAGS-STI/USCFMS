@@ -158,6 +158,10 @@ input, select {
     font-weight: bold;
 }
 
+#addressBox {
+    width: 795px;
+}
+
 
 .concernfield .inbox img {
     position: relative;
@@ -234,4 +238,20 @@ input, select {
 .submit:hover { 
     transition: 0.3s;
     background-color: #1a7225;
+}
+
+#blankPanel {
+    display: block;
+}
+
+#indingencyPanel {
+    display: none;
+}
+
+#clearancePanel {
+    display: none;
+}
+
+.transition-height {
+    transition: height 0.3s ease; /* You can adjust the duration and timing function */
 }

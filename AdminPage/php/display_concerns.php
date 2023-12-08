@@ -89,7 +89,7 @@ if ($result->num_rows > 0) {
     echo '</table>
     </div>';
 } else {
-    echo 'No concerns found.';
+    echo '<div class="tblContent"><p style="margin-left: 50px;">No concerns found.</p></div>';
 }
 
 // OLD_TEMPLATE

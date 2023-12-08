@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pageContent {
+    position: relative;
+    background-color: white;
+    /* width and height already makes the actual document 8.5 x 13 inches ata hopefully sna ayan na yung final size*/
+    width: 850px;
+    height: 1300px;
+}
+
+/* Contents */

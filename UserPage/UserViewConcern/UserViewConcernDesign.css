@@ -23,7 +23,7 @@
 
 @media (max-height: 1080px) {
     .pageContent {
-        height: 1000px;
+        height: fit-content;
     }
 }
 
@@ -40,13 +40,30 @@
     margin-left: 50px; 
 }
 
+.blur .btnBack {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+    width: 105px;
+    height: 30px;
+}
+
+.blur .btnBack:hover {
+    transition: 0.3s;
+    /* background-color: rgba(198, 196, 196, 0.389);
+    border-radius: 5px; */
+    font-size: 15px;
+    text-decoration: underline;
+}
+
 #back
 {
-    height: 25px;
-    width: 25px;
-    margin-left: 300px;
-    margin-bottom: 60px;
-    cursor: pointer;
+    position: relative;
+    height: 21px;
+    width: 21px;
+    margin: 0;
+    padding: 0;
 }
 
 .headtitle,

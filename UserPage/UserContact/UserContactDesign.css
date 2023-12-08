@@ -26,7 +26,7 @@
 
 @media (max-height: 1080px) {
     .pageContent {
-        height: 600px;
+        height: fit-content;
     }
 }
 

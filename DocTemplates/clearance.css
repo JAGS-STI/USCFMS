@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pageContent {
+    position: relative;
+    background-color: white;
+    /* width and height already makes the actual document 10.5 x 7.6 inches*/
+    width: 1020px;
+    height: 684px;
+}
+
+/* Contents */

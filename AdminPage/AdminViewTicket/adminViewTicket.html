@@ -27,7 +27,7 @@
         }
     </script>
 
-    <!-- <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script> -->
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 
     <script src="/USCFMS/AdminPage/java/updateStatus.js"></script>
 </head>
@@ -234,15 +234,6 @@
             <div class="closeBtn" id="downloadPdf" onclick="toggleSurveyPanel('close')">
                 <img src="media/button-error-svgrepo-com.svg">
             </div>
-            <!-- <script>
-                document.getElementById('downloadPdf').addEventListener('click', function () {
-                    // Select the element to convert to PDF
-                    var element = document.querySelector('.popup');
-
-                    // Use html2pdf library to generate PDF
-                    html2pdf(element);
-                });
-            </script> -->
 
             <div class="popContent">
                 <div id="top" class="title">
@@ -340,21 +331,93 @@
         <div class="popup1">
             <h1 id="headShadow1">Send a message</h1>
             <div class="underline1"></div>         
-            <img src="Media/button-error-svgrepo-com.svg">
-        </div>    
-        <div class="fldConcern1">       
-        <p id="typeMssg">Type in your message below:</p>   
+            <img src="Media/button-error-svgrepo-com.svg" id="btnclose1">
+
+            <div class="fldConcern1">   
+                <p id="typeMssg">Type in your message below:</p>
                 <div class="concernfield1">
                     <div class="longbox1">
-                        <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
+                        <textarea id="msgBox" name="msgBox" rows="5" cols="100" placeholder="Type here"></textarea>
                     </div>
                 </div>
-        </div>
-        
-        <div class="bttnShadow">
-            <button>Send now</button>
-            <button>Discard</button>
-        </div>
+            </div>
+            
+            <div class="bttnShadow">
+                <button class="submitMsg" id="submitMsg">Send now</button>
+                <button class="btnDiscard" id="btndiscard1">Discard</button>
+            </div>
+        </div>    
     </div>
+    <script>
+        document.getElementById('sndMssg').addEventListener('click', function () {
+            // Select the element to convert to PDF
+            var element = document.querySelector('.shadow1');
+
+            element.style.display = element.style.display === "flex" ? "none" : "flex";
+        });
+    </script>
+    <script>
+        document.getElementById('btnclose1').addEventListener('click', function () {
+            // Select the element to convert to PDF
+            var element = document.querySelector('.shadow1');
+            
+            element.style.display = element.style.display === "flex" ? "none" : "flex";
+        });
+    </script>
+    <script>
+        document.getElementById('btndiscard1').addEventListener('click', function () {
+            // Select the element to convert to PDF
+            var element = document.querySelector('.shadow1');
+
+            element.style.display = element.style.display === "flex" ? "none" : "flex";
+        });
+    </script>
+    <script>
+        document.getElementById('pdf').addEventListener('click', function () {
+            // Select the element to convert to PDF
+            var element = document.querySelector('.popup');
+
+            // Use html2pdf library to generate PDF
+            html2pdf(element);
+        });
+    </script>
+    <script>
+        document.getElementById("submitMsg").addEventListener("click", function() {
+            if (confirm("Send Message?")) {
+                sendMsg();
+            }
+        });
+
+        function sendMsg() {
+            // Get the updated values from the select elements
+            const message = document.getElementById("msgBox").value;
+            const concernID = getParameterByName('concernID');
+
+            // Use AJAX to send the updated values to the server
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/USCFMS/AdminPage/php/sendMsg.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Handle the response from the server, if needed
+                    console.log(xhr.responseText);
+
+                    // Refreshes the page
+                    window.location.href = "/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html?concernID=" + concernID;
+                }
+            };
+            xhr.send(`concernID=${concernID}&msgBox=${message}`);
+        }
+
+        function getParameterByName(name) {
+            const url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+    </script>
 </body>
 </html>
