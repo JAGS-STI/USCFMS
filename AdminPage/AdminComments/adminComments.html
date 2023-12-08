@@ -44,6 +44,7 @@
                     </a>
                 </div>
             </li>
+            
             <li>
                 <div class="icon">
                     <a href="/USCFMS/AdminPage/AdminComments/adminComments.html">
@@ -52,6 +53,25 @@
                     </a>
                 </div>
             </li>
+
+            <li>
+                <div class="icon">
+                    <a href="/USCFMS/AdminPage/AdminDocument/adminDocument.html">
+                        <img src="media/document-copy-svgrepo-com.svg" />
+                        <span>Requests Documents</span>
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <div class="icon">             
+                    <a href="/USCFMS/AdminPage/AdminReport/adminReport.html">
+                        <img src="media/analytics-bars-chart-svgrepo-com.svg" />
+                        <span>Reports</span>
+                    </a>
+                </div>
+            </li>
+            
             <li id="about">
                 <div class="icon">
                     <a href="/USCFMS/AdminPage/AdminAbout/adminAbout.html">
@@ -73,12 +93,12 @@
     </div>
 
     <div class="pageContent">
-    <h2 id="filterTitle">Filter list</h2>
+        <h2 id="filterTitle">Filter list</h2>
         <div class="filters">
             <div class="concernfield">
             <p id="headField">Year:</p>
                 <div class="inbox">
-                    <select id="concernBox" name="concernBox" placeholder="Type Here" required >
+                    <select id="concernBox" name="concernBox" placeholder="Type Here">
                         <option value="2020">2020</option>
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
@@ -89,7 +109,7 @@
             <div class="concernfield">
             <p id="headField">Comment from:</p>
                 <div class="inbox">
-                    <select id="concernBox" name="concernBox" placeholder="Type Here" required >
+                    <select id="concernBox" name="concernBox" placeholder="Type Here">
                         <option value="Nezuko">Nezuko</option>
                         <option value="Tanjiro">Tanjiro</option>
                         <option value="Inosuke">Inosuke</option>
@@ -102,7 +122,7 @@
             <div class="concernfield">
             <p id="headField">Month:</p>
                 <div class="inbox">
-                    <select id="concernBox" name="concernBox" placeholder="Type Here" required >
+                    <select id="concernBox" name="concernBox" placeholder="Type Here">
                         <option value="January">Safety and security</option>
                         <option value="February">Infrastructures and facilities</option>
                         <option value="March">Animal Welfare</option>
@@ -127,7 +147,6 @@
             <p>Click on a comment ID to view its contents.</p>
         </div>
         <?php include(dirname(__DIR__) . "/php/display_comments.php"); ?>
-        <p id="showMore">Show more...</p>
     </div>
     
     <div class="rightContainer">

@@ -153,7 +153,8 @@ top: 60px;
     font-size: 13px;
 }
 
-#dl
+#dl,
+#send
 {
     font-size: 13px;
 }
@@ -180,6 +181,24 @@ top: 60px;
     color:white;
     font-size: 15px;
     cursor: pointer;
+}
+
+
+#sndMssg
+{
+    margin-top: 5px;
+    height: 40px;
+    width: 160px;
+    border-radius: 50px;
+    background-color: #16601F;
+    color:white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btnSendMssg
+{
+    margin-top: 20px;
 }
 
 .pageInfos
@@ -324,6 +343,8 @@ top: 60px;
     cursor: pointer;
 }
 
+
+/*FIRST SHADOWING*/
 .shadow
 {
     display: none;
@@ -341,7 +362,6 @@ top: 60px;
     position: relative;
     margin-top: 50px;
     margin-bottom: 50px;
-    margin-left: 300px;
     height: 1600px;
     width: 1000px;
     background-color: white;
@@ -370,13 +390,14 @@ top: 60px;
     border-radius: 10px;
 }
 
+
 /* tickets Section */
 
 .popup .popContent
 {
     position: absolute;
     left: 35px;
-    width: calc(100% - 300px);
+    width: calc(100% - 35px);
     top: 500px;
     height: 1100px;
 }
@@ -413,6 +434,7 @@ top: 60px;
     top: 12px;
     cursor: pointer;
 }
+
 .popup .closeBtn img {
     height: 30px;
     width: 30px;
@@ -459,6 +481,7 @@ top: 60px;
 {
     position: relative;
     margin-top: 80px;
+    width: 100%;
 }
 
 #top
@@ -502,18 +525,121 @@ top: 60px;
 .popup .longbox {
     margin-top: 10px;
     background: #cfcfcf;
-    width: 930px;
+    width: 95%;
     height: 150px;
     border-radius: 5px;
 }
 
 .popup .longbox textarea {
     margin-top: 10px;
-    width: 910px;
+    width: calc(100% - 30px);
     height: 140px;
     margin-left: 15px;
     border-style: none;
     background: none;
     color: black;
     outline: none;
+}
+ 
+.popup .q1 {
+    width: 100%;
+}
+
+/*SHADOWING FOR SEND MESSAGE*/
+.shadow1
+{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.384);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+}
+
+.popup1
+{
+    position: relative;
+    height: 550px;
+    width: 1000px;
+    background-color: white;
+    border-radius: 15px;
+
+}
+
+.popup1 img
+{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    right: 13px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.underline1
+{
+    position: absolute;
+    bottom: 0px;
+    top: 60px;
+    margin-left: 50px;
+    width: 25px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+#headShadow1
+{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.fldConcern1 {
+    position: absolute;
+}
+
+#typeMssg
+{
+    margin-top: -30px;
+    margin-bottom: 20px;
+}
+
+.longbox1 {
+    margin-top: 5px;
+    background: #cfcfcf;
+    width: 900px;
+    height: 320px;
+    border-radius: 5px;
+}
+
+.longbox1 textarea {
+    margin-top: 10px;
+    width: 870px;
+    height: 300px;
+    margin-left: 15px;
+    border-style: none;
+    background: none;
+    color: black;
+    outline: none;
+}
+
+.bttnShadow
+{
+    position: absolute;
+    margin-right: 650px;
+    margin-top: 450px;
+    display: flex;
+    gap: 30px;
+}
+
+.bttnShadow button
+{
+    background-color: #16601F;
+    color: white;
+    border-radius: 30px;
+    height: 40px;
+    width: 100px;
+    font-size: 15px;
 }

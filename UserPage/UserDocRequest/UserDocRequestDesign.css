@@ -1,0 +1,237 @@
+﻿.pageContent {
+    position: absolute;
+    top: 480px;
+    /*background: #c3bfbf;*/
+    width: 100%;
+    height: 1000px;
+    height: calc(100vh - 480px);
+}
+@media (max-height: 1480px) {
+    .pageContent {
+        height: 1800px;
+    }
+}
+
+.PageSubtitle img
+{
+    position: absolute;
+    right: 5px;
+}
+
+h1 {
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+#required
+{
+    position: absolute;
+    top: 0px;
+    right: 6%;
+    font-size: 12px;
+    font-weight:400;
+    color: red;
+}
+
+.field1,
+.fieldtop {
+    position: relative;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0px;
+    top: 22px;
+    left: 50px;
+    width: 33px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+.field1
+{
+    margin-top: 50px;
+}
+
+.fldPersonal {
+    position: relative;
+    display: flex;
+    row-gap: 20px;
+    column-gap: 130px;
+    width: 88%;
+    left: 50px;
+    right: 6%;
+    flex-wrap: wrap;
+}
+
+.fldPersonal2
+ {
+    position: relative;
+    display: flex;
+    row-gap: 20px;
+    column-gap: 130px;
+    width: 88%;
+    flex-wrap: wrap;
+}
+
+.flds
+{
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+.fldAcc
+{
+    margin-left: 50px;
+}
+
+.fldAcc p
+{
+    width: 200px;
+}
+
+.info
+{
+    display: flex;
+    gap: 10px;
+}
+
+#bold
+{
+    font-weight: bold;
+}
+
+
+.cbDocType
+{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.inbox {
+    background: #cfcfcf;
+    width: 350px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.inbox1 {
+    background: #cfcfcf;
+    width: 830px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.inbox2 {
+    background: #cfcfcf;
+    width: 264px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+
+
+input {
+    width: 320px;
+    height: 35px;
+    margin-left: 15px;
+    border-style: none;
+    background: none;
+    color: black;
+    outline: none;
+}
+
+input, select {
+    width: 320px;
+    height: 35px;
+    margin-left: 15px;
+    border-style: none;
+    background: none;
+    color: black;
+    outline: none;
+}
+
+.inbox select
+{
+    font-weight: bold;
+}
+
+
+.concernfield .inbox img {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    bottom: 32px;
+    margin-left: 310px;
+}
+
+.fldPersonal2
+{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.fldPersonal3
+{
+    margin-left: 50px;
+    margin-top: 30px;
+    display: flex;
+    gap: 128px;
+}
+
+.fldPurpose
+{
+    margin-top: 100px;
+    margin-left: 50px;
+    display: flex;
+    gap: 50px;
+}
+
+#upldPic
+{
+    height: 38px;
+    width: 150px;
+    border-radius: 40px;
+    background: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#consent
+{
+    margin-top: 100px;
+    margin-left: 80px;
+}
+
+#check
+{
+    position:relative;
+    margin-left: 50px;
+    bottom: 36px;
+    height: 15px;
+    width:15px;
+}
+
+.submit 
+{
+    height: 50px;
+    width: 160px;
+    background-color: #16601f;
+    border-radius: 50px;
+    border-style: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.submit:hover { 
+    transition: 0.3s;
+    background-color: #1a7225;
+}
