@@ -6,10 +6,10 @@ function handleScroll() {
     // Check the scroll position
     if (window.scrollY <= 400) {
         // At the top of the page, hide the scroll indicator
-        scrollIndicator.style.display = "none";
+        scrollIndicator.classList.remove("up");
     } else {
         // Scrolled down, show the scroll indicator
-        scrollIndicator.style.display = "block";
+        scrollIndicator.classList.add("up");
     }
 }
 

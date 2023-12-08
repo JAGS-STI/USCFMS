@@ -70,14 +70,14 @@ h1 {
 
 .longbox {
     background: #cfcfcf;
-    width: 1500px;
+    width: 92vw;
     height: 200px;
     border-radius: 5px;
 }
 
 .longbox textarea {
     margin-top: 10px;
-    width: 1470px;
+    width: 90vw;
     height: 180px;
     margin-left: 15px;
     border-style: none;

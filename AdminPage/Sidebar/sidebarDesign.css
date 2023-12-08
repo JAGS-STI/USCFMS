@@ -45,11 +45,11 @@
     font-size: 35px;
     color: #ffffff;
     background: #16601f;
-    padding: 30px;
+    padding: 15px 30px 0px 30px;
 }
 
 .sidebar ul li {
-    margin: 32px 0;
+    margin: 25px 0;
 }
 
 
@@ -80,19 +80,19 @@ span {
     background-color: #a4d37f;
 }
 
-@media (min-width: 800px) {
+@media (max-height: 900px) {
     .sidebar img {
-        width: 250px;
-        height: 250px;
-        padding: 35px 0px 0px 35px;
+        width: 244px;
+        height: 225px;
+        padding: 25px 0px 0px 45px;
     }
 
     .sidebar h2 {
-        padding: 30px 30px 0px 30px;
+        padding: 5px 30px 0px 30px;
     }
 
     .sidebar ul li {
-        margin: 25px 0;
+        margin: 15px 0;
     }
 }
 
