@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/USCFMS/TestPage/" />
+    <link rel="stylesheet" href="clearance.css" />
+
+    <!-- html2canvas library -->
+    <script src="/USCFMS/npm/jsPDF/node_modules/html2canvas/dist/html2canvas.min.js"></script>
+
+    <!-- jsPDF library -->
+    <script src="/USCFMS/npm/jsPDF/node_modules/jspdf/dist/jspdf.umd.min.js"></script>
+
+    <script>
+    /* Place custom JavaScript code here */
+    window.jsPDF = window.jspdf.jsPDF;
+
+    // Convert HTML content to PDF
+    function Convert_HTML_To_PDF() {
+        var doc = new jsPDF({
+        orientation: "landscape",
+        unit: "in",
+        format: [10.5, 7.6], //fu ka jsPDF awjkdnajdkajb
+    });
+    
+    // Source HTMLElement or a string containing HTML.
+    var elementHTML = document.querySelector("#contentToPrint");
+
+    // Handle missing images gracefully
+    var images = elementHTML.querySelectorAll("img");
+    images.forEach(function(img) {
+        img.onerror = function() {
+            // Replace the missing image with a placeholder
+            img.src = "/USCFMS/TestPage/media/button-error-svgrepo-com.png";
+        };
+    });
+
+    doc.html(elementHTML, {
+        callback: function(doc) {
+            // Save the PDF
+            doc.save('document-html.pdf');
+        },
+        margin: [-0.18, 0, 0, 0],
+        x: 0,
+        y: 0,
+        width: 10.5, //target width in the PDF document
+        windowWidth: 945, //window width in CSS pixels
+        windowHeight: 684
+    });
+    }
+
+    </script>
+</head>
+
+<body style="position: relative; display: flex; align-items: center; flex-direction: column; gap: 10px; background-color: #c8c8c8; height: 1000px">
+    <!-- Trigger button -->
+    <button onclick="Convert_HTML_To_PDF();">Convert HTML to PDF</button>
+    
+    <!-- Download the pdf if u want to see what it looks like in pdf or smthign awjkdajkh-->
+    <h3>Barangay Clearance</h3>
+
+    <!-- Only use .png, .jpeg, .jpg for images -->
+    <!-- HTML content for PDF creation -->
+    <div class="pageContent" id="contentToPrint">
+        <p>eme</p>
+    </div>
+</body>
+</html>

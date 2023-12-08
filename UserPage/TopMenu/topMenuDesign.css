@@ -122,7 +122,17 @@ body {
     text-decoration: underline;
 }
 
+#contact1
+{
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+}
+
 #contact,
+#contact1,
+#request,
 #area 
 {
     width: 90px;

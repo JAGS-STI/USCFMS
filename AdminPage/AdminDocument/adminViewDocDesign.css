@@ -40,9 +40,41 @@ body {
     border-radius: 10px;
 }
 
+.ticketID {
+    position: relative;
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;
+    bottom: 65px;
+    background: #16601F;
+    left: 870px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ticketID p
+{
+    margin-top: 7px;
+    font-size: 10px;
+    font-weight: 400;
+    color: white;
+    margin-left: 10px;
+}
+
+.ticketID h1
+{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-left: 10px;
+}
+
+
+/*DATE AND TIME*/
 .rightContainer {
-    position: fixed;
-    right: 40px;
+    position: absolute;
+    right: 150px;
     top: 60px;
 
 }
@@ -58,39 +90,41 @@ body {
     color: #000000;
 }
 
-.rightCard {
-    width: 220px;
+.header {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    position: absolute;
     height: 150px;
-    background: linear-gradient(90deg, #7ed957, #00742f);
-    border-radius: 20px;
-    margin-top: 20px;
-    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
+    top: 180px;
+    left: 350px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
-.rightCard h3 {
-    position: relative;
-    font-size: 65px;
-    color: #ffffff;
-    top: 10px;
+.card1 {
+    background: #EDEDED;
+    height: 120px;
+    width: 290px;
+    border-style: solid;
+    border-color:#797979;
+    border-width: 0.5px;
+}
+
+.header p 
+{
+    margin-top: 15px;
+    font-size: 13px;
+    font-weight: 400;
     margin-left: 20px;
-    text-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
 }
-
-.rightCard p {
-    font-size: 30px;
-    font-weight: bold;
-    color: #ffffff;
+.header h3 
+{
     margin-left: 20px;
-    margin-top: 6px;
+    font-size: 25px;
 }
 
-.rightCard img {
-    position: relative;
-    bottom: 110px;
-    left: 160px;
-    width: 50px;
-    height: 50px;
-}
 
 
 /* BODY CONTENT*/
@@ -98,170 +132,98 @@ body {
 {
     position: absolute;
     width: 980px;
-    height: 750px;
-    top: 180px;
+    height: 1200px;
+    top: 350px;
     left: 300px;
 
 }
 
-#info
+.infosTitle
 {
-    margin-left: 70px;
+    position: relative;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+.underline 
+{
+    position: absolute;
+    bottom: 0px;
+    top: 25px;
+    left: 0px;
+    width: 25px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+.fields
+{
     margin-top: 30px;
-
+    margin-left: 50px;
 }
 
-.pageContent img
+.fldDetail
 {
-    position: relative;
-    height: 20px;
-    width: 20px;
-    top: -20px;
-    margin-left: 40px;
-}
-
-table {
-    margin-left: 40px;
-    text-align: left;
-    background: #e8e8e8;
-    border-collapse: collapse;
-}
-
-.tblContent {
-    position: relative;
-    width: fit-content;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-th,
-td {
-    padding: 10px;
-}
-
-tr {
-    border-bottom: solid;
-    border-width: 2px;
-    border-color: #e8e8e8;
-}
-
-.tbl:hover {
-    transition: 0.2s;
-    background-color: #dadada;
-}
-
-.tbl {
-    padding: 100px;
-    background: white;
-    cursor: pointer;
-}
-
-.head {
-    background: #e8e8e8;
-    color: #606060;
-}
-
-.active {
+    margin-top: 20px;
     display: flex;
-    align-items: center;
-    gap: 5px;
 }
 
-.dot {
-    background: black;
-    width: 5px;
-    height: 5px;
-    border-radius: 50px;
+.fldDetail p
+{
+    width: 400px;
 }
 
-.ticketID {
+#bold
+{
     font-weight: bold;
 }
 
-#red {
-    background-color: #d92b0b;
-}
-
-#gray {
-    background-color: #aaaaaa;
-}
-
-#blue {
-    background-color: #004aad;
-}
-
-#green {
-    background-color: #22872f;
-}
-
-#orange {
-    background-color: #ff914d;
-}
-
-.filters {
-    position: relative;
+.expandsPart
+{
+    margin-top: 80px;
     margin-left: 50px;
-    display: flex;
-    gap: 50px;
+}
+
+.xpnd
+{
     margin-top: 10px;
-    width: 200px;
-}
-
-#headField
-{
-    width: 120px;
-}
-
-#filterTitle
-{
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-left: 50px;
-}
-
-.concernfield
-{
+    background-color: #d4d4d2;
+    height: 30px;
+    width: 300px;
+    border-radius: 5px;
     display: flex;
-    gap: 10px;
     align-items: center;
 }
 
-.inbox
+.expands select
 {
-    background: #cfcfcf;
-    width: 250px;
-    height: 35px;
-    border-radius: 5px;
-}
-
-input, select 
-{
-    width: 220px;
-    height: 35px;
-    margin-left: 15px;
     border-style: none;
     background: none;
-    color: black;
     outline: none;
+    width: 280px;
+    margin-left: 10px;
+    color: black;
     font-size: 15px;
-}
-.inbox select option 
-{
-    text-decoration: bold;
     font-weight: bold;
 }
 
-#fltrNow
+.buttons
 {
-    position: relative;
-    left: 100px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    left: 450px;
+    margin-top: -30px;
+}
+
+.buttons button
+{
+    height: 35px;
+    width: 180px;
+    border-radius: 20px;
     background-color: #22872f;
-    height: 40px;
-    width: 150px;
-    border-radius: 30px;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
 }
