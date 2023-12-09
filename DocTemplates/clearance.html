@@ -17,9 +17,9 @@
     // Convert HTML content to PDF
     function Convert_HTML_To_PDF() {
         var doc = new jsPDF({
-        orientation: "landscape",
+        orientation: "portrait",
         unit: "in",
-        format: [10.5, 7.6], //fu ka jsPDF awjkdnajdkajb
+        format: [8.5, 11], //fu ka jsPDF awjkdnajdkajb
     });
     
     // Source HTMLElement or a string containing HTML.
@@ -42,9 +42,9 @@
         margin: [-0.001, 0, 0, 0],
         x: 0,
         y: 0,
-        width: 10.5, //target width in the PDF document
-        windowWidth: 945, //window width in CSS pixels
-        windowHeight: 684
+        width: 8.5, //target width in the PDF document
+        windowWidth: 850, //window width in CSS pixels
+        windowHeight: 1100
     });
     }
 
@@ -58,8 +58,8 @@
     <!-- Download the pdf if u want to see what it looks like in pdf or smthign awjkdajkh-->
     <h3>Barangay Clearance</h3>
 
-    <div style="border-style: solid; border-width:1px; border-color: #c6c6c6; box-shadow: 20px;">
-        <div class="pageContent" id="contentToPrint">
+    <div style="border-style: solid; border-width:1px; border-color: #c6c6c6; box-shadow: 20px; ">
+        <div class="pageContent" id="contentToPrint" >
             <!-- Only use .png, .jpeg, .jpg for images -->
             <!-- content START -->
 

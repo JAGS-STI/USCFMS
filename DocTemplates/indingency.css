@@ -12,3 +12,150 @@
 }
 
 /* Contents */
+.topLogo
+{
+    position: relative;
+    background-color: #dfb500;
+    height: 150px;
+    width: 100%;
+}
+.logos
+{
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 30px;
+    display: flex;
+    gap: 10px;
+}
+.logos img
+{
+    height: 100px;
+    width: 100px;
+}
+
+.topTitle
+{
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 250px;
+    font-weight: bold;
+}
+
+#republic
+{
+    font-weight: lighter;
+}
+
+.rightInfo
+{
+    position: absolute;
+    margin-left: 620px;
+    margin-top: 30px;
+}
+
+.details
+{
+    display: flex;
+    gap: 10px;
+}
+
+#bold
+{
+    font-weight: bold;
+    width: 100px;
+}
+
+/* SubContents */
+.pageInfo
+{
+    margin-top: 40px;
+}
+.pic
+{
+    margin-left: 50px;
+}
+
+.pic img
+{
+    height: 200px;
+    width: 200px;
+}
+
+.infoDetails
+{
+    position: relative;
+    margin-top: -200px;
+    margin-left: 300px;
+}
+
+.details1
+{
+    display: flex;
+    gap: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#red
+{
+    color: red;
+    font-weight: bold;
+    width: 200px;
+}
+
+#second
+{
+    margin-top: 40px;
+}
+
+
+.certify
+{
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+
+/* Ending */
+
+.ending
+{
+    margin-left: 50px;
+}
+#verify
+{
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 50px;
+    margin-bottom: 80px; 
+}
+
+.officialsName
+{
+    margin-left: 90px;
+    display: flex;
+    gap: 150px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.officialsPositionSec
+{
+    margin-left: 120px;
+    font-size: 15px;
+}
+
+.officialsPositionChairman
+{
+    margin-left: 500px;
+    margin-top: -18px;
+    font-size: 15px;
+}
+
+
+.last
+{
+    margin-top: 130px;
+    margin-left: 50px;
+}
