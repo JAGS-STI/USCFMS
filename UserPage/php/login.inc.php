@@ -58,6 +58,7 @@
 
             $_SESSION["user_concernList"] = $userConcernList;
             $_SESSION["user_messageList"] = $userMessageList;
+            $_SESSION["notifications"] = 0;
 
             $_SESSION["last_regeneration"] = time();
 

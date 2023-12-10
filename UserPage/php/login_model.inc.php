@@ -23,7 +23,7 @@
     }
 
     function get_messageDetail(object $pdo, string $accID) {
-        $sql = "SELECT messageconcern.concernID, message, messageconcern.dateReceived 
+        $sql = "SELECT msgID, isRead, messageconcern.concernID, message, messageconcern.dateReceived 
                 FROM messageconcern JOIN concerndetail ON messageconcern.concernID = concerndetail.concernID 
                 WHERE concerndetail.accID = :accID ORDER BY dateReceived DESC;";
         $stmt = $pdo->prepare($sql);

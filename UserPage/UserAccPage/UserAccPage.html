@@ -70,9 +70,9 @@
                 <div class="underline"></div>
             </div>
             <p id="noteCncrn">Click on a message to view</p>
-
-            <?php userMessageTable(); ?>
-
+            <div class="tblContent">
+                <?php userMessageTable(); ?>
+            </div>
         </div>
 
         <div class="second">
@@ -81,8 +81,9 @@
                 <div class="underline"></div>
             </div>
             <p id="noteCncrn">Click on a concern ID to view</p>
-            <?php userConcernTable(); ?>
-
+            <div class="tblContent">
+                <?php userConcernTable(); ?>
+            </div>
         </div>
 
         <div class="offset" style="height: 150px; background-color: transparent;"></div>
@@ -102,30 +103,30 @@
         <div class="popup">
             <h1 id="headShadow">Viewing message</h1>
             <div class="underline1"></div>         
-            <img src="Media/button-error-svgrepo-com.svg">
+            <img src="Media/button-error-svgrepo-com.svg" onclick="toggleMessagePopup('close', -1)">
         </div>    
         <div class="fldConcern">
             <div class="concernfield">
                 <div class="longbox">
-                    <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
+                    <textarea readonly id="desc" name="desc" rows="5" cols="100" placeholder="EMPTY"></textarea>
                 </div>
             </div>
         </div>
         <div class="PopDetails">
             <div class="CncrnID">
                 <p>Concern ID connected:</p>
-                <p id="bld">SC-12345</p>
+                <p class="msgInfo" id="bld">SC-12345</p>
             </div>
-            <div class="CncrnID">
+            <div class="CncrnID" onclick="">
                 <p>Date received:</p>
-                <p id="bld">November 27, 2023</p>
+                <p class="msgInfo" id="bld">November 27, 2023</p>
             </div>
             <div class="CncrnID">
                 <p>Time received:</p>
-                <p id="bld">09:48 PM</p>
+                <p class="msgInfo" id="bld">09:48 PM</p>
             </div>
         </div>
-        <button id="done">Done</button>
+        <button id="done" onclick="toggleMessagePopup('close', -1)">Done</button>
     </div>
 
     <?php login_popup(); ?>

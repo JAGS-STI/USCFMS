@@ -26,8 +26,23 @@
     }
 
     function output_account() {
+
         if (isset($_SESSION["user_id"])) {
+            $result = $_SESSION["user_messageList"];
+            $_SESSION["notifications"] = 0;
+            if (count($result) > 0) {
+                for ($row = 0; $row < count($result); $row++) {
+                    $data = $result[$row];
+                    if ($data['isRead'] === 0) {
+                        $_SESSION["notifications"] += 1;
+                    }
+                }
+            }
             echo '<img id="profile_pic" onclick="toaccount()" src="/USCFMS/UserPage/UserHome/Media/user-circle-svgrepo-com(1).svg" />';
+            if ($_SESSION["notifications"] > 0)
+            echo '<div class="accdot" style="width: 6px; height: 6px; background: red; border-radius: 50px;width: 12px;
+                    height: 12px;background: red;border-radius: 50px;position: absolute;right: 42px;top: 5px;font-size: 10px;color: white;
+                    display: flex;align-items: center;justify-content: center;">' . $_SESSION["notifications"] . '</div>';
             echo '<div class="register">
                     <p id="user_name" onclick="toaccount()">Logged in as: ' . $_SESSION["user_name"] . '</p>
                     <form action="../php/logout.inc.php" method="post">
@@ -212,16 +227,24 @@
 
             for ($row = 0; $row < count($result); $row++) {
                 $data = $result[$row];
-                echo '<tr class="tbl" onclick="toggleMessagePopup(' . "'open'" . ')">';
+                echo '<tr class="tbl" id="' . $data['msgID'] . '" onclick="toggleMessagePopup(\'open\', ' . $row . ')">';
 
                 // Format the date using DateTime
                 $dateTimeObj = new DateTime($data['dateReceived']);
                 $formattedDate = $dateTimeObj->format('F j, Y');
                 $formattedTime = $dateTimeObj->format('g:i A');
 
-                echo '<td>' . $formattedDate . '</td>';
-                echo '<td>' . $formattedTime . '</td>';
-                echo '<td class="ticketID">SC-' . $data['concernID'] . '</td>';
+                if ($data['isRead'] === 0) {
+                    echo '<td class="msgdate" id="date' . $row .'" style="display: flex; align-items: center; gap: 10px;">
+                    <div class="redDot" style="width: 10px; height: 10px; background: red; border-radius: 50px; "></div>' . $formattedDate . '</td>';
+                } else {
+                    echo '<td class="msgdate" id="date' . $row .'" style="display: flex; align-items: center; gap: 10px;">
+                    <div class="redDot" style="width: 10px; height: 10px; background: transparent; border-radius: 50px; "></div>' . $formattedDate . '</td>';
+                }
+                
+                echo '<td class="msgtime"  id="time' . $row .'">' . $formattedTime . '</td>';
+                echo '<td class="ticketID"  id="id' . $row .'">SC-' . $data['concernID'] . '</td>';
+                echo '<td class="msgDetail" style="position: absolute; display: none; width: 0;">' . $data['message'] . '</td>';
                 echo '</tr>';
             }
 
