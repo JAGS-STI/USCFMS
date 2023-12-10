@@ -198,6 +198,68 @@
         }
     }
 
+    function userMessageTable() {
+        // Display the HTML table
+        $result = $_SESSION["user_messageList"];
+
+        if (count($result) > -1) {
+            echo '<table>';
+            echo '<tr class="head">
+                    <th width="240px">Date received</th>
+                    <th width="190px">Time received</th>
+                    <th width="200px">Concern ID connected</th>
+                </tr>';
+
+            for ($row = 0; $row < count($result); $row++) {
+                $data = $result[$row];
+                echo '<tr class="tbl" onclick="toggleMessagePopup(' . "'open'" . ')">';
+
+                // Format the date using DateTime
+                $dateTimeObj = new DateTime($data['dateReceived']);
+                $formattedDate = $dateTimeObj->format('F j, Y');
+                $formattedTime = $dateTimeObj->format('g:i A');
+
+                echo '<td>' . $formattedDate . '</td>';
+                echo '<td>' . $formattedTime . '</td>';
+                echo '<td class="ticketID">SC-' . $data['concernID'] . '</td>';
+                echo '</tr>';
+            }
+
+            echo '</table>';
+        } else {
+            echo 'No concerns found.';
+        }
+
+        //Old Format
+        // <table>
+        //     <tr class="head">
+        //         <th width="250px">Date received</th>
+        //         <th width="270px">Time received</th>
+        //         <th width="360px">Concern ID connected</th>
+        //     </tr>
+        //     <tr class="tbl">
+        //         <td>October 26, 2023</td>
+        //         <td>09:46 PM</td>
+        //         <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>                    
+        //     </tr>
+        //     <tr class="tbl">
+        //         <td>October 26, 2023</td>
+        //         <td>09:46 PM</td>
+        //         <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
+        //     </tr>
+        //     <tr class="tbl">
+        //         <td>October 26, 2023</td>
+        //         <td>09:46 PM</td>
+        //         <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
+        //     </tr>
+        //     <tr class="tbl">
+        //         <td>October 26, 2023</td>
+        //         <td>09:46 PM</td>
+        //         <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
+        //     </tr>
+        // </table>
+    }
+
     function getStatusColor($status)
     {
         switch ($status) {

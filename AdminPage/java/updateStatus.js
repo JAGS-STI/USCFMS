@@ -82,10 +82,10 @@ function sendMsg() {
             console.log(xhr.responseText);
 
             // Refreshes the page
-            window.location.href = "/USCFMS/AdminPage/AdminTickets/adminTickets.html?concernID=" + concernID;
+            window.location.href = "/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html?concernID=" + concernID;
         }
     };
-    xhr.send(`concernID=${concernID}&msg=${message}`);
+    xhr.send(`concernID=${concernID}&msgBox=${message}`);
 }
 
 function discardTicket() {

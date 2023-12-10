@@ -22,4 +22,16 @@
         return $userConcernList;
     }
 
+    function get_messageDetail(object $pdo, string $accID) {
+        $sql = "SELECT messageconcern.concernID, message, messageconcern.dateReceived 
+                FROM messageconcern JOIN concerndetail ON messageconcern.concernID = concerndetail.concernID 
+                WHERE concerndetail.accID = :accID ORDER BY dateReceived DESC;";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(":accID", $accID);
+        $stmt->execute();
+
+        $userConcernList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $userConcernList;
+    }
+
 ?>

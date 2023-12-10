@@ -24,6 +24,16 @@ function toggleLoginPopup($toggle) {
     }
 }
 
+function toggleMessagePopup($toggle) {
+    $popupWindow = document.getElementsByClassName("shadow");
+
+    if ($toggle === 'open') {
+        $popupWindow[0].style.display = 'flex';
+    } else {
+        $popupWindow[0].style.display = 'none';
+    }
+}
+
 function togglePassword() {
     var passwordField = document.getElementById("passwordBox");
     if (passwordField.type === "password") {

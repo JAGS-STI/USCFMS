@@ -21,7 +21,7 @@
     top: 490px;
 }
 
-@media (max-height: 1080px) {
+@media (max-height: 1500px) {
     .pageContent {
         height: fit-content;
     }
@@ -48,17 +48,22 @@
 #details
 {
     font-weight: bold;
+    width: 230px;
 }
 .first
 {
+    position: relative;
     display: flex;
-    gap: 300px;
-    margin-left: 50px; 
+    column-gap: 30vw;
+    left: 50px;
+    width: calc(100% - 50px);
+    flex-wrap: wrap;
 }
 
 .NameNAdd
 {
     display: flex;
+    width: fit-content;
     gap: 30px;
 }
 
@@ -116,6 +121,19 @@ table {
     text-align: left;
     background: #e8e8e8;
     border-collapse: collapse;
+    width: 75vw;
+}
+
+@media (min-width: 1400px) {
+    table {
+        width: 60vw;
+    }
+}
+
+@media (min-width: 1600px) {
+    table {
+        width: 50vw;
+    }
 }
 
 th,
