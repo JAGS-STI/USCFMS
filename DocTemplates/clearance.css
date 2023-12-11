@@ -1,14 +1,258 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 .pageContent {
     position: relative;
     background-color: white;
     /* width and height already makes the actual document 10.5 x 7.6 inches*/
-    width: 1020px;
-    height: 684px;
+    width: 850px;
+    height: 1100px;
 }
 
-/* Contents */
+/* TopLogo */
+
+.topLogo
+{
+    height: 200px;
+}
+
+.logos
+{
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 37px;
+    display: flex;
+    gap: 510px;
+}
+
+.logos img
+{
+    height: 120px;
+    width: 120px;
+}
+
+.topTitle
+{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 183px;
+    text-align: center;
+}
+
+#headTitle
+{
+    font-size: 48px;
+}
+
+#add
+{
+    font-size: 12px;
+}
+
+
+/* LeftContents */
+
+.leftContents
+{
+    margin-top: -50px;
+    position: absolute;
+    width: 250px;
+    height: 800px;
+    text-align: center;
+}
+
+.pic
+{
+    position: relative;
+    
+}
+
+.pic img
+{
+    height: 200px;
+    width: 150px;
+}
+
+
+.nameInfosTop
+{
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.nameInfosContent
+{
+    margin-top: 40px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.line 
+{
+    border-left: 2px solid #000000;
+    height: 800px;
+    position: absolute;
+    margin-left: 230px;
+    top: 0%;
+    margin-top: 70px;
+  }
+
+
+
+  /*  RightContents */
+
+  .rightContents
+  {
+    position: absolute;
+    width: 560px;
+    height: 850px;
+    margin-left: 260px;
+  }
+
+  .rightContents p
+  {
+    font-family:'Times New Roman', Times, serif;
+  }
+
+  .rightHead
+  {
+    text-align: center;
+  }
+
+  .rightHead h2
+  {
+    color: #4b8c01;
+    font-family:'Times New Roman', Times, serif;
+  }
+
+  .rightHead h3
+  {
+    color: #db100f;
+    font-size: 16px;
+    font-family:'Times New Roman', Times, serif;
+  }
+
+
+  .letter
+  {
+    margin-top: 40px;
+  }
+
+  #text
+  {
+    text-indent: 50px;
+    font-size: 15px;
+    font-family:'Times New Roman', Times, serif;
+  }
+
+  /*  TableContents */
+
+  .table1
+  {
+    margin-top: 25px;
+  }
+
+  table 
+  {
+    
+    border-collapse: collapse;
+  }
+  
+  td, th, tr 
+  {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11px;
+  }
+
+  #certReq,
+  #issueDate
+  {
+    margin-top: 30px;
+    font-size: 15px;
+  }
+
+  .CapitanName
+  {
+    margin-top: 80px;
+    margin-left: 120px;
+    text-align: center;
+  }
+
+  .CapitanName h4
+  {
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .seal
+  {
+    margin-top: 75px;
+  }
+
+  .seal h5
+  {
+    font-family: 'Times New Roman', Times, serif;
+    color: #797979;
+  }
+  
+
+    /*  Last */
+
+    .last
+    {
+        position: absolute;
+        background-color: #ebff01;
+        margin-top: 850px;
+        height: 50px;
+        width: 850px;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .tanod
+    {
+        margin-left: 20px;
+        display: flex;
+        gap: 5px;
+    }
+
+    .tanod img,
+    .fire img,
+    .health img
+    {
+        height: 20px;
+        width: 20px;
+    }
+
+    .fire
+    {
+        margin-left: 90px;
+        display: flex;
+        gap: 5px;
+    }
+
+    .health
+    {
+        margin-left: 100px;
+        display: flex;
+        gap: 5px;
+    }
+
+    .num
+    {
+        margin-left: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+    }
