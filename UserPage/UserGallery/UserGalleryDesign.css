@@ -19,7 +19,7 @@
 
 @media (max-height: 2000px) {
     .pageContent {
-        height: 1500px;
+        height: fit-content;
     }
 }
 
@@ -29,7 +29,7 @@
     left: 50px;
     position: relative;
     font-size: 20px;
-    width: fit-content;
+    width: 265px;
 }
 
 #headTitle::after {
@@ -136,7 +136,7 @@
 .showMore
 {
     margin-left:50px;
-    width: fit-content;
+    width: 110px;
     font-size: 18px;
     font-weight:bold;
     color:green;

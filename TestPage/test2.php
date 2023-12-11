@@ -3,45 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Active Concerns</title>
+    <title>Image Enlarger</title>
+    <style>
+        /* Styles for the enlarged image container */
+        #enlargedContainer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #enlargedImg {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        #imgcloseBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Display the total amount of active concerns -->
-<?php
-function displayActiveConcerns() {
-    // Include the script
-    include($_SERVER['DOCUMENT_ROOT'] . "/USCFMS/TestPage/php/fetch_count.php");
-    
-    // Display the total amount in a new <h3> element
-    echo '<h3 class="activeConcern">' . $activeCount . '</h3>';
-}
+<!-- Image that, when clicked, will be enlarged -->
+<img src="\USCFMS\AdminPage\uploads\10023_Evidence1.jpg" alt="Enlargable Image" onclick="enlargeImage(this)">
 
-// Call the function to display the total amount initially
-displayActiveConcerns();
-?>
-
-<!-- Button to add a new <h3> element -->
-<button onclick="addNewConcern()">Add New Concern</button>
+<!-- Enlarged image container -->
+<div id="enlargedContainer" onclick="closeEnlarged()">
+    <span id="closeBtn">&times;</span>
+    <img id="enlargedImg" src="" alt="Enlarged Image">
+</div>
 
 <script>
-    // JavaScript function to add a new <h3> element
-    function addNewConcern() {
-        // Create a new <h3> element with the class "activeConcern"
-        var newH3 = document.createElement("h3");
-        newH3.className = "activeConcern";
+    // Function to enlarge the image
+    function enlargeImage(clickedImg) {
+        var enlargedContainer = document.getElementById("enlargedContainer");
+        var enlargedImg = document.getElementById("enlargedImg");
 
-        // Append the new <h3> element to the body
-        document.body.appendChild(newH3);
+        // Set the source of the enlarged image
+        enlargedImg.src = clickedImg.src;
 
-        // Call the PHP script to fetch and update the total amount
-        fetch('php/fetch_count.php') // Assuming your PHP script is in the "php" folder
-            .then(response => response.text())
-            .then(data => {
-                // Update the innerHTML of the new <h3> element with the new count
-                newH3.innerHTML = data;
-            })
-            .catch(error => console.error('Error:', error));
+        // Show the enlarged container
+        enlargedContainer.style.display = "flex";
+    }
+
+    // Function to close the enlarged image container
+    function closeEnlarged() {
+        var enlargedContainer = document.getElementById("enlargedContainer");
+
+        // Hide the enlarged container
+        enlargedContainer.style.display = "none";
     }
 </script>
 

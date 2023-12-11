@@ -21,11 +21,18 @@
     top: 490px;
 }
 
-@media (max-height: 1080px) {
+@media (max-height: 1820px) {
     .pageContent {
-        height: 1200px;
+        height: fit-content;
     }
 }
+
+@media (max-height: 1560px ) and (max-width: 880px ) {
+    .pageContent {
+        height: fit-content;
+    }
+}
+
 
 .underline 
 {
@@ -48,17 +55,22 @@
 #details
 {
     font-weight: bold;
+    width: 230px;
 }
 .first
 {
+    position: relative;
     display: flex;
-    gap: 300px;
-    margin-left: 50px; 
+    column-gap: 30vw;
+    left: 50px;
+    width: calc(100% - 50px);
+    flex-wrap: wrap;
 }
 
 .NameNAdd
 {
     display: flex;
+    width: fit-content;
     gap: 30px;
 }
 
@@ -111,11 +123,31 @@
 }
 
 table {
-    margin-top: 30px;
-    margin-left: 40px;
     text-align: left;
     background: #e8e8e8;
     border-collapse: collapse;
+    width: 75vw;
+}
+
+.tblContent {
+    margin-top: 30px;
+    margin-left: 40px;
+    position: relative;
+    width: fit-content;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+@media (min-width: 1400px) {
+    table {
+        width: 60vw;
+    }
+}
+
+@media (min-width: 1600px) {
+    table {
+        width: 50vw;
+    }
 }
 
 th,
@@ -242,6 +274,7 @@ tr {
     background: none;
     color: black;
     outline: none;
+    resize: none;
 }
 .PopDetails
 {
@@ -260,6 +293,10 @@ tr {
 .CncrnID p
 {
     width: 200px;
+}
+
+.msgInfo .redDot {
+    display: none;
 }
 
 #bld

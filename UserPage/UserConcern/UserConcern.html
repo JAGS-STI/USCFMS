@@ -37,7 +37,7 @@
 
         <div class="menuOptions">
             <a href="/USCFMS/UserPage/UserAbout/UserAbout.html">About the Barangay</a>
-            <a id="request" href="/USCFMS/UserPage/UserDocRequest/UserDocRequest.html">Request document(s)</a>
+            <?php torequestBtn() ?>
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
             <?php tosubmitBtn(); ?>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
@@ -99,7 +99,7 @@
                         <p>Upload photos as proof/evidence <span style="color: red">*</span></p>
                         <div class="inbox" id="invi">
                             <div class="upload">
-                                <button for="fileInput" class="upload-button">Upload photos</button>
+                                <button type="button" for="fileInput" class="upload-button">Upload photos</button>
                                 <span class="selected-file">No file selected</span>
                                 <input class="file-input" type="file" id="fileInput" name="fileInput[]" accept=".jpeg, .jpg, .png" multiple required>
                                 <script>
@@ -154,6 +154,8 @@
                 </script>
             </div>
         </form>
+
+        <div class="offset" style="height: 100px; background-color: transparent;"></div>
 
         <!--bottom-->
         <footer class="copyRight">

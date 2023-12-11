@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <base href="/USCFMS/TestPage/" />
-    <link rel="stylesheet" href="clearance.css" />
+    <link rel="stylesheet" href="\USCFMS\DocTemplates\clearance.css" />
 
     <!-- html2canvas library -->
     <script src="/USCFMS/npm/jsPDF/node_modules/html2canvas/dist/html2canvas.min.js"></script>
@@ -39,7 +39,7 @@
             // Save the PDF
             doc.save('document-html.pdf');
         },
-        margin: [-0.18, 0, 0, 0],
+        margin: [-0.001, 0, 0, 0],
         x: 0,
         y: 0,
         width: 10.5, //target width in the PDF document
@@ -51,17 +51,22 @@
     </script>
 </head>
 
-<body style="position: relative; display: flex; align-items: center; flex-direction: column; gap: 10px; background-color: #c8c8c8; height: 1000px">
+<body style="position: relative; display: flex; align-items: center; flex-direction: column; gap: 20px; background-color: #ebeaea;">
     <!-- Trigger button -->
     <button onclick="Convert_HTML_To_PDF();">Convert HTML to PDF</button>
     
     <!-- Download the pdf if u want to see what it looks like in pdf or smthign awjkdajkh-->
     <h3>Barangay Clearance</h3>
 
-    <!-- Only use .png, .jpeg, .jpg for images -->
-    <!-- HTML content for PDF creation -->
-    <div class="pageContent" id="contentToPrint">
-        <p>eme</p>
+    <div style="border-style: solid; border-width:1px; border-color: #c6c6c6; box-shadow: 20px;">
+        <div class="pageContent" id="contentToPrint">
+            <!-- Only use .png, .jpeg, .jpg for images -->
+            <!-- content START -->
+
+            <p>eme</p>
+
+            <!-- content END -->
+        </div>
     </div>
 </body>
 </html>

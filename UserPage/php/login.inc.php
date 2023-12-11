@@ -21,6 +21,7 @@
 
             if ($result["accID"]) {
                 $userConcernList = get_concernDetail($pdo, $result["accID"]);
+                $userMessageList = get_messageDetail($pdo, $result["accID"]);
             }
             
             if (is_email_wrong($result)) {
@@ -56,6 +57,8 @@
             $_SESSION["user_street"] = $result["address"];
 
             $_SESSION["user_concernList"] = $userConcernList;
+            $_SESSION["user_messageList"] = $userMessageList;
+            $_SESSION["notifications"] = 0;
 
             $_SESSION["last_regeneration"] = time();
 

@@ -43,7 +43,7 @@
 
         <div class="menuOptions">
             <a href="/USCFMS/UserPage/UserAbout/UserAbout.html">About the Barangay</a>
-            <a id="request" href="/USCFMS/UserPage/UserDocRequest/UserDocRequest.html">Request document(s)</a>
+            <?php torequestBtn() ?>
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
             <?php tosubmitBtn(); ?>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
@@ -101,7 +101,7 @@
                                 <p id="file">Supported file types: JPG, PNG</p>
                                 <div class="inbox" id="invi">
                                     <div class="upload">
-                                        <button for="fileInput" class="upload-button" id="upload">Upload</button>
+                                        <button type="button" for="fileInput" class="upload-button" id="upload">Upload</button>
                                         <input class="file-input" type="file" id="fileInput" name="fileInput" accept=".jpeg, .jpg, .png" required>
                                         <script>
                                             // JavaScript to display the selected file names

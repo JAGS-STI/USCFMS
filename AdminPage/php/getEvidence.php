@@ -26,7 +26,7 @@
     while ($row = $result->fetch_assoc()) {
         $idPath = $row['photoEvidence'];
         $pathFormat = '/USCFMS' . $idPath;
-    echo            '<img src="' . $pathFormat . '">';
+    echo            '<img src="' . $pathFormat . '" onclick="enlargeImage(this)">';
     }         
     echo        '</div>  
             </div>';
