@@ -17,24 +17,30 @@
 }
 
 .PageMenu {
-    position: absolute;
+    position: relative;
     top: 480px;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
-    gap: 90px;
+    height: fit-content;
+    justify-content: space-evenly;
+    gap: 2%;
     align-items: center;
-    height: 60px;
     background: #16601F;
     color: white;
     font-size:13px;
     font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.PageMenu p {
+    flex-shrink: 1;
 }
 
 #goTo
 {
     margin-left: 50px;
     font-weight: lighter;
+    width: 51px;
 }
 
 #goTo:hover
@@ -96,7 +102,7 @@
 
 /* BODY CONTENT*/
 .pageContent {
-    position: absolute;
+    position: relative;
     width: 100%;
     top: 540px;
     height: 2600px;
@@ -105,16 +111,18 @@
 
 @media (max-height: 3140px) {
     .pageContent {
-        height: 2600px;
+        height: fit-content;
     }
 }
 
 .boundaries
 {
     position: relative;
+    width: 90%;
     margin-left: 60px;
     display: flex;
-    gap: 200px;
+    column-gap: 200px;
+    flex-wrap: wrap;
 }
 
 .directions
@@ -162,6 +170,7 @@ table {
     text-align: left;
     background: #e8e8e8;
     border-collapse: collapse;
+    max-width: 82vw;
 }
 
 th,
@@ -185,24 +194,27 @@ tr {
     color: #606060;
 }
 
-.up {
+#upBtn {
     position: fixed;
+    opacity: 0;
     right: 50px;
-    bottom: 90px;
-    display: none;
-    opacity: 1;
-    transition: opacity 0.5s ease;
+    bottom: 10px;
+    transition: 0.3s;
 }
 
-.up img
+#upBtn.up {
+    transition: 0.3s;
+    position: fixed;
+    right: 50px;
+    bottom: 70px;
+    opacity: 1;
+}
+
+#upBtn img
 {
     height: 80px;
     width: 80px;
     cursor: pointer;
 }
 
-.up:active {
-    transition: 0.3s;
-    opacity: 1; /* Fully opaque when visible */
-}
 

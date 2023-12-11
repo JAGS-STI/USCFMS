@@ -52,7 +52,7 @@
 
 @media (max-height: 1820px) {
     .aboutInfo {
-        height: 1300px;
+        height: fit-content;
     }
 }
 
@@ -121,5 +121,13 @@ iframe {
 {
     position: relative;
     display: flex;
-    gap: 500px;
+    gap: 13vw;
+}
+
+.mission {
+    width: 39vw;
+}
+
+.vision {
+    width: 39vw;
 }

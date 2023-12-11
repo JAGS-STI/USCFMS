@@ -7,7 +7,7 @@
 
 @media (max-height: 1580px) {
     .pageContent {
-        height: 1100px;
+        height: fit-content;
     }
 }
 .PageSubtitle img
@@ -159,6 +159,7 @@ input, select {
     background: none;
     color: black;
     outline: none;
+    resize: none;
 }
 
 #identityTitle {

@@ -37,7 +37,7 @@
 
         <div class="menuOptions">
             <a href="/USCFMS/UserPage/UserAbout/UserAbout.html">About the Barangay</a>
-            <a id="request" href="/USCFMS/UserPage/UserDocRequest/UserDocRequest.html">Request document(s)</a>
+            <?php torequestBtn() ?>
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
             <?php tosubmitBtn(); ?>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
@@ -53,24 +53,13 @@
     </div>
 
 
-    <div class="pageContent">
-        <form id="commentForm" action="php/process_comment.php" method="post" >
-            
+    <div class="pageContent">   
         <div class="fieldtop">
             <h1 id="headTitle">Personal Information</h1>
             <div class="underline"></div>
             <p id="required">Fields with * are required</p>
             
-            <div class="fldAcc">
-                <div class="info">
-                    <p>You are logged in as:</p>
-                    <p id="bold">Gerald Balbon</p>
-                </div>
-                <div class="info">
-                    <p>Contact number:</p>
-                    <p id="bold">0976 045 9207</p>
-                </div>
-            </div>
+            <?php request_detail(); ?>
 
             <div class="cbDocType">
                 <div class="concernfield">
@@ -85,10 +74,18 @@
                 </div>
             </div>
         </div>
+
+        <!-- Blank -->
+        <div class="allFields" id="blankPanel">
+            <div class="field1">
+                <h1 id="headTitle">Request Information</h1>
+                <div class="underline"></div>
+            </div>
+        </div>
         
         <!-- Barangay Indingency -->
         <div class="allFields" id="indingencyPanel">
-            <form id="indingencyForm" method="post">
+            <form id="indingencyForm" method="post" action="php/process_indingency.php">
                 <div class="field1">
                     <h1 id="headTitle">Request Information</h1>
                     <div class="underline"></div>
@@ -97,19 +94,19 @@
                         <div class="contactfield">
                             <p>Name: <span style="color: red">*</span></p>
                             <div class="inbox">
-                                <input id="nameBox" name="nameBox" type="text" placeholder="Type Here" required>
+                                <input id="nameBox" name="nameBox" type="text" placeholder="Firstname Middlename Lastname" required>
                             </div>
                         </div>
                         <div class="contactfield">
                             <p>Birthday: <span style="color: red">*</span></p>
                             <div class="inbox">
-                                <input id="bdayBox" name="contactBox" type="date" placeholder="Type Here" required>
+                                <input id="bdayBox" name="bdayBox" type="date" placeholder="Type Here" required>
                             </div>
                         </div>
                         <div class="contactfield">
-                            <p>VIN/Precint No.: <span style="color: red">*</span></p>
+                            <p>VIN/Precint No.: </p>
                             <div class="inbox">
-                                <input id="vinBox" name="contactBox" type="text" placeholder="Type Here" required>
+                                <input id="vinBox" name="vinBox" type="text" placeholder="Type Here">
                             </div>
                         </div>
                     </div>
@@ -118,34 +115,40 @@
                         <div class="contactfield">
                             <p>Full address: <span style="color: red">*</span></p>
                             <div class="inbox1">
-                                <input id="addressBox" name="contactBox" type="text" placeholder="Type Here" required>
+                                <input id="addressBox" name="addressBox" type="text" placeholder="Type Here" required>
                             </div>
                         </div>
                         <div class="contactfield">
                             <p>No. of years residing in the Barangay: <span style="color: red">*</span></p>
                             <div class="inbox">
-                                <input id="yearBox" name="contactBox" type="text" placeholder="Type Here" required>
+                                <input id="yearBox" name="yearBox" type="text" placeholder="Type Here" required>
                             </div>
                         </div>
                     </div>
 
                     <div class="fldPersonal3">
                         <div class="contactfield">
-                            <p>Educational/Institution: <span style="color: red">*</span></p>
+                            <p>Educational/Institution: </p>
                             <div class="inbox">
-                                <input id="educationalBox" name="nameBox" type="text" placeholder="Type Here" required>
+                                <input id="educationalBox" name="educationalBox" type="text" placeholder="Type Here">
                             </div>
                         </div>
                         <div class="contactfield">
                             <p>Requesting/support institution: <span style="color: red">*</span></p>
                             <div class="inbox">
-                                <input id="requestingBox" name="contactBox" type="text" placeholder="Type Here" required>
+                                <input id="requestingBox" name="requestingBox" type="text" placeholder="Type Here" required>
                             </div>
                         </div>
                         <div class="contactfield">
                             <p>Purpose: <span style="color: red">*</span></p>
                             <div class="inbox">
-                                <input id="purposeBox" name="contactBox" type="text" placeholder="Type Here" required>
+                                <input id="purposeBox" name="purposeBox" type="text" placeholder="Type Here" required>
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Grade/Level: </p>
+                            <div class="inbox">
+                                <input id="gradeBox" name="gradeBox" type="text" placeholder="Type Here">
                             </div>
                         </div>
                     </div>
@@ -154,10 +157,165 @@
                         <p id="consent">I consent to the processing of my personal data in accordance with the Republic Act 10173 or also known as the Data Privacy Act of 2012.</p>
                         <input id="check" type="checkbox" required/>
                     </div>
-                        <input type="submit" class="submit" name="submit" value="SUBMIT">
+                        <input type="submit" class="submit" name="submit" value="SUBMIT" id="submitIndingency">
                 </div>
             </form>
         </div>
+
+        <!-- Barangay Clearance -->
+        <div class="allFields" id="clearancePanel" >
+            <form id="clearanceForm" method="post" action="php/process_clearance.php" enctype="multipart/form-data" >
+                <div class="field1">
+                    <h1 id="headTitle">Request Information</h1>
+                    <div class="underline"></div>
+
+                    <div class="fldPersonal">
+                        <div class="contactfield">
+                            <p>Name: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="nameBox" name="nameBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Age: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="ageBox" name="ageBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Gender: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="genderBox" name="genderBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+
+                        <div class="contactfield">
+                            <p>Birthday: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="bdayBox" name="bdayBox" type="date" placeholder="Type Here" required>
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Religion: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="religionBox" name="religionBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Citizenship: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="citizenBox" name="citizenBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fldPersonal2">
+                        <div class="contactfield">
+                            <p>Full home address: <span style="color: red">*</span></p>
+                            <div class="inbox1">
+                                <input id="addressBox" name="addressBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Voter’s ID number: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="voterBox" name="voterBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fldPersonal3">
+                        <div class="flds">
+                            <div class="contactfield">
+                                <p>Height: <span style="color: red">*</span></p>
+                                <div class="inbox2">
+                                    <input class="input2" id="heightBox" name="heightBox" type="text" placeholder="Type Here" >
+                                </div>
+                            </div>
+                            <div class="contactfield">
+                                <p>Weight: <span style="color: red">*</span></p>
+                                <div class="inbox2">
+                                    <input class="input2" id="weightBox" name="weightBox" type="text" placeholder="Type Here" >
+                                </div>
+                            </div>
+                            <div class="contactfield">
+                                <p>Complexion: <span style="color: red">*</span></p>
+                                <div class="inbox2">
+                                    <input class="input2" id="complexionBox" name="complexionBox" type="text" placeholder="Type Here" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Hair color: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="hairBox" name="hairBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+
+                <div class="field1">
+                    <h1 id="headTitle">Contact Person Information</h1>
+                    <div class="underline"></div>
+                    
+                    <div class="fldPersonal2">
+                        <div class="contactfield">
+                            <p>Contact person: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="contactPersonBox" name="contactPersonBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Contact number: <span style="color: red">*</span></p>
+                            <div class="inbox">
+                                <input id="contactNumBox" name="contactNumBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                        <div class="contactfield">
+                            <p>Address: <span style="color: red">*</span></p>
+                            <div class="inbox1">
+                                <input id="contactAddBox" name="contactAddBox" type="text" placeholder="Type Here" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fldPurpose">
+                    <div class="contactfield">
+                        <p>Purpose of this request: <span style="color: red">*</span></p>
+                        <div class="inbox">
+                            <input id="purposeBox" name="purposeBox" type="text" placeholder="Type Here" >
+                        </div>
+                    </div>
+                    <div class="contactfield">
+                        <p>Upload your 2x2 photo <span style="color: red">*</span></p>
+                        <div class="inboxUp" id="invi">
+                            <div class="upload">
+                                <button type="button" for="fileInput" class="upload-button">Upload photos</button>
+                                <span class="selected-file">No file selected</span>
+                                <input class="file-input" type="file" id="fileInput" name="fileInput" accept=".jpeg, .jpg, .png" required>
+                                <script>
+                                    // JavaScript to display the selected file names
+                                    document.getElementById('fileInput').addEventListener('change', function () {
+                                        const files = this.files;
+                                        const fileNames = Array.from(files).map(file => file.name);
+                                        document.querySelector('.selected-file').textContent = fileNames.join(', ') || 'No file selected';
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="consent">
+                    <p id="consent">I consent to the processing of my personal data in accordance with the Republic Act 10173 or also known as the Data Privacy Act of 2012.</p>
+                    <input id="check" type="checkbox" required/>
+                </div>
+                <input type="submit" class="submit" name="submit" value="SUBMIT" id="submitClearance">
+            </form>
+        </div>
+
+        <div class="offset" style="height: 150px; background-color: transparent;"></div>
 
         <!--bottom-->
         <footer class="copyRight">
@@ -171,5 +329,83 @@
     </div>
     <?php login_popup(); ?>
     
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var selectBox = document.getElementById("concernBox");
+            var indingencyPanel = document.getElementById("indingencyPanel");
+            var clearancePanel = document.getElementById("clearancePanel");
+            var blankPanel = document.getElementById("blankPanel");
+            var contentSize = document.getElementsByClassName("pageContent");
+            var scrollTo = document.getElementsByClassName("submit");
+
+            // Initial check on page load
+            handlePanelVisibility();
+
+            // Add an event listener to the select box to handle changes
+            selectBox.addEventListener("change", handlePanelVisibility);
+            window.addEventListener("resize", handlePanelVisibility);
+
+            function handlePanelVisibility() {
+                var selectedValue = selectBox.value;
+
+                // Hide all panels by default
+                indingencyPanel.style.display = "none";
+                clearancePanel.style.display = "none";
+                blankPanel.style.display = "none";
+
+                // Show the selected panel based on the value of the select box
+                if (selectedValue === "Barangay Indigency") {
+                    indingencyPanel.style.display = "block";
+                    console.log("Screen Height: " + window.innerHeight + " pixels");
+                    console.log("Screen Width: " + window.innerWidth + " pixels");
+                    if (window.innerHeight <= 1480){
+                        contentSize[0].style.height = "fit-content";
+                    } else {
+                        contentSize[0].style.height = "calc(100vh - 480px)";
+                    }
+                    scrollTo[0].scrollIntoView( { behavior: "smooth" } );
+
+                } else if (selectedValue === "Barangay Clearance") {
+                    clearancePanel.style.display = "block";
+                    console.log("Screen Height: " + window.innerHeight + " pixels");
+                    console.log("Screen Width: " + window.innerWidth + " pixels");
+                    if (window.innerHeight <= 2480){
+                        contentSize[0].style.height = "fit-content";
+                    } else {
+                        contentSize[0].style.height = "calc(100vh - 480px)";
+                    } if (window.innerHeight >= 2120 && window.innerWidth >= 1500) {
+                        contentSize[0].style.height = "calc(100vh - 480px)";
+                    } else {
+                        contentSize[0].style.height = "fit-content";
+                    } if (window.innerHeight >= 2020 && window.innerWidth >= 2046) {
+                        contentSize[0].style.height = "calc(100vh - 480px)";
+                    } else {
+                        contentSize[0].style.height = "fit-content";
+                    } if (window.innerHeight >= 1479 && window.innerWidth >= 800) {
+                        contentSize[0].style.height = "fit-content";
+                    } else {
+                        contentSize[0].style.height = "calc(100vh - 480px)";
+                    } if (window.innerHeight <= 1482 && window.innerWidth >= 800) {
+                        contentSize[0].style.height = "fit-content";
+                    }
+                    scrollTo[1].scrollIntoView( { behavior: "smooth" } );
+
+                } else {
+                    blankPanel.style.display = "block";
+                    console.log("Screen Height: " + window.innerHeight + " pixels");
+                    console.log("Screen Width: " + window.innerWidth + " pixels");
+                    if (window.innerHeight <= 990){
+                        contentSize[0].style.height = "fit-content";
+                    } else {
+                        contentSize[0].style.height = "calc(100vh - 480px)";
+                    }
+                }
+
+                // Adding a class to trigger CSS transition
+                contentSize[0].classList.add("transition-height");
+                
+            }
+        });
+    </script>
 </body>
 </html>
