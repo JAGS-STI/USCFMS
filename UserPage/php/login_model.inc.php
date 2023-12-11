@@ -34,4 +34,15 @@
         return $userConcernList;
     }
 
+    function get_crnImage(object $pdo, string $concernID) {
+        $sql = "SELECT photoEvidence FROM concernphoto, concerndetail
+        WHERE  concerndetail.concernID = :concernID AND concerndetail.concernID = concernphoto.concernID";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(":concernID", $concernID);
+        $stmt->execute();
+
+        $userImageList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $userImageList;
+    }
+
 ?>

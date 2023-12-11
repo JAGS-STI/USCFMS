@@ -348,6 +348,32 @@
             </div>
         </div>    
     </div>
+    <div id="enlargedContainer" onclick="closeEnlarged()">
+        <span id="closeBtn">&times;</span>
+        <img id="enlargedImg" src="" alt="Enlarged Image">
+    </div>
+
+    <script>
+        // Function to enlarge the image
+        function enlargeImage(clickedImg) {
+            var enlargedContainer = document.getElementById("enlargedContainer");
+            var enlargedImg = document.getElementById("enlargedImg");
+
+            // Set the source of the enlarged image
+            enlargedImg.src = clickedImg.src;
+
+            // Show the enlarged container
+            enlargedContainer.style.display = "flex";
+        }
+
+        // Function to close the enlarged image container
+        function closeEnlarged() {
+            var enlargedContainer = document.getElementById("enlargedContainer");
+
+            // Hide the enlarged container
+            enlargedContainer.style.display = "none";
+        }
+    </script>
     <script>
         document.getElementById('sndMssg').addEventListener('click', function () {
             // Select the element to convert to PDF

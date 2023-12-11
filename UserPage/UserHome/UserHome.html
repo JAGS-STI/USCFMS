@@ -38,7 +38,7 @@
 
         <div class="menuOptions">
             <a href="/USCFMS/UserPage/UserAbout/UserAbout.html">About the Barangay</a>
-            <a id="request" href="/USCFMS/UserPage/UserDocRequest/UserDocRequest.html">Request document(s)</a>
+            <?php torequestBtn() ?>
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
             <?php tosubmitBtn(); ?>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
@@ -67,7 +67,7 @@
                 <h3>Request document(s)</h3>
                 <p>You can now request a variety of barangay documents. Click the button below to fill up a form.</p>
                 <p id="acc">An account is required to submit.</p>
-                <button class="submit" onclick="window.location.href='/USCFMS/UserPage/UserFeedback/UserFeedback.html'">SUBMIT</button>
+                <?php torequestHomeBtn(); ?>
             </div>
         </div>
         
@@ -82,5 +82,24 @@
         </footer>
     </div>
     <?php login_popup(); ?>
+    <script>
+        // Function to get URL parameter by name
+        function getUrlParameter(name) {
+            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Check if "logout" parameter is true after the page has loaded
+        window.onload = function() {
+            var logoutParam = getUrlParameter('logout');
+
+            if (logoutParam === 'true') {
+                // Display alert if logout is true
+                alert('Logged-out Successfully.');
+            }
+        };
+    </script>
 </body>
 </html>

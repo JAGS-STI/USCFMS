@@ -15,8 +15,9 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $concernID = $_POST['concernID'];
         $message = $_POST['msgBox'];
+        $formattedMessage = addslashes($message);
         $sql = "INSERT INTO messageconcern (concernID, message) 
-                VALUES ('$concernID', '$message');";
+                VALUES ('$concernID', '$formattedMessage');";
         $result = mysqli_query($conn, $sql);
 
         if ($result) {

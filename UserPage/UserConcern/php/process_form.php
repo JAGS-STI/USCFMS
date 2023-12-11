@@ -17,9 +17,10 @@
     }
 
     // Get values from the form
-    if (empty($_SESSION["user_id"])) {
+    if (empty($_SESSION["user_id"]) || !isset($_SESSION["user_id"])) {
         echo 'Error: Cannot find $_SESSION["user_id"]';
         echo 'Please go back to the home page';
+        header("Location: ../UserLogin/UserLogin.html?timeout=true");
         die();
     }
     
@@ -28,11 +29,10 @@
     $file1 = $_FILES['fileInput']['name'];
     $concern = $_POST['concernBox'];
     $description = $_POST['desc'];
-    $currentDateTime = date("Y-m-d H:i:s");
 
     // Insert data into the database
-    $sql = "INSERT INTO concerndetail (accID, location, concernType, description, submitDate, status)
-            VALUES ('$accId', '$location', '$concern', '$description', '$currentDateTime', 'Unread');";
+    $sql = "INSERT INTO concerndetail (accID, location, concernType, description, status)
+            VALUES ('$accId', '$location', '$concern', '$description', 'Unread');";
 
     if ($conn->query($sql) === TRUE) {
         $lastInsertedID = $conn->insert_id; // Get the auto-incremented ID

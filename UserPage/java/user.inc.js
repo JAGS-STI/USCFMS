@@ -10,6 +10,10 @@ function tosubmitconcern() {
     window.location.href='/USCFMS/UserPage/UserConcern/UserConcern.html';
 }
 
+function tosubmitrequest() {
+    window.location.href='/USCFMS/UserPage/UserDocRequest/UserDocRequest.html';
+}
+
 function toaccount() {
     window.location.href='/USCFMS/UserPage/UserAccPage/UserAccPage.html';
 }
@@ -22,6 +26,31 @@ function toggleLoginPopup($toggle) {
     } else {
         $popupWindow[0].style.display = 'none';
     }
+
+}
+
+function redirectToTicket($concernID) {
+    window.location.href='/USCFMS/UserPage/UserViewConcern/UserViewConcern.html?concernID=' + $concernID;
+}
+
+// Function to enlarge the image
+function enlargeImage(clickedImg) {
+    var enlargedContainer = document.getElementById("enlargedContainer");
+    var enlargedImg = document.getElementById("enlargedImg");
+
+    // Set the source of the enlarged image
+    enlargedImg.src = clickedImg.src;
+
+    // Show the enlarged container
+    enlargedContainer.style.display = "flex";
+}
+
+// Function to close the enlarged image container
+function closeEnlarged() {
+    var enlargedContainer = document.getElementById("enlargedContainer");
+
+    // Hide the enlarged container
+    enlargedContainer.style.display = "none";
 }
 
 function toggleMessagePopup($toggle, $row) {
@@ -41,11 +70,13 @@ function toggleMessagePopup($toggle, $row) {
         msginfo[0].innerHTML = id[$row].innerHTML;
         msginfo[1].innerHTML = date[$row].innerHTML;
         msginfo[2].innerHTML = time[$row].innerHTML;
+        if (dot[$row].style.backgroundColor === "red") {
+            var num = parseInt(accdot[0].innerHTML);
+            console.log(num);
+            accdot[0].innerHTML = num - 1;
+        }
         dot[$row].style.backgroundColor = "transparent";
         msgbox.innerHTML = msg[$row].innerHTML;
-        var num = parseInt(accdot[0].innerHTML);
-        console.log(num);
-        accdot[0].innerHTML = num - 1;
 
         fetch('readMsg.php?msgID=' + encodeURIComponent(table[$row].id) + '&row=' + encodeURIComponent($row))
             .then(response => response.text())

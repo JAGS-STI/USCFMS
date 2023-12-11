@@ -42,15 +42,15 @@ if(!empty($_GET['concernType'])) {
     
         // Add WHERE clause to the SQL query if conditions exist
         if (!empty($whereConditions)) {
-            $sql .= " WHERE " . implode(" AND ", $whereConditions);
+            $sql .= " WHERE " . implode(" AND ", $whereConditions) . " ORDER BY submitDate DESC";
         }
         $result = $conn->query($sql);
     } else {
-        $sql = "SELECT concernID, submitDate, concernType, status, priority, location FROM concernDetail WHERE status != 'Discarded'";
+        $sql = "SELECT concernID, submitDate, concernType, status, priority, location FROM concernDetail WHERE status != 'Discarded' ORDER BY submitDate DESC";
         $result = $conn->query($sql);
     }
 } else {
-    $sql = "SELECT concernID, submitDate, concernType, status, priority, location FROM concernDetail WHERE status != 'Discarded'";
+    $sql = "SELECT concernID, submitDate, concernType, status, priority, location FROM concernDetail WHERE status != 'Discarded' ORDER BY submitDate DESC";
     $result = $conn->query($sql);
 }
 

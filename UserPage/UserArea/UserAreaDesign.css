@@ -170,6 +170,7 @@ table {
     text-align: left;
     background: #e8e8e8;
     border-collapse: collapse;
+    max-width: 82vw;
 }
 
 th,

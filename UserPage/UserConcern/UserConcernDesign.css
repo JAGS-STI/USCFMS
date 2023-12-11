@@ -159,6 +159,7 @@ input, select {
     background: none;
     color: black;
     outline: none;
+    resize: none;
 }
 
 #identityTitle {
