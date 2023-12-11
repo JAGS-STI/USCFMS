@@ -31,17 +31,17 @@
     $age = strtoupper($_POST['ageBox']);
     $gender = strtoupper($_POST['genderBox']);
     $bday = $_POST['bdayBox'];
-    $religion = !empty($_POST['religionBox']) ? "'" . strtoupper($_POST['religionBox']) . "'" : "NULL";
+    $religion = !empty($_POST['religionBox']) ? strtoupper($_POST['religionBox']) : "N/A";
     $citizenship = strtoupper($_POST['citizenBox']);
     $fulladdress = addslashes(strtoupper($_POST['addressBox']));
-    $votersID = !empty($_POST['voterBox']) ? "'" . strtoupper($_POST['voterBox']) . "'" : "NULL";
-    $height = strtoupper($_POST['heightBox']);
-    $weight = strtoupper($_POST['weightBox']);
-    $complexion = !empty($_POST['complexionBox']) ? "'" . strtoupper($_POST['complexionBox']) . "'" : "NULL";
+    $votersID = !empty($_POST['voterBox']) ? strtoupper($_POST['voterBox']) : "N/A";
+    $height = addslashes(strtoupper($_POST['heightBox']));
+    $weight = addslashes(strtoupper($_POST['weightBox']));
+    $complexion = !empty($_POST['complexionBox']) ? strtoupper($_POST['complexionBox']) : "N/A";
     $haircolor = strtoupper($_POST['hairBox']);
-    $contactperson = !empty($_POST['contactPersonBox']) ? "'" . strtoupper($_POST['contactPersonBox']) . "'" : "NULL";
-    $personaddress = !empty($_POST['contactAddBox']) ? "'" . addslashes(strtoupper($_POST['contactAddBox'])) . "'" : "NULL";
-    $contactnum = !empty($_POST['contactNumBox']) ? "'" . $_POST['contactNumBox'] . "'" : "NULL";
+    $contactperson = !empty($_POST['contactPersonBox']) ? strtoupper($_POST['contactPersonBox']) : "N/A";
+    $personaddress = !empty($_POST['contactAddBox']) ? addslashes(strtoupper($_POST['contactAddBox'])) : "N/A";
+    $contactnum = !empty($_POST['contactNumBox']) ? $_POST['contactNumBox'] : "N/A";
     $purpose = strtoupper($_POST['purposeBox']);
 
     $sql = "INSERT INTO docstatus (docType, accID, status)
@@ -57,8 +57,8 @@
 
     $sql1 = "INSERT INTO doc2detail (docID, name, age, gender, bday, religion, citizenship, fulladdress, 
             votersID, height, weight, complexion, haircolor, contactperson, personaddress, contactnum, 
-            purpose) VALUES ('$lastInsertedID', '$name', '$age', '$gender', '$bday', $religion, '$citizenship', '$fulladdress', $votersID, 
-            '$height', '$weight', $complexion, '$haircolor', $contactperson, $personaddress, $contactnum, '$purpose');";
+            purpose) VALUES ('$lastInsertedID', '$name', '$age', '$gender', '$bday', '$religion', '$citizenship', '$fulladdress', '$votersID', 
+            '$height', '$weight', '$complexion', '$haircolor', '$contactperson', '$personaddress', '$contactnum', '$purpose');";
     
     if ($conn->query($sql1) === TRUE) {
         echo "Record doc2detail inserted successfully. docID: " . $lastInsertedID;
@@ -108,7 +108,7 @@
     }
 
     // Match found, redirect to the next HTML page
-    //header("Location: \USCFMS\UserPage\UserAccPage\UserAccPage.html");
+    header("Location: \USCFMS\UserPage\UserAccPage\UserAccPage.html?submit=success");
 
     $conn->close();
 ?>

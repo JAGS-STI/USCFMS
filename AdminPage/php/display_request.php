@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
             </tr>';
 
     while ($row = $result->fetch_assoc()) {
-        echo '<tr class="tbl" onclick="window.location.href=\'adminViewDoc.html\'">';
+        echo '<tr class="tbl" onclick="window.location.href=\'adminViewDoc.html?docID='.$row['docID'].'\'">';
         echo '<td class="ticketID">DOC-' . $row['docID'] . '</td>';
 
         // Format the date using DateTime
@@ -93,6 +93,19 @@ function getStatusColor($status)
             return 'black'; // Change this to a default color or handle as needed
     }
 }
+
+function getReqType($type)
+{
+    switch ($type) {
+        case 'Barangay Indingency':
+            return '1';
+        case 'Barangay Clearance':
+            return '2';
+        default:
+            return '0'; // Change this to a default color or handle as needed
+    }
+}
+
 $conn->close();
 ?>
 <script>

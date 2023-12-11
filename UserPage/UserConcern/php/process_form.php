@@ -83,7 +83,7 @@
 
     echo "<br>Record inserted successfully. Directory Path: " . $escapedTargetFile;
     // Match found, redirect to the next HTML page
-    header("Location: \USCFMS\UserPage\UserAccPage\UserAccPage.html");
+    header("Location: \USCFMS\UserPage\UserAccPage\UserAccPage.html?submit=success");
 
     $conn->close();
 ?>

@@ -169,10 +169,15 @@
         // Check if "logout" parameter is true after the page has loaded
         window.onload = function() {
             var logoutParam = getUrlParameter('login');
+            var submitParam = getUrlParameter('submit');
 
             if (logoutParam === 'success') {
                 // Display alert if logout is true
                 alert('Log-in Successfully.');
+            }
+            if (submitParam === 'success') {
+                // Display alert if logout is true
+                alert('Form Submitted Successfully.');
             }
         };
     </script>
