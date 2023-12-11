@@ -17,6 +17,33 @@
     <link rel="stylesheet" href="UserAccPageDesign.css" />
     <link rel="stylesheet" href="/USCFMS/UserPage/TopMenu/topMenuDesign.css" />
     <script src="/USCFMS/UserPage/java/user.inc.js"></script>
+
+    <script>
+        function checkImage(element, altSources) {
+            var img = new Image();
+            img.onload = function() {
+                // Image exists, do nothing
+            };
+            img.onerror = function() {
+                // Image does not exist, switch to alternative sources
+                switchToAlternative(element, altSources);
+            };
+            img.src = element.src;
+        }
+
+        function switchToAlternative(element, altSources) {
+            if (altSources.length > 0) {
+                var altSource = altSources.shift(); // Take the first alternative
+                element.src = altSource;
+
+                // Continue checking with the new source
+                checkImage(element, altSources);
+            } else {
+                console.error('All alternative sources failed.');
+            }
+        }
+    </script>
+
 </head>
 <body>
     <div class="PageSubtitle">
@@ -57,7 +84,7 @@
         <?php userProfileDetails(); ?>
 
         <div class="buttons">
-            <button>View uploaded valid ID</button>
+            <button onclick="enlargeImage('/USCFMS/AdminPage/IDPhotos/<?php echo $_SESSION['user_id'] ?>_ID')">View uploaded valid ID</button>
             <button>Change email / password</button>
             <form action="../php/logout.inc.php" method="post">
                 <button class="logoutAccBtn">Log-out now</button>
@@ -149,7 +176,7 @@
             }
         };
     </script>
-     <script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Initial check on page load
             handlePanelVisibility();
@@ -161,5 +188,29 @@
             }
         });
     </script>
+    <script>
+    // Function to enlarge the image
+    function enlargeImage(clickedImg) {
+        var enlargedContainer = document.getElementById("enlargedContainer");
+        var enlargedImg = document.getElementById("enlargedImg");
+
+        // Set the source of the enlarged image
+        enlargedImg.src = clickedImg + '.png';
+
+        var alternativeSources = [clickedImg + '.jpg', clickedImg + '.jpeg'];
+        checkImage(enlargedImg, alternativeSources);
+
+        // Show the enlarged container
+        enlargedContainer.style.display = "flex";
+    }
+
+    // Function to close the enlarged image container
+    function closeEnlarged() {
+        var enlargedContainer = document.getElementById("enlargedContainer");
+
+        // Hide the enlarged container
+        enlargedContainer.style.display = "none";
+    }
+</script>
 </body>
 </html>

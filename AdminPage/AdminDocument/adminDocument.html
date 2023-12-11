@@ -97,43 +97,7 @@
             <p>Click on a request ID to view its contents.</p>
         </div>    
             
-        <table>
-            <tr class="head">
-                <th width="300px">Request ID</th>
-                <th width="400px">Date received</th>
-                <th width="300px">Requestor name</th>
-                <th width="300px">Document request</th>
-                <th width="200px">Status</th>
-            </tr>
-            <tr class="tbl" onclick="window.location.href='adminViewDoc.html'">
-                <td class="ticketID">SC-12345</td>
-                <td>October 26, 2023</td>
-                <td>Nezuko Kamado</td>
-                <td>Barangay Indigency</td>
-                <td class="active"><div class="dot"></div>Active</td>
-            </tr>
-                <tr class="tbl">
-                <td class="ticketID">SC-12345</td>
-                <td>October 26, 2023</td>
-                <td>Tanjiro Kamado</td>
-                <td>Barangay Indigency</td>
-                <td class="active"><div class="dot"></div>Active</td>
-            </tr>
-                <tr class="tbl">
-                <td class="ticketID">SC-12345</td>
-                <td>October 26, 2023</td>
-                <td>Zenitsu Agatsuma</td>
-                <td>Barangay Clearance</td>
-                <td class="active"><div class="dot"></div>Active</td>
-            </tr>
-            <tr class="tbl">
-                <td class="ticketID">SC-12345</td>
-                <td>October 26, 2023</td>
-                <td>Inosuke Hashibira</td>
-                <td>Barangay Indigency</td>
-                <td class="active"><div class="dot"></div>Active</td>
-            </tr>
-        </table>
+        <?php include(dirname(__DIR__) . "/php/display_request.php") ?>
     </div>
 
     <div class="rightContainer">

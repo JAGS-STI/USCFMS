@@ -27,16 +27,16 @@
     $accId = $_SESSION["user_id"];
     $name = strtoupper($_POST['nameBox']);
     $bday = $_POST['bdayBox'];
-    $vin = !empty($_POST['vinBox']) ? "'" . strtoupper($_POST['vinBox']) . "'" : "NULL";
+    $vin = !empty($_POST['vinBox']) ? strtoupper($_POST['vinBox']) : "N/A";
     $address = strtoupper($_POST['addressBox']);
     $year = strtoupper($_POST['yearBox']);
-    $educ = !empty($_POST['vinBox']) ? "'" . strtoupper($_POST['educationalBox']) . "'" : "NULL";
+    $educ = !empty($_POST['vinBox']) ? strtoupper($_POST['educationalBox']) : "N/A";
     $request = strtoupper($_POST['requestingBox']);
     $purpose = strtoupper($_POST['purposeBox']);
-    $grade = !empty($_POST['vinBox']) ? "'" . strtoupper($_POST['gradeBox']) . "'" : "NULL";
+    $grade = !empty($_POST['vinBox']) ? strtoupper($_POST['gradeBox']) : "N/A";
 
     $sql = "INSERT INTO docstatus (docType, accID, status)
-            VALUES ('Indingency', '$accId', 'Pending');";
+            VALUES ('Barangay Indingency', '$accId', 'Pending');";
     
     if ($conn->query($sql) === TRUE) {
         $lastInsertedID = $conn->insert_id; // Get the auto-incremented ID
@@ -47,14 +47,20 @@
     }
 
     $sql1 = "INSERT INTO doc1detail (docID, name, bday, vin, address, years, education, grade, request, purpose)
-            VALUES ('$lastInsertedID', '$name', '$bday', $vin, '$address', '$year', $educ, $grade, '$request', '$purpose');";
+            VALUES ('$lastInsertedID', '$name', '$bday', '$vin', '$address', '$year', '$educ', '$grade', '$request', '$purpose');";
     
-    if ($conn->query($sql1) === TRUE) {
-        echo "Record doc1detail inserted successfully. docID: " . $lastInsertedID;
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-        die();
+    try {
+        if ($conn->query($sql1) === TRUE) {
+            echo "Record doc1detail inserted successfully. docID: " . $lastInsertedID;
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+            die();
+        }
+    } catch(Exception) {
+        $sql = "DELETE FROM docstatus WHERE docID = $lastInsertedID;";
+        echo "Deleted newly added " . $lastInsertedID;
     }
+    
  
     // Match found, redirect to the next HTML page
     header("Location: \USCFMS\UserPage\UserAccPage\UserAccPage.html");

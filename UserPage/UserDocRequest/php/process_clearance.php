@@ -45,7 +45,7 @@
     $purpose = strtoupper($_POST['purposeBox']);
 
     $sql = "INSERT INTO docstatus (docType, accID, status)
-            VALUES ('Clearance', '$accId', 'Pending');";
+            VALUES ('Barangay Clearance', '$accId', 'Pending');";
     
     if ($conn->query($sql) === TRUE) {
         $lastInsertedID = $conn->insert_id; // Get the auto-incremented ID
