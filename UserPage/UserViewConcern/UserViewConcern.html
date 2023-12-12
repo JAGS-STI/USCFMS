@@ -37,7 +37,7 @@
 
         <div class="menuOptions">
             <a href="/USCFMS/UserPage/UserAbout/UserAbout.html">About the Barangay</a>
-            <a id="request" href="/USCFMS/UserPage/UserDocRequest/UserDocRequest.html">Request document(s)</a>
+            <?php torequestBtn() ?>
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
             <?php tosubmitBtn(); ?>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
@@ -60,54 +60,9 @@
             <div class="underline"></div>
         </div>
 
-        <div class="rightInfo">
-            <p>Uploaded photos:</p>
-            <div class="uploadedImg">
-                <img src="Media/blank-image-svgrepo-com.svg">
-                <img src="Media/blank-image-svgrepo-com.svg">
-                <img src="Media/blank-image-svgrepo-com.svg">
-                <img src="Media/blank-image-svgrepo-com.svg">
-                <img src="Media/blank-image-svgrepo-com.svg">
-            </div>      
-        </div>
-
-        <div class="CncrnInfos">
-            <div class="infos">
-                <p>Concern ID:</p>
-                <p id="details">SC-12345</p>
-            </div>
-            <div class="infos">
-                <p>Type of concern:</p>
-                <p id="details">Residential</p>
-            </div>
-            <div class="infos">
-                <p>Incident location:</p>
-                <p id="details">Tomasa St.</p>
-            </div>
-            <div class="infos">
-                <p>Date submitted:</p>
-                <p id="details">November 21, 2023</p>
-            </div>
-            <div class="infos">
-                <p>Status:</p>
-                <p id="details">Active</p>
-            </div>
-        </div>
-
-        
-        <div class="second">
-            <div class="CnrcnDesc">
-                <h4 id="fld">Concern description:</h4>
-                <div class="underline"></div>
-            </div>
-            
-            <div class="desc">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation<br>
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            </div>
-         </div>
+        <?php concernInfo (); ?>
        
-         <div class="offset" style="height: 100px; background-color: transparent;"></div>
+         <div class="offset" style="height: 150px; background-color: transparent;"></div>
 
         <!--bottom-->
         <footer class="copyRight">
@@ -119,7 +74,6 @@
             </p>
         </footer>
     </div>
-
-
+    <?php login_popup(); ?>
 </body>
 </html>

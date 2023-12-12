@@ -24,25 +24,11 @@
         </div>
         <div class="ticketID">
             <p>Request ID::</p>
-            <h1>DOC-12345</h1>
+            <h1>DOC-<?php echo $_GET['docID']; ?></h1>
         </div>
     </div>
 
-    <div class="header">
-        <div class="card1">
-            <p>Date and time received:</p>
-            <h3>September 26, 2023</h3>
-            <h3>11:07 PM</h3>
-        </div>
-        <div class="card1">
-            <p>Respondent name:</p>
-            <h3>Ian Gerald Balbon</h3>
-        </div>   
-        <div class="card1">
-            <p>Contact no.:</p>
-            <h3>0976 045 9207</h3>
-        </div>     
-    </div>
+    <?php include(dirname(__DIR__) . "/php/req.getRequestInfo.php") ?>
 
     <div class="sidebar">
         <img src="media/ususan_logo.png">
@@ -117,91 +103,13 @@
             <div class="underline"></div>
         </div>
 
-        <div class="fields">
-            <div class="fldDetail">
-                <p>Document type:</p>
-                <p id="bold">Barangay Clearance</p>
-            </div>
-            <div class="fldDetail">
-                <p>Name:</p>
-                <p id="bold">Ian Gerald Balbon</p>
-            </div>
-            <div class="fldDetail">
-                <p>Address:</p>
-                <p id="bold">SA BAHAY NILA RR</p>
-            </div>
-            <div class="fldDetail">
-                <p>Birthday:</p>
-                <p id="bold">June 30, 2003</p>
-            </div>
-            <div class="fldDetail">
-                <p>Age:</p>
-                <p id="bold">21</p>
-            </div>
-            <div class="fldDetail">
-                <p>Citizenship:</p>
-                <p id="bold">Filipino</p>
-            </div>
-            <div class="fldDetail">
-                <p>Hair color:</p>
-                <p id="bold">Brown</p>
-            </div>
-            <div class="fldDetail">
-                <p>Voter’s ID number:</p>
-                <p id="bold">N/A</p>
-            </div>
-            <div class="fldDetail">
-                <p>Civil status:</p>
-                <p id="bold">Single</p>
-            </div>
-            <div class="fldDetail">
-                <p>Religion:</p>
-                <p id="bold">Roman Catholic</p>
-            </div>
-            <div class="fldDetail">
-                <p>Complexion:</p>
-                <p id="bold">Brown</p>
-            </div>
-            <div class="fldDetail">
-                <p>Gender:</p>
-                <p id="bold">Female</p>
-            </div>
-            <div class="fldDetail">
-                <p>Height:</p>
-                <p id="bold">5' 4"</p>
-            </div>
-            <div class="fldDetail">
-                <p>Weight:</p>
-                <p id="bold">53 kgs</p>
-            </div>
-        </div>
-
-
-        <div class="infosTitle">
-            <h3>Contact person information</h3>
-            <div class="underline"></div>
-        </div>
-
-        <div class="fields">
-            <div class="fldDetail">
-                <p>Contact person:</p>
-                <p id="bold">Jherico Medina</p>
-            </div>
-            <div class="fldDetail">
-                <p>Address:</p>
-                <p id="bold">SA BAHAY NILA RR</p>
-            </div>
-            <div class="fldDetail">
-                <p>Contact number:</p>
-                <p id="bold">099999999999</p>
-            </div>
-        </div>    
+        <?php include(dirname(__DIR__) . "/php/req.getRequest.php") ?>
 
         <div class="expandsPart">
             <div class="expands">
                 <p>Set status:</p>
                 <div class="xpnd">
-                    <select id="statusBox" value="Unread" required >
+                    <select id="statusBox" value="Pending" required >
                         <option value="Pending">Pending</option>
                         <option value="Ready for pick up">Ready for pick up</option>
                         <option value="Closed">Closed</option>
@@ -212,8 +120,8 @@
 
         <div class="buttons">
             <button>Save</button>
-            <button>Generate PDF</button>
-        </div>  
+            <?php generateBtn(); ?>
+        </div>
     </div>
 
     <div class="rightContainer">

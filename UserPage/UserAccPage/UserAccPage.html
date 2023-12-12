@@ -17,6 +17,33 @@
     <link rel="stylesheet" href="UserAccPageDesign.css" />
     <link rel="stylesheet" href="/USCFMS/UserPage/TopMenu/topMenuDesign.css" />
     <script src="/USCFMS/UserPage/java/user.inc.js"></script>
+
+    <script>
+        function checkImage(element, altSources) {
+            var img = new Image();
+            img.onload = function() {
+                // Image exists, do nothing
+            };
+            img.onerror = function() {
+                // Image does not exist, switch to alternative sources
+                switchToAlternative(element, altSources);
+            };
+            img.src = element.src;
+        }
+
+        function switchToAlternative(element, altSources) {
+            if (altSources.length > 0) {
+                var altSource = altSources.shift(); // Take the first alternative
+                element.src = altSource;
+
+                // Continue checking with the new source
+                checkImage(element, altSources);
+            } else {
+                console.error('All alternative sources failed.');
+            }
+        }
+    </script>
+
 </head>
 <body>
     <div class="PageSubtitle">
@@ -37,7 +64,7 @@
 
         <div class="menuOptions">
             <a href="/USCFMS/UserPage/UserAbout/UserAbout.html">About the Barangay</a>
-            <a id="request" href="/USCFMS/UserPage/UserDocRequest/UserDocRequest.html">Request document(s)</a>
+            <?php torequestBtn() ?>
             <a href="/USCFMS/UserPage/UserGallery/UserGallery.html">Gallery</a>
             <?php tosubmitBtn(); ?>
             <a id="area" href="/USCFMS/UserPage/UserArea/UserArea.html">Area Guide</a>
@@ -57,7 +84,7 @@
         <?php userProfileDetails(); ?>
 
         <div class="buttons">
-            <button>View uploaded valid ID</button>
+            <button onclick="enlargeImage('/USCFMS/AdminPage/IDPhotos/<?php echo $_SESSION['user_id'] ?>_ID')">View uploaded valid ID</button>
             <button>Change email / password</button>
             <form action="../php/logout.inc.php" method="post">
                 <button class="logoutAccBtn">Log-out now</button>
@@ -70,36 +97,9 @@
                 <div class="underline"></div>
             </div>
             <p id="noteCncrn">Click on a message to view</p>
-
-            <table>
-                <tr class="head">
-                    <th width="250px">Date received</th>
-                    <th width="270px">Time received</th>
-                    <th width="360px">Concern ID connected</th>
-                </tr>
-                <tr class="tbl">
-                    <td>October 26, 2023</td>
-                    <td>09:46 PM</td>
-                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>                    
-                </tr>
-                <tr class="tbl">
-                    <td>October 26, 2023</td>
-                    <td>09:46 PM</td>
-                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
-                </tr>
-                <tr class="tbl">
-                    <td>October 26, 2023</td>
-                    <td>09:46 PM</td>
-                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
-                </tr>
-                <tr class="tbl">
-                    <td>October 26, 2023</td>
-                    <td>09:46 PM</td>
-                    <td class="ticketID" onclick="window.location.href='/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html'">SC-12345</td>
-                </tr>
-            </table>
-
-            <p id="showMore">Show more...</p>
+            <div class="tblContent">
+                <?php userMessageTable(); ?>
+            </div>
         </div>
 
         <div class="second">
@@ -108,12 +108,12 @@
                 <div class="underline"></div>
             </div>
             <p id="noteCncrn">Click on a concern ID to view</p>
-            <?php userConcernTable(); ?>
-
-            <p id="showMore">Show more...</p>
+            <div class="tblContent">
+                <?php userConcernTable(); ?>
+            </div>
         </div>
 
-        <div class="offset" style="height: 100px; background-color: transparent;"></div>
+        <div class="offset" style="height: 150px; background-color: transparent;"></div>
 
         <!--bottom-->
         <footer class="copyRight">
@@ -130,32 +130,92 @@
         <div class="popup">
             <h1 id="headShadow">Viewing message</h1>
             <div class="underline1"></div>         
-            <img src="Media/button-error-svgrepo-com.svg">
+            <img src="Media/button-error-svgrepo-com.svg" onclick="toggleMessagePopup('close', -1)">
         </div>    
         <div class="fldConcern">
             <div class="concernfield">
                 <div class="longbox">
-                    <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
+                    <textarea readonly id="desc" name="desc" rows="5" cols="100" placeholder="EMPTY"></textarea>
                 </div>
             </div>
         </div>
         <div class="PopDetails">
             <div class="CncrnID">
                 <p>Concern ID connected:</p>
-                <p id="bld">SC-12345</p>
+                <p class="msgInfo" id="bld">SC-12345</p>
             </div>
             <div class="CncrnID">
                 <p>Date received:</p>
-                <p id="bld">November 27, 2023</p>
+                <p class="msgInfo" id="bld">November 27, 2023</p>
             </div>
             <div class="CncrnID">
                 <p>Time received:</p>
-                <p id="bld">09:48 PM</p>
+                <p class="msgInfo" id="bld">09:48 PM</p>
             </div>
         </div>
-        <button id="done">Done</button>
+        <button id="done" onclick="toggleMessagePopup('close', -1)">Done</button>
     </div>
 
     <?php login_popup(); ?>
+    <script>
+        // Function to get URL parameter by name
+        function getUrlParameter(name) {
+            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Check if "logout" parameter is true after the page has loaded
+        window.onload = function() {
+            var logoutParam = getUrlParameter('login');
+            var submitParam = getUrlParameter('submit');
+
+            if (logoutParam === 'success') {
+                // Display alert if logout is true
+                alert('Log-in Successfully.');
+            }
+            if (submitParam === 'success') {
+                // Display alert if logout is true
+                alert('Form Submitted Successfully.');
+            }
+        };
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initial check on page load
+            handlePanelVisibility();
+            window.addEventListener("resize", handlePanelVisibility);
+
+            function handlePanelVisibility() {
+                console.log("Screen Height: " + window.innerHeight + " pixels");
+                console.log("Screen Width: " + window.innerWidth + " pixels");
+            }
+        });
+    </script>
+    <script>
+    // Function to enlarge the image
+    function enlargeImage(clickedImg) {
+        var enlargedContainer = document.getElementById("enlargedContainer");
+        var enlargedImg = document.getElementById("enlargedImg");
+
+        // Set the source of the enlarged image
+        enlargedImg.src = clickedImg + '.png';
+
+        var alternativeSources = [clickedImg + '.jpg', clickedImg + '.jpeg'];
+        checkImage(enlargedImg, alternativeSources);
+
+        // Show the enlarged container
+        enlargedContainer.style.display = "flex";
+    }
+
+    // Function to close the enlarged image container
+    function closeEnlarged() {
+        var enlargedContainer = document.getElementById("enlargedContainer");
+
+        // Hide the enlarged container
+        enlargedContainer.style.display = "none";
+    }
+</script>
 </body>
 </html>

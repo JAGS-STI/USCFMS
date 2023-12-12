@@ -2,13 +2,27 @@
 
     ini_set('session.use_only_cookie', 1);
     ini_set('session.use_strict_cookie', 1);
+    $host = $_SERVER['HTTP_HOST'];
+
+    if ($host === 'localhost') {
+        // Configuration for localhost
+        ini_set('session.cookie_domain', 'localhost');
+    } else if ($host === '192.168.100.184') {
+        // Configuration for 192.168.100.184
+        ini_set('session.cookie_domain', '192.168.100.184');
+    } else {
+        // Default configuration
+        $error = "Warning, accessed through unknown domain: " . $host;
+        error_log($error);
+        echo $error;
+        die();
+    }
 
     session_set_cookie_params([
         'lifetime' => 1800,
-        'domain' => 'localhost',
         'path' => '/',
-        'secure' => true,
-        'httponly' => true
+        'secure' => false,
+        'httponly' => false
     ]);
 
     session_start();
@@ -18,7 +32,7 @@
             regenerate_session_id_loggedin();
     
         } else {
-            $interval = 60 * 30;
+            $interval = 60 * 60;
             if (time() - $_SESSION["last_regeneration"] >= $interval) {
                 regenerate_session_id_loggedin();
             }
@@ -29,7 +43,7 @@
             regenerate_session_id();
     
         } else {
-            $interval = 60 * 30;
+            $interval = 60 * 60;
             if (time() - $_SESSION["last_regeneration"] >= $interval) {
                 regenerate_session_id();
             }
