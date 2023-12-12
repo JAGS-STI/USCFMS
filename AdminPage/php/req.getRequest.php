@@ -187,7 +187,7 @@
                 echo '<button onclick="window.location.href =\'/USCFMS/DocTemplates/clearance.html?docID='.$docstat['docID'].'\'">Generate PDF</button>';
                 break;
             case 'Barangay Indingency':
-                echo '<button onclick="window.location.href =\'/USCFMS/DocTemplates/Indingency.html?docID='.$docstat['docID'].'\'">Generate PDF</button>';
+                echo '<button onclick="window.location.href =\'/USCFMS/DocTemplates/indingency.html?docID='.$docstat['docID'].'\'">Generate PDF</button>';
                 break;
             default:
                 echo "<p>error or smthing</p>";

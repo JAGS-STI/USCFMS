@@ -1,161 +1,258 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 .pageContent {
     position: relative;
     background-color: white;
-    /* width and height already makes the actual document 8.5 x 13 inches ata hopefully sna ayan na yung final size*/
+    /* width and height already makes the actual document 10.5 x 7.6 inches*/
     width: 850px;
-    height: 1300px;
+    height: 1100px;
 }
 
-/* Contents */
+/* TopLogo */
+
 .topLogo
 {
-    position: relative;
-    background-color: #dfb500;
-    height: 150px;
-    width: 100%;
+    height: 200px;
 }
+
 .logos
 {
     position: absolute;
-    margin-top: 25px;
-    margin-left: 30px;
+    margin-left: 50px;
+    margin-top: 37px;
     display: flex;
-    gap: 10px;
+    gap: 510px;
 }
+
 .logos img
 {
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
 }
 
 .topTitle
 {
     position: absolute;
-    margin-top: 25px;
-    margin-left: 250px;
-    font-weight: bold;
-}
-
-#republic
-{
-    font-weight: lighter;
-}
-
-.rightInfo
-{
-    position: absolute;
-    margin-left: 620px;
     margin-top: 30px;
+    margin-left: 183px;
+    text-align: center;
 }
 
-.details
+#headTitle
 {
-    display: flex;
-    gap: 10px;
+    font-size: 48px;
 }
 
-#bold
+#add
 {
-    font-weight: bold;
-    width: 100px;
+    font-size: 12px;
 }
 
-/* SubContents */
-.pageInfo
+
+/* LeftContents */
+
+.leftContents
 {
-    margin-top: 40px;
+    margin-top: -50px;
+    position: absolute;
+    width: 250px;
+    height: 800px;
+    text-align: center;
 }
+
 .pic
 {
-    margin-left: 50px;
+    position: relative;
+    
 }
 
 .pic img
 {
     height: 200px;
-    width: 200px;
+    width: 150px;
 }
 
-.infoDetails
-{
-    position: relative;
-    margin-top: -200px;
-    margin-left: 300px;
-}
 
-.details1
+.nameInfosTop
 {
-    display: flex;
-    gap: 5px;
-    margin-top: 15px;
     font-weight: bold;
+    font-size: 10px;
 }
 
-#red
-{
-    color: red;
-    font-weight: bold;
-    width: 200px;
-}
-
-#second
+.nameInfosContent
 {
     margin-top: 40px;
+    font-size: 10px;
+    font-weight: 600;
 }
 
-
-.certify
+.line 
 {
-    margin-left: 50px;
-    margin-top: 50px;
-    font-size: 18px;
-}
+    border-left: 2px solid #000000;
+    height: 800px;
+    position: absolute;
+    margin-left: 230px;
+    top: 0%;
+    margin-top: 70px;
+  }
 
 
-/* Ending */
 
-.ending
-{
-    margin-left: 50px;
-}
-#verify
-{
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 50px;
-    margin-bottom: 80px; 
-}
+  /*  RightContents */
 
-.officialsName
-{
-    margin-left: 90px;
-    display: flex;
-    gap: 150px;
-    font-size: 18px;
-    font-weight: bold;
-}
+  .rightContents
+  {
+    position: absolute;
+    width: 560px;
+    height: 850px;
+    margin-left: 260px;
+  }
 
-.officialsPositionSec
-{
+  .rightContents p
+  {
+    font-family:'Times New Roman', Times, serif;
+  }
+
+  .rightHead
+  {
+    text-align: center;
+  }
+
+  .rightHead h2
+  {
+    color: #4b8c01;
+    font-family:'Times New Roman', Times, serif;
+  }
+
+  .rightHead h3
+  {
+    color: #db100f;
+    font-size: 16px;
+    font-family:'Times New Roman', Times, serif;
+  }
+
+
+  .letter
+  {
+    margin-top: 40px;
+  }
+
+  #text
+  {
+    text-indent: 50px;
+    font-size: 15px;
+    font-family:'Times New Roman', Times, serif;
+  }
+
+  /*  TableContents */
+
+  .table1
+  {
+    margin-top: 25px;
+  }
+
+  table 
+  {
+    
+    border-collapse: collapse;
+  }
+  
+  td, th, tr 
+  {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11px;
+  }
+
+  #certReq,
+  #issueDate
+  {
+    margin-top: 30px;
+    font-size: 15px;
+  }
+
+  .CapitanName
+  {
+    margin-top: 80px;
     margin-left: 120px;
-    font-size: 15px;
-}
+    text-align: center;
+  }
 
-.officialsPositionChairman
-{
-    margin-left: 500px;
-    margin-top: -18px;
-    font-size: 15px;
-}
+  .CapitanName h4
+  {
+    font-family: 'Times New Roman', Times, serif;
+  }
 
+  .seal
+  {
+    margin-top: 75px;
+  }
 
-.last
-{
-    margin-top: 130px;
-    margin-left: 50px;
-}
+  .seal h5
+  {
+    font-family: 'Times New Roman', Times, serif;
+    color: #797979;
+  }
+  
+
+    /*  Last */
+
+    .last
+    {
+        position: absolute;
+        background-color: #ebff01;
+        margin-top: 850px;
+        height: 50px;
+        width: 850px;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .tanod
+    {
+        margin-left: 20px;
+        display: flex;
+        gap: 5px;
+    }
+
+    .tanod img,
+    .fire img,
+    .health img
+    {
+        height: 20px;
+        width: 20px;
+    }
+
+    .fire
+    {
+        margin-left: 90px;
+        display: flex;
+        gap: 5px;
+    }
+
+    .health
+    {
+        margin-left: 100px;
+        display: flex;
+        gap: 5px;
+    }
+
+    .num
+    {
+        margin-left: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+    }

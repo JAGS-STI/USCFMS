@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <base href="/USCFMS/TestPage/" />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        </style>
     <link rel="stylesheet" href="\USCFMS\DocTemplates\indingency.css" />
 
     <!-- html2canvas library -->
@@ -11,186 +14,61 @@
     <script src="/USCFMS/npm/jsPDF/node_modules/jspdf/dist/jspdf.umd.min.js"></script>
 
     <script>
+    /* Place custom JavaScript code here */
     window.jsPDF = window.jspdf.jsPDF;
 
     // Convert HTML content to PDF
     function Convert_HTML_To_PDF() {
         var doc = new jsPDF({
+        orientation: "portrait",
         unit: "in",
-        format: [8.5, 13], //fu ka jsPDF awjkdnajdkajb
+        format: [8.5, 11], //fu ka jsPDF awjkdnajdkajb
     });
     
+    // Source HTMLElement or a string containing HTML.
     var elementHTML = document.querySelector("#contentToPrint");
 
+    // Handle missing images gracefully
     var images = elementHTML.querySelectorAll("img");
     images.forEach(function(img) {
         img.onerror = function() {
+            // Replace the missing image with a placeholder
             img.src = "/USCFMS/TestPage/media/button-error-svgrepo-com.png";
         };
     });
 
     doc.html(elementHTML, {
         callback: function(doc) {
+            // Save the PDF
             doc.save('document-html.pdf');
         },
         margin: [-0.001, 0, 0, 0],
         x: 0,
         y: 0,
-        width: 8.5,
+        width: 8.5, //target width in the PDF document
         windowWidth: 850, //window width in CSS pixels
-        windowHeight: 1300
+        windowHeight: 1100
     });
     }
 
     </script>
 </head>
 
-<body style="position: relative; display: flex; align-items: center; flex-direction: column; gap: 20px; background-color: #ebeaea; height: 1450px">
+<body style="position: relative; display: flex; align-items: center; flex-direction: column; gap: 20px; background-color: #ebeaea;">
     <!-- Trigger button -->
     <button onclick="Convert_HTML_To_PDF();">Convert HTML to PDF</button>
+    
     <!-- Download the pdf if u want to see what it looks like in pdf or smthign awjkdajkh-->
     <h3>Barangay Indingency</h3>
 
-    <div style="border-style: solid; border-width:1px; border-color: #c6c6c6; box-shadow: 20px;">
-
-        <div class="pageContent" id="contentToPrint">
+    <div style="border-style: solid; border-width:1px; border-color: #c6c6c6; box-shadow: 20px; ">
+        <div class="pageContent" id="contentToPrint" >
             <!-- Only use .png, .jpeg, .jpg for images -->
 
-            <div class="topLogo">
-                <div class="logos">
-                    <img src ="media/ususan_logo.png">
-                    <img src ="\USCFMS\DocTemplates\media\taguig_logo.png">
-                </div>
-                <div class="topTitle">
-                    <p id="republic">Republic of the Philippines</p>
-                    <p>BARANGAY USUSAN</p>
-                    <p>Taguig City</p>
-                    <h2>BARANGAY CLEARANCE</h2>
-                </div>
-                <div class="rightInfo">
-                    <div class="details">
-                        <p id="bold">Control no.: </p>
-                        <p>0106-C-0650</p>
-                    </div>
-                    <div class="details">
-                        <p id="bold">Prepared by: </p>
-                        <p>N. CRUZ</p>
-                    </div>
-                    <div class="details">
-                        <p id="bold">Date of issue: </p>
-                        <p>1/6/2022</p>
-                    </div>
-                    <div class="details">
-                        <p id="bold">Valid until: </p>
-                        <p>7/6/2022</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- SubContent START -->
-            
-            <div class="pageInfo">
-                <div class="pic">
-                    <img src="\USCFMS\DocTemplates\media\image-svgrepo-com.png">
-                </div>
+            <?php include("getData.php") ?>
 
-                <div class="infoDetails">
-                    <div class="details1">
-                        <p id="red">NAME: </p>
-                        <p>SHEENA GEM ALEMAN JUARBAL</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">ADDRESS: </p>
-                        <p>PDS, BCDA, Barangay Ususan, Taguig City</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">BIRTH DATE: </p>
-                        <p>September 15, 2002</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">AGE: </p>
-                        <p>21 yrs. old</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">GENDER: </p>
-                        <p>Female</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">RELIGION: </p>
-                        <p>Catholic</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">CITIZENSHIP: </p>
-                        <p>Filipino</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">VOTER’S ID NO.: </p>
-                        <p>N/A</p>
-                    </div>
-                    <div id="second"class="details1">
-                        <p id="red">HEIGHT: </p>
-                        <p>5'4"</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">WEIGHT: </p>
-                        <p>53 kgs.</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">COMPLEXION: </p>
-                        <p>Brown</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">HAIR COLOR: </p>
-                        <p>Black"</p>
-                    </div>
-                    <div id="second"class="details1">
-                        <p id="red">CONTACT PERSON: </p>
-                        <p>EDUARDO VISTAL JUARBAL JR.</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">ADDRESS: </p>
-                        <p>PDS, BCDA, Barangay Ususan, Taguig City</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">CONTACT NO.: </p>
-                        <p>09123456789</p>
-                    </div>
-                    <div class="details1">
-                        <p id="red">PURPOSE: </p>
-                        <p>BIR REQUIREMENT</p>
-                    </div>
-                </div>
-
-                <div class="certify">
-                    <p>This is to certify that the applicant is a bonafide resident of Barangay Ususan, whose name, photographs <br>
-                        and right thumb mark appears above. This certification serves as RECORD CLEARANCE upon request<br>
-                        of the aforesaid applicant.</p>
-                </div>
-
-
-                <div class="ending">
-                    <p id="verify">Verified by: </p>
-
-                    <div class="officialsName">
-                        <p>Ms. Rosario T. Esteban</p>
-                        <p>Hon. Marilyn “Marie” F. Marcelino</p>
-                    </div>
-
-                    <div class="officialsPositionSec">
-                        <p>Barangay Secretary</p>
-                    </div>
-                    <div class="officialsPositionChairman">
-                        <p>Barangay Chairman</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="last">
-                <p>BRGY. USUSAN FORM 01, REV. 12/2013</p>
-            </div>
             <!-- content END -->
         </div>
-
     </div>
 </body>
 </html>
