@@ -8,7 +8,7 @@
 @media (max-height: 1580px) {
     .pageContent {
         /* height: fit-content; */
-        height: 1000px;
+        height: 1900px;
     }
 }
 .PageSubtitle img
@@ -50,33 +50,20 @@ h1
     border-radius: 10px;
 }
 
-
-.inbox {
-    background: #cfcfcf;
-    width: 350px;
-    height: 35px;
-    border-radius: 5px;
-}
-
-
-#notes
+.topFld
 {
-    color:#16601f;
-    font-size: 12px;
+    margin-left: 50px;
 }
 
-input, select {
-    width: 320px;
-    height: 35px;
-    margin-left: 15px;
-    border-style: none;
-    background: none;
-    color: black;
-    outline: none;
+ul
+{
+    margin-bottom: 30px;
 }
 
-.inbox select option {
-    text-decoration: bold;
+hr
+{
+    width: 98%;
+    margin-bottom: 50px;
 }
 
 #concernTitle {
@@ -89,139 +76,16 @@ input, select {
 
 .fldConcern {
     position: relative;
+    margin-left: 50px;
     display: flex;
-    justify-content: space-between;
-    row-gap: 20px;
-    column-gap: 180px;
-    width: 88%;
-    left: 50px;
-    right: 6%;
-    flex-wrap: wrap;
+    gap: 50px;
 }
 
-#invi {
-    background: none;
-}
-
-
-.file-input {
-    position: absolute;
-    left: 0;
-    margin-left: -10px;
-    font-size: 55px; /* Set a large font size to cover the button */
-    width: 150px;
-    height: 40px;
-    opacity: 0; /* Make the actual file input transparent */
-    cursor: pointer;
-}
-
-.upload-button {
-    font-weight: bold;
-    font-size: 15px;
-    height: 40px;
-    width: 140px;
-    background: none;
-    border-radius: 20px;
-}
-
-.selected-file {
-    margin-left: 10px;
-    font-size: 14px;
-}
-
-.concernfield .inbox img {
-    position: relative;
-    height: 25px;
-    width: 25px;
-    bottom: 32px;
-    margin-left: 310px;
-}
-
-.upload {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.longbox {
-    background: #cfcfcf;
-    width: 900px;
-    height: 200px;
-    border-radius: 5px;
-}
-
-.longbox textarea {
-    margin-top: 10px;
-    width: 870px;
-    height: 175px;
-    margin-left: 15px;
-    border-style: none;
-    background: none;
-    color: black;
-    outline: none;
-    resize: none;
-}
-
-#identityTitle {
-    margin-top: 90px;
-}
-
-#note
+#firstQ
 {
-    color: green;
-    font-size: 12px;
-    position: relative;
-    bottom: 31px;
-    margin-left: 230px;
+    width: 1100px;
 }
 
-.fldVerification
-{
-    position: relative;
-    bottom: 20px;
-    margin-left: 50px;
-}
-
-#consent
-{
-    margin-top: 50px;
-    margin-left: 50px;
-}
-
-#check
-{
-    position:relative;
-    bottom: 36px;
-    height: 15px;
-    width:15px;
-}
-
-.submit {
-    height: 50px;
-    width: 160px;
-    background-color: #16601f;
-    border-radius: 50px;
-    border-style: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 50px;
-}
-
-#submitBtn:disabled {
-    background-color: #ddd;
-    color: #777;
-    cursor: not-allowed;
-}
-
-.submit:hover { 
-    transition: 0.3s;
-    background-color: #1a7225;
-}
 
 .fld
 {
@@ -245,4 +109,95 @@ input, select {
 #bold
 {
     font-weight: bold;
+}
+
+.choices
+{
+    position: absolute;
+    margin-left: 130px;
+   display: flex;
+   gap: 50px;
+}
+
+.choices1
+{
+    position: absolute;
+    margin-left: 1350px;
+   display: flex;
+   gap: 50px;
+}
+
+.stars
+{
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    margin-left: 1200px;
+    margin-top: -5px;
+}
+
+.stars img
+{
+    height: 40px;
+    width: 40px;
+}
+
+.longbox {
+    margin-top: 5px;
+    background: #cfcfcf;
+    width: 900px;
+    height: 320px;
+    border-radius: 5px;
+}
+
+.longbox textarea {
+    margin-top: 10px;
+    width: 870px;
+    height: 300px;
+    margin-left: 15px;
+    border-style: none;
+    background: none;
+    color: black;
+    outline: none;
+}
+
+.questions
+{
+    margin-left: 50px;
+}
+
+#consent
+{
+    margin-top: 100px;
+    margin-left: 80px;
+}
+
+#check
+{
+    position:relative;
+    margin-left: 50px;
+    bottom: 36px;
+    height: 15px;
+    width:15px;
+}
+
+#submit 
+{
+    height: 50px;
+    width: 160px;
+    background-color: #16601f;
+    border-radius: 50px;
+    border-style: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+#submit:hover { 
+    transition: 0.3s;
+    background-color: #1a7225;
 }
