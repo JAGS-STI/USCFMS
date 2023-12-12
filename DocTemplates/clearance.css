@@ -59,6 +59,10 @@
     gap: 10px;
 }
 
+.details p {
+    max-width: 313px;
+}
+
 #bold
 {
     font-weight: bold;
@@ -94,6 +98,10 @@
     gap: 5px;
     margin-top: 15px;
     font-weight: bold;
+}
+
+.details1 p {
+    max-width: 313px;
 }
 
 #red
@@ -158,4 +166,10 @@
 {
     margin-top: 130px;
     margin-left: 50px;
+}
+
+.last p
+{
+    margin: 0;
+    padding: 0;
 }
