@@ -13,7 +13,8 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM docstatus WHERE docID = $docID";
+    $sql = "SELECT docID, docType, useraccount.name, useraccount.contact, docstatus.dateReceived FROM docstatus 
+    JOIN useraccount ON useraccount.accID = docstatus.accID WHERE docstatus.docID = $docID;";
 
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
@@ -21,8 +22,8 @@
 
     if (!empty($row)) {
         
-        $dbDateTime = $row['submitDate'];
-        $pComment = $row['comment'];
+        $dbDateTime = $row['dateReceived'];
+        $pComment = $row['contact'];
         $pName = $row['name'];
 
         if(empty($row['contact'])){
@@ -33,22 +34,20 @@
 
         $dateTimeObj = new DateTime($dbDateTime);
         $formattedDate = $dateTimeObj->format('F j, Y');
-        $formattedTime = $dateTimeObj->format('g:i A');
 
         echo '<div class="header">
                 <div class="card1">
                     <p>Date and time received:</p>
                     <h3>'. $formattedDate . '</h3>
-                    <h3>' . $formattedTime . '</h3>
                 </div>
                 <div class="card1">
                     <p>Respondent name:</p>
                     <h3>' . $pName . '</h3>
-                </div>   
+                </div>
                 <div class="card1">
                     <p>Contact no.:</p>
                     <h3> ' . $pContact . '</h3>
-                </div>     
+                </div>
             </div>';
     } else {
         echo '<div class="header">

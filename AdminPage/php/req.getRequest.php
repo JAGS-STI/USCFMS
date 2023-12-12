@@ -50,7 +50,7 @@
                 </div>
                 <div class="fldDetail">
                     <p>Address:</p>
-                    <p id="bold">'.addslashes($row['fulladdress']).'</p>
+                    <p id="bold">'.($row['fulladdress']).'</p>
                 </div>
                 <div class="fldDetail">
                     <p>Birthday:</p>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="fldDetail">
                     <p>Complexion:</p>
-                    <p id="bold">'.addslashes($row['complexion']).'</p>
+                    <p id="bold">'.($row['complexion']).'</p>
                 </div>
                 <div class="fldDetail">
                     <p>Gender:</p>
@@ -90,11 +90,11 @@
                 </div>
                 <div class="fldDetail">
                     <p>Height:</p>
-                    <p id="bold">'.addslashes($row['height']).'"</p>
+                    <p id="bold">'.($row['height']).'</p>
                 </div>
                 <div class="fldDetail">
                     <p>Weight:</p>
-                    <p id="bold">'.addslashes($row['weight']).'</p>
+                    <p id="bold">'.($row['weight']).'</p>
                 </div>
             </div>
 
@@ -111,13 +111,56 @@
                 </div>
                 <div class="fldDetail">
                     <p>Address:</p>
-                    <p id="bold">'.addslashes($row['personaddress']).'</p>
+                    <p id="bold">'.($row['personaddress']).'</p>
                 </div>
                 <div class="fldDetail">
                     <p>Contact number:</p>
                     <p id="bold">'.$row['contactnum'].'</p>
                 </div>
             </div>   ';
+    } else if (!empty($row) && $docstat['docType'] === 'Barangay Indingency') {
+        echo '<div class="fields">
+                <div class="fldDetail">
+                    <p>Document type:</p>
+                    <p id="bold">'.$docstat['docType'].'</p>
+                </div>
+                <div class="fldDetail">
+                    <p>Name:</p>
+                    <p id="bold">'.$row['name'].'</p>
+                </div>
+                <div class="fldDetail">
+                    <p>Birthday:</p>
+                    <p id="bold">'.$formattedDate.'</p>
+                </div>
+                <div class="fldDetail">
+                    <p>Address:</p>
+                    <p id="bold">'.($row['address']).'</p>
+                </div>
+                <div class="fldDetail">
+                    <p>VIN-ID:</p>
+                    <p id="bold">'.$row['vin'].'</p>
+                </div>
+                <div class="fldDetail">
+                    <p>No. of years residing in Ususan:</p>
+                    <p id="bold">'.$row['years'].'</p>
+                </div>
+                <div class="fldDetail">
+                    <p>Purpose:</p>
+                    <p id="bold">'.$row['purpose'].'</p>
+                </div>
+                <div class="fldDetail">
+                    <p>Grade / Level:</p>
+                    <p id="bold">'.$row['grade'].'</p>
+                </div>
+                <div class="fldDetail">
+                    <p>Education / Institutional:</p>
+                    <p id="bold">'.$row['education'].'</p>
+                </div>
+                <div class="fldDetail">
+                    <p>Requesting / Support Institution:</p>
+                    <p id="bold">'.$row['request'].'</p>
+                </div>
+            </div>';
     }
 
     function generateBtn() {
@@ -141,10 +184,10 @@
 
         switch($docstat['docType']) {
             case 'Barangay Clearance':
-                echo '<button onclick="window.location.href =\'/USCFMS/DocTemplates/clearance.html\'">Generate PDF</button>';
+                echo '<button onclick="window.location.href =\'/USCFMS/DocTemplates/clearance.html?docID='.$docstat['docID'].'\'">Generate PDF</button>';
                 break;
             case 'Barangay Indingency':
-                echo '<button onclick="window.location.href =\'/USCFMS/DocTemplates/Indingency.html\'">Generate PDF</button>';
+                echo '<button onclick="window.location.href =\'/USCFMS/DocTemplates/Indingency.html?docID='.$docstat['docID'].'\'">Generate PDF</button>';
                 break;
             default:
                 echo "<p>error or smthing</p>";
