@@ -17,6 +17,14 @@
     right: 5px;
 }
 
+#responsiveRate {
+    position: absolute;
+    width: 212px;
+    height: 36px;
+    border: none;
+    color: transparent;
+}
+
 h1
 {
     margin-left: 50px;
@@ -127,7 +135,8 @@ hr
    gap: 50px;
 }
 
-.stars
+.stars,
+.stars2
 {
     position: absolute;
     display: flex;
@@ -136,8 +145,10 @@ hr
     margin-top: -5px;
 }
 
-.stars img
+.stars img,
+.stars2 img
 {
+    cursor: pointer;
     height: 40px;
     width: 40px;
 }

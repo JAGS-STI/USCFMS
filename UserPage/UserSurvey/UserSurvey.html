@@ -98,13 +98,14 @@
                     </div>            
                 </div>
 
-                <div class="choice2">
-                    <div class="stars">
-                        <img src="media\star-svgrepo-com.png">
-                        <img src="media\star-svgrepo-com.png">
-                        <img src="media\star-svgrepo-com.png">
-                        <img src="media\star-svgrepo-com.png">
-                        <img src="media\star-svgrepo-com.png">
+                <div class="choice2">                                                                    
+                    <div class="stars" onclick="rateStar(event)">
+                        <img src="media\star-svgrepo-com.png" data-value="1">
+                        <img src="media\star-svgrepo-com.png" data-value="2">
+                        <img src="media\star-svgrepo-com.png" data-value="3">
+                        <img src="media\star-svgrepo-com.png" data-value="4">
+                        <img src="media\star-svgrepo-com.png" data-value="5">
+                        <input type="text" value="" id="responsiveRate" name="responsiveRate" style="z-index: -1;" required>
                     </div>
                 </div>
             </div>
@@ -120,7 +121,7 @@
 
                 <div class="choices">
                     <div class="fldChoices">
-                        <input type="checkbox" id="yes" name="yesAns" value="yesCheck">
+                        <input type="checkbox" id="yes" name="yesAns" value="yesCheck">     
                         <label for="yesAns">Yes</label>
                     </div>
                     <div class="fldChoices">
@@ -130,12 +131,13 @@
                 </div>
 
                 <div class="choice2">
-                    <div class="stars">
-                        <img src="media\star-svgrepo-com.png">
-                        <img src="media\star-svgrepo-com.png">
-                        <img src="media\star-svgrepo-com.png">
-                        <img src="media\star-svgrepo-com.png">
-                        <img src="media\star-svgrepo-com.png">
+                    <<div class="stars2" onclick="rateStar(event)">
+                        <img src="media\star-svgrepo-com.png" data-value="1">
+                        <img src="media\star-svgrepo-com.png" data-value="2">
+                        <img src="media\star-svgrepo-com.png" data-value="3">
+                        <img src="media\star-svgrepo-com.png" data-value="4">
+                        <img src="media\star-svgrepo-com.png" data-value="5">
+                        <input type="text" value="" id="responsiveRate" name="responsiveRate" style="z-index: -1;" required>
                     </div>
                 </div>
             </div>
@@ -206,7 +208,60 @@
                 Gerald Balbon | Sheena Gem Juarbal | Jherico Medina | Arjay Fortuno
             </p>
         </footer>
-    </div> 
+    </div>
     <?php login_popup(); ?>
+    <script>
+        const stars = document.querySelectorAll('.stars img');
+        const responsiveRate = document.getElementById('responsiveRate');
+
+        function rateStar(event) {
+            const clickedStar = event.target;
+
+            if (clickedStar.tagName === 'IMG') {
+                const clickedValue = parseInt(clickedStar.getAttribute('data-value'));
+
+                // Update the star images based on the clicked value
+                stars.forEach((star, index) => {
+                    if (index < clickedValue) {
+                        star.src = 'media/star.png';
+                    } else {
+                        star.src = 'media/star-svgrepo-com.png';
+                    }
+                });
+
+                // Update the responsiveRate input value
+                responsiveRate.value = clickedValue;
+                console.log("responsiveRate: "+responsiveRate.value+"/5");
+            }
+        }
+
+        stars.forEach((star, index) => {
+            // Handle mouseover event to change star images on hover
+            star.addEventListener('mouseover', () => {
+                if (responsiveRate.value === '') {
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.src = 'media/star.png';
+                        } else {
+                            s.src = 'media/star-svgrepo-com.png';
+                        }
+                    });
+                }
+            });
+
+            // Handle mouseout event to reset star images to the selected value
+            star.addEventListener('mouseout', () => {
+                if (responsiveRate.value === '') {
+                    stars.forEach((s, i) => {
+                        if (i < parseInt(responsiveRate.value)) {
+                            s.src = 'media/star.png';
+                        } else {
+                            s.src = 'media/star-svgrepo-com.png';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
