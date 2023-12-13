@@ -410,7 +410,7 @@
                 
                 echo '<td class="msgtime"  id="time' . $row .'">' . $formattedTime . '</td>';
                 echo '<td class="ticketID"  id="id' . $row .'">SC-' . $data['concernID'] . '</td>';
-                echo '<td class="msgDetail" style="position: absolute; display: none; width: 0;">' . $data['message'] . '</td>';
+                echo '<td class="msgDetail" style="position: absolute; display: none; width: 0;">' . nl2br($data['message']) . '</td>';
                 echo '</tr>';
             }
 

@@ -21,6 +21,7 @@
     $dbDateTime = $row['submitDate'];
     $pType = $row['concernType'];
     $pStatus = $row['status'];
+    $numericValue = (int) date('YmdHis', strtotime($row['submitDate']));
 
     if($row['priority'] === null){
         $pPriority = '-----';
@@ -34,7 +35,7 @@
 
     echo    '<div class="first">
                 <div class="card">
-                    <p>Date and time received:</p>
+                    <p id="cd" class="'.$numericValue.'">Date and time received:</p>
                     <h3>' . $formattedDate . '</h3>
                     <h3>' . $formattedTime . '</h3>
                 </div>

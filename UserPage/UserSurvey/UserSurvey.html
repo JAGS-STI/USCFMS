@@ -47,155 +47,7 @@
 
     <div class="pageContent">
         
-        <form id="concernForm" action="php/process_form.php" method="post" enctype="multipart/form-data">
-            <div class="topFld">
-                <p id="bold">Instructions</p>
-                <ul>
-                    <li>Fill up the form below.</li>
-                    <li>Submission is optional. If you prefer not to submit, please close this website.</li>
-                </ul>
-                <hr>
-            </div>
-            <div class="field1">
-                <h1 id="headTitle">Personal Information</h1>
-                <div class="underline"></div>
-                <p id="required">Fields with * are required</p>
-                <div class="fld">
-                    <p>Name:</p>
-                    <p id="bold">Jherico Medina</p>
-                </div>
-                <div class="fld">
-                    <p>Email address:</p>
-                    <p id="bold">jhericomedina213@gmail.com</p>
-                </div>
-                <div class="fld">
-                    <p>Contact number:</p>
-                    <p id="bold">0949 985 6978</p>
-                </div>
-                <div class="fld">
-                    <p>Feedback for concern ID:</p>
-                    <p id="bold">SC-10001</p>
-                </div>
-
-                <p id="inf">The information above will be used and kept on this concern submission.</p>
-            </div>
-    
-            <div class="field2">
-                <h1 id="concernTitle">Concern Details</h1>
-                <div class="underline"></div>
-                <div class="fldConcern">
-                    <p id="firstQ">Did you receive timely assistance for your concern? </p>
-                    <p>Rate the responsiveness of the Barangay authorities in addressing your concern: </p>
-                </div>
-                <div class="choices">
-                    <div class="fldChoices">
-                        <input type="checkbox" id="yes" name="yesAns" value="yesCheck">
-                        <label for="yesAns">Yes</label>
-                    </div>
-                    <div class="fldChoices">
-                        <input type="checkbox" id="no" name="noAns" value="noCheck">
-                        <label for="noAns">No</label>
-                    </div>            
-                </div>
-
-                <div class="choice2">                                                                    
-                    <div class="stars" onclick="rateStar(event)">
-                        <img src="media\star-svgrepo-com.png" data-value="1">
-                        <img src="media\star-svgrepo-com.png" data-value="2">
-                        <img src="media\star-svgrepo-com.png" data-value="3">
-                        <img src="media\star-svgrepo-com.png" data-value="4">
-                        <img src="media\star-svgrepo-com.png" data-value="5">
-                        <input type="text" value="" id="responsiveRate" name="responsiveRate" style="z-index: -1;" required>
-                    </div>
-                </div>
-            </div>
-
-            <div class="field2">
-                <h1 id="concernTitle">User Experience</h1>
-                <div class="underline"></div>
-                <div class="fldConcern">
-                    <p id="firstQ">Were you able to easily navigate and use the platform? </p>
-                    <p>How would you rate your overall experience using this platform? </p>
-                </div>
-
-
-                <div class="choices">
-                    <div class="fldChoices">
-                        <input type="checkbox" id="yes" name="yesAns" value="yesCheck">     
-                        <label for="yesAns">Yes</label>
-                    </div>
-                    <div class="fldChoices">
-                        <input type="checkbox" id="no" name="noAns" value="noCheck">
-                        <label for="noAns">No</label>
-                    </div>            
-                </div>
-
-                <div class="choice2">
-                    <<div class="stars2" onclick="rateStar(event)">
-                        <img src="media\star-svgrepo-com.png" data-value="1">
-                        <img src="media\star-svgrepo-com.png" data-value="2">
-                        <img src="media\star-svgrepo-com.png" data-value="3">
-                        <img src="media\star-svgrepo-com.png" data-value="4">
-                        <img src="media\star-svgrepo-com.png" data-value="5">
-                        <input type="text" value="" id="responsiveRate" name="responsiveRate" style="z-index: -1;" required>
-                    </div>
-                </div>
-            </div>
-
-            <div class="field2">
-                <h1 id="concernTitle">Transparency and Communication</h1>
-                <div class="underline"></div>
-                <div class="fldConcern">
-                    <p id="firstQ">Did you receive updates regarding the status and resolution of your concern? </p>
-                    <p>Were you satisfied with the level of transparency in the process?</p>
-                </div>
-
-
-                <div class="choices">
-                    <div class="fldChoices">
-                        <input type="checkbox" id="yes" name="yesAns" value="yesCheck">
-                        <label for="yesAns">Yes</label>
-                    </div>
-                    <div class="fldChoices">
-                        <input type="checkbox" id="no" name="noAns" value="noCheck">
-                        <label for="noAns">No</label>
-                    </div>            
-                </div>
-
-                <div class="choices1">
-                    <div class="fldChoices">
-                        <input type="checkbox" id="yes" name="yesAns" value="yesCheck">
-                        <label for="yesAns">Yes</label>
-                    </div>
-                    <div class="fldChoices">
-                        <input type="checkbox" id="no" name="noAns" value="noCheck">
-                        <label for="noAns">No</label>
-                    </div>            
-                </div>
-            </div>
-
-            <div class="field2">
-                    <h1 id="concernTitle">Additional Comments</h1>
-                    <div class="underline"></div>
-                    <div class="questions">
-                        <div class="q1">
-                            <p>Is there anything else you would like to share regarding your experience or concerns that were not covered in this survey? </p>  
-                            <div class="longbox">
-                                <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
-                            </div>   
-                        </div>
-                    </div> 
-                </div>   
-
-
-                <div class="consent">
-                    <p id="consent">I consent to the processing of my personal data in accordance with the Republic Act 10173 or also known as the Data Privacy Act of 2012.</p>
-                    <input id="check" type="checkbox" required/>
-                </div>
-                    <button id="submit">Submit</button>
-                
-            
-        </form>
+        <?php include("php/displayInfo.php");?>
 
         <div class="offset" style="height: 100px; background-color: transparent;"></div>
 
@@ -254,6 +106,139 @@
                 if (responsiveRate.value === '') {
                     stars.forEach((s, i) => {
                         if (i < parseInt(responsiveRate.value)) {
+                            s.src = 'media/star.png';
+                        } else {
+                            s.src = 'media/star-svgrepo-com.png';
+                        }
+                    });
+                }
+            });
+        });
+
+        const checkboxesTimely = document.querySelectorAll('.choicesTimely input[type="checkbox"]');
+        const choicesNagivation = document.querySelectorAll('.choicesNagivation input[type="checkbox"]');
+        const choicesUpdateStat = document.querySelectorAll('.choicesUpdateStat input[type="checkbox"]');
+        const choicesTransparency = document.querySelectorAll('.choicesTransparency input[type="checkbox"]');
+
+        checkboxesTimely.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    // If the current checkbox is checked, uncheck the other one
+                    checkboxesTimely.forEach(otherCheckbox => {
+                        if (otherCheckbox !== this) {
+                            otherCheckbox.checked = false;
+                        }
+                    });
+                }
+                var anyCheckboxChecked = [...checkboxesTimely].some(cb => cb.checked);
+
+                // Update the required attribute based on the check state
+                checkboxesTimely.forEach(cb => {
+                    cb.required = !anyCheckboxChecked;
+                });
+                console.log("timely: "+document.getElementById("timelyY").checked);
+            });
+        });
+
+
+        choicesNagivation.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    // If the current checkbox is checked, uncheck the other one
+                    choicesNagivation.forEach(otherCheckbox => {
+                        if (otherCheckbox !== this) {
+                            otherCheckbox.checked = false;
+                        }
+                    });
+                } var anyCheckboxChecked = [...choicesNagivation].some(cb => cb.checked);
+
+                // Update the required attribute based on the check state
+                choicesNagivation.forEach(cb => {
+                    cb.required = !anyCheckboxChecked;
+                });
+            });
+        });
+
+        choicesUpdateStat.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    // If the current checkbox is checked, uncheck the other one
+                    choicesUpdateStat.forEach(otherCheckbox => {
+                        if (otherCheckbox !== this) {
+                            otherCheckbox.checked = false;
+                        }
+                    });
+                } var anyCheckboxChecked = [...choicesUpdateStat].some(cb => cb.checked);
+
+                // Update the required attribute based on the check state
+                choicesUpdateStat.forEach(cb => {
+                    cb.required = !anyCheckboxChecked;
+                });
+            });
+        });
+
+        choicesTransparency.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    // If the current checkbox is checked, uncheck the other one
+                    choicesTransparency.forEach(otherCheckbox => {
+                        if (otherCheckbox !== this) {
+                            otherCheckbox.checked = false;
+                        }
+                    });
+                } var anyCheckboxChecked = [...choicesTransparency].some(cb => cb.checked);
+
+                // Update the required attribute based on the check state
+                choicesTransparency.forEach(cb => {
+                    cb.required = !anyCheckboxChecked;
+                });
+            });
+        });
+    </script>
+    <script>
+        const stars2 = document.querySelectorAll('.stars2 img');
+        const overallRate = document.getElementById('overallRate');
+
+        function rateStar2(event) {
+            const clickedStar = event.target;
+
+            if (clickedStar.tagName === 'IMG') {
+                const clickedValue = parseInt(clickedStar.getAttribute('data-value'));
+
+                // Update the star images based on the clicked value
+                stars2.forEach((star, index) => {
+                    if (index < clickedValue) {
+                        star.src = 'media/star.png';
+                    } else {
+                        star.src = 'media/star-svgrepo-com.png';
+                    }
+                });
+
+                // Update the responsiveRate input value
+                overallRate.value = clickedValue;
+                console.log("overallRate: "+overallRate.value+"/5");
+            }
+        }
+
+        stars2.forEach((star, index) => {
+            // Handle mouseover event to change star images on hover
+            star.addEventListener('mouseover', () => {
+                if (overallRate.value === '') {
+                    stars2.forEach((s, i) => {
+                        if (i <= index) {
+                            s.src = 'media/star.png';
+                        } else {
+                            s.src = 'media/star-svgrepo-com.png';
+                        }
+                    });
+                }
+            });
+
+            // Handle mouseout event to reset star images to the selected value
+            star.addEventListener('mouseout', () => {
+                if (overallRate.value === '') {
+                    stars2.forEach((s, i) => {
+                        if (i < parseInt(overallRate.value)) {
                             s.src = 'media/star.png';
                         } else {
                             s.src = 'media/star-svgrepo-com.png';

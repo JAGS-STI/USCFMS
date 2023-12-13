@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
         // Show a confirmation dialog
         if (confirm("Save changes?")) {
             saveAndClose();
-            
         }
     });
 
@@ -51,6 +50,10 @@ function saveAndClose() {
     const priority = document.getElementById("priorBox").value;
     const concernID = getParameterByName('concernID');
 
+    if (status === 'Resolved') {
+        sendResolvedMsg(document.getElementById("cd").className);
+    }
+
     // Use AJAX to send the updated values to the server
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/USCFMS/AdminPage/php/updateStatus.php', true);
@@ -82,10 +85,35 @@ function sendMsg() {
             console.log(xhr.responseText);
 
             // Refreshes the page
-            window.location.href = "/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html?concernID=" + concernID;
+            //window.location.href = "/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html?concernID=" + concernID;
         }
     };
     xhr.send(`concernID=${concernID}&msgBox=${message}`);
+}
+
+function sendResolvedMsg(link) {
+    // Get the updated values from the select elements
+    const concernID = getParameterByName('concernID');
+    const Name = document.getElementById("pName").innerHTML;
+    document.getElementById("msgBox").value = "Hi there, "+Name+"! Your concern <p style=\"font-weight: bold;\">SC-"+concernID+"</p> has been resolved! Feel free to give us your thoughts on how we handled your concern.<br>You can tell us about your thoughts here: ";
+    const message = document.getElementById("msgBox").value;
+    
+    
+
+    // Use AJAX to send the updated values to the server
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/USCFMS/AdminPage/php/sendResolvedMsg.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Handle the response from the server, if needed
+            console.log(xhr.responseText);
+
+            // Refreshes the page
+            //window.location.href = "/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html?concernID=" + concernID;
+        }
+    };
+    xhr.send(`concernID=${concernID}&msgBox=${message}&cd=${link}`);
 }
 
 function discardTicket() {

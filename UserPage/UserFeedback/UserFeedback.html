@@ -106,5 +106,23 @@
         </footer>
     </div>
     <?php login_popup(); ?>
+    <script>
+        // Function to get URL parameter by name
+        function getUrlParameter(name) {
+            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Check if "logout" parameter is true after the page has loaded
+        window.onload = function() {
+            var submitParam = getUrlParameter('submit');
+            if (submitParam === 'success') {
+                // Display alert if logout is true
+                alert('Thank you for the feedback!.');
+            }
+        };
+    </script>
 </body>
 </html>

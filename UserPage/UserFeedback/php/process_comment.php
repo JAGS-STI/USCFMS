@@ -46,7 +46,7 @@
     }
  
     // Match found, redirect to the next HTML page
-    header("Location: \USCFMS\UserPage\UserAccPage\UserAccPage.html?submit=success");
+    header("Location: /USCFMS/UserPage/UserFeedback/UserFeedback.html?submit=success");
 
     $conn->close();
 ?>

@@ -17,7 +17,8 @@
     right: 5px;
 }
 
-#responsiveRate {
+#responsiveRate,
+#overallRate {
     position: absolute;
     width: 212px;
     height: 36px;
@@ -119,7 +120,10 @@ hr
     font-weight: bold;
 }
 
-.choices
+.choices,
+.choicesTimely,
+.choicesNagivation,
+.choicesUpdateStat
 {
     position: absolute;
     margin-left: 130px;
@@ -127,7 +131,8 @@ hr
    gap: 50px;
 }
 
-.choices1
+.choices1,
+.choicesTransparency
 {
     position: absolute;
     margin-left: 1350px;
@@ -170,6 +175,7 @@ hr
     background: none;
     color: black;
     outline: none;
+    resize: none;
 }
 
 .questions
