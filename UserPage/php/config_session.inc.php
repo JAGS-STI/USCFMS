@@ -7,9 +7,9 @@
     if ($host === 'localhost') {
         // Configuration for localhost
         ini_set('session.cookie_domain', 'localhost');
-    } else if ($host === '192.168.100.184') {
+    } else if ($host === $host) {
         // Configuration for 192.168.100.184
-        ini_set('session.cookie_domain', '192.168.100.184');
+        ini_set('session.cookie_domain', $host);
     } else {
         // Default configuration
         $error = "Warning, accessed through unknown domain: " . $host;

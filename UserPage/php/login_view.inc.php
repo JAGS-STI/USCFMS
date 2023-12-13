@@ -466,3 +466,6 @@
                 return 'black'; // Change this to a default color or handle as needed
         }
     }
+    $messagesData = json_encode(userMessageTable());
+    $concernsData = json_encode(userConcernTable());
+?>

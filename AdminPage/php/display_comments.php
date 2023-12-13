@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
 
     while ($row = $result->fetch_assoc()) {
         echo '<tr class="tbl" onclick="redirectToComment(' . $row['commentID'] . ')">';
-        echo '<td class="ticketID">SC-' . $row['commentID'] . '</td>';
+        echo '<td class="ticketID">CM-' . $row['commentID'] . '</td>';
 
         // Format the date using DateTime
         $dateTime = new DateTime($row['submitDate']);

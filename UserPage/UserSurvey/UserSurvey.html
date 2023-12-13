@@ -1,0 +1,212 @@
+﻿<?php 
+    require_once "../php/config_session.inc.php";
+    require_once "../php/signup_view.inc.php";
+    require_once "../php/login_view.inc.php";
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>User About | Ususan SCFMS</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="UserSurveyDesign.css" />
+    <link rel="stylesheet" href="/USCFMS/UserPage/TopMenu/topMenuDesign.css" />
+    <script src="/USCFMS/UserPage/java/user.inc.js"></script>
+</head>
+<body>
+    <div class="PageSubtitle">
+        <p id="dateTime">ERROR: Date cannot display</p>
+        <script src="/USCFMS/time.js"></script>
+    </div>
+    <div class="toolBar">
+        <a class="PageTitle" href="/USCFMS/UserPage/UserHome/UserHome.html">
+            <img src="Media/City_of_Taguig_Seal.png" />
+            <img src="Media/ususan_logo.png" />
+            <div class="label">
+                <p>The Official website of </p>
+                <h3>Barangay Ususan</h3>
+                <p id="taguig">Taguig City</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="aboutBrgy">
+        <div class="blur">
+            <h1>We’d love your feedback!</h1>
+            <p>
+            We've resolved the social concern you reported and would love to hear your feedback through this quick survey.
+                It'll only take a few minutes of your time.
+            </p>
+        </div>
+    </div>
+
+    <div class="pageContent">
+        
+        <form id="concernForm" action="php/process_form.php" method="post" enctype="multipart/form-data">
+            <div class="topFld">
+                <p id="bold">Instructions</p>
+                <ul>
+                    <li>Fill up the form below.</li>
+                    <li>Submission is optional. If you prefer not to submit, please close this website.</li>
+                </ul>
+                <hr>
+            </div>
+            <div class="field1">
+                <h1 id="headTitle">Personal Information</h1>
+                <div class="underline"></div>
+                <p id="required">Fields with * are required</p>
+                <div class="fld">
+                    <p>Name:</p>
+                    <p id="bold">Jherico Medina</p>
+                </div>
+                <div class="fld">
+                    <p>Email address:</p>
+                    <p id="bold">jhericomedina213@gmail.com</p>
+                </div>
+                <div class="fld">
+                    <p>Contact number:</p>
+                    <p id="bold">0949 985 6978</p>
+                </div>
+                <div class="fld">
+                    <p>Feedback for concern ID:</p>
+                    <p id="bold">SC-10001</p>
+                </div>
+
+                <p id="inf">The information above will be used and kept on this concern submission.</p>
+            </div>
+    
+            <div class="field2">
+                <h1 id="concernTitle">Concern Details</h1>
+                <div class="underline"></div>
+                <div class="fldConcern">
+                    <p id="firstQ">Did you receive timely assistance for your concern? </p>
+                    <p>Rate the responsiveness of the Barangay authorities in addressing your concern: </p>
+                </div>
+                <div class="choices">
+                    <div class="fldChoices">
+                        <input type="checkbox" id="yes" name="yesAns" value="yesCheck">
+                        <label for="yesAns">Yes</label>
+                    </div>
+                    <div class="fldChoices">
+                        <input type="checkbox" id="no" name="noAns" value="noCheck">
+                        <label for="noAns">No</label>
+                    </div>            
+                </div>
+
+                <div class="choice2">
+                    <div class="stars">
+                        <img src="media\star-svgrepo-com.png">
+                        <img src="media\star-svgrepo-com.png">
+                        <img src="media\star-svgrepo-com.png">
+                        <img src="media\star-svgrepo-com.png">
+                        <img src="media\star-svgrepo-com.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="field2">
+                <h1 id="concernTitle">User Experience</h1>
+                <div class="underline"></div>
+                <div class="fldConcern">
+                    <p id="firstQ">Were you able to easily navigate and use the platform? </p>
+                    <p>How would you rate your overall experience using this platform? </p>
+                </div>
+
+
+                <div class="choices">
+                    <div class="fldChoices">
+                        <input type="checkbox" id="yes" name="yesAns" value="yesCheck">
+                        <label for="yesAns">Yes</label>
+                    </div>
+                    <div class="fldChoices">
+                        <input type="checkbox" id="no" name="noAns" value="noCheck">
+                        <label for="noAns">No</label>
+                    </div>            
+                </div>
+
+                <div class="choice2">
+                    <div class="stars">
+                        <img src="media\star-svgrepo-com.png">
+                        <img src="media\star-svgrepo-com.png">
+                        <img src="media\star-svgrepo-com.png">
+                        <img src="media\star-svgrepo-com.png">
+                        <img src="media\star-svgrepo-com.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="field2">
+                <h1 id="concernTitle">Transparency and Communication</h1>
+                <div class="underline"></div>
+                <div class="fldConcern">
+                    <p id="firstQ">Did you receive updates regarding the status and resolution of your concern? </p>
+                    <p>Were you satisfied with the level of transparency in the process?</p>
+                </div>
+
+
+                <div class="choices">
+                    <div class="fldChoices">
+                        <input type="checkbox" id="yes" name="yesAns" value="yesCheck">
+                        <label for="yesAns">Yes</label>
+                    </div>
+                    <div class="fldChoices">
+                        <input type="checkbox" id="no" name="noAns" value="noCheck">
+                        <label for="noAns">No</label>
+                    </div>            
+                </div>
+
+                <div class="choices1">
+                    <div class="fldChoices">
+                        <input type="checkbox" id="yes" name="yesAns" value="yesCheck">
+                        <label for="yesAns">Yes</label>
+                    </div>
+                    <div class="fldChoices">
+                        <input type="checkbox" id="no" name="noAns" value="noCheck">
+                        <label for="noAns">No</label>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="field2">
+                    <h1 id="concernTitle">Additional Comments</h1>
+                    <div class="underline"></div>
+                    <div class="questions">
+                        <div class="q1">
+                            <p>Is there anything else you would like to share regarding your experience or concerns that were not covered in this survey? </p>  
+                            <div class="longbox">
+                                <textarea id="desc" name="desc" rows="5" cols="100" placeholder="Type here"></textarea>
+                            </div>   
+                        </div>
+                    </div> 
+                </div>   
+
+
+                <div class="consent">
+                    <p id="consent">I consent to the processing of my personal data in accordance with the Republic Act 10173 or also known as the Data Privacy Act of 2012.</p>
+                    <input id="check" type="checkbox" required/>
+                </div>
+                    <button id="submit">Submit</button>
+                
+            
+        </form>
+
+        <div class="offset" style="height: 100px; background-color: transparent;"></div>
+
+        <!--bottom-->
+        <footer class="copyRight">
+            <p>Copyright 2023 | All Rights Reserved | Barangay Government of Ususan</p>
+            <a id="contact1" href="/USCFMS/UserPage/UserContact/UserContact.html">Contact Us</a>
+            <p id="developedBy">
+                Website developed by: <br />
+                Gerald Balbon | Sheena Gem Juarbal | Jherico Medina | Arjay Fortuno
+            </p>
+        </footer>
+    </div> 
+    <?php login_popup(); ?>
+</body>
+</html>

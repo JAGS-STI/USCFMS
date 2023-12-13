@@ -1,0 +1,203 @@
+﻿.pageContent {
+    position: absolute;
+    top: 480px;
+    width: 100%;
+    height: calc(100vh - 480px);
+}
+
+@media (max-height: 1580px) {
+    .pageContent {
+        /* height: fit-content; */
+        height: 1900px;
+    }
+}
+.PageSubtitle img
+{
+    position: absolute;
+    right: 5px;
+}
+
+h1
+{
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+#required
+{
+    position: absolute;
+    top: 0px;
+    right: 6%;
+    font-size: 12px;
+    font-weight:400;
+    color: red;
+}
+
+.field1,
+.field2,
+.field3 {
+    position: relative;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0px;
+    top: 22px;
+    left: 50px;
+    width: 33px;
+    height: 6px;
+    background-color: #feda00;
+    border-radius: 10px;
+}
+
+.topFld
+{
+    margin-left: 50px;
+}
+
+ul
+{
+    margin-bottom: 30px;
+}
+
+hr
+{
+    width: 98%;
+    margin-bottom: 50px;
+}
+
+#concernTitle {
+    margin-top: 90px;
+}
+
+.field2 {
+    position: relative;
+}
+
+.fldConcern {
+    position: relative;
+    margin-left: 50px;
+    display: flex;
+    gap: 50px;
+}
+
+#firstQ
+{
+    width: 1100px;
+}
+
+
+.fld
+{
+    margin-left: 50px;
+    display: flex;
+    gap: 50px;
+    margin-bottom: -10px;
+}
+
+#inf
+{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.fld p
+{
+    width: 220px;
+}
+
+#bold
+{
+    font-weight: bold;
+}
+
+.choices
+{
+    position: absolute;
+    margin-left: 130px;
+   display: flex;
+   gap: 50px;
+}
+
+.choices1
+{
+    position: absolute;
+    margin-left: 1350px;
+   display: flex;
+   gap: 50px;
+}
+
+.stars
+{
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    margin-left: 1200px;
+    margin-top: -5px;
+}
+
+.stars img
+{
+    height: 40px;
+    width: 40px;
+}
+
+.longbox {
+    margin-top: 5px;
+    background: #cfcfcf;
+    width: 900px;
+    height: 320px;
+    border-radius: 5px;
+}
+
+.longbox textarea {
+    margin-top: 10px;
+    width: 870px;
+    height: 300px;
+    margin-left: 15px;
+    border-style: none;
+    background: none;
+    color: black;
+    outline: none;
+}
+
+.questions
+{
+    margin-left: 50px;
+}
+
+#consent
+{
+    margin-top: 100px;
+    margin-left: 80px;
+}
+
+#check
+{
+    position:relative;
+    margin-left: 50px;
+    bottom: 36px;
+    height: 15px;
+    width:15px;
+}
+
+#submit 
+{
+    height: 50px;
+    width: 160px;
+    background-color: #16601f;
+    border-radius: 50px;
+    border-style: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+#submit:hover { 
+    transition: 0.3s;
+    background-color: #1a7225;
+}
