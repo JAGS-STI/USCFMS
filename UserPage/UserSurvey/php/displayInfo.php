@@ -17,10 +17,11 @@
     $check =   "SELECT cd.status, cd.submitDate FROM concerndetail cd LEFT JOIN concernsurvey cs ON cd.concernID = cs.concernID
                 WHERE cd.concernID = $concernID AND cs.concernID IS NULL;";
     $result = $conn->query($check);
-    $row = $result->fetch_assoc();
+    if ($row = $result->fetch_assoc())
+    $numericValue = (int) date('YmdHis', strtotime($row['submitDate']));
 
     if(isset($row['status']) && $row['status'] === 'Resolved' && $numericValue === (int)$cd) {
-        $numericValue = (int) date('YmdHis', strtotime($row['submitDate']));
+        
         $sql2 =   "SELECT name, email, contact FROM useraccount ua JOIN concerndetail cd ON cd.accID = ua.accID 
         WHERE cd.concernID = $concernID;";
         $result2 = $conn->query($sql2);
@@ -169,11 +170,9 @@
                 <input id="check" type="checkbox" required/>
             </div>
             <button id="submit">Submit</button>
-            
-            
         </form>';
     } else {
-        header("Location: \USCFMS\UserPage\UserHome\UserHome.html?page=unknown");
+        header("Location: \USCFMS\UserPage\UserHome\UserHome.html?survey=answered");
     }
     
     $conn->close();

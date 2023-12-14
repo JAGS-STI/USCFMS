@@ -73,15 +73,15 @@
                             <div class="q1">
                                 <p>Did you receive timely assistance for your concern?</p>';
                                 if ($row['timely'] === 'true') {
-                                    echo '<div class="answers">     
-                                        <img src="media/radio-button-checked-svgrepo-com.png">
-                                        <p>Yes</p>
-                                    </div>';
+                                echo '<div class="answers">     
+                                    <img src="media/radio-button-checked-svgrepo-com.png">
+                                    <p>Yes</p>
+                                </div>';
                                 } else {
-                                    echo '<div class="answers">     
-                                        <img src="media/radio-button-unchecked-svgrepo-com.png">
-                                        <p>No</p>
-                                    </div>';
+                                echo '<div class="answers">     
+                                    <img src="media/radio-button-unchecked-svgrepo-com.png">
+                                    <p>No</p>
+                                </div>';
                                 }   
                             echo '</div>
                             <div class="q2">
@@ -90,7 +90,7 @@
 
                                 // Loop to generate star images based on $responsiveRate
                                 for ($i = 1; $i <= 5; $i++) {
-                                    $imageName = ($i <= $responsiveRate) ? 'star.png' : 'star-svgrepo-com.png';
+                                    $imageName = ($i <= $row['responsiveRate']) ? 'star.png' : 'star-svgrepo-com.png';
                                     echo '<img src="media/' . $imageName . '">';
                                 }
 
@@ -103,41 +103,8 @@
                         <div class="underline"></div>
                         <div class="questions">
                             <div class="q1">
-                                <p>Did you receive timely assistance for your concern?</p>';
-                                if ($row['transparency'] === 'true') {
-                                    echo '<div class="answers">     
-                                        <img src="media/radio-button-checked-svgrepo-com.png">
-                                        <p>Yes</p>
-                                    </div>';
-                                } else {
-                                    echo '<div class="answers">     
-                                        <img src="media/radio-button-unchecked-svgrepo-com.png">
-                                        <p>No</p>
-                                    </div>';
-                                }
-                                echo '</div>
-                            </div>
-            
-                            <div class="q2">
-                                <p>Rate the responsiveness of the Barangay authorities in addressing your concern: </p>'; 
-                                echo '<div class="answers">';
-
-                                // Loop to generate star images based on $responsiveRate
-                                for ($i = 1; $i <= 5; $i++) {
-                                    $imageName = ($i <= $responsiveRate) ? 'star.png' : 'star-svgrepo-com.png';
-                                    echo '<img src="media/' . $imageName . '">';
-                                }
-
-                                echo '</div>
-                        </div>     
-                    </div>
-                    <div class="title">
-                        <h1 id="subTitle">Transparency and Communication</h1>
-                        <div class="underline"></div>
-                        <div class="questions">
-                            <div class="q1">
-                                <p>Did you receive updates regarding the status and resolution of your concern?</p>'; 
-                                if ($row['transparency'] === 'true') {
+                                <p>Were you able to easily navigate and use the platform?</p>';
+                                if ($row['nagivation'] === 'true') {
                                     echo '<div class="answers">     
                                         <img src="media/radio-button-checked-svgrepo-com.png">
                                         <p>Yes</p>
@@ -150,6 +117,38 @@
                                 }
                             echo '</div>
             
+                            <div class="q2">
+                                <p>How would you rate your overall experience using this platform? </p>'; 
+                                echo '<div class="answers">';
+
+                                // Loop to generate star images based on $responsiveRate
+                                for ($i = 1; $i <= 5; $i++) {
+                                    $imageName = ($i <= $row['overallRate']) ? 'star.png' : 'star-svgrepo-com.png';
+                                    echo '<img src="media/' . $imageName . '">';
+                                }
+
+                            echo '</div>
+                            </div>
+                        </div>     
+                    </div>
+                    <div class="title">
+                        <h1 id="subTitle">Transparency and Communication</h1>
+                        <div class="underline"></div>
+                        <div class="questions">
+                            <div class="q1">
+                                <p>Did you receive updates regarding the status and resolution of your concern?</p>'; 
+                                if ($row['updateStat'] === 'true') {
+                                    echo '<div class="answers">     
+                                        <img src="media/radio-button-checked-svgrepo-com.png">
+                                        <p>Yes</p>
+                                    </div>';
+                                } else {
+                                    echo '<div class="answers">     
+                                        <img src="media/radio-button-unchecked-svgrepo-com.png">
+                                        <p>No</p>
+                                    </div>';
+                                }
+                            echo '</div>
                             <div class="q2">
                                 <p>Were you satisfied with the level of transparency in the process?</p>'; 
                                 if ($row['transparency'] === 'true') {

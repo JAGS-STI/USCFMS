@@ -82,7 +82,7 @@
         </footer>
     </div>
     <?php login_popup(); ?>
-    <div class="shadow-survey" id="shadow" style="display: none;">
+    <div class="shadow-survey" id="shadow">
         <div class="popup" style="position: relative;border-radius: 15px;background: white;height: 181px;width: 430px;display: flex;align-items: center;justify-content: center;flex-direction: column;">
             <h3 class="headpop" id="head" style="margin: 0;">Thank you for your feedback!</h3>
             <p class="subpop" id="head" style="margin: 0;margin-top: 10px;">You may now close this window.</p>
@@ -108,21 +108,11 @@
 
             if (logoutParam === 'true') {
                 // Display alert if logout is true
-                alert('Logged-out Successfully.');
+                var popup = document.getElementsByClassName('shadow-survey');
+                popup[0].style.display = "flex";
+                document.getElementsByClassName('headpop')[0].innerHTML = "Logged-out successfully.";
+                document.getElementsByClassName('subpop')[0].innerHTML = "Comeback anytime!.";
             }
-        };
-    </script>
-    <script>
-        // Function to get URL parameter by name
-        function getUrlParameter(name) {
-            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
-
-        // Check if "logout" parameter is true after the page has loaded
-        window.onload = function() {
             var feedbackParam = getUrlParameter('feedback');
 
             if (feedbackParam === 'success') {
@@ -130,19 +120,7 @@
                 var popup = document.getElementsByClassName('shadow-survey');
                 popup[0].style.display = "flex";
             }
-        };
-    </script>
-    <script>
-        // Function to get URL parameter by name
-        function getUrlParameter(name) {
-            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
 
-        // Check if "logout" parameter is true after the page has loaded
-        window.onload = function() {
             var pageParam = getUrlParameter('page');
 
             if (pageParam === 'unknown') {
@@ -151,6 +129,16 @@
                 popup[0].style.display = "flex";
                 document.getElementsByClassName('headpop')[0].innerHTML = "Page does not exist.";
                 document.getElementsByClassName('subpop')[0].innerHTML = "Going back to home page.";
+            }
+
+            var pageParam = getUrlParameter('survey');
+
+            if (pageParam === 'answered') {
+                // Display alert if logout is true
+                var popup = document.getElementsByClassName('shadow-survey');
+                popup[0].style.display = "flex";
+                document.getElementsByClassName('headpop')[0].innerHTML = "Opps my apologies!";
+                document.getElementsByClassName('subpop')[0].innerHTML = "Survey already answered or does not exist.";
             }
         };
     </script>
