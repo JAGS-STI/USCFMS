@@ -19,14 +19,13 @@
     $result = $conn->query($check);
     $row = $result->fetch_assoc();
 
-    $numericValue = (int) date('YmdHis', strtotime($row['submitDate']));
-
     if(isset($row['status']) && $row['status'] === 'Resolved' && $numericValue === (int)$cd) {
+        $numericValue = (int) date('YmdHis', strtotime($row['submitDate']));
         $sql2 =   "SELECT name, email, contact FROM useraccount ua JOIN concerndetail cd ON cd.accID = ua.accID 
         WHERE cd.concernID = $concernID;";
         $result2 = $conn->query($sql2);
         $row2 = $result2->fetch_assoc();
-        echo '<form id="concernForm" action="php/process_survey.php?concernID=<?php echo $_GET[\'concernID\'] ?>" method="post" enctype="multipart/form-data">
+        echo '<form id="concernForm" action="php/process_survey.php?concernID='.$concernID.'" method="post" enctype="multipart/form-data">
             <div class="topFld">
                 <p id="bold">Instructions</p>
                 <ul>
@@ -173,6 +172,8 @@
             
             
         </form>';
+    } else {
+        header("Location: \USCFMS\UserPage\UserHome\UserHome.html?page=unknown");
     }
     
     $conn->close();

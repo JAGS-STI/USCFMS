@@ -95,7 +95,7 @@ function sendResolvedMsg(link) {
     // Get the updated values from the select elements
     const concernID = getParameterByName('concernID');
     const Name = document.getElementById("pName").innerHTML;
-    document.getElementById("msgBox").value = "Hi there, "+Name+"! Your concern <p style=\"font-weight: bold;\">SC-"+concernID+"</p> has been resolved! Feel free to give us your thoughts on how we handled your concern.<br>You can tell us about your thoughts here: ";
+    document.getElementById("msgBox").value = "Hi there, "+Name+"! Your concern <span style=\"font-weight: bold;\">SC-"+concernID+"</span> has been resolved! Feel free to give us your thoughts on how we handled your concern.<br><br>You can tell us about your thoughts here: ";
     const message = document.getElementById("msgBox").value;
     
     

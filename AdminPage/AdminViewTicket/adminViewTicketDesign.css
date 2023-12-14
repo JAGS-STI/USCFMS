@@ -383,8 +383,8 @@ top: 60px;
     position: relative;
     margin-top: 50px;
     margin-bottom: 50px;
-    height: 1600px;
-    width: 1000px;
+    height: 1339px;
+    width: 1121px;
     background-color: white;
     border-radius: 15px;
 }
@@ -420,7 +420,7 @@ top: 60px;
     left: 35px;
     width: calc(100% - 35px);
     top: 500px;
-    height: 1100px;
+    height: 813px;
 }
 
 .popup .header1 {
@@ -518,7 +518,7 @@ top: 60px;
 .popup .questions
 {
     display: flex;
-    gap: 200px;
+    gap: -181px;
     font-size: 15px;
     margin-top: 30px;
 }
@@ -560,10 +560,11 @@ top: 60px;
     background: none;
     color: black;
     outline: none;
+    resize: none;
 }
  
 .popup .q1 {
-    width: 100%;
+    width: 492px;
 }
 
 /*SHADOWING FOR SEND MESSAGE*/

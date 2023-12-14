@@ -29,6 +29,18 @@ function toggleLoginPopup($toggle) {
 
 }
 
+function toggleSurveyPopup($toggle) {
+    $popupWindow = document.getElementsByClassName("shadow-survey");
+
+    if ($toggle === 'open') {
+        $popupWindow[0].style.display = 'flex';
+    } else {
+        $popupWindow[0].style.display = 'none';
+    }
+
+    window.location.href='/USCFMS/UserPage/UserHome/UserHome.html';
+}
+
 function redirectToTicket($concernID) {
     window.location.href='/USCFMS/UserPage/UserViewConcern/UserViewConcern.html?concernID=' + $concernID;
 }
