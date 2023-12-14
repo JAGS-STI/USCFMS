@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 
 // Fetch data from the database
 $sql = "SELECT docID, docType, useraccount.name, status, docstatus.dateReceived FROM docstatus 
-        JOIN useraccount ON useraccount.accID = docstatus.accID;";
+        JOIN useraccount ON useraccount.accID = docstatus.accID ORDER BY docstatus.dateReceived DESC;";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

@@ -19,7 +19,8 @@ if(!empty($_GET['concernType'])) {
         $concernPriority = $_GET['concernPriority'];
     
         // Fetch data from the database
-        $sql = "SELECT concernID, submitDate, concernType, status, priority, location FROM concernDetail";
+        $sql = "SELECT concernID, submitDate, concernType, status, priority, location, useraccount.name FROM concernDetail 
+        JOIN useraccount ON concernDetail.accID = useraccount.accID";
     
         // Build WHERE conditions based on selected values
         $whereConditions = [];
@@ -46,11 +47,13 @@ if(!empty($_GET['concernType'])) {
         }
         $result = $conn->query($sql);
     } else {
-        $sql = "SELECT concernID, submitDate, concernType, status, priority, location FROM concernDetail WHERE status != 'Discarded' ORDER BY submitDate DESC";
+        $sql = "SELECT concernID, submitDate, concernType, status, priority, location, useraccount.name FROM concernDetail 
+        JOIN useraccount ON concernDetail.accID = useraccount.accID WHERE status != 'Discarded' ORDER BY submitDate DESC";
         $result = $conn->query($sql);
     }
 } else {
-    $sql = "SELECT concernID, submitDate, concernType, status, priority, location FROM concernDetail WHERE status != 'Discarded' ORDER BY submitDate DESC";
+    $sql = "SELECT concernID, submitDate, concernType, status, priority, location, useraccount.name FROM concernDetail 
+    JOIN useraccount ON concernDetail.accID = useraccount.accID WHERE status != 'Discarded' ORDER BY submitDate DESC";
     $result = $conn->query($sql);
 }
 
@@ -61,28 +64,28 @@ if ($result->num_rows > 0) {
     echo '<table>
         <tr class="head">
             <th width="150px">Concern ID</th>
-            <th width="240px">Date received</th>
-            <th width="200px">Concern type</th>
-            <th width="150px">Status</th>
+            <th width="150px">Respondent</th>
+            <th width="230px">Date received</th>
+            <th width="190px">Concern type</th>
             <th width="150px">Priority</th>
             <th width="100px">Location</th>
-            <th width="100px">Updated</th>
+            <th width="150px">Status</th>
           </tr>';
 
     while ($row = $result->fetch_assoc()) {
         echo '<tr class="tbl" onclick="redirectToTicket(' . $row['concernID'] . ')">';
         echo '<td class="ticketID">SC-' . $row['concernID'] . '</td>';
+        echo '<td>' . $row['name'] . '</td>'; 
 
         // Format the date using DateTime
         $dateTime = new DateTime($row['submitDate']);
-        $formattedDate = $dateTime->format('Y-m-d h:i A');
+        $formattedDate = $dateTime->format('F j, Y h:i A');
 
         echo '<td>' . $formattedDate . '</td>';
         echo '<td>' . $row['concernType'] . '</td>';
-        echo '<td class="active"><div class="dot" id="' . getStatusColor($row['status']) . '"></div> ' . $row['status'] . '</td>';
         echo '<td>' . ($row['priority'] ? $row['priority'] : '-----') . '</td>';
         echo '<td>' . $row['location'] . '</td>';
-        echo '<td>----</td>'; 
+        echo '<td class="active"><div class="dot" id="' . getStatusColor($row['status']) . '"></div> ' . $row['status'] . '</td>';
         echo '</tr>';
     }
 

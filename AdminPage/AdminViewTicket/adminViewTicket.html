@@ -13,11 +13,48 @@
     <link rel="stylesheet" href="adminViewTicketDesign.css" />
     <link rel="stylesheet" href="/USCFMS/AdminPage/Sidebar/sidebarDesign.css" />
 
-    
-
-    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
-
     <script src="/USCFMS/AdminPage/java/updateStatus.js"></script>
+    <!-- html2canvas library -->
+    <script src="/USCFMS/npm/jsPDF/node_modules/html2canvas/dist/html2canvas.min.js"></script>
+
+    <!-- jsPDF library -->
+    <script src="/USCFMS/npm/jsPDF/node_modules/jspdf/dist/jspdf.umd.min.js"></script>
+
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+
+        // Convert HTML content to PDF
+        function Convert_HTML_To_PDF() {
+            var doc = new jsPDF({
+            unit: "in",
+            format: [12.1, 14.4], //fu ka jsPDF awjkdnajdkajb
+            onePage: true
+        });
+        
+        var elementHTML = document.querySelector("#contentToPrint");
+
+        var images = elementHTML.querySelectorAll("img");
+        images.forEach(function(img) {
+            img.onerror = function() {
+                img.src = "/USCFMS/TestPage/media/button-error-svgrepo-com.png";
+            };
+        });
+
+        doc.html(elementHTML, {
+            callback: function(doc) {
+                doc.save('document-html.pdf');
+            },
+            margin: [-0.25, 0, 0, 0.5],
+            x: 0,
+            y: 0,
+            width: 11,
+            height: 13.5,
+            windowWidth: 1100, //window width in CSS pixels
+            windowHeight: 1350
+        });
+        }
+    </script>
+    
 </head>
 <body>
     <div>
@@ -40,7 +77,7 @@
     <div class="pageContent">
         <div class="rightInf">
             <p id="dl">Download or view a print-friendly version of this concern</p>
-            <button id="pdf">View/download PDF</button>
+            <button id="pdf" onclick="Convert_HTML_To_PDF();">Download PDF</button>
 
             <p id="view">View survey result</p>
             <div class="btn">
@@ -286,6 +323,7 @@
                 document.body.style.overflowY = 'scroll';
             }
         }
+        
     </script>
 </body>
 </html>

@@ -34,7 +34,11 @@
         
 
         echo '<div class="shadow">
-            <div class="popup">
+        
+            <div class="closeBtn" id="downloadPdf" onclick="toggleSurveyPanel(\'close\')">
+                <img src="media/button-error-svgrepo-com.png">
+            </div>
+            <div class="popup" id="contentToPrint">
                 <div class="PopTitle">
                     <h3>Survey result</h3>
                 </div>
@@ -59,10 +63,6 @@
                         <p>Email address:</p>
                         <h3>'.$row2['email'].'</h3>
                     </div>
-                </div>
-
-                <div class="closeBtn" id="downloadPdf" onclick="toggleSurveyPanel(\'close\')">
-                    <img src="media/button-error-svgrepo-com.svg">
                 </div>
 
                 <div class="popContent">

@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Fetch concern details from the server
     fetchConcernDetails();
+    updateButtons();
 
     // Attach an event listener to the "Save and Close" button
     document.getElementById("saveNclose").addEventListener("click", function() {
@@ -27,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
             sendMsg();
         }
     });
+
+    
 });
 
 function fetchConcernDetails() {
@@ -42,6 +45,40 @@ function fetchConcernDetails() {
             document.getElementById("priorBox").value = data.priority;
         })
         .catch(error => console.error('Error:', error));
+}
+
+function updateButtons() {
+    var survey = document.getElementById("downloadPdf");
+    var isResolved = document.getElementsByClassName("dot");
+    var downloadBtn = document.getElementById("pdf");
+    var viewBtn = document.getElementById("btnView");
+    var label = document.getElementById("not");
+    if (survey) {
+        console.log("Survey Available.");
+        viewBtn.style.backgroundColor = "#16601F";
+        downloadBtn.style.backgroundColor = "#16601F";
+        label.style.color = "#008c0d";
+        label.innerHTML = "Survey result available"
+        
+    } else if(isResolved[0].id === "green"){
+        console.log("Waiting for Survey.");
+        viewBtn.style.backgroundColor = "#606060";
+        viewBtn.style.cursor = "not-allowed";
+        viewBtn.disabled = true;
+        downloadBtn.style.backgroundColor = "#606060";
+        downloadBtn.style.cursor = "not-allowed";
+        downloadBtn.disabled = true;
+        label.innerHTML = "Wait for user to answer"
+        label.style.color = "#f78904";
+    } else {
+        console.log("No survey result.");
+        viewBtn.style.backgroundColor = "#606060";
+        viewBtn.disabled = true;
+        viewBtn.style.cursor = "not-allowed";
+        downloadBtn.style.backgroundColor = "#606060";
+        downloadBtn.style.cursor = "not-allowed";
+        downloadBtn.disabled = true;
+    }
 }
 
 function saveAndClose() {
@@ -85,7 +122,7 @@ function sendMsg() {
             console.log(xhr.responseText);
 
             // Refreshes the page
-            //window.location.href = "/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html?concernID=" + concernID;
+            window.location.href = "/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html?concernID=" + concernID;
         }
     };
     xhr.send(`concernID=${concernID}&msgBox=${message}`);
