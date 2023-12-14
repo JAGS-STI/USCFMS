@@ -85,9 +85,9 @@ function getStatusColor($status)
     switch ($status) {
         case 'Pending':
             return 'blue';
-        case 'Done':
+        case 'Ready for pick up':
             return 'green';
-        case 'Discarded':
+        case 'Closed':
             return 'orange';
         default:
             return 'black'; // Change this to a default color or handle as needed

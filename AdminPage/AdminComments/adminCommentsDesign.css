@@ -208,7 +208,7 @@ tr {
 /*Footer*/
 
 .rightContainer {
-    position: fixed;
+    position: absolute;
     right: 150px;
     top: 60px;
 

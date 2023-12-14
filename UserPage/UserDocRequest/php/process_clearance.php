@@ -25,6 +25,21 @@
     }
 
     $accId = $_SESSION["user_id"];
+    $check = "SELECT COUNT(`docID`) AS `countToday` FROM `docstatus` WHERE `accID` = $accId AND DATE(`dateReceived`) = CURDATE();";
+    $result = $conn->query($check);
+
+    if ($result) {
+        $row = $result->fetch_assoc();
+        if($row['countToday'] > 3) {
+            echo $row['countToday'];
+            header("Location: /USCFMS/UserPage/UserHome/UserHome.html?submit=max");
+            die();
+        }    
+        
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+        die();
+    }
     $file1 = $_FILES['fileInput']['name'];
     $tempFileName = $_FILES["fileInput"]["tmp_name"];
     $name = strtoupper($_POST['nameBox']);

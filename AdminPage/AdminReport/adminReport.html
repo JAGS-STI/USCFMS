@@ -36,7 +36,7 @@
             animationEnabled: true,
             theme: "light2",
             title:{
-                text: "No. of concerns received per concern type"
+                text: "No. of concerns received per Street"
             },
             axisY: {
                 title: ""
@@ -135,9 +135,10 @@
             <div class="concernfield">
             <p id="headField">Select month:</p>
                 <div class="inbox">
-                    <select id="concernBox" name="concernBox" placeholder="Type Here">
+                    <select id="monthBox" name="monthBox" placeholder="Type Here">
                         <option value="All">All</option>
-                        <option value="January">January</option>
+                        <option value="[COMING SOON]">[In Development]</option>
+                        <!-- <option value="January">January</option>
                         <option value="Febuary">Febuary</option>
                         <option value="March">March</option>
                         <option value="April">April</option>
@@ -148,18 +149,18 @@
                         <option value="September">September</option>
                         <option value="October">October</option>
                         <option value="November">November</option>
-                        <option value="December">December</option>
+                        <option value="December">December</option> -->
                     </select>
                 </div>
                 <button id="fltrNow">Filter now</button>
             </div>
         </div>
         <div class="border">
-            <div id="chartContainer" style="height: 380px; width: 80%;"></div>
+            <div id="chartContainer" style="height: 380px; width: 85%;"></div>
             <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
         </div>
         <div class="border2">
-            <div id="chartContainer2" style="height: 380px; width: 80%;"></div>
+            <div id="chartContainer2" style="height: 380px; width: 85%;"></div>
             <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
         </div>
     </div>
@@ -172,6 +173,36 @@
         </div>
     </div>
 
+    <script>
+        document.getElementById("fltrNow").addEventListener("click", function() {
+            // Get the selected month
+            var selectedMonth = document.getElementById("monthBox").value;
+
+            // Fetch updated data based on the selected month
+            fetch(`/USCFMS/AdminPage/AdminReport/php/dataChart.php?month=${selectedMonth}`)
+                .then(response => response.json())
+                .then(dataPoints => {
+                    // Render the chart with the updated data
+                    var chart = new CanvasJS.Chart("chartContainer", {
+                        animationEnabled: true,
+                        theme: "light2",
+                        title: {
+                            text: "No. of concerns received per concern type"
+                        },
+                        axisY: {
+                            title: ""
+                        },
+                        data: [{
+                            type: "column",
+                            yValueFormatString: "#,##0.## concerns",
+                            dataPoints: dataPoints
+                        }]
+                    });
+                    chart.render();
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
 </body>
 </html>
   

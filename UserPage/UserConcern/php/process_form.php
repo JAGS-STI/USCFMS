@@ -23,67 +23,84 @@
         header("Location: ../UserLogin/UserLogin.html?timeout=true");
         die();
     }
-    
+
     $accId = $_SESSION["user_id"];
-    $location = $_POST['locationBox'];
-    $file1 = $_FILES['fileInput']['name'];
-    $concern = $_POST['concernBox'];
-    $description = $_POST['desc'];
 
-    // Insert data into the database
-    $sql = "INSERT INTO concerndetail (accID, location, concernType, description, status)
-            VALUES ('$accId', '$location', '$concern', '$description', 'Unread');";
+    $check = "SELECT COUNT(`concernID`) AS `countToday` FROM `concerndetail` WHERE `accID` = $accId AND DATE(`submitDate`) = CURDATE();";
+    $result = $conn->query($check);
 
-    if ($conn->query($sql) === TRUE) {
-        $lastInsertedID = $conn->insert_id; // Get the auto-incremented ID
-        echo "Record inserted successfully. Concern ID: " . $lastInsertedID;
+    if ($result) {
+        $row = $result->fetch_assoc();
+        
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
+        die();
     }
 
-    // File Handling
-    $targetDir = dirname(dirname(dirname(__DIR__))) . "/AdminPage/uploads/";
+    if($row['countToday'] > 3) {
+        echo $row['countToday'];
+        header("Location: /USCFMS/UserPage/UserHome/UserHome.html?submit=max");
+    } else {
+        $location = $_POST['locationBox'];
+        $file1 = $_FILES['fileInput']['name'];
+        $concern = $_POST['concernBox'];
+        $description = $_POST['desc'];
 
-    foreach ($_FILES['fileInput']['tmp_name'] as $key => $tempFileName) {
-        $originalFileName = $_FILES['fileInput']['name'][$key];
+        // Insert data into the database
+        $sql = "INSERT INTO concerndetail (accID, location, concernType, description, status)
+                VALUES ('$accId', '$location', '$concern', '$description', 'Unread');";
 
-        // Generate a new unique filename to avoid conflicts
-        $fileExtension = pathinfo($originalFileName, PATHINFO_EXTENSION);
-        $newFileName = $lastInsertedID . "_Evidence" . $key . "." . $fileExtension;
-        $targetFile = $targetDir . $newFileName;
+        if ($conn->query($sql) === TRUE) {
+            $lastInsertedID = $conn->insert_id; // Get the auto-incremented ID
+            echo "Record inserted successfully. Concern ID: " . $lastInsertedID;
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
 
-        // Check if a file with the same name already exists
-        if (file_exists($targetFile)) {
-            // Handle filename conflict (you can modify this logic)
-            $counter = 1;
-            $newFileName = $lastInsertedID . "_Evidence" . $key . "(" . $counter . ")." . $fileExtension;
+        // File Handling
+        $targetDir = dirname(dirname(dirname(__DIR__))) . "/AdminPage/uploads/";
+
+        foreach ($_FILES['fileInput']['tmp_name'] as $key => $tempFileName) {
+            $originalFileName = $_FILES['fileInput']['name'][$key];
+
+            // Generate a new unique filename to avoid conflicts
+            $fileExtension = pathinfo($originalFileName, PATHINFO_EXTENSION);
+            $newFileName = $lastInsertedID . "_Evidence" . $key . "." . $fileExtension;
             $targetFile = $targetDir . $newFileName;
 
-            // Increment the counter until a unique filename is found
-            while (file_exists($targetFile)) {
-                $counter++;
+            // Check if a file with the same name already exists
+            if (file_exists($targetFile)) {
+                // Handle filename conflict (you can modify this logic)
+                $counter = 1;
                 $newFileName = $lastInsertedID . "_Evidence" . $key . "(" . $counter . ")." . $fileExtension;
                 $targetFile = $targetDir . $newFileName;
+
+                // Increment the counter until a unique filename is found
+                while (file_exists($targetFile)) {
+                    $counter++;
+                    $newFileName = $lastInsertedID . "_Evidence" . $key . "(" . $counter . ")." . $fileExtension;
+                    $targetFile = $targetDir . $newFileName;
+                }
+            }
+
+            // Move uploaded files to a folder
+            move_uploaded_file($tempFileName, $targetFile);
+
+            $varTargetFile = '/AdminPage/uploads/' . $newFileName;
+            $escapedTargetFile = addslashes($varTargetFile);
+
+            $sql2 ="INSERT INTO concernphoto (concernID, photoEvidence, evidenceName, evidenceDate)
+                    VALUES ('$lastInsertedID', '$escapedTargetFile', '$newFileName', '$currentDateTime');";
+
+            if ($conn->query($sql2) !== TRUE) {
+                echo "Error: " . $sql2 . "<br>" . $conn->error;
             }
         }
 
-        // Move uploaded files to a folder
-        move_uploaded_file($tempFileName, $targetFile);
-
-        $varTargetFile = '/AdminPage/uploads/' . $newFileName;
-        $escapedTargetFile = addslashes($varTargetFile);
-
-        $sql2 ="INSERT INTO concernphoto (concernID, photoEvidence, evidenceName, evidenceDate)
-                VALUES ('$lastInsertedID', '$escapedTargetFile', '$newFileName', '$currentDateTime');";
-
-        if ($conn->query($sql2) !== TRUE) {
-            echo "Error: " . $sql2 . "<br>" . $conn->error;
-        }
+        echo "<br>Record inserted successfully. Directory Path: " . $escapedTargetFile;
+        // Match found, redirect to the next HTML page
+        header("Location: \USCFMS\UserPage\UserAccPage\UserAccPage.html?submit=success");
     }
-
-    echo "<br>Record inserted successfully. Directory Path: " . $escapedTargetFile;
-    // Match found, redirect to the next HTML page
-    header("Location: \USCFMS\UserPage\UserAccPage\UserAccPage.html?submit=success");
-
+    
     $conn->close();
 ?>

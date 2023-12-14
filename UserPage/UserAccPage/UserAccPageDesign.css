@@ -259,10 +259,13 @@ tr {
 
 .longbox {
     margin-top: -100px;
-    background: #cfcfcf;
+    background: #efefef;
     width: 900px;
     height: 320px;
     border-radius: 5px;
+    border: #979797;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .longbox textarea {

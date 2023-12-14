@@ -141,6 +141,17 @@
                 document.getElementsByClassName('headpop')[0].innerHTML = "Opps my apologies!";
                 document.getElementsByClassName('subpop')[0].innerHTML = "Survey already answered or does not exist.";
             }
+
+            var pageParam = getUrlParameter('submit');
+
+            if (pageParam === 'max') {
+                // Display alert if logout is true
+                var popup = document.getElementsByClassName('shadow-survey');
+                popup[0].style.display = "flex";
+                document.getElementsByClassName('headpop')[0].innerHTML = "3 Daily Max Submition Reach!";
+                document.getElementsByClassName('subpop')[0].innerHTML = "Please try again another time.";
+                
+            }
         };
     </script>
 </body>

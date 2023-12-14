@@ -1,6 +1,6 @@
 <?php
 // Include your database connection code here
-    $concernID = $_GET['concernID'];
+    $docID = $_GET['docID'];
 
     $servername = "localhost";
     $username = "root";
@@ -13,12 +13,12 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    if (isset($_GET['concernID'])) {
-        $concernID = $_GET['concernID'];
+    if (isset($_GET['docID'])) {
+        $docID = $_GET['docID'];
 
         // Fetch concern details from the database
         // Adjust this query according to your database schema
-        $query = "SELECT status, priority FROM concerndetail WHERE concernID = '$concernID'";
+        $query = "SELECT status FROM docstatus WHERE docID = '$docID'";
         $result = mysqli_query($conn, $query);
 
         if ($result) {

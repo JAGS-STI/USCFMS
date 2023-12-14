@@ -42,7 +42,7 @@
                 </div>
                 <div class="card1">
                     <p>Respondent name:</p>
-                    <h3>' . $pName . '</h3>
+                    <h3 id=pName>' . $pName . '</h3>
                 </div>
                 <div class="card1">
                     <p>Contact no.:</p>

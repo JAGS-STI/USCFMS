@@ -42,7 +42,7 @@ body {
 
 /*DATE AND TIME*/
 .rightContainer {
-    position: fixed;
+    position: absolute;
     right: 150px;
     top: 60px;
 
