@@ -121,7 +121,7 @@
                         <div class="contactfield">
                             <p>No. of years residing in the Barangay: <span style="color: red">*</span></p>
                             <div class="inbox">
-                                <input id="yearBox" name="yearBox" type="text" placeholder="Type Here" required>
+                                <input id="yearBox" name="yearBox" type="text" placeholder="Type Here" oninput="validateNumericInput(this)" required>
                             </div>
                         </div>
                     </div>
@@ -179,7 +179,7 @@
                         <div class="contactfield">
                             <p>Age: <span style="color: red">*</span></p>
                             <div class="inbox">
-                                <input id="ageBox" name="ageBox" type="text" placeholder="Type Here" >
+                                <input id="ageBox" name="ageBox" type="text" placeholder="Type Here" oninput="validateNumericInput(this)">
                             </div>
                         </div>
                         <div class="contactfield">
@@ -268,7 +268,7 @@
                         <div class="contactfield">
                             <p>Contact number: <span style="color: red">*</span></p>
                             <div class="inbox">
-                                <input id="contactNumBox" name="contactNumBox" type="text" placeholder="Type Here" >
+                                <input id="contactNumBox" name="contactNumBox" type="text" placeholder="Type Here" oninput="validateNumericInput(this)">
                             </div>
                         </div>
                         <div class="contactfield">
@@ -330,6 +330,10 @@
     <?php login_popup(); ?>
     
     <script>
+        function validateNumericInput(input) {
+            // Remove non-numeric characters from the input value
+            input.value = input.value.replace(/\D/g, '');
+        }
         document.addEventListener("DOMContentLoaded", function () {
             var selectBox = document.getElementById("concernBox");
             var indingencyPanel = document.getElementById("indingencyPanel");

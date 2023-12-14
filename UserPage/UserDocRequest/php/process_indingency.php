@@ -27,13 +27,13 @@
     $accId = $_SESSION["user_id"];
     $name = strtoupper($_POST['nameBox']);
     $bday = $_POST['bdayBox'];
-    $vin = !empty($_POST['vinBox']) ? strtoupper($_POST['vinBox']) : "N/A";
+    $vin = !empty($_POST['vinBox']) || isset($_POST['vinBox']) ? strtoupper($_POST['vinBox']) : "N/A";
     $address = strtoupper($_POST['addressBox']);
     $year = strtoupper($_POST['yearBox']);
-    $educ = !empty($_POST['vinBox']) ? strtoupper($_POST['educationalBox']) : "N/A";
+    $educ = !empty($_POST['vinBox']) || isset($_POST['vinBox']) ? strtoupper($_POST['educationalBox']) : "N/A";
     $request = strtoupper($_POST['requestingBox']);
     $purpose = strtoupper($_POST['purposeBox']);
-    $grade = !empty($_POST['vinBox']) ? strtoupper($_POST['gradeBox']) : "N/A";
+    $grade = !empty($_POST['vinBox']) || isset($_POST['vinBox']) ? strtoupper($_POST['gradeBox']) : "N/A";
 
     $sql = "INSERT INTO docstatus (docType, accID, status)
             VALUES ('Barangay Indingency', '$accId', 'Pending');";

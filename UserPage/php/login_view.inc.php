@@ -232,6 +232,10 @@
                     <p>Email address:</p>
                     <p id="details">' . $_SESSION["user_street"] . '</p>
                 </div>
+                <div class="NameNAdd">
+                    <p>Account ID:</p>
+                    <p id="details">' . $_SESSION["user_id"] . '</p>
+                </div>
             </div>';
     }
 

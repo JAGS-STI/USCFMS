@@ -1,26 +1,4 @@
-﻿<?php
- 
-    $dataPoints = array( 
-        array("y" => 10, "label" => "Roads and highways" ),
-        array("y" => 4, "label" => "Residential" ),
-        array("y" => 12, "label" => "Schools" ),
-        array("y" => 3, "label" => "Safety & security" ),
-        array("y" => 7, "label" => "I&F" ),
-        array("y" => 2, "label" => "Animal welfare" ),
-        array("y" => 1, "label" => "Others" )   
-    );
-
-    $dataPoints2 = array( 
-        array("y" => 10, "label" => "Roads and highways" ),
-        array("y" => 4, "label" => "Residential" ),
-        array("y" => 12, "label" => "Schools" ),
-        array("y" => 3, "label" => "Safety & security" ),
-        array("y" => 7, "label" => "I&F" ),
-        array("y" => 2, "label" => "Animal welfare" ),
-        array("y" => 1, "label" => "Others" )   
-    );
- 
-?>
+﻿<?php include("php/dataChart.php")?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,7 +44,7 @@
             data: [{
                 type: "column",
                 yValueFormatString: "#,##0.## concerns",
-                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+                dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
             }]
         });
         chart2.render();
