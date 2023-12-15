@@ -96,7 +96,7 @@
         <h2 id="filterTitle">Filter list</h2>
         <div class="filters">
             <div class="concernfield">
-            <p id="headField">Year:</p>
+                <p id="headField">Year:</p>
                 <div class="inbox">
                     <select id="concernBox" name="concernBox" placeholder="Type Here">
                         <option value="2020">2020</option>
@@ -107,7 +107,7 @@
                 </div>
             </div>
             <div class="concernfield">
-            <p id="headField">Comment from:</p>
+                <p id="headField">Comment from:</p>
                 <div class="inbox">
                     <select id="concernBox" name="concernBox" placeholder="Type Here">
                         <option value="Nezuko">Nezuko</option>
@@ -120,7 +120,7 @@
         </div>
         <div class="filters">
             <div class="concernfield">
-            <p id="headField">Month:</p>
+                <p id="headField">Month:</p>
                 <div class="inbox">
                     <select id="concernBox" name="concernBox" placeholder="Type Here">
                         <option value="January">Safety and security</option>
@@ -138,17 +138,18 @@
                     </select>
                 </div>
             </div>
-    </div>
-    <button id="fltrNow">Filter now</button>
-
-    <div class="second">
-        <div class="clickCncrn">
-            <img src="media/information-circle-svgrepo-com.svg">
-            <p>Click on a comment ID to view its contents.</p>
         </div>
-        <?php include(dirname(__DIR__) . "/php/display_comments.php"); ?>
+        <button id="fltrNow">Filter now</button>
+
+        <div class="second">
+            <div class="clickCncrn">
+                <img src="media/information-circle-svgrepo-com.svg">
+                <p>Click on a comment ID to view its contents.</p>
+            </div>
+            <?php include(dirname(__DIR__) . "/php/display_comments.php"); ?>
+        </div>
     </div>
-    
+        
     <div class="rightContainer">
         <div class="date">
             <p id="currentDate">September 25, 2023</p>

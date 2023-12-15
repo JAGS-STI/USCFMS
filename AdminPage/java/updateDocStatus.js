@@ -63,9 +63,7 @@ function sendMsg() {
     const Name = document.getElementById("pName").innerHTML;
     const type = document.getElementsByClassName("doctype")[0].innerHTML;
     const docID = getParameterByName('docID');
-    const message = "Hi there, "+Name+" your "+type+" is ready for pick up! <br><br>Request ID: DOC-"+docID+"<br>Open Time: Weekdays 10:00 am - 6:00 pm";
-
-
+    const message = "Good day! <br><br> We are pleased to inform you that the "+type+" you requested is now available for pick up at the barangay hall. Your request ID is DOC-"+docID+".<br><br>The document can be collected on weekdays between 08:00am and 03:00pm. Please visit the barangay hall during this time to retrieve your document!";
 
     // Use AJAX to send the updated values to the server
     const xhr = new XMLHttpRequest();

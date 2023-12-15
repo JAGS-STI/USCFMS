@@ -1,6 +1,4 @@
 <?php
-    $concernID = $_GET['concernID'];
-    
     $servername = "localhost";
     $username = "root";
     $password = ""; // Assuming no password for the root user
@@ -19,19 +17,20 @@
         $result = $conn->query($query);
         $row = $result->fetch_assoc();
         if ($result) {
-            echo 'fetched accID';
+            echo 'fetched accID '.$row['accID'].'<br>';
         } else {
-            echo 'Failed to fetched accID';
+            echo 'Failed to fetched accID<br>';
         }
         $accID = $row['accID'];
 
-        $query = "SELECT concernID FROM concerndetail JOIN useraccount ON useraccount.accID = concerndetail.accID";
+        $query = "SELECT concernID, useraccount.accID FROM concerndetail JOIN useraccount ON useraccount.accID = concerndetail.accID 
+                WHERE concerndetail.accID = $accID";
         $result = $conn->query($query);
         $row = $result->fetch_assoc();
         if ($result) {
-            echo 'fetch first concernID';
+            echo 'fetch first concernID'.$row['concernID'].' Account: '.$row['accID'].'<br>';
         } else {
-            echo 'Failed to fetch first concernID';
+            echo 'Failed to fetch first concernID<br>';
         }
         $concernID = $row['concernID'];
 
@@ -42,9 +41,9 @@
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
-            echo 'Message Sent';
+            echo 'Message Sent to '.$concernID;
         } else {
-            echo 'Failed to update concern details';
+            echo 'Failed to update concern details<br>';
         }
     } else {
         echo 'Invalid request method';

@@ -88,6 +88,15 @@ function saveAndClose() {
     if (status === 'Resolved') {
         sendResolvedMsg(document.getElementById("cd").className);
     }
+    if (status === 'Active') {
+        sendUpdateMsg(status);
+    }
+    if (status === 'Pending') {
+        sendUpdateMsg(status);
+    }
+    if (status === 'Discarded') {
+        sendUpdateMsg(status);
+    }
 
     // Use AJAX to send the updated values to the server
     const xhr = new XMLHttpRequest();
@@ -108,6 +117,41 @@ function saveAndClose() {
 function sendMsg() {
     // Get the updated values from the select elements
     const message = document.getElementById("msgBox").value;
+    const concernID = getParameterByName('concernID');
+
+    // Use AJAX to send the updated values to the server
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/USCFMS/AdminPage/php/sendMsg.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Handle the response from the server, if needed
+            console.log(xhr.responseText);
+
+            // Refreshes the page
+            window.location.href = "/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html?concernID=" + concernID;
+        }
+    };
+    xhr.send(`concernID=${concernID}&msgBox=${message}`);
+}
+
+function sendUpdateMsg(status) {
+    // Get the updated values from the select elements
+    var isNow = "";
+    switch(status) {
+        case "Active":
+            isNow = "is now on process.";
+            break;
+        case "Pending":
+            isNow = "is now pending.";
+            break;
+        case "Discarded":
+            isNow = "has been discarded.";
+            break;
+        default:
+            break; 
+    }
+    const message = "Status: "+status+"<br><br>Good Day!<br><br>Please be informed that your requested concern "+isNow;
     const concernID = getParameterByName('concernID');
 
     // Use AJAX to send the updated values to the server
