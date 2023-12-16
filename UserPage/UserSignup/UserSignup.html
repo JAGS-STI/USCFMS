@@ -198,6 +198,11 @@
     <?php login_popup(); ?>
 
     <script>
+        function validateNumericInput(input) {
+            // Remove non-numeric characters from the input value
+            input.value = input.value.replace(/\D/g, '');
+        }
+
         // Function to get URL parameter by name
         function getUrlParameter(name) {
             let searchParams = new URLSearchParams(window.location.search);

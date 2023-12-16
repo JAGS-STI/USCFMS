@@ -14,9 +14,9 @@
     function signup_input_contact() {
         
         if (isset($_SESSION["signup_data"]["contact"]) && !isset($_SESSION["errors_signup"]["invalid_contactno"])) {
-            echo '<input id="contactBox" name="contactBox" type="text" placeholder="Contact number" value="' . $_SESSION["signup_data"]["contact"] . '" required>';
+            echo '<input id="contactBox" name="contactBox" type="text" placeholder="Contact number" oninput="validateNumericInput(this)" value="' . $_SESSION["signup_data"]["contact"] . '" required>';
         } else {
-            echo '<input id="contactBox" name="contactBox" type="text" placeholder="Contact number" required>';
+            echo '<input id="contactBox" name="contactBox" type="text" placeholder="Contact number" oninput="validateNumericInput(this)" required>';
         }
     }
 

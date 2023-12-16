@@ -42,7 +42,7 @@
         echo '<div class="fields">
                 <div class="fldDetail">
                     <p>Document type:</p>
-                    <p id="bold">'.$docstat['docType'].'</p>
+                    <p id="bold" class="doctype">'.$docstat['docType'].'</p>
                 </div>
                 <div class="fldDetail">
                     <p>Name:</p>

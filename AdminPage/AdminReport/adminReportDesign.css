@@ -271,7 +271,8 @@ input, select
 }
 
 .border,
-.border2 {
+.border2,
+.border3 {
     position: relative;
     left: 50px;
 }

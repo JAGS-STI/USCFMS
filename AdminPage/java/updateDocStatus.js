@@ -52,7 +52,7 @@ function saveAndClose() {
             console.log(xhr.responseText);
 
             // Refreshes the page
-            //window.location.href = "/USCFMS/AdminPage/AdminDocument/adminDocument.html";
+            window.location.href = "/USCFMS/AdminPage/AdminDocument/adminDocument.html";
         }
     };
     xhr.send(`docID=${docID}&status=${status}`);
@@ -75,7 +75,7 @@ function sendMsg() {
             console.log(xhr.responseText);
 
             // Refreshes the page
-            //window.location.href = "/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html?concernID=" + docID;
+            window.location.href = "/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html?concernID=" + docID;
         }
     };
     xhr.send(`concernID=${docID}&msgBox=${message}`);
@@ -87,8 +87,6 @@ function sendResolvedMsg(link) {
     const Name = document.getElementById("pName").innerHTML;
     document.getElementById("msgBox").value = "Hi there, "+Name+"! Your concern <span style=\"font-weight: bold;\">SC-"+concernID+"</span> has been resolved! Feel free to give us your thoughts on how we handled your concern.<br><br>You can tell us about your thoughts here: ";
     const message = document.getElementById("msgBox").value;
-    
-    
 
     // Use AJAX to send the updated values to the server
     const xhr = new XMLHttpRequest();
@@ -100,7 +98,7 @@ function sendResolvedMsg(link) {
             console.log(xhr.responseText);
 
             // Refreshes the page
-            //window.location.href = "/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html?concernID=" + concernID;
+            window.location.href = "/USCFMS/AdminPage/AdminViewTicket/adminViewTicket.html?concernID=" + concernID;
         }
     };
     xhr.send(`concernID=${concernID}&msgBox=${message}&cd=${link}`);

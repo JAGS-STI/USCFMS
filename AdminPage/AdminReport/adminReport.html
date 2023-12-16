@@ -48,6 +48,22 @@
             }]
         });
         chart2.render();
+        var chart3 = new CanvasJS.Chart("chartContainer3", {
+            animationEnabled: true,
+            theme: "light2",
+            title:{
+                text: "No. of concerns per Status"
+            },
+            axisY: {
+                title: ""
+            },
+            data: [{
+                type: "column",
+                yValueFormatString: "#,##0.## concerns",
+                dataPoints: <?php echo json_encode($dataPoints3, JSON_NUMERIC_CHECK); ?>
+            }]
+        });
+        chart3.render();
         }
     </script>
     
@@ -159,8 +175,12 @@
             <div id="chartContainer" style="height: 380px; width: 85%;"></div>
             <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
         </div>
-        <div class="border2">
+        <div class="border2" style="margin-top: 50px;">
             <div id="chartContainer2" style="height: 380px; width: 85%;"></div>
+            <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+        </div>
+        <div class="border3" style="margin-top: 50px;">
+            <div id="chartContainer3" style="height: 380px; width: 85%;"></div>
             <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
         </div>
     </div>
